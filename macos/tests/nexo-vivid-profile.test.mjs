@@ -47,6 +47,11 @@ assert.match(
   "the macOS loader must accept the full task-art mode used by fixed skins",
 );
 assert.match(
+  loader,
+  /-Z 3840 "\$IMAGE"/,
+  "the macOS loader must preserve a 4K-wide skin master instead of downsampling it to 2400px",
+);
+assert.match(
   writer,
   /\["auto",\s*"ambient",\s*"banner",\s*"full",\s*"off"\]/,
   "the theme writer must preserve the full task-art mode",

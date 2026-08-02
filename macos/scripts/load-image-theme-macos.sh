@@ -101,7 +101,7 @@ case "$ext" in
     /bin/cp -f "$IMAGE" "$temporary"
     ;;
   *)
-    /usr/bin/sips -s format jpeg -s formatOptions 82 -Z 2400 "$IMAGE" --out "$temporary" >/dev/null \
+    /usr/bin/sips -s format jpeg -s formatOptions 88 -Z 3840 "$IMAGE" --out "$temporary" >/dev/null \
       || fail "Could not convert image. Use PNG/JPEG/HEIC/TIFF/WebP."
     [ -s "$temporary" ] || fail "Converted image is empty."
     ;;
