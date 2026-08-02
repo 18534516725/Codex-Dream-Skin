@@ -18,6 +18,7 @@
   const PAYLOAD_REVISION = __DREAM_SKIN_PAYLOAD_REVISION_JSON__;
   const THEME = themeConfig && typeof themeConfig === "object" ? themeConfig : {};
   const ART = THEME.art && typeof THEME.art === "object" ? THEME.art : {};
+  const VISUAL = THEME.visual && typeof THEME.visual === "object" ? THEME.visual : {};
   const ART_METADATA = THEME.artMetadata && typeof THEME.artMetadata === "object"
     ? THEME.artMetadata : null;
   const ANALYSIS_CACHE_KEY = "__CODEX_DREAM_SKIN_ANALYSIS_CACHE__";
@@ -44,6 +45,7 @@
     "--ds-theme-image-focus-y", "--ds-theme-image-zoom",
     "--ds-theme-image-dim", "--ds-theme-image-task-intensity",
     "--ds-theme-density-scale", "--ds-theme-motion-level",
+    "--ds-glow-strength", "--dream-skin-signature",
   ];
   const selectorByKey = new Map(SELECTOR_CONTRACT.selectors.map((entry) => [entry.key, entry]));
   const stableTestidSelector = (testid) => SELECTOR_CONTRACT.stableTestids?.includes(testid)
@@ -136,6 +138,13 @@
     return rgb ? [rgb.r, rgb.g, rgb.b]
       .map((channel) => Math.round(clamp(channel, 0, 255)))
       .join(" ") : null;
+  };
+
+  const profileRgb = (value) => {
+    if (typeof value !== "string") return null;
+    const channels = value.trim().split(/\s+/).map(Number);
+    if (channels.length !== 3 || channels.some((channel) => !Number.isInteger(channel) || channel < 0 || channel > 255)) return null;
+    return { r: channels[0], g: channels[1], b: channels[2] };
   };
 
   const rgbToHex = ({ r, g, b }) => `#${[r, g, b]
@@ -250,17 +259,32 @@
     };
     const accent = pick("accent");
     const accentAlt = explicit.has("accentAlt") ? pick("accentAlt") : (explicit.has("accent") ? accent : adaptive.accentAlt);
+    const profileAccent = profileRgb(VISUAL.accentRGB);
+    const profileSecondary = profileRgb(VISUAL.secondaryRGB);
+    const profilePanel = profileRgb(VISUAL.panelRGB);
+    const profilePanelAlt = profilePanel ? {
+      r: Math.min(255, profilePanel.r + 12),
+      g: Math.min(255, profilePanel.g + 12),
+      b: Math.min(255, profilePanel.b + 12),
+    } : null;
+    const profileBackground = profilePanel ? {
+      r: Math.max(4, Math.round(profilePanel.r * 0.58)),
+      g: Math.max(4, Math.round(profilePanel.g * 0.58)),
+      b: Math.max(4, Math.round(profilePanel.b * 0.58)),
+    } : null;
     const variables = {
-      "--ds-bg": pick("background"),
-      "--ds-panel": pick("panel"),
-      "--ds-panel-2": pick("panelAlt"),
-      "--ds-green": accent,
+      "--ds-bg": profileBackground ? rgbToHex(profileBackground) : pick("background"),
+      "--ds-panel": profilePanel ? rgbToHex(profilePanel) : pick("panel"),
+      "--ds-panel-2": profilePanelAlt ? rgbToHex(profilePanelAlt) : pick("panelAlt"),
+      "--ds-green": profileAccent ? rgbToHex(profileAccent) : accent,
       "--ds-lime": accentAlt,
-      "--ds-cyan": pick("secondary"),
+      "--ds-cyan": profileSecondary ? rgbToHex(profileSecondary) : pick("secondary"),
       "--ds-purple": pick("highlight"),
       "--ds-text": pick("text"),
       "--ds-muted": pick("muted"),
-      "--ds-line": explicit.has("line") && typeof colors.line === "string" ? colors.line : adaptive.line,
+      "--ds-line": profileAccent
+        ? `rgba(${profileAccent.r}, ${profileAccent.g}, ${profileAccent.b}, .30)`
+        : (explicit.has("line") && typeof colors.line === "string" ? colors.line : adaptive.line),
     };
 
     for (const [name, value] of Object.entries(variables)) {
@@ -293,6 +317,11 @@
     setStyleProperty(root, "--ds-theme-image-task-intensity", "0.35");
     setStyleProperty(root, "--ds-theme-density-scale", "standard");
     setStyleProperty(root, "--ds-theme-motion-level", "standard");
+    const glowStrength = clamp(Number(VISUAL.glowStrength) || 0.45, 0, 1);
+    setStyleProperty(root, "--ds-glow-strength", String(Number(glowStrength.toFixed(3))));
+    setStyleProperty(root, "--dream-skin-signature", cssString(
+      typeof VISUAL.signature === "string" ? VISUAL.signature.slice(0, 32) : "",
+    ));
     const rgbVariables = {
       "--ds-bg-rgb": variables["--ds-bg"],
       "--ds-panel-rgb": variables["--ds-panel"],
