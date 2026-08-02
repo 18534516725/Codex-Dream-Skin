@@ -43,12 +43,25 @@ for (const [argument, field] of [
   ["--signature", "signature"],
   ["--focus-x", "focusX"],
   ["--focus-y", "focusY"],
+  ["--layout-variant", "layoutVariant"],
+  ["--surface-style", "surfaceStyle"],
+  ["--corner-style", "cornerStyle"],
+  ["--motion-preset", "motionPreset"],
+  ["--sidebar-style", "sidebarStyle"],
+  ["--composer-style", "composerStyle"],
+  ["--texture-style", "textureStyle"],
 ]) {
   assert.match(
     appDelegate,
     new RegExp(`"${argument}",\\s*(?:String\\()?entry\\.visual\\.${field}`),
     `${argument} must reach the writer`,
   );
+}
+for (const argument of [
+  "--layout-variant", "--surface-style", "--corner-style", "--motion-preset",
+  "--sidebar-style", "--composer-style", "--texture-style",
+]) {
+  assert.match(loader, new RegExp(argument), `${argument} must be accepted by the macOS loader`);
 }
 assert.match(
   loader,
@@ -65,6 +78,6 @@ assert.match(
   /\["auto",\s*"ambient",\s*"banner",\s*"full",\s*"off"\]/,
   "the theme writer must preserve the full task-art mode",
 );
-assert.match(writer, /const visual\s*=\s*hasVisual\s*\?\s*\{[\s\S]*accentRGB[\s\S]*secondaryRGB[\s\S]*panelRGB[\s\S]*glowStrength[\s\S]*signature[\s\S]*\}/, "the writer must serialize the visual profile");
+assert.match(writer, /const visual\s*=\s*hasVisual\s*\?\s*\{[\s\S]*accentRGB[\s\S]*secondaryRGB[\s\S]*panelRGB[\s\S]*glowStrength[\s\S]*signature[\s\S]*layoutVariant[\s\S]*surfaceStyle[\s\S]*cornerStyle[\s\S]*motionPreset[\s\S]*sidebarStyle[\s\S]*composerStyle[\s\S]*textureStyle[\s\S]*\}/, "the writer must serialize the complete deep visual profile");
 
 console.log("Nexo vivid profile tests passed");

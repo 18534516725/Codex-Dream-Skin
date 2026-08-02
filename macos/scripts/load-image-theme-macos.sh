@@ -20,6 +20,13 @@ SECONDARY_RGB=""
 PANEL_RGB=""
 GLOW_STRENGTH=""
 SIGNATURE=""
+LAYOUT_VARIANT=""
+SURFACE_STYLE=""
+CORNER_STYLE=""
+MOTION_PRESET=""
+SIDEBAR_STYLE=""
+COMPOSER_STYLE=""
+TEXTURE_STYLE=""
 
 while [ "$#" -gt 0 ]; do
   case "$1" in
@@ -36,6 +43,13 @@ while [ "$#" -gt 0 ]; do
     --panel-rgb) PANEL_RGB="${2:-}"; shift 2 ;;
     --glow-strength) GLOW_STRENGTH="${2:-}"; shift 2 ;;
     --signature) SIGNATURE="${2:-}"; shift 2 ;;
+    --layout-variant) LAYOUT_VARIANT="${2:-}"; shift 2 ;;
+    --surface-style) SURFACE_STYLE="${2:-}"; shift 2 ;;
+    --corner-style) CORNER_STYLE="${2:-}"; shift 2 ;;
+    --motion-preset) MOTION_PRESET="${2:-}"; shift 2 ;;
+    --sidebar-style) SIDEBAR_STYLE="${2:-}"; shift 2 ;;
+    --composer-style) COMPOSER_STYLE="${2:-}"; shift 2 ;;
+    --texture-style) TEXTURE_STYLE="${2:-}"; shift 2 ;;
     --no-apply) APPLY_NOW="false"; shift ;;
     *) fail "Unknown argument: $1" ;;
   esac
@@ -130,6 +144,13 @@ theme_args=(
 [ -n "$PANEL_RGB" ] && theme_args+=(--panel-rgb "$PANEL_RGB")
 [ -n "$GLOW_STRENGTH" ] && theme_args+=(--glow-strength "$GLOW_STRENGTH")
 [ -n "$SIGNATURE" ] && theme_args+=(--signature "$SIGNATURE")
+[ -n "$LAYOUT_VARIANT" ] && theme_args+=(--layout-variant "$LAYOUT_VARIANT")
+[ -n "$SURFACE_STYLE" ] && theme_args+=(--surface-style "$SURFACE_STYLE")
+[ -n "$CORNER_STYLE" ] && theme_args+=(--corner-style "$CORNER_STYLE")
+[ -n "$MOTION_PRESET" ] && theme_args+=(--motion-preset "$MOTION_PRESET")
+[ -n "$SIDEBAR_STYLE" ] && theme_args+=(--sidebar-style "$SIDEBAR_STYLE")
+[ -n "$COMPOSER_STYLE" ] && theme_args+=(--composer-style "$COMPOSER_STYLE")
+[ -n "$TEXTURE_STYLE" ] && theme_args+=(--texture-style "$TEXTURE_STYLE")
 "$NODE" "$SCRIPT_DIR/write-theme.mjs" "${theme_args[@]}" >/dev/null
 /usr/bin/find "$THEME_DIR" -maxdepth 1 -type f -name 'background.*' ! -name "$image_name" -delete
 trap - EXIT

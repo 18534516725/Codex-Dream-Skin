@@ -55,6 +55,13 @@ function Resolve-DreamSkinNexoApplyUri {
     Signature = $record.Signature
     FocusX = $record.FocusX
     FocusY = $record.FocusY
+    LayoutVariant = $record.LayoutVariant
+    SurfaceStyle = $record.SurfaceStyle
+    CornerStyle = $record.CornerStyle
+    MotionPreset = $record.MotionPreset
+    SidebarStyle = $record.SidebarStyle
+    ComposerStyle = $record.ComposerStyle
+    TextureStyle = $record.TextureStyle
   }
 }
 

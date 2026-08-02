@@ -143,13 +143,24 @@ const safeArea = validateChoice(valueFor("safe-area", "auto"), "safe-area", ["au
 const taskMode = validateChoice(valueFor("task-mode", "auto"), "task-mode", ["auto", "ambient", "banner", "full", "off"]);
 const focusX = hasValue("focus-x") ? validateUnit(valueFor("focus-x"), "focus-x") : null;
 const focusY = hasValue("focus-y") ? validateUnit(valueFor("focus-y"), "focus-y") : null;
-const hasVisual = ["accent-rgb", "secondary-rgb", "panel-rgb", "glow-strength", "signature"].some(hasValue);
+const hasVisual = [
+  "accent-rgb", "secondary-rgb", "panel-rgb", "glow-strength", "signature",
+  "layout-variant", "surface-style", "corner-style", "motion-preset",
+  "sidebar-style", "composer-style", "texture-style",
+].some(hasValue);
 const visual = hasVisual ? {
   accentRGB: validateRGB(valueFor("accent-rgb"), "accent-rgb"),
   secondaryRGB: validateRGB(valueFor("secondary-rgb"), "secondary-rgb"),
   panelRGB: validateRGB(valueFor("panel-rgb"), "panel-rgb"),
   glowStrength: validateUnit(valueFor("glow-strength"), "glow-strength"),
   signature: validateText(valueFor("signature"), "signature", 32, "DREAM SKIN"),
+  layoutVariant: validateChoice(valueFor("layout-variant", "poster-right"), "layout-variant", ["poster-right", "editorial", "stage", "console", "pixel-platform", "collage", "pixel-desktop", "pixel-console"]),
+  surfaceStyle: validateChoice(valueFor("surface-style", "glass"), "surface-style", ["glass", "paper", "metal", "ink", "pixel"]),
+  cornerStyle: validateChoice(valueFor("corner-style", "round"), "corner-style", ["round", "cut", "stamp", "pixel", "tape", "ticket"]),
+  motionPreset: validateChoice(valueFor("motion-preset", "none"), "motion-preset", ["none", "orbit", "petals", "rain", "mist", "sparks", "scan", "ink", "mail", "spotlight", "doodle", "pixel-rain", "cursor", "sonar"]),
+  sidebarStyle: validateChoice(valueFor("sidebar-style", "navigation"), "sidebar-style", ["navigation", "garden", "neon", "maritime", "harbor", "forge", "scroll", "terminal", "station", "blueprint", "aurora", "postal", "setlist", "notebook", "file-tree", "submarine"]),
+  composerStyle: validateChoice(valueFor("composer-style", "console"), "composer-style", ["console", "letter", "terminal", "label", "pixel-console", "workbench", "mixer", "dialog", "sonar"]),
+  textureStyle: validateChoice(valueFor("texture-style", "grain"), "texture-style", ["grid", "wash", "scanline", "grain", "droplets", "paper", "dither", "halftone", "vinyl", "crayon"]),
 } : null;
 
 const explicitColors = {};

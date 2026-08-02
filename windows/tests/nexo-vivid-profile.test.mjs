@@ -34,6 +34,7 @@ assert.match(
   /Set-DreamSkinActiveTheme[^\r\n]*-Theme\s+\$themeProfile/,
   "Windows must pass the fixed skin profile into theme generation",
 );
-assert.match(applyScript, /visual\s*=\s*\[pscustomobject\]@\{[\s\S]*accentRGB[\s\S]*secondaryRGB[\s\S]*panelRGB[\s\S]*glowStrength[\s\S]*signature[\s\S]*\}/, "Windows must serialize the complete visual profile");
+assert.match(themeContract, /LayoutVariant\s*=\s*\$record\.LayoutVariant[\s\S]*SurfaceStyle\s*=\s*\$record\.SurfaceStyle[\s\S]*CornerStyle\s*=\s*\$record\.CornerStyle[\s\S]*MotionPreset\s*=\s*\$record\.MotionPreset[\s\S]*SidebarStyle\s*=\s*\$record\.SidebarStyle[\s\S]*ComposerStyle\s*=\s*\$record\.ComposerStyle[\s\S]*TextureStyle\s*=\s*\$record\.TextureStyle/, "Windows resolver must return every deep visual field");
+assert.match(applyScript, /visual\s*=\s*\[pscustomobject\]@\{[\s\S]*accentRGB[\s\S]*secondaryRGB[\s\S]*panelRGB[\s\S]*glowStrength[\s\S]*signature[\s\S]*layoutVariant[\s\S]*surfaceStyle[\s\S]*cornerStyle[\s\S]*motionPreset[\s\S]*sidebarStyle[\s\S]*composerStyle[\s\S]*textureStyle[\s\S]*\}/, "Windows must serialize the complete deep visual profile");
 
 console.log("Windows Nexo vivid profile tests passed");

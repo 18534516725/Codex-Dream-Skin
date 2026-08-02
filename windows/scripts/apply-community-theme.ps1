@@ -143,6 +143,13 @@ function Invoke-DreamSkinNexoApply {
         panelRGB = $entry.PanelRGB
         glowStrength = $entry.GlowStrength
         signature = $entry.Signature
+        layoutVariant = $entry.LayoutVariant
+        surfaceStyle = $entry.SurfaceStyle
+        cornerStyle = $entry.CornerStyle
+        motionPreset = $entry.MotionPreset
+        sidebarStyle = $entry.SidebarStyle
+        composerStyle = $entry.ComposerStyle
+        textureStyle = $entry.TextureStyle
       }
       art = [pscustomobject]@{
         focusX = $entry.FocusX
