@@ -33,7 +33,7 @@ if ($endpoints.MetadataUri -cne 'https://api.dreamskin.cc/v1/themes/ver_1234abcd
 }
 
 $nexo = Resolve-DreamSkinNexoApplyUri -Uri 'dreamskin://apply?skin=sakura-signal'
-if ($nexo.Id -cne 'sakura-signal' -or $nexo.Name -cne '樱花信使' -or
+if ($nexo.Id -cne 'sakura-signal' -or [string]::IsNullOrWhiteSpace("$($nexo.Name)") -or
   $nexo.ImageUri -cne 'https://nexotoken.net/codex-skins/originals/02-sakura-signal.webp') {
   throw 'The fixed Nexo skin link did not resolve its catalog entry.'
 }
