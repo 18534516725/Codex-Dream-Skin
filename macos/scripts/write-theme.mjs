@@ -132,7 +132,7 @@ const quote = validateText(
 );
 const appearance = validateChoice(valueFor("appearance", "auto"), "appearance", ["auto", "light", "dark"]);
 const safeArea = validateChoice(valueFor("safe-area", "auto"), "safe-area", ["auto", "left", "right", "center", "none"]);
-const taskMode = validateChoice(valueFor("task-mode", "auto"), "task-mode", ["auto", "ambient", "banner", "off"]);
+const taskMode = validateChoice(valueFor("task-mode", "auto"), "task-mode", ["auto", "ambient", "banner", "full", "off"]);
 const focusX = hasValue("focus-x") ? validateUnit(valueFor("focus-x"), "focus-x") : null;
 const focusY = hasValue("focus-y") ? validateUnit(valueFor("focus-y"), "focus-y") : null;
 

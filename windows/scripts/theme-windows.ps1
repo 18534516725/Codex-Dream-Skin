@@ -40,6 +40,8 @@ function Resolve-DreamSkinNexoApplyUri {
     Id = $id
     Name = $record[0]
     ImageUri = "$script:DreamSkinNexoAssetOrigin/codex-skins/originals/$($record[1])"
+    Appearance = 'dark'
+    TaskMode = 'full'
   }
 }
 

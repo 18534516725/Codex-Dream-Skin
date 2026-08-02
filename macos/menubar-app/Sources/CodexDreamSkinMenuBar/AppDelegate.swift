@@ -567,7 +567,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
           self.updateCommunityStage("主题已下载，正在应用并验证…")
           ScriptRunner.run(
             script: loadScript,
-            arguments: ["--file", imageURL.path, "--name", entry.name]
+            arguments: [
+              "--file", imageURL.path,
+              "--name", entry.name,
+              "--appearance", entry.appearance,
+              "--task-mode", entry.taskMode,
+            ]
           ) { [weak self] scriptResult in
             guard let self else { return }
             try? self.fileManager.removeItem(at: root)

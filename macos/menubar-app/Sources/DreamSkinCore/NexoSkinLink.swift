@@ -4,6 +4,8 @@ public struct NexoSkinCatalogEntry: Equatable, Sendable {
   public let id: String
   public let name: String
   public let imageURL: URL
+  public let appearance: String
+  public let taskMode: String
 }
 
 public enum NexoSkinContract {
@@ -44,7 +46,13 @@ public enum NexoSkinContract {
           ) else {
       return nil
     }
-    return NexoSkinCatalogEntry(id: id, name: record.name, imageURL: imageURL)
+    return NexoSkinCatalogEntry(
+      id: id,
+      name: record.name,
+      imageURL: imageURL,
+      appearance: "dark",
+      taskMode: "full"
+    )
   }
 
   public static func isRestoreURL(_ url: URL) -> Bool {

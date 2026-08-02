@@ -133,7 +133,18 @@ function Invoke-DreamSkinNexoApply {
     } finally {
       $response.Dispose()
     }
-    $null = Set-DreamSkinActiveTheme -ImagePath $imagePath -Theme $null -Name $entry.Name -StateRoot $stateRoot
+    $themeProfile = [pscustomobject]@{
+      id = "nexo-$($entry.Id)"
+      name = $entry.Name
+      appearance = $entry.Appearance
+      art = [pscustomobject]@{
+        focusX = $null
+        focusY = $null
+        safeArea = 'auto'
+        taskMode = $entry.TaskMode
+      }
+    }
+    $null = Set-DreamSkinActiveTheme -ImagePath $imagePath -Theme $themeProfile -Name $entry.Name -StateRoot $stateRoot
     & (Join-Path $PSScriptRoot 'start-dream-skin.ps1') -PromptRestart -RequireUnpaused
     if ($LASTEXITCODE -ne 0) { throw 'The selected skin did not pass visible renderer verification.' }
     return [pscustomobject]@{ Canceled = $false; Name = $entry.Name; CleanupWarning = ''; Kind = 'Nexo' }

@@ -33,7 +33,7 @@ done
 
 case "$APPEARANCE" in auto|light|dark) ;; *) fail "Invalid appearance: $APPEARANCE" ;; esac
 case "$SAFE_AREA" in auto|left|right|center|none) ;; *) fail "Invalid safe area: $SAFE_AREA" ;; esac
-case "$TASK_MODE" in auto|ambient|banner|off) ;; *) fail "Invalid task mode: $TASK_MODE" ;; esac
+case "$TASK_MODE" in auto|ambient|banner|full|off) ;; *) fail "Invalid task mode: $TASK_MODE" ;; esac
 
 ensure_state_root
 IMAGES_DIR="$STATE_ROOT/images"

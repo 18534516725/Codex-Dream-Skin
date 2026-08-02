@@ -112,6 +112,8 @@ final class CoreTests: XCTestCase {
     let entry = try XCTUnwrap(NexoSkinContract.entry(from: valid))
     XCTAssertEqual(entry.id, "sakura-signal")
     XCTAssertEqual(entry.name, "樱花信使")
+    XCTAssertEqual(entry.appearance, "dark")
+    XCTAssertEqual(entry.taskMode, "full")
     XCTAssertEqual(
       entry.imageURL.absoluteString,
       "https://nexotoken.net/codex-skins/originals/02-sakura-signal.webp"
