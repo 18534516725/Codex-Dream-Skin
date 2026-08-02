@@ -29,7 +29,7 @@ CODEX_APP_JOB_LABEL="com.openai.codex-dream-skin-studio.app"
 INJECTOR_JOB_LABEL="com.openai.codex-dream-skin-studio.injector"
 EXPECTED_CODEX_TEAM_ID="2DC432GLL2"
 EXPECTED_CODEX_REQUIREMENT="anchor apple generic and certificate leaf[subject.OU] = \"$EXPECTED_CODEX_TEAM_ID\""
-SKIN_VERSION="1.5.11"
+SKIN_VERSION="1.5.12"
 DREAM_SKIN_VALIDATED_RUNTIME_PID=""
 DREAM_SKIN_VALIDATED_RUNTIME_BUNDLE=""
 DREAM_SKIN_VALIDATED_RUNTIME_EXE=""
@@ -839,19 +839,15 @@ launch_codex_with_cdp() {
   : > "$APP_LOG"
   : > "$APP_ERROR_LOG"
   release_codex_launchd_job
-  # Start as a normal user process (NOT launchctl submit). submit keeps a job
-  # that will restart Codex when the window is closed.
-  /usr/bin/open -na "$CODEX_BUNDLE" --args \
+  # Launch the executable that was resolved from and signature-validated with
+  # the official bundle. Newer Codex builds can accept an `open --args`
+  # request while silently dropping Electron's remote-debugging switches.
+  # A direct user-owned process preserves the arguments without creating a
+  # launchd job that would relaunch Codex after the user quits.
+  /usr/bin/nohup "$CODEX_EXE" \
     --remote-debugging-address=127.0.0.1 \
     --remote-debugging-port="$port" \
-    >>"$APP_LOG" 2>>"$APP_ERROR_LOG" || true
-  # Fallback if open failed to pass args on some builds
-  if ! codex_is_running; then
-    /usr/bin/nohup "$CODEX_EXE" \
-      --remote-debugging-address=127.0.0.1 \
-      --remote-debugging-port="$port" \
-      >>"$APP_LOG" 2>>"$APP_ERROR_LOG" &
-  fi
+    >>"$APP_LOG" 2>>"$APP_ERROR_LOG" &
 }
 
 launch_codex_normally() {

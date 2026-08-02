@@ -9,6 +9,39 @@ $script:DreamSkinMaxThemeArchiveEntries = 32
 $script:DreamSkinCommunityApiOrigin = 'https://api.dreamskin.cc'
 $script:DreamSkinMaxCommunityMetadataBytes = 64 * 1024
 $script:DreamSkinThemeReplacementCommitText = 'dreamskin-theme-replace-commit/1'
+$script:DreamSkinNexoAssetOrigin = 'https://nexotoken.net'
+$script:DreamSkinNexoCatalog = @{
+  'stellar-voyager' = @('星核旅者', '01-stellar-voyager.webp')
+  'sakura-signal' = @('樱花信使', '02-sakura-signal.webp')
+  'neon-courier' = @('霓虹信使', '03-neon-courier.webp')
+  'mist-beacon' = @('雾海灯塔', '04-mist-beacon.webp')
+  'rain-harbor' = @('雨港余光', '05-rain-harbor.webp')
+  'crimson-forge' = @('绯红铸界', '06-crimson-forge.webp')
+  'cloud-antler' = @('云鹿栖境', '07-cloud-antler.webp')
+  'midnight-terminal' = @('午夜终端', '08-midnight-terminal.webp')
+  'retro-orbit' = @('复古轨道', '09-retro-orbit.webp')
+  'strategy-atrium' = @('策略中庭', '10-strategy-atrium.webp')
+  'aurora-leviathan' = @('极光巨鲸', '11-aurora-leviathan.webp')
+  'ink-ridge-guardian' = @('墨岭守望', '12-ink-ridge-guardian.webp')
+}
+
+function Resolve-DreamSkinNexoApplyUri {
+  param([Parameter(Mandatory = $true)][string]$Uri)
+  $match = [regex]::Match(
+    $Uri,
+    '\Adreamskin://apply/?\?skin=([a-z0-9-]{1,64})\z',
+    [System.Text.RegularExpressions.RegexOptions]::CultureInvariant
+  )
+  if (-not $match.Success) { throw 'Only a fixed Nexo skin catalog link is accepted.' }
+  $id = $match.Groups[1].Value
+  $record = $script:DreamSkinNexoCatalog[$id]
+  if ($null -eq $record) { throw 'The requested skin is not in the fixed catalog.' }
+  return [pscustomobject]@{
+    Id = $id
+    Name = $record[0]
+    ImageUri = "$script:DreamSkinNexoAssetOrigin/codex-skins/originals/$($record[1])"
+  }
+}
 
 function Test-DreamSkinCommunityVersionId {
   param([AllowNull()][string]$Value)

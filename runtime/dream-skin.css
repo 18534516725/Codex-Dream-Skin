@@ -111,6 +111,34 @@ html[data-dream-skin="active"][data-dream-shell="light"] {
   --ds-task-immersive-far: rgb(var(--ds-panel-rgb) / .66);
 }
 
+/* A pinned dark skin can be applied while the already-running native shell
+   still exposes its light token set. Bridge the native tokens so task text,
+   sticky composer chrome and outer shell surfaces agree immediately. */
+html[data-dream-skin="active"][data-dream-shell="dark"] {
+  --color-text-foreground: var(--ds-text) !important;
+  --color-text-foreground-secondary: var(--ds-muted) !important;
+  --color-text-foreground-tertiary: rgb(var(--ds-muted-rgb) / .72) !important;
+  --color-foreground-application-menu: var(--ds-text) !important;
+  --color-icon-primary: var(--ds-text) !important;
+  --color-icon-secondary: var(--ds-muted) !important;
+  --color-icon-tertiary: rgb(var(--ds-muted-rgb) / .72) !important;
+  --color-text-button-secondary: var(--ds-text) !important;
+  --color-text-button-tertiary: var(--ds-muted) !important;
+  --color-background-panel: rgb(var(--ds-panel-rgb) / .92) !important;
+  --color-background-surface: rgb(var(--ds-panel-rgb) / .88) !important;
+  --color-background-surface-under: rgb(var(--ds-bg-rgb) / .92) !important;
+  --color-background-control: rgb(var(--ds-panel-2-rgb) / .88) !important;
+  --color-background-control-opaque: var(--ds-panel-2) !important;
+  --color-background-editor-opaque: var(--ds-panel-2) !important;
+  --color-background-elevated-primary: rgb(var(--ds-panel-rgb) / .94) !important;
+  --color-background-elevated-primary-opaque: var(--ds-panel) !important;
+  --color-background-elevated-secondary: rgb(var(--ds-panel-2-rgb) / .94) !important;
+  --color-background-elevated-secondary-opaque: var(--ds-panel-2) !important;
+  --color-border: var(--ds-line) !important;
+  --color-border-heavy: rgb(var(--ds-muted-rgb) / .26) !important;
+  --color-border-light: rgb(var(--ds-muted-rgb) / .12) !important;
+}
+
 /* Native token surfaces (dropdown/popover) resolve from Codex's own
    appearanceTheme, not the skin; when that disagrees with data-dream-shell the
    popover keeps the opposite palette (#233). Remap the dropdown token family to
@@ -543,8 +571,7 @@ html[data-dream-skin="active"] __DREAM_SELECTOR_SHELL_MAIN__ > __DREAM_SELECTOR_
 /* Decorative chrome lives on the native shell; no injected positioning host is needed. */
 html[data-dream-skin="active"]
   __DREAM_SELECTOR_SHELL_MAIN__:not(:has(__DREAM_SELECTOR_HOME_ROUTE_CSS__)) > __DREAM_SELECTOR_HEADER_TINT__::before {
-  content: var(--dream-skin-name, "Codex Dream Skin") " · "
-    var(--dream-skin-brand-subtitle, "CODEX DREAM SKIN");
+  content: none !important;
   position: absolute;
   left: 22px;
   top: 4px;
@@ -562,7 +589,7 @@ html[data-dream-skin="active"]
 
 html[data-dream-skin="active"]
   __DREAM_SELECTOR_SHELL_MAIN__:not(:has(__DREAM_SELECTOR_HOME_ROUTE_CSS__)) > __DREAM_SELECTOR_HEADER_TINT__::after {
-  content: var(--dream-skin-status, "DREAM SKIN ONLINE");
+  content: none !important;
   position: absolute;
   right: 84px;
   top: 13px;
@@ -580,7 +607,7 @@ html[data-dream-skin="active"]
 
 html[data-dream-skin="active"]
   __DREAM_SELECTOR_SHELL_MAIN__:has(__DREAM_SELECTOR_HOME_ROUTE_CSS__)::after {
-  content: var(--dream-skin-quote, "MAKE SOMETHING WONDERFUL");
+  content: none !important;
   position: absolute;
   right: 28px;
   bottom: 72px;

@@ -43,6 +43,11 @@ function Format-DreamSkinCommunitySuccessMessage {
   return $message
 }
 
+function Format-DreamSkinNexoSuccessMessage {
+  param([Parameter(Mandatory = $true)][string]$Name)
+  return "主题「$Name」已通过固定来源、图片格式和可见渲染验证，并已应用到 Codex。"
+}
+
 function Confirm-DreamSkinCommunityApply {
   param([Parameter(Mandatory = $true)][object]$Metadata)
   Add-Type -AssemblyName System.Windows.Forms -ErrorAction Stop
@@ -64,6 +69,79 @@ SHA-256：$($Metadata.PackageSha256)
     [System.Windows.Forms.MessageBoxDefaultButton]::Button2
   )
   return $choice -eq [System.Windows.Forms.DialogResult]::Yes
+}
+
+function Invoke-DreamSkinNexoApply {
+  param([Parameter(Mandatory = $true)][string]$ApplyUri)
+  $entry = Resolve-DreamSkinNexoApplyUri -Uri $ApplyUri
+  Add-Type -AssemblyName System.Windows.Forms -ErrorAction Stop
+  $choice = [System.Windows.Forms.MessageBox]::Show(
+    "应用主题「$($entry.Name)」？`r`n`r`n助手只会从固定皮肤目录下载图片；必要时 Codex 会重启一次。",
+    '确认一键换肤',
+    [System.Windows.Forms.MessageBoxButtons]::YesNo,
+    [System.Windows.Forms.MessageBoxIcon]::Question,
+    [System.Windows.Forms.MessageBoxDefaultButton]::Button2
+  )
+  if ($choice -ne [System.Windows.Forms.DialogResult]::Yes) {
+    return [pscustomobject]@{ Canceled = $true; Name = $entry.Name; CleanupWarning = ''; Kind = 'Nexo' }
+  }
+
+  $stateRoot = Join-Path $env:LOCALAPPDATA 'CodexDreamSkin'
+  $paths = Get-DreamSkinThemePaths -StateRoot $stateRoot
+  Ensure-DreamSkinManagedDirectory -Path $paths.Root -Root $paths.Root
+  $workRoot = Join-Path $paths.Root ('.nexo-apply-' + [guid]::NewGuid().ToString('N'))
+  Ensure-DreamSkinManagedDirectory -Path $workRoot -Root $paths.Root
+  $imagePath = Join-Path $workRoot 'background.webp'
+  try {
+    $request = [System.Net.HttpWebRequest][System.Net.WebRequest]::Create(
+      [System.Uri]::new($entry.ImageUri, [System.UriKind]::Absolute)
+    )
+    $request.Method = 'GET'
+    $request.Accept = 'image/webp,image/*'
+    $request.UserAgent = 'CodexDreamSkin/1 nexo-skin-apply'
+    $request.AllowAutoRedirect = $false
+    $request.Timeout = 20000
+    $request.ReadWriteTimeout = 60000
+    $response = [System.Net.HttpWebResponse]$request.GetResponse()
+    try {
+      if ([int]$response.StatusCode -ne 200 -or $response.ResponseUri.AbsoluteUri -cne $entry.ImageUri) {
+        throw 'The fixed skin image returned an unexpected status or redirect.'
+      }
+      $contentType = ("$($response.ContentType)" -split ';', 2)[0].Trim().ToLowerInvariant()
+      if (-not $contentType.StartsWith('image/')) { throw 'The fixed skin response is not an image.' }
+      if ($response.ContentLength -gt $script:DreamSkinMaxImageBytes) { throw 'The skin image exceeds 10 MiB.' }
+      $input = $response.GetResponseStream()
+      $output = [System.IO.File]::Open(
+        $imagePath,
+        [System.IO.FileMode]::CreateNew,
+        [System.IO.FileAccess]::Write,
+        [System.IO.FileShare]::None
+      )
+      try {
+        $buffer = New-Object byte[] 65536
+        [int64]$written = 0
+        while (($read = $input.Read($buffer, 0, $buffer.Length)) -gt 0) {
+          $written += $read
+          if ($written -gt $script:DreamSkinMaxImageBytes) { throw 'The skin image exceeds 10 MiB.' }
+          $output.Write($buffer, 0, $read)
+        }
+        if ($written -le 0) { throw 'The skin image is empty.' }
+      } finally {
+        $output.Dispose()
+        $input.Dispose()
+      }
+    } finally {
+      $response.Dispose()
+    }
+    $null = Set-DreamSkinActiveTheme -ImagePath $imagePath -Theme $null -Name $entry.Name -StateRoot $stateRoot
+    & (Join-Path $PSScriptRoot 'start-dream-skin.ps1') -PromptRestart -RequireUnpaused
+    if ($LASTEXITCODE -ne 0) { throw 'The selected skin did not pass visible renderer verification.' }
+    return [pscustomobject]@{ Canceled = $false; Name = $entry.Name; CleanupWarning = ''; Kind = 'Nexo' }
+  } finally {
+    if (Test-Path -LiteralPath $workRoot) {
+      Remove-Item -LiteralPath $workRoot -Recurse -Force -ErrorAction SilentlyContinue
+    }
+  }
 }
 
 function New-DreamSkinCommunityHttpRequest {
@@ -785,11 +863,27 @@ function Invoke-DreamSkinCommunityApply {
 $previousProtocol = [System.Net.ServicePointManager]::SecurityProtocol
 try {
   [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
-  $result = Invoke-DreamSkinCommunityApply -ApplyUri $Uri
+  if ($Uri -cmatch '\Adreamskin://apply/?\?skin=') {
+    $result = Invoke-DreamSkinNexoApply -ApplyUri $Uri
+  } elseif ($Uri -ceq 'dreamskin://restore') {
+    & (Join-Path $PSScriptRoot 'restore-dream-skin.ps1') -RestoreBaseTheme -PromptRestart
+    if ($LASTEXITCODE -ne 0) { throw 'The official appearance did not pass restore verification.' }
+    $result = [pscustomobject]@{ Canceled = $false; Name = '官方外观'; CleanupWarning = ''; Kind = 'Restore' }
+  } else {
+    $result = Invoke-DreamSkinCommunityApply -ApplyUri $Uri
+  }
   if (-not $result.Canceled) {
-    Show-DreamSkinCommunityMessage `
-      -Message (Format-DreamSkinCommunitySuccessMessage -Name $result.Name `
-        -CleanupWarning $result.CleanupWarning)
+    $kindProperty = $result.PSObject.Properties['Kind']
+    $resultKind = if ($null -ne $kindProperty) { "$($kindProperty.Value)" } else { 'Community' }
+    $successMessage = if ($resultKind -ceq 'Nexo') {
+      Format-DreamSkinNexoSuccessMessage -Name $result.Name
+    } elseif ($resultKind -ceq 'Restore') {
+      'Codex 已恢复官方外观。'
+    } else {
+      Format-DreamSkinCommunitySuccessMessage -Name $result.Name `
+        -CleanupWarning $result.CleanupWarning
+    }
+    Show-DreamSkinCommunityMessage -Message $successMessage
   }
   exit 0
 } catch {

@@ -25,6 +25,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   private var engineInstallInFlight = false
   private var themeRecoveryInFlight = false
   private var pendingCommunityVersionID: String?
+  private var pendingNexoSkin: NexoSkinCatalogEntry?
   private var communityBaselineThemeID = ""
   private var communityStageMessage = ""
   private var refreshTimer: Timer?
@@ -138,15 +139,25 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   }
 
   func application(_ application: NSApplication, open urls: [URL]) {
-    guard urls.count == 1,
-          let versionID = CommunityThemeContract.versionID(from: urls[0]) else {
+    guard urls.count == 1 else {
       showError(
         title: "一键换肤链接无效",
-        message: "只接受 DreamSkin.cc 生成的主题版本链接；不会打开链接中的任意网址或文件。"
+        message: "一次只能处理一个经过验证的主题链接。"
       )
       return
     }
-    beginCommunityThemeApply(versionID: versionID)
+    if let entry = NexoSkinContract.entry(from: urls[0]) {
+      beginNexoSkinApply(entry)
+    } else if NexoSkinContract.isRestoreURL(urls[0]) {
+      beginNexoRestore()
+    } else if let versionID = CommunityThemeContract.versionID(from: urls[0]) {
+      beginCommunityThemeApply(versionID: versionID)
+    } else {
+      showError(
+        title: "一键换肤链接无效",
+        message: "只接受固定主题目录或 DreamSkin.cc 生成的版本链接；不会打开链接中的任意网址、文件或命令。"
+      )
+    }
   }
 
   func menuNeedsUpdate(_ menu: NSMenu) {
@@ -497,6 +508,124 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     activateForUserInteraction()
     guard panel.runModal() == .OK, let archiveURL = panel.url else { return }
     importThemeArchive(archiveURL)
+  }
+
+  private func beginNexoSkinApply(_ entry: NexoSkinCatalogEntry) {
+    guard !operationInFlight, !snapshot.busy else {
+      showError(title: "暂时无法换肤", message: "Dream Skin 正在执行其他操作，请稍后再点一次。")
+      return
+    }
+    if engineInstallInFlight {
+      pendingNexoSkin = entry
+      return
+    }
+    if engineNeedsInstall() {
+      pendingNexoSkin = entry
+      installBundledEngineIfNeeded(force: false)
+      return
+    }
+    guard let loadScript = installedScript(named: "load-image-theme-macos.sh") else {
+      showError(title: "引擎尚未安装", message: "请先选择“安装 / 升级引擎”，再使用一键换肤。")
+      return
+    }
+
+    let alert = NSAlert()
+    alert.messageText = "应用“\(entry.name)”？"
+    alert.informativeText = "助手会从 Nexo 固定主题目录下载并校验图片。若当前 Codex 没有安全调试连接，应用过程中会自动重启一次；请先保存未发送的输入。"
+    alert.addButton(withTitle: "应用主题")
+    alert.addButton(withTitle: "取消")
+    activateForUserInteraction()
+    guard alert.runModal() == .alertFirstButtonReturn else { return }
+
+    operationInFlight = true
+    updateCommunityStage("正在下载并校验“\(entry.name)”…")
+    communityHTTP.get(
+      entry.imageURL,
+      accept: "image/webp,image/*",
+      maximumBytes: 10 * 1024 * 1024
+    ) { [weak self] result in
+      guard let self else { return }
+      do {
+        guard case let .success(payload) = result,
+              payload.body.count > 0,
+              self.mediaType(of: payload.response).hasPrefix("image/") else {
+          throw CommunityThemeContractError.invalidPackageIdentity
+        }
+        let root = self.stateRootURL.appendingPathComponent(
+          ".nexo-apply-\(UUID().uuidString)",
+          isDirectory: true
+        )
+        try self.fileManager.createDirectory(
+          at: root,
+          withIntermediateDirectories: false,
+          attributes: [.posixPermissions: 0o700]
+        )
+        let imageURL = root.appendingPathComponent("background.webp")
+        try payload.body.write(to: imageURL, options: [.atomic])
+        try self.fileManager.setAttributes([.posixPermissions: 0o600], ofItemAtPath: imageURL.path)
+        DispatchQueue.main.async {
+          self.updateCommunityStage("主题已下载，正在应用并验证…")
+          ScriptRunner.run(
+            script: loadScript,
+            arguments: ["--file", imageURL.path, "--name", entry.name]
+          ) { [weak self] scriptResult in
+            guard let self else { return }
+            try? self.fileManager.removeItem(at: root)
+            self.finishThemeOperation()
+            if scriptResult.succeeded {
+              self.showInfo(title: "主题已应用", message: "“\(entry.name)”已通过下载、主题生成和可见渲染验证。")
+            } else {
+              self.showError(
+                title: "主题应用失败",
+                message: self.conciseOutput(scriptResult.output, fallback: "目标主题没有通过可见渲染验证，未报告成功。")
+              )
+            }
+          }
+        }
+      } catch {
+        DispatchQueue.main.async {
+          self.finishThemeOperation()
+          self.showError(title: "主题下载失败", message: "固定主题图片未通过来源、大小或格式校验。")
+        }
+      }
+    }
+  }
+
+  private func beginNexoRestore() {
+    guard !operationInFlight, !snapshot.busy else {
+      showError(title: "暂时无法恢复", message: "Dream Skin 正在执行其他操作，请稍后再点一次。")
+      return
+    }
+    guard let script = installedScript(named: "restore-dream-skin-macos.sh") else {
+      showError(title: "引擎尚未安装", message: "本机还没有可用的 Dream Skin 引擎。")
+      return
+    }
+    let alert = NSAlert()
+    alert.messageText = "恢复 Codex 官方外观？"
+    alert.informativeText = "将移除当前皮肤并恢复官方外观。必要时 Codex 只会重启一次。"
+    alert.addButton(withTitle: "恢复官方外观")
+    alert.addButton(withTitle: "取消")
+    activateForUserInteraction()
+    guard alert.runModal() == .alertFirstButtonReturn else { return }
+    operationInFlight = true
+    rebuildMenu()
+    ScriptRunner.run(
+      script: script,
+      arguments: ["--restore-base-theme", "--restart-codex"]
+    ) { [weak self] result in
+      guard let self else { return }
+      self.operationInFlight = false
+      self.refreshStatus()
+      self.rebuildMenu()
+      if result.succeeded {
+        self.showInfo(title: "已恢复官方外观", message: "当前皮肤已移除。")
+      } else {
+        self.showError(
+          title: "恢复未完成",
+          message: self.conciseOutput(result.output, fallback: "官方外观未通过恢复验证，请稍后重试。")
+        )
+      }
+    }
   }
 
   private func beginCommunityThemeApply(versionID: String) {
@@ -1134,22 +1263,25 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     if !force && !engineNeedsInstall() {
       recoverInterruptedThemeImports { [weak self] recovered in
         guard let self else { return }
-        if recovered {
-          self.resumePendingCommunityApply()
-        } else {
-          self.pendingCommunityVersionID = nil
-        }
+      if recovered {
+        self.resumePendingCommunityApply()
+      } else {
+        self.pendingCommunityVersionID = nil
+        self.pendingNexoSkin = nil
+      }
       }
       return
     }
     guard let bundledVersion = version(at: bundledEngineURL?.appendingPathComponent("VERSION")) else {
       pendingCommunityVersionID = nil
+      pendingNexoSkin = nil
       showError(title: "安装资源损坏", message: "App 内的版本信息无效，请重新下载。")
       return
     }
     if let installedVersion = version(at: installedEngineURL.appendingPathComponent("VERSION")),
        installedVersion > bundledVersion {
       pendingCommunityVersionID = nil
+      pendingNexoSkin = nil
       showError(
         title: "已安装更新版本",
         message: "本机引擎 v\(installedVersion) 比当前 App 的 v\(bundledVersion) 更新。请下载相同或更新版本的 DMG，不会执行降级。"
@@ -1158,6 +1290,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
     guard let script = bundledScript(named: "install-dream-skin-macos.sh") else {
       pendingCommunityVersionID = nil
+      pendingNexoSkin = nil
       showError(title: "安装资源损坏", message: "App 内没有找到 Dream Skin 引擎。请重新下载。")
       return
     }
@@ -1178,10 +1311,12 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             self.resumePendingCommunityApply()
           } else {
             self.pendingCommunityVersionID = nil
+            self.pendingNexoSkin = nil
           }
         }
       } else {
         self.pendingCommunityVersionID = nil
+        self.pendingNexoSkin = nil
         self.showError(
           title: "引擎安装未完成",
           message: self.conciseOutput(
@@ -1227,6 +1362,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   }
 
   private func resumePendingCommunityApply() {
+    if let entry = pendingNexoSkin {
+      pendingNexoSkin = nil
+      DispatchQueue.main.async { [weak self] in
+        self?.beginNexoSkinApply(entry)
+      }
+      return
+    }
     guard let versionID = pendingCommunityVersionID else { return }
     pendingCommunityVersionID = nil
     DispatchQueue.main.async { [weak self] in

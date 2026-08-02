@@ -242,8 +242,13 @@ assert.equal(
 
 assert.match(
   commonSource,
+  /\/usr\/bin\/nohup "\$CODEX_EXE"[\s\\]*\n[\s\\]*--remote-debugging-address=127\.0\.0\.1/,
+  "The first launch must pass CDP arguments directly to the validated Codex executable.",
+);
+assert.doesNotMatch(
+  commonSource,
   /\/usr\/bin\/open -na "\$CODEX_BUNDLE" --args[\s\\]*\n[\s\\]*--remote-debugging-address=127\.0\.0\.1/,
-  "The first launch must retain a new CDP-enabled app instance.",
+  "LaunchServices must not silently discard the required CDP arguments.",
 );
 assert.match(
   startSource,

@@ -32,6 +32,22 @@ if ($endpoints.MetadataUri -cne 'https://api.dreamskin.cc/v1/themes/ver_1234abcd
   throw 'Community theme endpoints were not built from the fixed API origin.'
 }
 
+$nexo = Resolve-DreamSkinNexoApplyUri -Uri 'dreamskin://apply?skin=sakura-signal'
+if ($nexo.Id -cne 'sakura-signal' -or $nexo.Name -cne '樱花信使' -or
+  $nexo.ImageUri -cne 'https://nexotoken.net/codex-skins/originals/02-sakura-signal.webp') {
+  throw 'The fixed Nexo skin link did not resolve its catalog entry.'
+}
+foreach ($invalidNexoUri in @(
+  'dreamskin://apply?skin=unknown',
+  'dreamskin://apply?skin=../sakura-signal',
+  'dreamskin://apply?skin=sakura-signal&url=https://evil.example/a.webp',
+  'dreamskin://apply/path?skin=sakura-signal'
+)) {
+  Assert-CommunityValueRejected -Label $invalidNexoUri -Action {
+    Resolve-DreamSkinNexoApplyUri -Uri $invalidNexoUri
+  }
+}
+
 foreach ($invalidUri in @(
   'https://dreamskin.cc/apply?version=ver_1234abcd',
   'dreamskin://apply?url=https://example.com/theme.zip',

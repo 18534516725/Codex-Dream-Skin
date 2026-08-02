@@ -107,6 +107,30 @@ final class CoreTests: XCTestCase {
     }
   }
 
+  func testNexoSkinLinkAcceptsOnlyFixedCatalogEntries() throws {
+    let valid = try XCTUnwrap(URL(string: "dreamskin://apply?skin=sakura-signal"))
+    let entry = try XCTUnwrap(NexoSkinContract.entry(from: valid))
+    XCTAssertEqual(entry.id, "sakura-signal")
+    XCTAssertEqual(entry.name, "樱花信使")
+    XCTAssertEqual(
+      entry.imageURL.absoluteString,
+      "https://nexotoken.net/codex-skins/originals/02-sakura-signal.webp"
+    )
+
+    for source in [
+      "dreamskin://apply?skin=unknown",
+      "dreamskin://apply?skin=../sakura-signal",
+      "dreamskin://apply?skin=sakura-signal&url=https://evil.example/a.webp",
+      "dreamskin://apply/path?skin=sakura-signal",
+      "dreamskin://apply?skin=sakura-signal#fragment",
+      "https://www.nexotoken.net/apply?skin=sakura-signal"
+    ] {
+      XCTAssertNil(NexoSkinContract.entry(from: try XCTUnwrap(URL(string: source))), source)
+    }
+    XCTAssertTrue(NexoSkinContract.isRestoreURL(try XCTUnwrap(URL(string: "dreamskin://restore"))))
+    XCTAssertFalse(NexoSkinContract.isRestoreURL(try XCTUnwrap(URL(string: "dreamskin://restore?extra=1"))))
+  }
+
   func testCommunityThemeMetadataValidatesIdentityAndBounds() throws {
     let json = #"{"id":"ver_1234abcd","themeId":"theme-one","name":"Paper","version":"1.2.3","authorDisplayName":"Author","license":"MIT","packageSha256":"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","packageBytes":2048,"applyCompatible":true}"#
     let metadata = try JSONDecoder().decode(CommunityThemeMetadata.self, from: Data(json.utf8))
