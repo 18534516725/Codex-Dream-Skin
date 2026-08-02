@@ -12,6 +12,8 @@
     "data-dream-art-wide", "data-dream-art-safe", "data-dream-task-mode",
     "data-dream-art-safe-area", "data-dream-art-task-mode", "data-dream-art-aspect",
     "data-dream-art-ready",
+    "data-dream-layout", "data-dream-surface", "data-dream-corners", "data-dream-motion",
+    "data-dream-sidebar-style", "data-dream-composer-style", "data-dream-texture",
   ];
   const VERSION = __DREAM_SKIN_VERSION_JSON__;
   const STYLE_REVISION = __DREAM_SKIN_STYLE_REVISION_JSON__;
@@ -100,6 +102,27 @@
   })();
 
   const cssString = (value) => JSON.stringify(String(value ?? ""));
+
+  const VISUAL_CHOICES = {
+    layoutVariant: ["poster-right", "editorial", "stage", "console", "pixel-platform", "collage", "pixel-desktop", "pixel-console"],
+    surfaceStyle: ["glass", "paper", "metal", "ink", "pixel"],
+    cornerStyle: ["round", "cut", "stamp", "pixel", "tape", "ticket"],
+    motionPreset: ["none", "orbit", "petals", "rain", "mist", "sparks", "scan", "ink", "mail", "spotlight", "doodle", "pixel-rain", "cursor", "sonar"],
+    sidebarStyle: ["navigation", "garden", "neon", "maritime", "harbor", "forge", "scroll", "terminal", "station", "blueprint", "aurora", "postal", "setlist", "notebook", "file-tree", "submarine"],
+    composerStyle: ["console", "letter", "terminal", "label", "pixel-console", "workbench", "mixer", "dialog", "sonar"],
+    textureStyle: ["grid", "wash", "scanline", "grain", "droplets", "paper", "dither", "halftone", "vinyl", "crayon"],
+  };
+  const VISUAL_DEFAULTS = {
+    layoutVariant: "poster-right",
+    surfaceStyle: "glass",
+    cornerStyle: "round",
+    motionPreset: "none",
+    sidebarStyle: "navigation",
+    composerStyle: "console",
+    textureStyle: "grain",
+  };
+  const visualChoice = (field, value) => VISUAL_CHOICES[field]?.includes(value)
+    ? value : VISUAL_DEFAULTS[field];
 
   const setStyleProperty = (root, name, value) => {
     if (root.style.getPropertyValue(name) !== value) {
@@ -579,6 +602,13 @@
     const shell = resolvedShell();
     setAttribute(root, "data-dream-skin", "active");
     setAttribute(root, SHELL_ATTR, shell);
+    setAttribute(root, "data-dream-layout", visualChoice("layoutVariant", VISUAL.layoutVariant));
+    setAttribute(root, "data-dream-surface", visualChoice("surfaceStyle", VISUAL.surfaceStyle));
+    setAttribute(root, "data-dream-corners", visualChoice("cornerStyle", VISUAL.cornerStyle));
+    setAttribute(root, "data-dream-motion", visualChoice("motionPreset", VISUAL.motionPreset));
+    setAttribute(root, "data-dream-sidebar-style", visualChoice("sidebarStyle", VISUAL.sidebarStyle));
+    setAttribute(root, "data-dream-composer-style", visualChoice("composerStyle", VISUAL.composerStyle));
+    setAttribute(root, "data-dream-texture", visualChoice("textureStyle", VISUAL.textureStyle));
     setStyleProperty(root, "--dream-skin-art", `url("${artUrl}")`);
     applyTheme(root, shell);
     applyArtMetadata(root);
