@@ -12,14 +12,23 @@ const [contract, appDelegate, loader, writer] = await Promise.all([
   fs.readFile(path.join(root, "scripts/write-theme.mjs"), "utf8"),
 ]);
 
-for (const field of ["accentRGB", "secondaryRGB", "panelRGB", "glowStrength", "signature", "focusX", "focusY"]) {
+for (const field of [
+  "accentRGB", "secondaryRGB", "panelRGB", "glowStrength", "signature", "focusX", "focusY",
+  "layoutVariant", "surfaceStyle", "cornerStyle", "motionPreset", "sidebarStyle", "composerStyle", "textureStyle",
+]) {
   assert.match(contract, new RegExp(`public let ${field}:`), `macOS fixed skin profiles must expose ${field}`);
 }
 assert.equal(
   [...contract.matchAll(/^\s*"[a-z0-9-]+":\s*\.init\(/gm)].length,
-  12,
-  "macOS must define one visual profile for each of the 12 fixed skins",
+  18,
+  "macOS must define one visual profile for each of the 18 fixed skins",
 );
+for (const id of [
+  "post-raccoon", "night-shift-penguin", "workshop-otter",
+  "moon-platform-cat", "floppy-wizard", "deep-sea-repair",
+]) {
+  assert.match(contract, new RegExp(`"${id}"`), `macOS must expose ${id}`);
+}
 
 assert.match(
   appDelegate,

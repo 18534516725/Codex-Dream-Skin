@@ -12,14 +12,23 @@ const [themeContract, applyScript] = await Promise.all([
 
 assert.match(themeContract, /Appearance\s*=\s*'dark'/, "fixed Windows skins must use dark native chrome");
 assert.match(themeContract, /TaskMode\s*=\s*'full'/, "fixed Windows skins must use full-strength artwork");
-for (const field of ["AccentRGB", "SecondaryRGB", "PanelRGB", "GlowStrength", "Signature", "FocusX", "FocusY"]) {
+for (const field of [
+  "AccentRGB", "SecondaryRGB", "PanelRGB", "GlowStrength", "Signature", "FocusX", "FocusY",
+  "LayoutVariant", "SurfaceStyle", "CornerStyle", "MotionPreset", "SidebarStyle", "ComposerStyle", "TextureStyle",
+]) {
   assert.match(themeContract, new RegExp(`${field}\\s*=`), `Windows fixed skin profiles must expose ${field}`);
 }
 assert.equal(
   [...themeContract.matchAll(/^\s*'[a-z0-9-]+'\s*=\s*@\{/gm)].length,
-  12,
-  "Windows must define one visual profile for each of the 12 fixed skins",
+  18,
+  "Windows must define one visual profile for each of the 18 fixed skins",
 );
+for (const id of [
+  "post-raccoon", "night-shift-penguin", "workshop-otter",
+  "moon-platform-cat", "floppy-wizard", "deep-sea-repair",
+]) {
+  assert.match(themeContract, new RegExp(`'${id}'\\s*=`), `Windows must expose ${id}`);
+}
 assert.match(
   applyScript,
   /Set-DreamSkinActiveTheme[^\r\n]*-Theme\s+\$themeProfile/,
