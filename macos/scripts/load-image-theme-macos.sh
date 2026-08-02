@@ -15,6 +15,11 @@ SAFE_AREA="auto"
 TASK_MODE="auto"
 FOCUS_X=""
 FOCUS_Y=""
+ACCENT_RGB=""
+SECONDARY_RGB=""
+PANEL_RGB=""
+GLOW_STRENGTH=""
+SIGNATURE=""
 
 while [ "$#" -gt 0 ]; do
   case "$1" in
@@ -26,6 +31,11 @@ while [ "$#" -gt 0 ]; do
     --task-mode) TASK_MODE="${2:-}"; shift 2 ;;
     --focus-x) FOCUS_X="${2:-}"; shift 2 ;;
     --focus-y) FOCUS_Y="${2:-}"; shift 2 ;;
+    --accent-rgb) ACCENT_RGB="${2:-}"; shift 2 ;;
+    --secondary-rgb) SECONDARY_RGB="${2:-}"; shift 2 ;;
+    --panel-rgb) PANEL_RGB="${2:-}"; shift 2 ;;
+    --glow-strength) GLOW_STRENGTH="${2:-}"; shift 2 ;;
+    --signature) SIGNATURE="${2:-}"; shift 2 ;;
     --no-apply) APPLY_NOW="false"; shift ;;
     *) fail "Unknown argument: $1" ;;
   esac
@@ -115,6 +125,11 @@ theme_args=(
 )
 [ -n "$FOCUS_X" ] && theme_args+=(--focus-x "$FOCUS_X")
 [ -n "$FOCUS_Y" ] && theme_args+=(--focus-y "$FOCUS_Y")
+[ -n "$ACCENT_RGB" ] && theme_args+=(--accent-rgb "$ACCENT_RGB")
+[ -n "$SECONDARY_RGB" ] && theme_args+=(--secondary-rgb "$SECONDARY_RGB")
+[ -n "$PANEL_RGB" ] && theme_args+=(--panel-rgb "$PANEL_RGB")
+[ -n "$GLOW_STRENGTH" ] && theme_args+=(--glow-strength "$GLOW_STRENGTH")
+[ -n "$SIGNATURE" ] && theme_args+=(--signature "$SIGNATURE")
 "$NODE" "$SCRIPT_DIR/write-theme.mjs" "${theme_args[@]}" >/dev/null
 /usr/bin/find "$THEME_DIR" -maxdepth 1 -type f -name 'background.*' ! -name "$image_name" -delete
 trap - EXIT

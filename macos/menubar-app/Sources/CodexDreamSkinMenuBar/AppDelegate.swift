@@ -572,6 +572,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
               "--name", entry.name,
               "--appearance", entry.appearance,
               "--task-mode", entry.taskMode,
+              "--accent-rgb", entry.visual.accentRGB,
+              "--secondary-rgb", entry.visual.secondaryRGB,
+              "--panel-rgb", entry.visual.panelRGB,
+              "--glow-strength", String(entry.visual.glowStrength),
+              "--signature", entry.visual.signature,
+              "--focus-x", String(entry.visual.focusX),
+              "--focus-y", String(entry.visual.focusY),
             ]
           ) { [weak self] scriptResult in
             guard let self else { return }

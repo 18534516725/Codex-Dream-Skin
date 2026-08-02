@@ -114,6 +114,13 @@ final class CoreTests: XCTestCase {
     XCTAssertEqual(entry.name, "樱花信使")
     XCTAssertEqual(entry.appearance, "dark")
     XCTAssertEqual(entry.taskMode, "full")
+    XCTAssertFalse(entry.visual.accentRGB.isEmpty)
+    XCTAssertFalse(entry.visual.secondaryRGB.isEmpty)
+    XCTAssertFalse(entry.visual.panelRGB.isEmpty)
+    XCTAssertFalse(entry.visual.signature.isEmpty)
+    XCTAssertTrue((0...1).contains(entry.visual.glowStrength))
+    XCTAssertTrue((0...1).contains(entry.visual.focusX))
+    XCTAssertTrue((0...1).contains(entry.visual.focusY))
     XCTAssertEqual(
       entry.imageURL.absoluteString,
       "https://nexotoken.net/codex-skins/originals/02-sakura-signal.webp"

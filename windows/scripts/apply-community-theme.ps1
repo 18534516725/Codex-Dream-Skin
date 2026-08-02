@@ -137,9 +137,16 @@ function Invoke-DreamSkinNexoApply {
       id = "nexo-$($entry.Id)"
       name = $entry.Name
       appearance = $entry.Appearance
+      visual = [pscustomobject]@{
+        accentRGB = $entry.AccentRGB
+        secondaryRGB = $entry.SecondaryRGB
+        panelRGB = $entry.PanelRGB
+        glowStrength = $entry.GlowStrength
+        signature = $entry.Signature
+      }
       art = [pscustomobject]@{
-        focusX = $null
-        focusY = $null
+        focusX = $entry.FocusX
+        focusY = $entry.FocusY
         safeArea = 'auto'
         taskMode = $entry.TaskMode
       }

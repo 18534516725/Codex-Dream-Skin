@@ -42,6 +42,14 @@ function validateUnit(value, name) {
   return parsed;
 }
 
+function validateRGB(value, name) {
+  const parts = value.trim().split(/\s+/).map(Number);
+  if (parts.length !== 3 || parts.some((part) => !Number.isInteger(part) || part < 0 || part > 255)) {
+    throw new Error(`${name} must be three integers from 0 to 255.`);
+  }
+  return parts.join(" ");
+}
+
 function validateText(value, name, maxLength, fallback) {
   if (/\p{Cc}|\u2028|\u2029/u.test(value)) {
     throw new Error(`${name} must be a single line without control characters.`);
@@ -135,6 +143,14 @@ const safeArea = validateChoice(valueFor("safe-area", "auto"), "safe-area", ["au
 const taskMode = validateChoice(valueFor("task-mode", "auto"), "task-mode", ["auto", "ambient", "banner", "full", "off"]);
 const focusX = hasValue("focus-x") ? validateUnit(valueFor("focus-x"), "focus-x") : null;
 const focusY = hasValue("focus-y") ? validateUnit(valueFor("focus-y"), "focus-y") : null;
+const hasVisual = ["accent-rgb", "secondary-rgb", "panel-rgb", "glow-strength", "signature"].some(hasValue);
+const visual = hasVisual ? {
+  accentRGB: validateRGB(valueFor("accent-rgb"), "accent-rgb"),
+  secondaryRGB: validateRGB(valueFor("secondary-rgb"), "secondary-rgb"),
+  panelRGB: validateRGB(valueFor("panel-rgb"), "panel-rgb"),
+  glowStrength: validateUnit(valueFor("glow-strength"), "glow-strength"),
+  signature: validateText(valueFor("signature"), "signature", 32, "DREAM SKIN"),
+} : null;
 
 const explicitColors = {};
 if (hasValue("accent")) {
@@ -165,6 +181,7 @@ const custom = {
 
 if (focusX !== null) custom.art.focusX = focusX;
 if (focusY !== null) custom.art.focusY = focusY;
+if (visual) custom.visual = visual;
 if (Object.keys(explicitColors).length) custom.colors = explicitColors;
 
 await atomicWrite(themePath, `${JSON.stringify(custom, null, 2)}\n`);
