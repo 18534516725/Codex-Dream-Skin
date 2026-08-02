@@ -1,0 +1,17 @@
+{
+  "id": "post-raccoon",
+  "medium": "cel-animation-paper",
+  "safeArea": "left",
+  "colors": [
+    "#07172f",
+    "#10294a",
+    "#8f3025",
+    "#c54b32",
+    "#e8c98e",
+    "#f2dfb0",
+    "#90918b",
+    "#17191b"
+  ],
+  "glossy3d": false,
+  "readableText": false
+}

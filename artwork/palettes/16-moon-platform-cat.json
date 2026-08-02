@@ -1,0 +1,21 @@
+{
+  "id": "moon-platform-cat",
+  "medium": "16-bit-pixel",
+  "safeArea": "left",
+  "pixelGrid": 8,
+  "antialias": false,
+  "colors": [
+    "#020819",
+    "#06132e",
+    "#0c2351",
+    "#153871",
+    "#244a86",
+    "#4e6386",
+    "#8b6f54",
+    "#be7d42",
+    "#efae54",
+    "#f4d486",
+    "#d7d4c4",
+    "#3a2d2c"
+  ]
+}
