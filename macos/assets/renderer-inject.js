@@ -1,5 +1,114 @@
 // Canonical cross-platform renderer. Run tools/sync-runtime-assets.mjs after editing.
-((cssText, artDataUrl, themeConfig) => {
+function createDreamSkinMediaLayer(environment = globalThis) {
+  const document = environment.document;
+  const mediaQuery = typeof environment.matchMedia === "function"
+    ? environment.matchMedia("(prefers-reduced-motion: reduce)")
+    : { matches: false, addEventListener() {}, removeEventListener() {} };
+
+  function mount({ posterUrl, videoUrl }) {
+    if (!document?.body || typeof posterUrl !== "string" || !posterUrl) {
+      throw new Error("Dream Skin media layer requires a document body and poster URL");
+    }
+
+    const root = document.createElement("div");
+    root.setAttribute("data-dream-media-layer", "true");
+    Object.assign(root.style, {
+      position: "fixed",
+      inset: "0",
+      zIndex: "-1",
+      overflow: "hidden",
+      pointerEvents: "none",
+      backgroundImage: `url(${JSON.stringify(posterUrl)})`,
+      backgroundPosition: "var(--dream-skin-art-position, center)",
+      backgroundRepeat: "no-repeat",
+      backgroundSize: "cover",
+    });
+
+    let video = null;
+    let disposed = false;
+    let failed = false;
+
+    const shouldPlay = () => !disposed && !failed && !document.hidden && !mediaQuery.matches;
+    const showPoster = () => {
+      if (!video) return;
+      video.pause();
+      video.style.display = "none";
+    };
+    const playWhenAllowed = async () => {
+      if (!video || !shouldPlay()) {
+        showPoster();
+        return;
+      }
+      video.style.display = "block";
+      try {
+        await video.play();
+      } catch {
+        failed = true;
+        showPoster();
+      }
+    };
+    const failToPoster = () => {
+      failed = true;
+      showPoster();
+    };
+    const handleVisibility = () => { void playWhenAllowed(); };
+    const handleMotion = () => { void playWhenAllowed(); };
+
+    if (typeof videoUrl === "string" && videoUrl) {
+      video = document.createElement("video");
+      video.src = videoUrl;
+      video.muted = true;
+      video.loop = true;
+      video.autoplay = true;
+      video.controls = false;
+      video.playsInline = true;
+      video.preload = "auto";
+      video.setAttribute("aria-hidden", "true");
+      video.setAttribute("tabindex", "-1");
+      Object.assign(video.style, {
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        objectPosition: "var(--dream-skin-art-position, center)",
+        pointerEvents: "none",
+      });
+      video.addEventListener("error", failToPoster);
+      video.addEventListener("stalled", failToPoster);
+      root.appendChild(video);
+    }
+
+    document.body.appendChild(root);
+    document.addEventListener("visibilitychange", handleVisibility);
+    mediaQuery.addEventListener?.("change", handleMotion);
+    void playWhenAllowed();
+
+    return {
+      root,
+      video,
+      dispose() {
+        if (disposed) return;
+        disposed = true;
+        document.removeEventListener("visibilitychange", handleVisibility);
+        mediaQuery.removeEventListener?.("change", handleMotion);
+        if (video) {
+          video.removeEventListener("error", failToPoster);
+          video.removeEventListener("stalled", failToPoster);
+          video.pause();
+          video.removeAttribute?.("src");
+        }
+        root.remove();
+      },
+    };
+  }
+
+  return Object.freeze({ mount });
+}
+
+if (typeof module === "object" && module?.exports) {
+  module.exports = createDreamSkinMediaLayer;
+}
+
+((cssText, artDataUrl, videoDataUrl, themeConfig) => {
   const SELECTOR_CONTRACT = {"schema":"codex-dream-skin-selectors/1","selectors":[{"key":"shell-main","selector":"main:is(.main-surface, [data-app-shell-main-surface], [class*=\"_MainContentSurface_\"])","tier":"L1","scope":"all","required":true},{"key":"left-panel","selector":"aside.app-shell-left-panel","tier":"L1","scope":"all","required":true},{"key":"header-tint","selector":"header:is(.app-header-tint, [data-app-shell-header-edge-scroll], [class*=\"_Header_\"])","tier":"L1","scope":"all","required":true},{"key":"main-content-top-fade","selector":":is(.app-shell-main-content-top-fade, [data-app-shell-main-content-top-fade], [class*=\"_MainContentTopFade_\"])","tier":"L2","scope":"all","required":false},{"key":"home-icon","selector":"[data-testid=\"home-icon\"]","tier":"L1","scope":"home","required":true},{"key":"home-route","selector":"[role=\"main\"]:has([data-testid=\"home-icon\"])","tier":"L1","scope":"home","required":true},{"key":"home-route-css","selector":"[role=\"main\"]","tier":"L1","scope":"home","required":true},{"key":"home-banners","selector":".home-banners","tier":"L2","scope":"home","required":false},{"key":"composer-chrome","selector":".composer-surface-chrome","tier":"L2","scope":"home+thread","required":false},{"key":"composer-toolbar","selector":".composer-surface-chrome [class*=\"_footer_\"]","tier":"L2","scope":"home+thread","required":false},{"key":"home-utility","selector":"[class*=\"_homeUtilityBar_\"]","tier":"L2","scope":"home","required":false},{"key":"game-source","selector":"[data-feature=\"game-source\"]","tier":"L2","scope":"home","required":false},{"key":"home-suggestions","selector":".group\\/home-suggestions","tier":"L2","scope":"home","required":false},{"key":"project-selector","selector":".group\\/project-selector","tier":"L2","scope":"home config","required":false},{"key":"markdown","selector":"[class*=\"_markdown\"]","tier":"L2","scope":"thread","required":false},{"key":"thread-surface","selector":".thread-scroll-container","tier":"L2","scope":"thread","required":false},{"key":"message","selector":":is([data-message-author-role], [data-local-conversation-user-anchor], [data-local-conversation-final-assistant])","tier":"L2","scope":"thread","required":false},{"key":"settings-panel","selector":"[data-settings-panel-slug=\"general-settings\"]","tier":"L2","scope":"settings","required":false},{"key":"appearance-radio","selector":"input[name=\"appearance-theme\"]","tier":"L2","scope":"settings","required":false},{"key":"overlay-menu","selector":"[role=\"menu\"]","tier":"L2","scope":"overlay","required":false},{"key":"overlay-dialog","selector":"[role=\"dialog\"]","tier":"L2","scope":"overlay","required":false},{"key":"overlay-popper","selector":"[data-radix-popper-content-wrapper]","tier":"L2","scope":"overlay","required":false}],"stableTestids":["app-shell-header-context-menu-surface","home-icon","theme-preview"]};
   const STATE_KEY = "__CODEX_DREAM_SKIN_STATE__";
   const DISABLED_KEY = "__CODEX_DREAM_SKIN_DISABLED__";
@@ -69,6 +178,7 @@
   let styleMode = null;
   let styleNode = null;
   let styleSheet = null;
+  let mediaLayer = null;
   const now = () => typeof performance === "object" && typeof performance.now === "function"
     ? performance.now() : Date.now();
   const metrics = {
@@ -96,14 +206,24 @@
   const existingStyleRegistry = window[STYLE_REGISTRY_KEY];
   const styleRegistry = existingStyleRegistry instanceof Set ? existingStyleRegistry : new Set();
   window[STYLE_REGISTRY_KEY] = styleRegistry;
-  const artUrl = (() => {
-    const comma = artDataUrl.indexOf(",");
-    const mime = /^data:([^;,]+)/.exec(artDataUrl)?.[1] || "image/png";
-    const binary = atob(artDataUrl.slice(comma + 1));
+  const dataUrlToObjectUrl = (source, fallbackMime) => {
+    if (typeof source !== "string" || !source.startsWith("data:")) return null;
+    const comma = source.indexOf(",");
+    if (comma < 0) return null;
+    const mime = /^data:([^;,]+)/.exec(source)?.[1] || fallbackMime;
+    const binary = atob(source.slice(comma + 1));
     const bytes = new Uint8Array(binary.length);
     for (let index = 0; index < binary.length; index += 1) bytes[index] = binary.charCodeAt(index);
     return URL.createObjectURL(new Blob([bytes], { type: mime }));
-  })();
+  };
+  const artUrl = dataUrlToObjectUrl(artDataUrl, "image/png");
+  const videoUrl = dataUrlToObjectUrl(videoDataUrl, "video/mp4");
+  const mediaController = typeof createDreamSkinMediaLayer === "function"
+    ? createDreamSkinMediaLayer(window) : null;
+  const ensureMediaLayer = () => {
+    if (mediaLayer || !mediaController || !document.body || !artUrl) return;
+    try { mediaLayer = mediaController.mount({ posterUrl: artUrl, videoUrl }); } catch {}
+  };
 
   const cssString = (value) => JSON.stringify(String(value ?? ""));
 
@@ -844,6 +964,7 @@
     const root = document.documentElement;
     if (!root) return;
     metrics.ensureCalls += 1;
+    ensureMediaLayer();
     if (rootPass) applyRootState(root);
     if (partPass) refreshParts();
     if (scopePass) refreshScope();
@@ -890,6 +1011,8 @@
     if (document.getElementById(STYLE_ID) === styleNode) document.getElementById(STYLE_ID)?.remove();
     if (styleRegistry.size === 0) delete window[STYLE_REGISTRY_KEY];
     if (state?.artUrl) URL.revokeObjectURL(state.artUrl);
+    state?.mediaLayer?.dispose?.();
+    if (state?.videoUrl) URL.revokeObjectURL(state.videoUrl);
     delete window[STATE_KEY];
     return true;
   };
@@ -945,6 +1068,8 @@
     navigation: navigationApi,
     navigationHandler,
     artUrl,
+    videoUrl,
+    mediaLayer,
     installToken,
     styleMode,
     styleNode,
@@ -962,6 +1087,7 @@
   };
   const firstEnsureStartedAt = now();
   ensure({ root: true, parts: true });
+  if (window[STATE_KEY]) window[STATE_KEY].mediaLayer = mediaLayer;
   const initialScope = refreshScope();
   metrics.firstEnsureMs = Number((now() - firstEnsureStartedAt).toFixed(3));
 
@@ -985,6 +1111,8 @@
   else if (typeof document.addEventListener === "function") {
     bodyReadyHandler = () => {
       if (!window[DISABLED_KEY]) {
+        ensureMediaLayer();
+        if (window[STATE_KEY]) window[STATE_KEY].mediaLayer = mediaLayer;
         observeBody();
         scheduleEnsure({ scope: true, parts: true }, 0);
       }
@@ -1025,4 +1153,4 @@
     styleMode,
     analysis: artAnalysis,
   };
-})(__DREAM_SKIN_CSS_JSON__, __DREAM_SKIN_ART_JSON__, __DREAM_SKIN_THEME_JSON__)
+})(__DREAM_SKIN_CSS_JSON__, __DREAM_SKIN_ART_JSON__, __DREAM_SKIN_VIDEO_JSON__, __DREAM_SKIN_THEME_JSON__)

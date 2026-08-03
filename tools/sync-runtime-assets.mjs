@@ -36,7 +36,7 @@ function compileSelectorTokens(source, sourceName) {
   return compiled;
 }
 
-function compileRuntime(source) {
+function compileRuntime(source, mediaLayerSource) {
   const token = "__DREAM_SKIN_SELECTORS_JSON__";
   const occurrences = source.split(token).length - 1;
   if (occurrences !== 1) {
@@ -54,7 +54,13 @@ function compileRuntime(source) {
     })),
     stableTestids: Array.isArray(contract.stableTestids) ? [...contract.stableTestids] : [],
   };
-  return source.replace(token, JSON.stringify(runtimeContract));
+  const mediaToken = "__DREAM_SKIN_MEDIA_LAYER_SOURCE__";
+  if (source.split(mediaToken).length - 1 !== 1) {
+    throw new Error(`runtime/renderer-inject.js must contain exactly one ${mediaToken} token`);
+  }
+  return source
+    .replace(token, JSON.stringify(runtimeContract))
+    .replace(mediaToken, mediaLayerSource);
 }
 
 function compileSafeCssFileValidator(source) {
@@ -119,6 +125,7 @@ function compileWindowsImageMetadata(source) {
 
 const sourceCss = await fs.readFile(path.join(projectRoot, "runtime", "dream-skin.css"), "utf8");
 const sourceRuntime = await fs.readFile(path.join(projectRoot, "runtime", "renderer-inject.js"), "utf8");
+const sourceMediaLayer = await fs.readFile(path.join(projectRoot, "runtime", "media-layer.js"), "utf8");
 const sourceThemePackageValidator = await fs.readFile(
   path.join(projectRoot, "runtime", "theme-package-validator.mjs"),
   "utf8",
@@ -160,7 +167,7 @@ const outputs = [
     paths: ["macos/assets/dream-skin.css", "windows/assets/dream-skin.css"],
   },
   {
-    content: compileRuntime(sourceRuntime),
+    content: compileRuntime(sourceRuntime, sourceMediaLayer),
     paths: ["macos/assets/renderer-inject.js", "windows/assets/renderer-inject.js"],
   },
   {

@@ -252,6 +252,7 @@ function makeFixture({
     return template
       .replace("__DREAM_SKIN_CSS_JSON__", JSON.stringify(".fixture { color: red; }"))
       .replace("__DREAM_SKIN_ART_JSON__", JSON.stringify("data:image/png;base64,AA=="))
+      .replace("__DREAM_SKIN_VIDEO_JSON__", JSON.stringify(""))
       .replace("__DREAM_SKIN_THEME_JSON__", JSON.stringify({ id: "fixture", appearance: "auto", ...theme }))
       .replace("__DREAM_SKIN_VERSION_JSON__", JSON.stringify("test"))
       .replace("__DREAM_SKIN_STYLE_REVISION_JSON__", JSON.stringify("css-rev"))

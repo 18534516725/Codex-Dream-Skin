@@ -1,5 +1,6 @@
 // Canonical cross-platform renderer. Run tools/sync-runtime-assets.mjs after editing.
-((cssText, artDataUrl, themeConfig) => {
+__DREAM_SKIN_MEDIA_LAYER_SOURCE__
+((cssText, artDataUrl, videoDataUrl, themeConfig) => {
   const SELECTOR_CONTRACT = __DREAM_SKIN_SELECTORS_JSON__;
   const STATE_KEY = "__CODEX_DREAM_SKIN_STATE__";
   const DISABLED_KEY = "__CODEX_DREAM_SKIN_DISABLED__";
@@ -69,6 +70,7 @@
   let styleMode = null;
   let styleNode = null;
   let styleSheet = null;
+  let mediaLayer = null;
   const now = () => typeof performance === "object" && typeof performance.now === "function"
     ? performance.now() : Date.now();
   const metrics = {
@@ -96,14 +98,24 @@
   const existingStyleRegistry = window[STYLE_REGISTRY_KEY];
   const styleRegistry = existingStyleRegistry instanceof Set ? existingStyleRegistry : new Set();
   window[STYLE_REGISTRY_KEY] = styleRegistry;
-  const artUrl = (() => {
-    const comma = artDataUrl.indexOf(",");
-    const mime = /^data:([^;,]+)/.exec(artDataUrl)?.[1] || "image/png";
-    const binary = atob(artDataUrl.slice(comma + 1));
+  const dataUrlToObjectUrl = (source, fallbackMime) => {
+    if (typeof source !== "string" || !source.startsWith("data:")) return null;
+    const comma = source.indexOf(",");
+    if (comma < 0) return null;
+    const mime = /^data:([^;,]+)/.exec(source)?.[1] || fallbackMime;
+    const binary = atob(source.slice(comma + 1));
     const bytes = new Uint8Array(binary.length);
     for (let index = 0; index < binary.length; index += 1) bytes[index] = binary.charCodeAt(index);
     return URL.createObjectURL(new Blob([bytes], { type: mime }));
-  })();
+  };
+  const artUrl = dataUrlToObjectUrl(artDataUrl, "image/png");
+  const videoUrl = dataUrlToObjectUrl(videoDataUrl, "video/mp4");
+  const mediaController = typeof createDreamSkinMediaLayer === "function"
+    ? createDreamSkinMediaLayer(window) : null;
+  const ensureMediaLayer = () => {
+    if (mediaLayer || !mediaController || !document.body || !artUrl) return;
+    try { mediaLayer = mediaController.mount({ posterUrl: artUrl, videoUrl }); } catch {}
+  };
 
   const cssString = (value) => JSON.stringify(String(value ?? ""));
 
@@ -844,6 +856,7 @@
     const root = document.documentElement;
     if (!root) return;
     metrics.ensureCalls += 1;
+    ensureMediaLayer();
     if (rootPass) applyRootState(root);
     if (partPass) refreshParts();
     if (scopePass) refreshScope();
@@ -890,6 +903,8 @@
     if (document.getElementById(STYLE_ID) === styleNode) document.getElementById(STYLE_ID)?.remove();
     if (styleRegistry.size === 0) delete window[STYLE_REGISTRY_KEY];
     if (state?.artUrl) URL.revokeObjectURL(state.artUrl);
+    state?.mediaLayer?.dispose?.();
+    if (state?.videoUrl) URL.revokeObjectURL(state.videoUrl);
     delete window[STATE_KEY];
     return true;
   };
@@ -945,6 +960,8 @@
     navigation: navigationApi,
     navigationHandler,
     artUrl,
+    videoUrl,
+    mediaLayer,
     installToken,
     styleMode,
     styleNode,
@@ -962,6 +979,7 @@
   };
   const firstEnsureStartedAt = now();
   ensure({ root: true, parts: true });
+  if (window[STATE_KEY]) window[STATE_KEY].mediaLayer = mediaLayer;
   const initialScope = refreshScope();
   metrics.firstEnsureMs = Number((now() - firstEnsureStartedAt).toFixed(3));
 
@@ -985,6 +1003,8 @@
   else if (typeof document.addEventListener === "function") {
     bodyReadyHandler = () => {
       if (!window[DISABLED_KEY]) {
+        ensureMediaLayer();
+        if (window[STATE_KEY]) window[STATE_KEY].mediaLayer = mediaLayer;
         observeBody();
         scheduleEnsure({ scope: true, parts: true }, 0);
       }
@@ -1025,4 +1045,4 @@
     styleMode,
     analysis: artAnalysis,
   };
-})(__DREAM_SKIN_CSS_JSON__, __DREAM_SKIN_ART_JSON__, __DREAM_SKIN_THEME_JSON__)
+})(__DREAM_SKIN_CSS_JSON__, __DREAM_SKIN_ART_JSON__, __DREAM_SKIN_VIDEO_JSON__, __DREAM_SKIN_THEME_JSON__)

@@ -93,6 +93,29 @@ try {
   await fs.mkdir(symlinkStage);
   await assert.rejects(runStage(symlink, symlinkStage), /symbolic link/);
 
+  const dynamic = path.join(tempRoot, "dynamic-v2");
+  const dynamicStage = path.join(tempRoot, "dynamic-v2-stage");
+  await Promise.all([fs.mkdir(dynamic), fs.mkdir(dynamicStage)]);
+  await fs.copyFile(path.join(macosRoot, "..", "docs", "images", "site-studio-zh.webp"), path.join(dynamic, "background.webp"));
+  const video = Buffer.concat([
+    Buffer.from([0, 0, 0, 24]), Buffer.from("ftypisom"),
+    Buffer.from([0, 0, 0, 0]), Buffer.from("isomavc1"),
+  ]);
+  await fs.writeFile(path.join(dynamic, "background.mp4"), video);
+  await fs.writeFile(path.join(dynamic, "theme.json"), `${JSON.stringify({
+    schemaVersion: 2, id: "dynamic-sakura", name: "动态樱花", appearance: "dark",
+    family: "cartoon-stationery", media: { poster: "background.webp", video: "background.mp4" },
+    typography: { body: "native-sans", title: "rounded", label: "rounded", code: "native-mono" },
+    visual: { layout: "poster-right", surface: "paper", corners: "stamp", motion: "petals", sidebar: "garden", composer: "letter", texture: "wash" },
+    colors: { background: "#19141f", panel: "#211a29", panelAlt: "#2a2134", accent: "#e897be", secondary: "#a689e8", text: "#fff8fc", muted: "#cabdca", line: "#735b7d" },
+    art: { focusX: 0.72, focusY: 0.45, safeArea: "left", taskMode: "ambient" },
+    risk: { status: "approved", note: "original" },
+  })}\n`);
+  const dynamicIdentity = JSON.parse(await runStage(dynamic, dynamicStage));
+  assert.equal(dynamicIdentity.image, "background.webp");
+  assert.equal(dynamicIdentity.video, "background.mp4");
+  assert.deepEqual(await fs.readFile(path.join(dynamicStage, "background.mp4")), video);
+
   console.log("PASS: theme staging snapshots a matched pair and binds it to a stable content fingerprint.");
 } finally {
   await fs.rm(tempRoot, { recursive: true, force: true });

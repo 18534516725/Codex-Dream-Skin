@@ -8,6 +8,8 @@ import {
   normalizeThemeColor,
   normalizeThemeText,
 } from "../assets/theme-package-validator.mjs";
+import { validateThemeV2 } from "../assets/theme-v2.mjs";
+import { buildThemeProfile } from "../assets/theme-profile.mjs";
 import { decodeAndValidateSafeCss } from "../assets/safe-css-validator.mjs";
 
 const scriptPath = fileURLToPath(import.meta.url);
@@ -41,6 +43,7 @@ const stableTestidLiteral = (testid) => {
 };
 const SKIN_VERSION = "1.5.14";
 const MAX_ART_BYTES = 10 * 1024 * 1024;
+const MAX_VIDEO_BYTES = 80 * 1024 * 1024;
 const MAX_SAFE_CSS_BYTES = 256 * 1024;
 const STRONG_THEME_AUDIT_MS = 30000;
 const MIN_RENDERER_VIEWPORT_WIDTH = 320;
@@ -518,7 +521,8 @@ export async function loadTheme(themeDir) {
   if (!raw || typeof raw !== "object" || Array.isArray(raw)) {
     throw new Error("Theme root must be an object");
   }
-  const image = normalizedText(raw.image, "image", null, 240);
+  const v2 = raw.schemaVersion === 2 ? validateThemeV2(raw) : null;
+  const image = v2?.media.poster ?? normalizedText(raw.image, "image", null, 240);
   if (!image || path.isAbsolute(image)) throw new Error("Theme image must be a relative path");
   const imagePath = path.resolve(realThemeDir, image);
   const relativeImage = path.relative(realThemeDir, imagePath);
@@ -553,7 +557,8 @@ export async function loadTheme(themeDir) {
     muted: normalizeThemeColor(rawColors?.muted, "#9ebdb3"),
     line: normalizeThemeColor(rawColors?.line, "rgba(124, 255, 70, .28)"),
   };
-  const theme = {
+  const legacyTheme = {
+    schemaVersion: 1,
     id: normalizeThemeText(raw.id, "custom", 80, "id", themePath),
     name: normalizeThemeText(raw.name, "Codex Dream Skin", 80, "name", themePath),
     brandSubtitle: normalizeThemeText(raw.brandSubtitle, "CODEX DREAM SKIN", 120, "brandSubtitle", themePath),
@@ -574,6 +579,21 @@ export async function loadTheme(themeDir) {
     explicitColorKeys: rawColors ? colorKeys.filter((key) => Object.hasOwn(rawColors, key)) : [],
     colors,
   };
+  const theme = v2 ? {
+    ...v2,
+    image: v2.media.poster,
+    visual: {
+      ...v2.visual,
+      layoutVariant: v2.visual.layout,
+      surfaceStyle: v2.visual.surface,
+      cornerStyle: v2.visual.corners,
+      motionPreset: v2.visual.motion,
+      sidebarStyle: v2.visual.sidebar,
+      composerStyle: v2.visual.composer,
+      textureStyle: v2.visual.texture,
+    },
+    renderProfile: buildThemeProfile(v2),
+  } : legacyTheme;
   const [themeStat, imageStat, safeCss] = await Promise.all([
     fs.stat(themePath),
     fs.stat(realImagePath),
@@ -588,6 +608,22 @@ export async function loadTheme(themeDir) {
   if (imageBytes.length < 1 || imageBytes.length > MAX_ART_BYTES) {
     throw new Error(`Theme image must be between 1 byte and ${MAX_ART_BYTES / 1024 / 1024} MB`);
   }
+  let videoBytes = null;
+  let videoPath = null;
+  let videoStat = null;
+  if (v2?.media.video) {
+    const requestedVideoPath = path.resolve(realThemeDir, v2.media.video);
+    videoPath = await fs.realpath(requestedVideoPath);
+    const relativeVideo = path.relative(realThemeDir, videoPath);
+    if (!relativeVideo || relativeVideo.startsWith("..") || path.isAbsolute(relativeVideo)) {
+      throw new Error("Theme video cannot escape through a link or junction");
+    }
+    videoStat = await fs.stat(videoPath);
+    if (!videoStat.isFile() || videoStat.size < 1 || videoStat.size > MAX_VIDEO_BYTES) {
+      throw new Error(`Theme video must be between 1 byte and ${MAX_VIDEO_BYTES / 1024 / 1024} MB`);
+    }
+    videoBytes = await fs.readFile(videoPath);
+  }
   const artMetadata = readImageMetadata(imageBytes, extension);
   if (!artMetadata) {
     throw new Error("Theme image metadata is invalid or exceeds the 16384px / 50MP safety limit");
@@ -598,6 +634,8 @@ export async function loadTheme(themeDir) {
     .update("\0")
     .update(imageBytes)
     .update("\0")
+    .update(videoBytes ?? "")
+    .update("\0")
     .update(safeCss?.source ?? "")
     .digest("hex");
   return {
@@ -605,12 +643,15 @@ export async function loadTheme(themeDir) {
     themePath,
     imagePath: realImagePath,
     imageBytes,
+    videoBytes,
+    videoPath,
     safeCss: safeCss?.source ?? "",
     safeCssRuntime: safeCss?.runtimeSource ?? "",
     safeCssPath: safeCss?.path ?? null,
     safeCssStatus: safeCss ? "validated" : "none",
     fingerprint,
     sourceStamp: `${themeStat.size}:${themeStat.mtimeMs}:${imageStat.size}:${imageStat.mtimeMs}:` +
+      (videoStat ? `${videoStat.size}:${videoStat.mtimeMs}:` : "no-video:") +
       (safeCss ? `${safeCss.stat.size}:${safeCss.stat.mtimeMs}` : "none"),
   };
 }
@@ -627,6 +668,8 @@ export async function loadPayload(themeDir = path.join(root, "assets"), candidat
   const mime = extension === ".jpg" || extension === ".jpeg" ? "image/jpeg"
     : extension === ".webp" ? "image/webp" : "image/png";
   const artDataUrl = `data:${mime};base64,${loadedTheme.imageBytes.toString("base64")}`;
+  const videoDataUrl = loadedTheme.videoBytes?.length
+    ? `data:video/mp4;base64,${loadedTheme.videoBytes.toString("base64")}` : "";
   const styleRevision = createHash("sha256").update(combinedCss).digest("hex").slice(0, 20);
   loadedTheme.theme.artKey = createHash("sha256")
     .update(loadedTheme.imageBytes).digest("hex").slice(0, 20);
@@ -635,6 +678,7 @@ export async function loadPayload(themeDir = path.join(root, "assets"), candidat
     .update(combinedCss)
     .update(template)
     .update(JSON.stringify(loadedTheme.theme))
+    .update(loadedTheme.videoBytes ?? "")
     .digest("hex")
     .slice(0, 20);
   // Every replacement uses a function so String.prototype.replace never
@@ -646,6 +690,7 @@ export async function loadPayload(themeDir = path.join(root, "assets"), candidat
   const payload = template
     .replace("__DREAM_SKIN_CSS_JSON__", () => JSON.stringify(combinedCss))
     .replace("__DREAM_SKIN_ART_JSON__", () => JSON.stringify(artDataUrl))
+    .replace("__DREAM_SKIN_VIDEO_JSON__", () => JSON.stringify(videoDataUrl))
     .replace("__DREAM_SKIN_THEME_JSON__", () => JSON.stringify(loadedTheme.theme))
     .replace("__DREAM_SKIN_VERSION_JSON__", () => JSON.stringify(SKIN_VERSION))
     .replace("__DREAM_SKIN_STYLE_REVISION_JSON__", () => JSON.stringify(styleRevision))
@@ -678,15 +723,17 @@ async function fileExists(filePath) {
 }
 
 async function readThemeSourceStamp(loadedTheme) {
-  const [themeStat, imageStat, cssStat] = await Promise.all([
+  const [themeStat, imageStat, videoStat, cssStat] = await Promise.all([
     fs.stat(loadedTheme.themePath),
     fs.stat(loadedTheme.imagePath),
+    loadedTheme.videoPath ? fs.stat(loadedTheme.videoPath) : null,
     fs.stat(path.join(path.dirname(loadedTheme.themePath), "theme.css")).catch((error) => {
       if (error.code === "ENOENT") return null;
       throw error;
     }),
   ]);
   return `${themeStat.size}:${themeStat.mtimeMs}:${imageStat.size}:${imageStat.mtimeMs}:` +
+    (videoStat ? `${videoStat.size}:${videoStat.mtimeMs}:` : "no-video:") +
     (cssStat ? `${cssStat.size}:${cssStat.mtimeMs}` : "none");
 }
 

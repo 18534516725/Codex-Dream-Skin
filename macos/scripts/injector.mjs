@@ -11,6 +11,8 @@ import {
   normalizeThemeColor,
   normalizeThemeText,
 } from "../assets/theme-package-validator.mjs";
+import { validateThemeV2 } from "../assets/theme-v2.mjs";
+import { buildThemeProfile } from "../assets/theme-profile.mjs";
 import { decodeAndValidateSafeCss } from "../assets/safe-css-validator.mjs";
 
 const execFileAsync = promisify(execFile);
@@ -47,6 +49,7 @@ const SKIN_VERSION = "1.5.14";
 const LOOPBACK_HOSTS = new Set(["127.0.0.1", "localhost", "[::1]"]);
 const CDP_ID_PATTERN = /^[A-Za-z0-9._-]{1,200}$/;
 const MAX_ART_BYTES = 10 * 1024 * 1024;
+const MAX_VIDEO_BYTES = 80 * 1024 * 1024;
 const MAX_SAFE_CSS_BYTES = 256 * 1024;
 const OPERATION_UI_HOST_ID = "chatgpt-dream-skin-operation";
 const OPERATION_UI_REGISTRY_KEY = "__CHATGPT_DREAM_SKIN_OPERATION_UI__";
@@ -649,13 +652,15 @@ export async function loadTheme(themeDir) {
     throw error;
   }
   const raw = JSON.parse(config);
-  if (raw.schemaVersion !== 1 || typeof raw.image !== "string" || !raw.image) {
+  const v2 = raw.schemaVersion === 2 ? validateThemeV2(raw) : null;
+  const sourceImage = v2?.media.poster ?? raw.image;
+  if (!v2 && (raw.schemaVersion !== 1 || typeof raw.image !== "string" || !raw.image)) {
     throw new Error(`${configPath} has an unsupported schema or image field`);
   }
-  if (/[\u0000-\u001f\u007f-\u009f\u2028\u2029]/u.test(raw.image)) {
+  if (/[\u0000-\u001f\u007f-\u009f\u2028\u2029]/u.test(sourceImage)) {
     throw new Error(`${configPath} has an invalid image field`);
   }
-  if (path.basename(raw.image) !== raw.image) throw new Error("Theme image must stay inside its theme directory");
+  if (path.basename(sourceImage) !== sourceImage) throw new Error("Theme image must stay inside its theme directory");
   const choice = (value, name, choices) => {
     if (value === undefined) return undefined;
     if (typeof value !== "string" || !choices.includes(value)) {
@@ -687,7 +692,7 @@ export async function loadTheme(themeDir) {
     safeArea: choice(rawArt.safeArea, "art.safeArea", ["auto", "left", "right", "center", "none"]),
     taskMode: choice(rawArt.taskMode, "art.taskMode", ["auto", "ambient", "banner", "full", "off"]),
   };
-  const theme = {
+  const legacyTheme = {
     schemaVersion: 1,
     id: normalizeThemeText(raw.id, "custom", 80, "id", configPath),
     name: normalizeThemeText(raw.name, "Codex Dream Skin", 80, "name", configPath),
@@ -697,7 +702,7 @@ export async function loadTheme(themeDir) {
     projectLabel: normalizeThemeText(raw.projectLabel, "◉  选择项目", 120, "projectLabel", configPath),
     statusText: normalizeThemeText(raw.statusText, "DREAM SKIN ONLINE", 120, "statusText", configPath),
     quote: normalizeThemeText(raw.quote, "MAKE SOMETHING WONDERFUL", 120, "quote", configPath),
-    image: raw.image,
+    image: sourceImage,
     colorMode: rawColors ? "explicit" : "auto",
     explicitColorKeys: rawColors ? colorKeys.filter((key) => Object.hasOwn(rawColors, key)) : [],
     colors: {
@@ -713,10 +718,25 @@ export async function loadTheme(themeDir) {
       line: normalizeThemeColor(rawColors?.line, "rgba(124, 255, 70, .28)"),
     },
   };
-  if (appearance !== undefined) theme.appearance = appearance;
+  if (appearance !== undefined) legacyTheme.appearance = appearance;
   if (Object.values(art).some((value) => value !== undefined)) {
-    theme.art = Object.fromEntries(Object.entries(art).filter(([, value]) => value !== undefined));
+    legacyTheme.art = Object.fromEntries(Object.entries(art).filter(([, value]) => value !== undefined));
   }
+  const theme = v2 ? {
+    ...v2,
+    image: v2.media.poster,
+    visual: {
+      ...v2.visual,
+      layoutVariant: v2.visual.layout,
+      surfaceStyle: v2.visual.surface,
+      cornerStyle: v2.visual.corners,
+      motionPreset: v2.visual.motion,
+      sidebarStyle: v2.visual.sidebar,
+      composerStyle: v2.visual.composer,
+      textureStyle: v2.visual.texture,
+    },
+    renderProfile: buildThemeProfile(v2),
+  } : legacyTheme;
   const requestedImagePath = path.join(assetsRoot, theme.image);
   let imagePath;
   try {
@@ -755,6 +775,22 @@ export async function loadTheme(themeDir) {
       throw new Error(`Theme image must be a non-empty file no larger than ${MAX_ART_BYTES} bytes`);
     }
     const safeCss = await loadSafeCss(assetsRoot);
+    let videoBytes = null;
+    if (v2?.media.video) {
+      const requestedVideoPath = path.join(assetsRoot, v2.media.video);
+      const videoPath = await fs.realpath(requestedVideoPath);
+      assertContainedPath(assetsRoot, videoPath, "Theme video");
+      const videoHandle = await fs.open(videoPath, fsConstants.O_RDONLY | (fsConstants.O_NOFOLLOW ?? 0));
+      try {
+        const videoStat = await videoHandle.stat();
+        if (!videoStat.isFile() || videoStat.size < 1 || videoStat.size > MAX_VIDEO_BYTES) {
+          throw new Error(`Theme video must be a stable non-empty file no larger than ${MAX_VIDEO_BYTES} bytes`);
+        }
+        videoBytes = await videoHandle.readFile();
+      } finally {
+        await videoHandle.close();
+      }
+    }
     return {
       art,
       assetsRoot,
@@ -765,6 +801,7 @@ export async function loadTheme(themeDir) {
       safeCssPath: safeCss?.path ?? null,
       safeCssStatus: safeCss ? "validated" : "none",
       theme,
+      videoBytes,
     };
   } finally {
     await imageHandle.close();
@@ -810,11 +847,14 @@ export async function loadPayload(themeDir) {
   const mime = extension === ".jpg" || extension === ".jpeg" ? "image/jpeg"
     : extension === ".webp" ? "image/webp" : "image/png";
   const artDataUrl = `data:${mime};base64,${art.toString("base64")}`;
+  const videoDataUrl = loaded.videoBytes?.length
+    ? `data:video/mp4;base64,${loaded.videoBytes.toString("base64")}` : "";
   const revision = createHash("sha256")
     .update(SKIN_VERSION)
     .update(combinedCss)
     .update(template)
     .update(JSON.stringify(theme))
+    .update(loaded.videoBytes ?? "")
     .digest("hex")
     .slice(0, 20);
   // Every replacement value must be supplied as a function. A plain string
@@ -824,6 +864,7 @@ export async function loadPayload(themeDir) {
   const payload = template
     .replace("__DREAM_SKIN_CSS_JSON__", () => JSON.stringify(combinedCss))
     .replace("__DREAM_SKIN_ART_JSON__", () => JSON.stringify(artDataUrl))
+    .replace("__DREAM_SKIN_VIDEO_JSON__", () => JSON.stringify(videoDataUrl))
     .replace("__DREAM_SKIN_THEME_JSON__", () => JSON.stringify(theme))
     .replace("__DREAM_SKIN_VERSION_JSON__", () => JSON.stringify(SKIN_VERSION))
     .replace("__DREAM_SKIN_STYLE_REVISION_JSON__", () => JSON.stringify(styleRevision))

@@ -1417,6 +1417,11 @@ html[data-dream-skin="active"] [data-ds-part="main"],
 html[data-dream-skin="active"] [data-ds-part="dialog"] {
   font-family: var(--ds-font-body) !important;
 }
+html[data-dream-skin="active"] body { isolation: isolate; }
+html[data-dream-skin="active"] [data-dream-media-layer] {
+  opacity: 1;
+  pointer-events: none !important;
+}
 html[data-dream-skin="active"] :is(h1, h2, h3, [role="heading"]),
 html[data-dream-skin="active"] [data-ds-part="home-hero"] {
   font-family: var(--ds-font-title) !important;

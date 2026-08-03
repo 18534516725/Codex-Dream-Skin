@@ -56,6 +56,13 @@ test("Renderer applies family state and clears every new root token", () => {
   ]) assert.ok(renderer.includes(`"${variable}"`), `${variable} must be registered by the renderer`);
 });
 
+test("Renderer records the mounted media layer before any later theme cleanup", () => {
+  assert.match(
+    renderer,
+    /ensure\(\{ root: true, parts: true \}\);\s*if \(window\[STATE_KEY\]\) window\[STATE_KEY\]\.mediaLayer = mediaLayer;/,
+  );
+});
+
 test("Canonical CSS themes every required native UI region", () => {
   const requiredFragments = [
     "__DREAM_SELECTOR_LEFT_PANEL__",
