@@ -151,6 +151,9 @@ if ($fileSources.Count -ne 6 -or
 
 foreach ($requiredBuilderContract in @(
   'Release versions differ:',
+  'function Get-CanonicalTextSha256',
+  '$Text.Replace("`r`n", "`n").Replace("`r", "`n")',
+  'Get-CanonicalTextSha256 -Path $innoChineseLanguagePath',
   'Get-FileHash -LiteralPath $archivePath -Algorithm SHA256',
   'Copy-ZipEntry -Archive $zip -EntryName "$($manifest.nodeEntry)"',
   'Copy-ZipEntry -Archive $zip -EntryName "$($manifest.licenseEntry)"',

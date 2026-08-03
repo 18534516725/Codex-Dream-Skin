@@ -41,6 +41,21 @@ function Read-ReleaseTextFile {
   return [System.IO.File]::ReadAllText($Path, [System.Text.UTF8Encoding]::new($false))
 }
 
+function Get-CanonicalTextSha256 {
+  param([Parameter(Mandatory = $true)][string]$Path)
+  # Git may materialize this reviewed text file with LF or CRLF; pin its content,
+  # not the platform-specific checkout representation.
+  $Text = Read-ReleaseTextFile -Path $Path
+  $canonicalText = $Text.Replace("`r`n", "`n").Replace("`r", "`n")
+  $bytes = [System.Text.UTF8Encoding]::new($false).GetBytes($canonicalText)
+  $sha256 = [System.Security.Cryptography.SHA256]::Create()
+  try {
+    return ([System.BitConverter]::ToString($sha256.ComputeHash($bytes))).Replace('-', '').ToLowerInvariant()
+  } finally {
+    $sha256.Dispose()
+  }
+}
+
 function Resolve-ReleasePath {
   param(
     [Parameter(Mandatory = $true)][string]$Path,
@@ -271,7 +286,7 @@ $null = Read-ReleaseTextFile -Path $licensePath
 $null = Read-ReleaseTextFile -Path $noticePath
 $null = Read-ReleaseTextFile -Path $innoChineseLanguagePath
 $null = Read-ReleaseTextFile -Path $innoSetupLicensePath
-$innoChineseLanguageHash = (Get-FileHash -LiteralPath $innoChineseLanguagePath -Algorithm SHA256).Hash.ToLowerInvariant()
+$innoChineseLanguageHash = Get-CanonicalTextSha256 -Path $innoChineseLanguagePath
 if ($innoChineseLanguageHash -cne $innoChineseLanguageSha256) {
   throw "The pinned Inno Setup Simplified Chinese messages changed. Expected $innoChineseLanguageSha256, found $innoChineseLanguageHash."
 }
