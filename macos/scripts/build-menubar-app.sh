@@ -125,7 +125,7 @@ done
 /usr/bin/rsync -a "$ROOT/assets/" "$ENGINE/assets/"
 PUBLIC_PRESET="preset-gothic-void-crusade"
 PUBLIC_PRESET_SHA256="b76a7cbe2ff9d923846e931984d243a7ba1f25de8d190b5c6412c809c41aee42"
-PUBLIC_PRESET_THEME_SHA256="8316c6ad29e3b84806358ab4a730c7e063b261e379179b9608cf751c282d66a7"
+PUBLIC_PRESET_THEME_SHA256="2ca2cc0f4d8ad12d822fe6331e4744df09e07862fa120022d4f53b77f09498e3"
 [ -d "$ROOT/presets/$PUBLIC_PRESET" ] \
   || { printf 'Public release preset missing: %s\n' "$PUBLIC_PRESET" >&2; exit 1; }
 actual_public_preset_sha256="$(LC_ALL=C /usr/bin/shasum -a 256 \
