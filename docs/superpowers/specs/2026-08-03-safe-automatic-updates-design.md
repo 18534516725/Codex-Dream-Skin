@@ -16,7 +16,7 @@ Prevent old Codex Dream Skin clients from rejecting newly published Nexo skin ID
 
 ## Security boundary
 
-- Release metadata comes only from `api.github.com/repos/Fei-Away/Codex-Dream-Skin/releases/latest` over TLS.
+- Release metadata comes only from `api.github.com/repos/18534516725/Codex-Dream-Skin/releases/latest` over TLS.
 - Artifacts use exact versioned names and the fixed release download path.
 - The companion checksum filename, digest syntax, downloaded byte count, bundle/application identity, embedded engine version, and platform architecture are validated.
 - Redirects are limited to HTTPS GitHub release infrastructure.

@@ -3,7 +3,7 @@
 set -euo pipefail
 export LC_ALL=C
 
-REPOSITORY="Fei-Away/Codex-Dream-Skin"
+REPOSITORY="18534516725/Codex-Dream-Skin"
 VERSION=""
 TARGET_APP=""
 PARENT_PID=""

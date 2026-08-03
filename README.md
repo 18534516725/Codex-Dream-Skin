@@ -45,7 +45,7 @@ Passion8 为本项目用户准备了专属福利：通过<a href="https://passio
 ## 直接安装
 
 普通用户只需先安装并退出一次官方 Codex / ChatGPT，然后从
-[GitHub Releases](https://github.com/Fei-Away/Codex-Dream-Skin/releases) 下载：
+[GitHub Releases](https://github.com/18534516725/Codex-Dream-Skin/releases) 下载：
 
 - macOS：打开 `CodexDreamSkin-vX.Y.Z.dmg`，把 App 拖进 Applications。
 - Windows：双击 `CodexDreamSkin-Setup-vX.Y.Z.exe`，按安装向导完成。
@@ -161,7 +161,7 @@ macOS 菜单栏和 Windows 托盘都有「主题库 Gallery」和「在线 Studi
 ### 普通用户：下载安装包
 
 不需要 clone 仓库，也不需要安装 Node.js 或运行 `.sh` / `.ps1`。从
-[GitHub Releases](https://github.com/Fei-Away/Codex-Dream-Skin/releases) 下载对应平台的最新安装包，
+[GitHub Releases](https://github.com/18534516725/Codex-Dream-Skin/releases) 下载对应平台的最新安装包，
 按平台文档完成一次图形界面安装：
 
 | 平台 | 下载 | 安装说明 |

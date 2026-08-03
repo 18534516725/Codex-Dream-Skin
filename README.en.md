@@ -45,7 +45,7 @@ Passion8 has a benefit for this project's users: register through <a href="https
 ## Install directly
 
 Ordinary users first install and quit the official Codex / ChatGPT app once,
-then download from [GitHub Releases](https://github.com/Fei-Away/Codex-Dream-Skin/releases):
+then download from [GitHub Releases](https://github.com/18534516725/Codex-Dream-Skin/releases):
 
 - macOS: open `CodexDreamSkin-vX.Y.Z.dmg` and drag the app to Applications.
 - Windows: run `CodexDreamSkin-Setup-vX.Y.Z.exe` and follow the wizard.
@@ -183,7 +183,7 @@ to use and save it for one-click switching.
 
 You do not need to clone the repository, install Node.js, or run `.sh` / `.ps1`
 files. Download the latest package for your platform from
-[GitHub Releases](https://github.com/Fei-Away/Codex-Dream-Skin/releases), then
+[GitHub Releases](https://github.com/18534516725/Codex-Dream-Skin/releases), then
 follow the graphical first-run guide:
 
 | Platform | Download | Install guide |

@@ -9,7 +9,7 @@ param(
 $ErrorActionPreference = 'Stop'
 $engineRoot = Split-Path -Parent $PSScriptRoot
 $versionPath = Join-Path $engineRoot 'VERSION'
-$repository = 'Fei-Away/Codex-Dream-Skin'
+$repository = '18534516725/Codex-Dream-Skin'
 $releasePage = "https://github.com/$repository/releases/latest"
 $stateRoot = Join-Path $env:LOCALAPPDATA 'CodexDreamSkin'
 $updateRoot = Join-Path $stateRoot 'updates'

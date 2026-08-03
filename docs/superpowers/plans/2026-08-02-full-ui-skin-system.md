@@ -603,4 +603,4 @@ Require homepage HTTP 200, representative original and preview asset HTTP 200, f
 
 - [ ] **Step 6: Report the helper-repository publishing boundary**
 
-If `Fei-Away/Codex-Dream-Skin` still returns 403, report that the platform preview and this Mac are updated but other machines cannot fetch the new helper until repository write access or an approved distribution repository exists. Do not claim universal rollout before that is resolved.
+If `18534516725/Codex-Dream-Skin` still returns 403, report that the platform preview and this Mac are updated but other machines cannot fetch the new helper until repository write access or an approved distribution repository exists. Do not claim universal rollout before that is resolved.
