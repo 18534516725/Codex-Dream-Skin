@@ -7,9 +7,9 @@ private enum BoundedCommunityHTTPError: LocalizedError {
   var errorDescription: String? {
     switch self {
     case .invalidResponse:
-      return "DreamSkin.cc returned an unexpected response or redirect."
+      return "The theme service returned an unexpected response or redirect."
     case .responseTooLarge:
-      return "DreamSkin.cc returned more data than the approved limit."
+      return "The theme service returned more data than the approved limit."
     }
   }
 }

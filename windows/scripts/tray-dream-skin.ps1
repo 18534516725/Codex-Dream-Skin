@@ -16,7 +16,7 @@ $powershell = (Get-Command powershell.exe -ErrorAction Stop).Source
 $startScript = Join-Path $PSScriptRoot 'start-dream-skin.ps1'
 $restoreScript = Join-Path $PSScriptRoot 'restore-dream-skin.ps1'
 $checkUpdateScript = Join-Path $PSScriptRoot 'check-update.ps1'
-$startupShortcut = Join-Path ([Environment]::GetFolderPath('Startup')) 'Codex Dream Skin.lnk'
+$startupShortcut = Join-Path ([Environment]::GetFolderPath('Startup')) 'Nexo Codex Skin.lnk'
 
 $sid = [System.Security.Principal.WindowsIdentity]::GetCurrent().User.Value
 $mutex = [System.Threading.Mutex]::new($false, "Local\CodexDreamSkin.$sid.Tray")
@@ -43,7 +43,7 @@ try {
   } else {
     $notify.Icon = [System.Drawing.SystemIcons]::Application
   }
-  $notify.Text = 'Codex Dream Skin'
+  $notify.Text = 'Nexo Codex Skin'
   $notify.Visible = $true
   $menu = [System.Windows.Forms.ContextMenuStrip]::new()
   $notify.ContextMenuStrip = $menu
@@ -52,7 +52,7 @@ try {
     param([string]$Message)
     [void][System.Windows.Forms.MessageBox]::Show(
       $Message,
-      'Codex Dream Skin',
+      'Nexo Codex Skin',
       [System.Windows.Forms.MessageBoxButtons]::OK,
       [System.Windows.Forms.MessageBoxIcon]::Error
     )
@@ -109,7 +109,7 @@ try {
     $shortcut.TargetPath = $powershell
     $shortcut.Arguments = "-NoProfile -STA -WindowStyle Hidden -ExecutionPolicy RemoteSigned -File `"$PSScriptRoot\tray-dream-skin.ps1`""
     $shortcut.WorkingDirectory = $SkillRoot
-    $shortcut.Description = 'Start Codex Dream Skin in the notification area'
+    $shortcut.Description = 'Start Nexo Codex Skin in the notification area'
     $shortcut.Save()
   }
 
@@ -139,7 +139,7 @@ try {
         $null = Show-DreamSkinOperationUi -Session $session -Phase finish -Token $begin.Token `
           -UiState success -Message '已开始应用皮肤' -TimeoutMs 1500
       }
-      $notify.ShowBalloonTip(1800, 'Codex Dream Skin', '正在应用皮肤…', [System.Windows.Forms.ToolTipIcon]::Info)
+      $notify.ShowBalloonTip(1800, 'Nexo Codex Skin', '正在应用皮肤…', [System.Windows.Forms.ToolTipIcon]::Info)
     }
     # Match macOS menubar: pause = mark + live remove; resume lets the serialized
     # start path clear pause only after its safety checks and any restart consent.
@@ -159,7 +159,7 @@ try {
         }
         $notify.ShowBalloonTip(
           1800,
-          'Codex Dream Skin',
+          'Nexo Codex Skin',
           '正在重新应用皮肤…',
           [System.Windows.Forms.ToolTipIcon]::Info
         )
@@ -176,15 +176,16 @@ try {
         } else {
           [System.Windows.Forms.ToolTipIcon]::Warning
         }
-        $notify.ShowBalloonTip(2800, 'Codex Dream Skin', $removal.Message, $icon)
+        $notify.ShowBalloonTip(2800, 'Nexo Codex Skin', $removal.Message, $icon)
         if (-not $removal.Removed -and $removal.Attempted) {
           Show-DreamSkinTrayError -Message $removal.Message
         }
       }
     }
-    $null = Add-DreamSkinTrayItem -Items $menu.Items -Text '更换背景图' -Action {
+    $advancedMenu = [System.Windows.Forms.ToolStripMenuItem]::new('高级工具')
+    $null = Add-DreamSkinTrayItem -Items $advancedMenu.DropDownItems -Text '更换背景图' -Action {
       $dialog = [System.Windows.Forms.OpenFileDialog]::new()
-      $dialog.Title = '选择 Codex Dream Skin 背景图'
+      $dialog.Title = '选择 Nexo 皮肤背景图'
       $dialog.Filter = 'Image files|*.png;*.jpg;*.jpeg;*.webp|All files|*.*'
       $dialog.Multiselect = $false
       try {
@@ -194,15 +195,15 @@ try {
               -StateRoot $StateRoot
             Set-DreamSkinPaused -Paused $false -StateRoot $StateRoot | Out-Null
           }
-          $notify.ShowBalloonTip(1800, 'Codex Dream Skin', '背景图已更新。', [System.Windows.Forms.ToolTipIcon]::Info)
+          $notify.ShowBalloonTip(1800, 'Nexo Codex Skin', '背景图已更新。', [System.Windows.Forms.ToolTipIcon]::Info)
         }
       } finally {
         $dialog.Dispose()
       }
     }
-    $null = Add-DreamSkinTrayItem -Items $menu.Items -Text '导入主题 ZIP…' -Action {
+    $null = Add-DreamSkinTrayItem -Items $advancedMenu.DropDownItems -Text '导入主题 ZIP…' -Action {
       $dialog = [System.Windows.Forms.OpenFileDialog]::new()
-      $dialog.Title = '选择 Codex Dream Skin 主题 ZIP'
+      $dialog.Title = '选择 Nexo 皮肤主题 ZIP'
       $dialog.Filter = 'Dream Skin theme ZIP|*.zip'
       $dialog.Multiselect = $false
       try {
@@ -232,19 +233,19 @@ try {
           } else {
             [System.Windows.Forms.ToolTipIcon]::Info
           }
-          $notify.ShowBalloonTip(4200, 'Codex Dream Skin', $message, $messageIcon)
+          $notify.ShowBalloonTip(4200, 'Nexo Codex Skin', $message, $messageIcon)
         }
       } finally {
         $dialog.Dispose()
       }
     }
-    $null = Add-DreamSkinTrayItem -Items $menu.Items -Text '保存当前主题' -Action {
-      $name = [Microsoft.VisualBasic.Interaction]::InputBox('输入主题名称：', '保存 Codex Dream Skin 主题', '')
+    $null = Add-DreamSkinTrayItem -Items $advancedMenu.DropDownItems -Text '保存当前主题' -Action {
+      $name = [Microsoft.VisualBasic.Interaction]::InputBox('输入主题名称：', '保存 Nexo 皮肤主题', '')
       if ($name.Trim()) {
         $saved = Invoke-DreamSkinTrayThemeOperation -Action {
           Save-DreamSkinCurrentTheme -Name $name -StateRoot $StateRoot
         }
-        $notify.ShowBalloonTip(1800, 'Codex Dream Skin', "已保存：$($saved.Theme.name)", [System.Windows.Forms.ToolTipIcon]::Info)
+        $notify.ShowBalloonTip(1800, 'Nexo Codex Skin', "已保存：$($saved.Theme.name)", [System.Windows.Forms.ToolTipIcon]::Info)
       }
     }
 
@@ -263,18 +264,18 @@ try {
             $null = Use-DreamSkinSavedTheme -ThemeDirectory $savedPath -StateRoot $StateRoot
             Set-DreamSkinPaused -Paused $false -StateRoot $StateRoot | Out-Null
           }
-          $notify.ShowBalloonTip(1800, 'Codex Dream Skin', "已应用：$savedName", [System.Windows.Forms.ToolTipIcon]::Info)
+          $notify.ShowBalloonTip(1800, 'Nexo Codex Skin', "已应用：$savedName", [System.Windows.Forms.ToolTipIcon]::Info)
         }.GetNewClosure()
         $null = Add-DreamSkinTrayItem -Items $savedMenu.DropDownItems -Text $savedName -Action $savedAction
       }
     }
-    [void]$menu.Items.Add($savedMenu)
+    [void]$advancedMenu.DropDownItems.Add($savedMenu)
 
-    $null = Add-DreamSkinTrayItem -Items $menu.Items -Text '打开主题文件夹' -Action {
+    $null = Add-DreamSkinTrayItem -Items $advancedMenu.DropDownItems -Text '打开主题文件夹' -Action {
       $themeDirectoryToken = ConvertTo-DreamSkinProcessArgument -Value $paths.Saved
       Start-Process -FilePath explorer.exe -ArgumentList $themeDirectoryToken | Out-Null
     }
-    $null = Add-DreamSkinTrayItem -Items $menu.Items -Text '打开图片文件夹' -Action {
+    $null = Add-DreamSkinTrayItem -Items $advancedMenu.DropDownItems -Text '打开图片文件夹' -Action {
       $imageDirectoryToken = ConvertTo-DreamSkinProcessArgument -Value $paths.Images
       Start-Process -FilePath explorer.exe -ArgumentList $imageDirectoryToken | Out-Null
     }
@@ -286,8 +287,10 @@ try {
     $autoStartAction = {
       Set-DreamSkinAutoStart -Enabled:(-not $autoStartEnabled)
     }.GetNewClosure()
-    $null = Add-DreamSkinTrayItem -Items $menu.Items -Text '登录时启动' `
+    [void]$advancedMenu.DropDownItems.Add([System.Windows.Forms.ToolStripSeparator]::new())
+    $null = Add-DreamSkinTrayItem -Items $advancedMenu.DropDownItems -Text '登录时启动' `
       -Action $autoStartAction -Checked $autoStartEnabled
+    [void]$menu.Items.Add($advancedMenu)
     [void]$menu.Items.Add([System.Windows.Forms.ToolStripSeparator]::new())
     $null = Add-DreamSkinTrayItem -Items $menu.Items -Text '完全恢复 Codex' -Action {
       Start-DreamSkinPowerShell -Script $restoreScript -Arguments @(

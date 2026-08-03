@@ -161,7 +161,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     } else {
       showError(
         title: "一键换肤链接无效",
-        message: "只接受固定主题目录或 DreamSkin.cc 生成的版本链接；不会打开链接中的任意网址、文件或命令。"
+        message: "只接受 NexoToken 平台签发的主题链接；不会打开链接中的任意网址、文件或命令。"
       )
     }
   }
@@ -176,31 +176,23 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     menu.autoenablesItems = false
     statusItem.menu = menu
     guard let button = statusItem.button else { return }
-    // 菜单栏模板剪影：与 dreamskin.cc favicon 同源的品牌 mark
-    // （圆角方描边 + 墨色对角半区）。模板图仅黑 + 透明，青点在
-    // 此尺寸下省略，避免糊成噪点。
+    // Nexo 同心环模板图标：只使用黑色与透明度，自动适配深浅菜单栏。
     let mark = NSImage(size: NSSize(width: 18, height: 18), flipped: true) { rect in
-      let inset = rect.insetBy(dx: 1, dy: 1)
-      let rounded = NSBezierPath(roundedRect: inset, xRadius: 5.2, yRadius: 5.2)
       NSColor.black.setStroke()
-      rounded.lineWidth = 1.4
-      rounded.stroke()
-      NSGraphicsContext.current?.saveGraphicsState()
-      rounded.addClip()
-      let diagonal = NSBezierPath()
-      diagonal.move(to: NSPoint(x: inset.minX, y: inset.maxY))
-      diagonal.line(to: NSPoint(x: inset.maxX, y: inset.minY))
-      diagonal.line(to: NSPoint(x: inset.maxX, y: inset.maxY))
-      diagonal.close()
+      let outer = NSBezierPath(ovalIn: rect.insetBy(dx: 1.4, dy: 1.4))
+      outer.lineWidth = 1.65
+      outer.stroke()
+      let inner = NSBezierPath(ovalIn: rect.insetBy(dx: 5.1, dy: 5.1))
+      inner.lineWidth = 1.45
+      inner.stroke()
       NSColor.black.setFill()
-      diagonal.fill()
-      NSGraphicsContext.current?.restoreGraphicsState()
+      NSBezierPath(ovalIn: rect.insetBy(dx: 7.25, dy: 7.25)).fill()
       return true
     }
     mark.isTemplate = true
-    mark.accessibilityDescription = "Codex Dream Skin"
+    mark.accessibilityDescription = "Nexo Codex Skin"
     button.image = mark
-    button.toolTip = "Codex Dream Skin"
+    button.toolTip = "Nexo Codex Skin"
     rebuildMenu()
   }
 
@@ -260,7 +252,14 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
   private func rebuildMenu() {
     menu.removeAllItems()
-    addDisabledItem(snapshot.title)
+    let compactStatus: String
+    switch snapshot.session {
+    case "active": compactStatus = "Nexo Skin · 已开启"
+    case "applying": compactStatus = "Nexo Skin · 正在应用"
+    case "stale", "unknown": compactStatus = "Nexo Skin · 需要修复"
+    default: compactStatus = "Nexo Skin · 已暂停"
+    }
+    addDisabledItem(compactStatus)
     if !snapshot.appliedThemeName.isEmpty && snapshot.session == "active" {
       addDisabledItem("已应用：\(cleanMenuText(snapshot.appliedThemeName))")
     }
@@ -269,7 +268,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     } else if snapshot.appliedThemeName.isEmpty && !snapshot.themeName.isEmpty {
       addDisabledItem("已选主题：\(cleanMenuText(snapshot.themeName))")
     }
-    addDisabledItem(snapshot.codexRunning ? "ChatGPT：已打开" : "ChatGPT：未打开")
     if !snapshot.operationMessage.isEmpty {
       addDisabledItem(cleanMenuText(snapshot.operationMessage))
     }
@@ -280,17 +278,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     menu.addItem(.separator())
     let busy = operationInFlight || engineInstallInFlight || themeRecoveryInFlight || snapshot.busy
-    let needsEngineInstall = engineNeedsInstall()
-    if engineInstallInFlight {
-      addDisabledItem("正在安装引擎…")
-    } else {
-      addActionItem(
-        needsEngineInstall ? "安装 / 升级引擎…" : "修复 / 重新安装引擎…",
-        action: #selector(reinstallEngine),
-        enabled: !busy
-      )
-    }
-
     let applyTitle: String
     switch snapshot.session {
     case "active": applyTitle = "重新应用皮肤"
@@ -302,19 +289,35 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       addActionItem("暂停皮肤", action: #selector(pauseSkin), enabled: !busy)
     }
     addActionItem("打开 ChatGPT", action: #selector(openCodex), enabled: !busy)
-    addActionItem("换一张背景图…", action: #selector(chooseBackgroundImage), enabled: !busy)
-    addActionItem("导入主题 ZIP…", action: #selector(chooseThemeArchive), enabled: !busy)
-    addSavedThemesMenu(enabled: !busy)
-    addActionItem("打开主题文件夹", action: #selector(openThemesFolder))
-    addActionItem("打开图片文件夹", action: #selector(openImagesFolder))
-
-    menu.addItem(.separator())
     addActionItem("检查更新…", action: #selector(checkForUpdates), enabled: !operationInFlight)
-    let loginItem = addActionItem("登录时启动", action: #selector(toggleLoginItem))
+
+    let advancedRoot = NSMenuItem(title: "高级工具", action: nil, keyEquivalent: "")
+    let advancedMenu = NSMenu(title: "高级工具")
+    advancedMenu.autoenablesItems = false
+    addActionItem("更换背景图…", action: #selector(chooseBackgroundImage), enabled: !busy, to: advancedMenu)
+    addActionItem("导入主题 ZIP…", action: #selector(chooseThemeArchive), enabled: !busy, to: advancedMenu)
+    addSavedThemesMenu(enabled: !busy, to: advancedMenu)
+    addActionItem("打开主题文件夹", action: #selector(openThemesFolder), to: advancedMenu)
+    addActionItem("打开图片文件夹", action: #selector(openImagesFolder), to: advancedMenu)
+    advancedMenu.addItem(.separator())
+    let needsEngineInstall = engineNeedsInstall()
+    if engineInstallInFlight {
+      addDisabledItem("正在安装引擎…", to: advancedMenu)
+    } else {
+      addActionItem(
+        needsEngineInstall ? "安装 / 升级组件…" : "修复 / 重新安装组件…",
+        action: #selector(reinstallEngine),
+        enabled: !busy,
+        to: advancedMenu
+      )
+    }
+    let loginItem = addActionItem("登录时启动", action: #selector(toggleLoginItem), to: advancedMenu)
     loginItem.state = SMAppService.mainApp.status == .enabled ? .on : .off
     if !legacyPluginURLs().isEmpty {
-      addActionItem("停用旧 SwiftBar 菜单…", action: #selector(disableLegacySwiftBarFromMenu))
+      addActionItem("停用旧菜单组件…", action: #selector(disableLegacySwiftBarFromMenu), to: advancedMenu)
     }
+    advancedRoot.submenu = advancedMenu
+    menu.addItem(advancedRoot)
 
     menu.addItem(.separator())
     addActionItem(
@@ -345,7 +348,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     (destination ?? menu).addItem(item)
   }
 
-  private func addSavedThemesMenu(enabled: Bool) {
+  private func addSavedThemesMenu(enabled: Bool, to destination: NSMenu? = nil) {
     let root = NSMenuItem(title: "已保存的主题", action: nil, keyEquivalent: "")
     let submenu = NSMenu(title: "已保存的主题")
     submenu.autoenablesItems = false
@@ -367,7 +370,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       }
     }
     root.submenu = submenu
-    menu.addItem(root)
+    (destination ?? menu).addItem(root)
   }
 
   private func savedThemes() -> [SavedThemeOption] {
@@ -463,7 +466,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       if result.succeeded,
          let parsed = StatusSnapshot(jsonData: Data(result.output.utf8)) {
         self.snapshot = parsed
-        self.statusItem.button?.toolTip = "Codex Dream Skin · \(parsed.title)"
+        self.statusItem.button?.toolTip = "Nexo Codex Skin · \(parsed.title)"
         self.statusItem.button?.appearsDisabled = parsed.session == "unknown" || parsed.session == "stale"
         self.rebuildMenu()
       }
@@ -485,7 +488,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
   @objc private func chooseBackgroundImage() {
     let panel = NSOpenPanel()
-    panel.title = "选择 Dream Skin 背景图"
+    panel.title = "选择 Nexo 皮肤背景图"
     panel.prompt = "选择"
     panel.canChooseDirectories = false
     panel.canChooseFiles = true
@@ -502,7 +505,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
   @objc private func chooseThemeArchive() {
     let panel = NSOpenPanel()
-    panel.title = "选择 Dream Skin 主题 ZIP"
+    panel.title = "选择 Nexo 皮肤主题 ZIP"
     panel.prompt = "导入"
     panel.canChooseDirectories = false
     panel.canChooseFiles = true
@@ -707,7 +710,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
           self.finishThemeOperation()
           self.showError(
             title: "无法读取主题信息",
-            message: "DreamSkin.cc 没有返回可验证的已审核主题，请稍后重试。"
+            message: "主题服务没有返回可验证的授权主题，请稍后重试。"
           )
           return
         }
@@ -730,7 +733,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     updateCommunityStage("等待确认：\(cleanMenuText(metadata.name))")
     let size = ByteCountFormatter.string(fromByteCount: metadata.packageBytes, countStyle: .file)
     let alert = NSAlert()
-    alert.messageText = "从 DreamSkin.cc 应用“\(cleanMenuText(metadata.name))”？"
+    alert.messageText = "从 NexoToken 应用“\(cleanMenuText(metadata.name))”？"
     alert.informativeText = """
     作者：\(cleanMenuText(metadata.authorDisplayName))
     版本：\(metadata.version) · \(size)
@@ -1148,7 +1151,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         if showCurrentVersion || triggeredByUnknownSkin {
           self.showError(
             title: "检查更新失败",
-            message: self.conciseOutput(result.output, fallback: "无法连接 GitHub，请稍后重试。")
+            message: self.conciseOutput(result.output, fallback: "无法连接更新服务，请稍后重试。")
           )
         }
         return
@@ -1211,7 +1214,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       if SMAppService.mainApp.status == .requiresApproval {
         showInfo(
           title: "需要系统确认",
-          message: "请在“系统设置 → 通用 → 登录项”中允许 Codex Dream Skin。"
+          message: "请在“系统设置 → 通用 → 登录项”中允许 Nexo Codex Skin。"
         )
       }
     } catch {
@@ -1275,7 +1278,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       }
       self.showInfo(
         title: "恢复完成",
-        message: "本地引擎和登录启动已移除。最后请把“Codex Dream Skin.app”移到废纸篓。"
+        message: "本地组件和登录启动已移除。最后请把当前助手 App 移到废纸篓。"
       )
       NSApp.terminate(nil)
     }

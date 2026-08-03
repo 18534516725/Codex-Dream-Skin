@@ -123,21 +123,21 @@ function Show-DreamSkinUpdateResult {
   if (-not $Result.updateAvailable) {
     if ($Interactive) {
       [void][System.Windows.Forms.MessageBox]::Show(
-        "Codex Dream Skin $($Result.currentVersion) is up to date.", 'Codex Dream Skin Update',
+        "Nexo Codex Skin $($Result.currentVersion) is up to date.", 'Nexo Codex Skin Update',
         [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Information)
     }
     return
   }
   $choice = [System.Windows.Forms.MessageBox]::Show(
-    "Codex Dream Skin $($Result.latestVersion) is available.`r`n`r`nDownload and install it automatically? Codex will not be closed or restarted.",
-    'Codex Dream Skin Update', [System.Windows.Forms.MessageBoxButtons]::YesNo,
+    "Nexo Codex Skin $($Result.latestVersion) is available.`r`n`r`nDownload and install it automatically? Codex will not be closed or restarted.",
+    'Nexo Codex Skin Update', [System.Windows.Forms.MessageBoxButtons]::YesNo,
     [System.Windows.Forms.MessageBoxIcon]::Information)
   if ($choice -ne [System.Windows.Forms.DialogResult]::Yes) { return }
   $pending = Save-DreamSkinPendingUpdate -LatestVersion $Result.latestVersionNumber
   if (-not (Invoke-DreamSkinPendingUpdate)) {
     [void][System.Windows.Forms.MessageBox]::Show(
       "The verified update has been downloaded. It will install automatically after Codex closes normally.",
-      'Codex Dream Skin Update', [System.Windows.Forms.MessageBoxButtons]::OK,
+      'Nexo Codex Skin Update', [System.Windows.Forms.MessageBoxButtons]::OK,
       [System.Windows.Forms.MessageBoxIcon]::Information)
   }
 }
@@ -191,7 +191,7 @@ try {
   if ($Interactive) {
     Add-Type -AssemblyName System.Windows.Forms
     [void][System.Windows.Forms.MessageBox]::Show(
-      "Could not check for updates.`r`n`r`n$($_.Exception.Message)", 'Codex Dream Skin Update',
+      "Could not check for updates.`r`n`r`n$($_.Exception.Message)", 'Nexo Codex Skin Update',
       [System.Windows.Forms.MessageBoxButtons]::OK, [System.Windows.Forms.MessageBoxIcon]::Warning)
   }
   if (-not $Json -and -not $Interactive -and -not $Auto) { throw }

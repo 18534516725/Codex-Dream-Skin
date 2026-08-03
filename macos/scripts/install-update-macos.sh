@@ -20,10 +20,10 @@ done
 fail() {
   /usr/bin/osascript - "$*" <<'APPLESCRIPT' >/dev/null 2>&1 || true
 on run argv
-  display alert "Codex Dream Skin 更新失败" message (item 1 of argv) buttons {"好"}
+  display alert "Nexo Codex Skin 更新失败" message (item 1 of argv) buttons {"好"}
 end run
 APPLESCRIPT
-  printf 'Codex Dream Skin update failed: %s\n' "$*" >&2
+  printf 'Nexo Codex Skin update failed: %s\n' "$*" >&2
   exit 1
 }
 

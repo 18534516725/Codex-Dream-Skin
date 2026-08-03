@@ -30,36 +30,26 @@ guard let context = NSGraphicsContext(bitmapImageRep: bitmap) else {
 }
 NSGraphicsContext.current = context
 
-// DreamSkin 品牌 mark，与 dreamskin.cc 的 favicon 同源：白底圆角方 +
-// 发丝描边 + 墨色对角三角 + 青色圆点。坐标取自 32 栅格 favicon ×32
-//（AppKit 坐标系原点在左下，Y 轴与 SVG 相反，已做镜像换算）。
+// Nexo concentric-ring mark: 深色底、绿青双环与中心光点。
 let canvas = NSRect(x: 64, y: 64, width: 896, height: 896)
 let cornerRadius: CGFloat = 288
 let background = NSBezierPath(roundedRect: canvas, xRadius: cornerRadius, yRadius: cornerRadius)
-let paper = NSColor(calibratedRed: 0.992, green: 0.992, blue: 0.988, alpha: 1) // #fdfdfc
-let ink = NSColor(calibratedRed: 0.090, green: 0.094, blue: 0.110, alpha: 1) // #17181c
-let teal = NSColor(calibratedRed: 0.176, green: 0.882, blue: 0.761, alpha: 1) // #2de1c2
+let navy = NSColor(calibratedRed: 0.0392, green: 0.0549, blue: 0.1020, alpha: 1) // #0a0e1a
+let green = NSColor(calibratedRed: 0.5725, green: 0.9961, blue: 0.6157, alpha: 1) // #92FE9D
+let cyan = NSColor(calibratedRed: 0.0000, green: 0.7882, blue: 1.0000, alpha: 1) // #00C9FF
 
-paper.setFill()
+navy.setFill()
 background.fill()
-
-NSGraphicsContext.current?.saveGraphicsState()
-background.addClip()
-ink.setFill()
-let diagonal = NSBezierPath()
-diagonal.move(to: NSPoint(x: 64, y: 64))
-diagonal.line(to: NSPoint(x: 960, y: 960))
-diagonal.line(to: NSPoint(x: 960, y: 64))
-diagonal.close()
-diagonal.fill()
-NSGraphicsContext.current?.restoreGraphicsState()
-
-ink.withAlphaComponent(0.14).setStroke()
-background.lineWidth = 32
-background.stroke()
-
-teal.setFill()
-NSBezierPath(ovalIn: NSRect(x: 656, y: 656, width: 160, height: 160)).fill()
+let outer = NSBezierPath(ovalIn: NSRect(x: 176, y: 176, width: 672, height: 672))
+green.setStroke()
+outer.lineWidth = 76
+outer.stroke()
+let inner = NSBezierPath(ovalIn: NSRect(x: 316, y: 316, width: 392, height: 392))
+cyan.withAlphaComponent(0.92).setStroke()
+inner.lineWidth = 58
+inner.stroke()
+cyan.setFill()
+NSBezierPath(ovalIn: NSRect(x: 454, y: 454, width: 116, height: 116)).fill()
 
 context.flushGraphics()
 NSGraphicsContext.restoreGraphicsState()

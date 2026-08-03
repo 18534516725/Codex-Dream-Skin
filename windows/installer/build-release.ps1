@@ -164,43 +164,36 @@ function Write-DreamSkinIcon {
         $alphaRow = New-Object byte[] $size
         for ($column = 0; $column -lt $size; $column++) {
           $coverage = 0
-          $darkCoverage = 0
-          $dotCoverage = 0
-          $edgeCoverage = 0
+          $outerCoverage = 0
+          $innerCoverage = 0
+          $centerCoverage = 0
           foreach ($sampleY in @(0.125, 0.375, 0.625, 0.875)) {
             foreach ($sampleX in @(0.125, 0.375, 0.625, 0.875)) {
-              # DreamSkin 品牌 mark（与网站 favicon 同源）：白圆角方 +
-              # 墨色对角半区（x+y>=1）+ 青点 + 14% 发丝描边环。
+              # Nexo concentric-ring mark：深色圆底、绿青双环与中心光点。
               $x = ($column + $sampleX) / $size
               $y = ($row + $sampleY) / $size
-              $dx = [Math]::Max([Math]::Abs($x - 0.5) - 0.16, 0.0)
-              $dy = [Math]::Max([Math]::Abs($y - 0.5) - 0.16, 0.0)
-              $edgeDistance = [Math]::Sqrt($dx * $dx + $dy * $dy)
-              if ($edgeDistance -le 0.285) {
+              $dx = $x - 0.5
+              $dy = $y - 0.5
+              $distance = [Math]::Sqrt($dx * $dx + $dy * $dy)
+              if ($distance -le 0.46) {
                 $coverage++
-                if (($x + $y) -ge 1.0) { $darkCoverage++ }
-                $ddx = $x - 0.719
-                $ddy = $y - 0.281
-                if (($ddx * $ddx + $ddy * $ddy) -le (0.08 * 0.08)) { $dotCoverage++ }
-                if ($edgeDistance -gt (0.285 - [Math]::Max(0.028, 1.1 / $size))) { $edgeCoverage++ }
+                if ($distance -ge 0.30 -and $distance -le 0.40) { $outerCoverage++ }
+                if ($distance -ge 0.14 -and $distance -le 0.22) { $innerCoverage++ }
+                if ($distance -le 0.065) { $centerCoverage++ }
               }
             }
           }
 
           $alpha = [int][Math]::Round(255.0 * $coverage / 16.0)
           $alphaRow[$column] = [byte]$alpha
-          $darkBlend = $darkCoverage / 16.0
-          $dotBlend = $dotCoverage / 16.0
-          $edgeBlend = 0.14 * ($edgeCoverage / 16.0)
-          $red = 253.0 * (1.0 - $darkBlend) + 23.0 * $darkBlend
-          $green = 253.0 * (1.0 - $darkBlend) + 24.0 * $darkBlend
-          $blue = 252.0 * (1.0 - $darkBlend) + 28.0 * $darkBlend
-          $red = $red * (1.0 - $dotBlend) + 45.0 * $dotBlend
-          $green = $green * (1.0 - $dotBlend) + 225.0 * $dotBlend
-          $blue = $blue * (1.0 - $dotBlend) + 194.0 * $dotBlend
-          $red = [int][Math]::Round($red * (1.0 - $edgeBlend) + 23.0 * $edgeBlend)
-          $green = [int][Math]::Round($green * (1.0 - $edgeBlend) + 24.0 * $edgeBlend)
-          $blue = [int][Math]::Round($blue * (1.0 - $edgeBlend) + 28.0 * $edgeBlend)
+          $greenBlend = $outerCoverage / 16.0
+          $cyanBlend = [Math]::Min(1.0, ($innerCoverage + $centerCoverage) / 16.0)
+          $red = 10.0 * (1.0 - $greenBlend) + 146.0 * $greenBlend
+          $green = 14.0 * (1.0 - $greenBlend) + 254.0 * $greenBlend
+          $blue = 26.0 * (1.0 - $greenBlend) + 157.0 * $greenBlend
+          $red = [int][Math]::Round($red * (1.0 - $cyanBlend))
+          $green = [int][Math]::Round($green * (1.0 - $cyanBlend) + 201.0 * $cyanBlend)
+          $blue = [int][Math]::Round($blue * (1.0 - $cyanBlend) + 255.0 * $cyanBlend)
           $writer.Write([byte]$blue)
           $writer.Write([byte]$green)
           $writer.Write([byte]$red)
