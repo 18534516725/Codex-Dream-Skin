@@ -1,11 +1,12 @@
 # Codex Skin V2 visual QA
 
-- Helper version: 1.6.0 candidate
+- Helper version: 1.6.7
 - Host: macOS, Apple Silicon
 - Logical platforms: macOS and Windows share the generated Theme V2 catalog and renderer assets
 - Catalog: 18 approved themes, six visual families
 - Source materials: 71 records, 69 unique candidates, two exact duplicates
 - Video handling: one true dynamic candidate; 20 low-resolution sources use ambient reconstruction
+- Review catalog: `themes/material-review-catalog.json` records all 69 candidate packages, their 4K/preview checksums and publication gate.
 
 ## Automated evidence
 
@@ -23,3 +24,4 @@
 - The complete Swift XCTest bundle is unavailable in this local toolchain (`XCTest` module missing), while the production `DreamSkinCore` target compiles successfully.
 - The full live doctor check sees the currently installed older helper payload at the active Codex debugging port. No forced Codex restart was used to hide that environmental mismatch.
 - Copyright-review candidates remain under ignored `.artifacts/` storage and are not published in the public catalog.
+- All candidate media remains admin-review-only until originality or redistribution rights are confirmed; metadata submission does not make the source assets downloadable.
