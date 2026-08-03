@@ -72,30 +72,15 @@ private struct GeneratedVisual: Decodable {
 public enum NexoSkinContract {
   private static let linkPattern = #"^dreamskin://apply\?skin=([a-z0-9-]{1,64})$"#
 
-  private static func catalogURL() -> URL? {
+  private static func catalogData() -> Data? {
     if let url = Bundle.main.url(forResource: "nexo-skin-catalog", withExtension: "json") {
-      return url
+      return try? Data(contentsOf: url)
     }
-
-    // SwiftPM test products keep resources in a sibling bundle. Resolve it
-    // without Bundle.module because its generated accessor calls fatalError
-    // when a hand-built app accidentally omits that bundle.
-    guard var directory = Bundle.main.executableURL?.deletingLastPathComponent() else {
-      return nil
-    }
-    for _ in 0..<5 {
-      let resourceBundle = directory.appendingPathComponent("CodexDreamSkinMenuBar_DreamSkinCore.bundle", isDirectory: true)
-      if let url = Bundle(url: resourceBundle)?.url(forResource: "nexo-skin-catalog", withExtension: "json") {
-        return url
-      }
-      directory.deleteLastPathComponent()
-    }
-    return nil
+    return EmbeddedNexoSkinCatalog.data
   }
 
   private static let catalog: GeneratedCatalog? = {
-    guard let url = catalogURL(),
-          let data = try? Data(contentsOf: url),
+    guard let data = catalogData(),
           let value = try? JSONDecoder().decode(GeneratedCatalog.self, from: data),
           value.schemaVersion == 2,
           URL(string: value.assetOrigin)?.scheme == "https" else { return nil }

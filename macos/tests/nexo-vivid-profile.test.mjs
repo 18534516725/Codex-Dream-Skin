@@ -16,7 +16,7 @@ const [contract, catalogSource, appDelegate, loader, writer, appBuilder] = await
 
 assert.doesNotMatch(contract, /Bundle\.module\.url/, "installed app catalog lookup must never trap when a SwiftPM resource bundle is absent");
 assert.match(contract, /Bundle\.main\.url\(forResource: "nexo-skin-catalog"/, "installed app must load its catalog from the signed app resources");
-assert.match(contract, /for _ in 0\.\.<5/, "SwiftPM test fallback must search only a bounded set of parent directories");
+assert.match(contract, /EmbeddedNexoSkinCatalog\.data/, "missing app resources must fall back to the compiled fixed catalog without filesystem discovery");
 assert.match(appBuilder, /nexo-skin-catalog\.json/, "native app builder must package the fixed catalog beside the app resources");
 
 for (const field of [
