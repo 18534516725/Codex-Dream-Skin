@@ -1,0 +1,1176 @@
+{
+  "schemaVersion": 2,
+  "assetOrigin": "https://nexotoken.net",
+  "items": [
+    {
+      "id": "stellar-voyager",
+      "name": "星核旅者",
+      "version": 2,
+      "family": "celestial-fantasy",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "01-stellar-voyager.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "b4a2f7f4570023798fb0c11da0a845fcc9e97f51d593b4edc5238c5bc8e39277",
+        "poster": "ae3637e5469c28d637240bad60319a96ee9e13366601ccddeba85bd2a660513e",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "stellar-voyager",
+        "name": "星核旅者",
+        "appearance": "dark",
+        "family": "celestial-fantasy",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "glass",
+          "corners": "cut",
+          "motion": "orbit",
+          "sidebar": "navigation",
+          "composer": "console",
+          "texture": "grid"
+        },
+        "colors": {
+          "background": "#0e1722",
+          "panel": "#132235",
+          "panelAlt": "#1b3048",
+          "accent": "#70c0ff",
+          "secondary": "#f4be5c",
+          "text": "#edf7ff",
+          "muted": "#a9bfd1",
+          "line": "#35536d"
+        },
+        "art": {
+          "focusX": 0.68,
+          "focusY": 0.46,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "sakura-signal",
+      "name": "樱花信使",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "02-sakura-signal.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "c243f7f8c8a15a9998013bebcc160214a457d2835b1f79ef74d3efaff7705fe4",
+        "poster": "e25a05ba795c6f01ab562e58b8da09bc85a9ce13acf93a3c69ad93048f161738",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "sakura-signal",
+        "name": "樱花信使",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "rounded",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "stamp",
+          "motion": "petals",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#19141f",
+          "panel": "#211a29",
+          "panelAlt": "#2a2134",
+          "accent": "#e897be",
+          "secondary": "#a689e8",
+          "text": "#fff8fc",
+          "muted": "#cabdca",
+          "line": "#735b7d"
+        },
+        "art": {
+          "focusX": 0.72,
+          "focusY": 0.45,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "neon-courier",
+      "name": "霓虹信使",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "03-neon-courier.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "0b3331daa4b2f04718aa54e85d36560b46b093aa7187a9db10eccf0806d4b873",
+        "poster": "10f0685f7543561c4070ecdddacd0c2164b75f16964cbd8ad5896df6c4358d1f",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "neon-courier",
+        "name": "霓虹信使",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "rain",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#110b1c",
+          "panel": "#170f1f",
+          "panelAlt": "#251733",
+          "accent": "#f45dca",
+          "secondary": "#4fdae5",
+          "text": "#fff4fd",
+          "muted": "#c5abc8",
+          "line": "#63306b"
+        },
+        "art": {
+          "focusX": 0.66,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "mist-beacon",
+      "name": "雾海灯塔",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "light",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "04-mist-beacon.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "c48acdf3fc75fa9d4910a524e634dc56e3e7884a7688b66d831498901ed18c2b",
+        "poster": "052477f8e0375662f8abdeef060b3fe6bb4a89a619b301e07e7979059cfaf14a",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "mist-beacon",
+        "name": "雾海灯塔",
+        "appearance": "light",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "editorial",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "paper",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "maritime",
+          "composer": "label",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#eee6d8",
+          "panel": "#f7f0e5",
+          "panelAlt": "#e4d8c6",
+          "accent": "#b17b35",
+          "secondary": "#668993",
+          "text": "#2d2924",
+          "muted": "#756d63",
+          "line": "#b9a58b"
+        },
+        "art": {
+          "focusX": 0.69,
+          "focusY": 0.45,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "rain-harbor",
+      "name": "雨港余光",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "05-rain-harbor.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "fc743109dda158015f21cfced675f34fc75bf10bd333ed5255cbcf2f8ad7133f",
+        "poster": "892cc88826dffe215976c4718765e5d1d82f7c78663f5396a1464b5285cb5d5c",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "rain-harbor",
+        "name": "雨港余光",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "glass",
+          "corners": "cut",
+          "motion": "rain",
+          "sidebar": "harbor",
+          "composer": "console",
+          "texture": "droplets"
+        },
+        "colors": {
+          "background": "#091819",
+          "panel": "#0d1819",
+          "panelAlt": "#142526",
+          "accent": "#56bead",
+          "secondary": "#db9d5b",
+          "text": "#effbf7",
+          "muted": "#9bbdb6",
+          "line": "#315e58"
+        },
+        "art": {
+          "focusX": 0.72,
+          "focusY": 0.47,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "crimson-forge",
+      "name": "绯红铸界",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "06-crimson-forge.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "3d0ce73ed894a99e61cc81d604b47ec13d619505199aa4dad0e405de26e69fec",
+        "poster": "42abc6821e91d83bbbe2d3521aac874a538b5b5ade2f21286f072a5203193184",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "crimson-forge",
+        "name": "绯红铸界",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "stage",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "sparks",
+          "sidebar": "forge",
+          "composer": "console",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#16090b",
+          "panel": "#1e0f11",
+          "panelAlt": "#321619",
+          "accent": "#e85249",
+          "secondary": "#ebaa50",
+          "text": "#fff1ed",
+          "muted": "#c7a19b",
+          "line": "#71342f"
+        },
+        "art": {
+          "focusX": 0.67,
+          "focusY": 0.46,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "cloud-antler",
+      "name": "云鹿栖境",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "light",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "07-cloud-antler.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "a1567e49c8370f6d64c1a79cf5df0588d71eb9a8179fc4a9ba0982f9f6987645",
+        "poster": "c008944657abcde04272b1682e6af1bb27a47a9d6b85a1e94ddb87b9f7d7808d",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "cloud-antler",
+        "name": "云鹿栖境",
+        "appearance": "light",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "scroll",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#e7eee9",
+          "panel": "#f0f5f1",
+          "panelAlt": "#dce8e0",
+          "accent": "#67a889",
+          "secondary": "#8b72b4",
+          "text": "#26332d",
+          "muted": "#65786f",
+          "line": "#9bb4a6"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.44,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "midnight-terminal",
+      "name": "午夜终端",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "08-midnight-terminal.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "4ae9dd340762b95cb23ffb65ad68f3864399b3e9d1b465ba91a0403c19dda0f9",
+        "poster": "cb711d9d3d30cd9b5eb84c59098a8795318697377d2613cdcb6704e8190d3f44",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "midnight-terminal",
+        "name": "午夜终端",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "terminal",
+          "composer": "terminal",
+          "texture": "grid"
+        },
+        "colors": {
+          "background": "#07110f",
+          "panel": "#0c1514",
+          "panelAlt": "#12211f",
+          "accent": "#54cda2",
+          "secondary": "#5d91da",
+          "text": "#edfff8",
+          "muted": "#94b9ac",
+          "line": "#2e6755"
+        },
+        "art": {
+          "focusX": 0.73,
+          "focusY": 0.49,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "retro-orbit",
+      "name": "复古轨道",
+      "version": 2,
+      "family": "pixel-retro",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "09-retro-orbit.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "05688c5eb3e0f902824188d0362f8680db5513378368ba137c05eb66ba2b6b67",
+        "poster": "e79f045303026997288fdcaf7491942cc25b40f374c305b0585262ae4c77dbc9",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "retro-orbit",
+        "name": "复古轨道",
+        "appearance": "dark",
+        "family": "pixel-retro",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "pixel",
+          "label": "pixel",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "pixel-platform",
+          "surface": "pixel",
+          "corners": "pixel",
+          "motion": "orbit",
+          "sidebar": "station",
+          "composer": "pixel-console",
+          "texture": "dither"
+        },
+        "colors": {
+          "background": "#18100b",
+          "panel": "#1e1611",
+          "panelAlt": "#302219",
+          "accent": "#e58948",
+          "secondary": "#53b3b2",
+          "text": "#fff3df",
+          "muted": "#cbb79e",
+          "line": "#72503a"
+        },
+        "art": {
+          "focusX": 0.69,
+          "focusY": 0.45,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "strategy-atrium",
+      "name": "策略中庭",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "10-strategy-atrium.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "49e8ae3d54ec619c27763e3eff9f33c7f1eb0ebe7aea3bf9a3412b01f500bbc2",
+        "poster": "0ba7b5f3703098c0adabc5806b8eddc7e6e07e1502cf4539491bb47f8986ec3b",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "strategy-atrium",
+        "name": "策略中庭",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "editorial",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "blueprint",
+          "composer": "workbench",
+          "texture": "grid"
+        },
+        "colors": {
+          "background": "#17140f",
+          "panel": "#1c1812",
+          "panelAlt": "#2a241a",
+          "accent": "#cdae69",
+          "secondary": "#65a486",
+          "text": "#fff7e5",
+          "muted": "#c2b49c",
+          "line": "#695a3a"
+        },
+        "art": {
+          "focusX": 0.71,
+          "focusY": 0.46,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "aurora-leviathan",
+      "name": "极光巨鲸",
+      "version": 2,
+      "family": "celestial-fantasy",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "11-aurora-leviathan.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "b6afb43a5850099a42cce8234d74309771b6585f0454396ec4951b805afd3357",
+        "poster": "04bab0dcb83d86c0e3bdfe16f9559f4618ffd160219ee925bf60ed7ac5fb4bb7",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "aurora-leviathan",
+        "name": "极光巨鲸",
+        "appearance": "dark",
+        "family": "celestial-fantasy",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "glass",
+          "corners": "round",
+          "motion": "orbit",
+          "sidebar": "aurora",
+          "composer": "console",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#071419",
+          "panel": "#0c191e",
+          "panelAlt": "#112931",
+          "accent": "#5bd2cf",
+          "secondary": "#9b7ee6",
+          "text": "#effdff",
+          "muted": "#9dbdc4",
+          "line": "#32636d"
+        },
+        "art": {
+          "focusX": 0.68,
+          "focusY": 0.42,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "ink-ridge-guardian",
+      "name": "墨岭守望",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "12-ink-ridge-guardian.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "200b1bd287328e8a227d800f78b104a478c1108d29d7ed2090c2cf255f6b9909",
+        "poster": "de1815719f98e83815aee043dfeb97d16c41c0428b629c58ea1ad13d05b7364e",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "ink-ridge-guardian",
+        "name": "墨岭守望",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "editorial",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "ink",
+          "sidebar": "scroll",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#17130f",
+          "panel": "#1b1713",
+          "panelAlt": "#29211a",
+          "accent": "#cba661",
+          "secondary": "#a8534c",
+          "text": "#fff6e8",
+          "muted": "#bdae9a",
+          "line": "#67543c"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.45,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "post-raccoon",
+      "name": "邮差浣熊",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "light",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "13-post-raccoon.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "e502e8233bc5564c1c50af29c07a3ac143e20d101345e38187904835e0a3bf3c",
+        "poster": "1293cdaadcbf0c8382b38eb6c780c5a6db60a117f4d0d34210db9388f27788e2",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "post-raccoon",
+        "name": "邮差浣熊",
+        "appearance": "light",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "rounded",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "ticket",
+          "motion": "mail",
+          "sidebar": "postal",
+          "composer": "label",
+          "texture": "halftone"
+        },
+        "colors": {
+          "background": "#f5eee0",
+          "panel": "#fff8eb",
+          "panelAlt": "#eadfcf",
+          "accent": "#da4342",
+          "secondary": "#f1be5c",
+          "text": "#332522",
+          "muted": "#78645f",
+          "line": "#c99b83"
+        },
+        "art": {
+          "focusX": 0.74,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "night-shift-penguin",
+      "name": "夜班企鹅",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "14-night-shift-penguin.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "4e5acafa45824a063a801bfd228cdef973ebe71d2fa837e3a6abd64f0fee026f",
+        "poster": "0f82f5123c88319b9edf3f8f8dbd61d4ca39d8a94fd8b9aaea7492597f1469f0",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "night-shift-penguin",
+        "name": "夜班企鹅",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "rounded",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "stage",
+          "surface": "metal",
+          "corners": "round",
+          "motion": "spotlight",
+          "sidebar": "setlist",
+          "composer": "mixer",
+          "texture": "vinyl"
+        },
+        "colors": {
+          "background": "#0d0c0a",
+          "panel": "#11100e",
+          "panelAlt": "#201d17",
+          "accent": "#e0b650",
+          "secondary": "#fae197",
+          "text": "#fff9e8",
+          "muted": "#bfb59c",
+          "line": "#655632"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.46,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "workshop-otter",
+      "name": "工坊水獭",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "light",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "15-workshop-otter.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "c5589a70f100e7c3e660afa08d48cf2bde88918b56da79ab67268ec0928f7eb4",
+        "poster": "a48ec0670e23a0b42d650eb18a6a58b014df6e60e6539cfb814de68fd318ea5e",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "workshop-otter",
+        "name": "工坊水獭",
+        "appearance": "light",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "rounded",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "doodle",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "crayon"
+        },
+        "colors": {
+          "background": "#e8f3ee",
+          "panel": "#f5fbf8",
+          "panelAlt": "#dbece6",
+          "accent": "#2bb3a3",
+          "secondary": "#ef8449",
+          "text": "#243b3a",
+          "muted": "#657b78",
+          "line": "#8dbab2"
+        },
+        "art": {
+          "focusX": 0.72,
+          "focusY": 0.47,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "moon-platform-cat",
+      "name": "月台猫站长",
+      "version": 2,
+      "family": "pixel-retro",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "16-moon-platform-cat.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "5f362675abe8ec1a8b611e152774fcf033b7e6a247523084ef7e94306c6df96b",
+        "poster": "98ee50b584bdd36396b8d552dc6838910351460d0b1540b514ffac9ce6139ddb",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "moon-platform-cat",
+        "name": "月台猫站长",
+        "appearance": "dark",
+        "family": "pixel-retro",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "pixel",
+          "label": "pixel",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "pixel-platform",
+          "surface": "pixel",
+          "corners": "pixel",
+          "motion": "pixel-rain",
+          "sidebar": "station",
+          "composer": "pixel-console",
+          "texture": "dither"
+        },
+        "colors": {
+          "background": "#080d22",
+          "panel": "#0d122b",
+          "panelAlt": "#171d3d",
+          "accent": "#f1aa48",
+          "secondary": "#6985d3",
+          "text": "#f6f4ff",
+          "muted": "#aaa8c6",
+          "line": "#414c83"
+        },
+        "art": {
+          "focusX": 0.75,
+          "focusY": 0.5,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "floppy-wizard",
+      "name": "软盘魔法师",
+      "version": 2,
+      "family": "pixel-retro",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "17-floppy-wizard.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "695a949d3f375c02360937b5974ce7d96ab6fc9596683c34019e07811823c963",
+        "poster": "522cdfe367dc776e0c0754d116bfedcdbca1dec5cf69384c9c2f93be6f3ae172",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "floppy-wizard",
+        "name": "软盘魔法师",
+        "appearance": "dark",
+        "family": "pixel-retro",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "pixel",
+          "label": "pixel",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "pixel-desktop",
+          "surface": "pixel",
+          "corners": "pixel",
+          "motion": "cursor",
+          "sidebar": "file-tree",
+          "composer": "dialog",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#100822",
+          "panel": "#160f2a",
+          "panelAlt": "#241743",
+          "accent": "#a969ed",
+          "secondary": "#52d5e0",
+          "text": "#fff2ff",
+          "muted": "#baa4cb",
+          "line": "#553178"
+        },
+        "art": {
+          "focusX": 0.69,
+          "focusY": 0.45,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "deep-sea-repair",
+      "name": "深海维修队",
+      "version": 2,
+      "family": "pixel-retro",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "18-deep-sea-repair.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "230577bc7bd8795a7e613286682abbcba8a4b0a01b6379b69523e6179cdf0feb",
+        "poster": "e94fcac7ac31231ef54cc3ba40178e1f935e6d002f393939eea4fe553c0cdefa",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "deep-sea-repair",
+        "name": "深海维修队",
+        "appearance": "dark",
+        "family": "pixel-retro",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "pixel",
+          "label": "pixel",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "pixel-console",
+          "surface": "pixel",
+          "corners": "pixel",
+          "motion": "sonar",
+          "sidebar": "submarine",
+          "composer": "sonar",
+          "texture": "dither"
+        },
+        "colors": {
+          "background": "#061820",
+          "panel": "#0a1f27",
+          "panelAlt": "#10313c",
+          "accent": "#36beb6",
+          "secondary": "#f17055",
+          "text": "#eaffff",
+          "muted": "#9cbec0",
+          "line": "#286973"
+        },
+        "art": {
+          "focusX": 0.72,
+          "focusY": 0.5,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 2,
+  "id": "strategy-atrium",
+  "name": "策略中庭",
+  "appearance": "dark",
+  "family": "warm-editorial",
+  "media": {
+    "poster": "background.webp",
+    "video": null
+  },
+  "typography": {
+    "body": "native-sans",
+    "title": "editorial",
+    "label": "editorial",
+    "code": "native-mono"
+  },
+  "visual": {
+    "layout": "collage",
+    "surface": "paper",
+    "corners": "tape",
+    "motion": "none",
+    "sidebar": "blueprint",
+    "composer": "workbench",
+    "texture": "grid"
+  },
+  "colors": {
+    "background": "#17140f",
+    "panel": "#1c1812",
+    "panelAlt": "#2a241a",
+    "accent": "#cdae69",
+    "secondary": "#65a486",
+    "text": "#fff7e5",
+    "muted": "#c2b49c",
+    "line": "#695a3a"
+  },
+  "art": {
+    "focusX": 0.71,
+    "focusY": 0.46,
+    "safeArea": "left",
+    "taskMode": "full"
+  },
+  "risk": {
+    "status": "approved",
+    "note": "现有自有目录主题，等待新版实机预览复核。"
+  }
+}

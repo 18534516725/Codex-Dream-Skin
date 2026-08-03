@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 2,
+  "id": "midnight-terminal",
+  "name": "午夜终端",
+  "appearance": "dark",
+  "family": "cinematic-cyber",
+  "media": {
+    "poster": "background.webp",
+    "video": null
+  },
+  "typography": {
+    "body": "native-sans",
+    "title": "native-sans",
+    "label": "native-sans",
+    "code": "native-mono"
+  },
+  "visual": {
+    "layout": "console",
+    "surface": "metal",
+    "corners": "cut",
+    "motion": "scan",
+    "sidebar": "terminal",
+    "composer": "terminal",
+    "texture": "grid"
+  },
+  "colors": {
+    "background": "#07110f",
+    "panel": "#0c1514",
+    "panelAlt": "#12211f",
+    "accent": "#54cda2",
+    "secondary": "#5d91da",
+    "text": "#edfff8",
+    "muted": "#94b9ac",
+    "line": "#2e6755"
+  },
+  "art": {
+    "focusX": 0.73,
+    "focusY": 0.49,
+    "safeArea": "left",
+    "taskMode": "full"
+  },
+  "risk": {
+    "status": "approved",
+    "note": "现有自有目录主题，等待新版实机预览复核。"
+  }
+}

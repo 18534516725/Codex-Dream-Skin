@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 2,
+  "id": "stellar-voyager",
+  "name": "星核旅者",
+  "appearance": "dark",
+  "family": "celestial-fantasy",
+  "media": {
+    "poster": "background.webp",
+    "video": null
+  },
+  "typography": {
+    "body": "native-sans",
+    "title": "native-sans",
+    "label": "native-sans",
+    "code": "native-mono"
+  },
+  "visual": {
+    "layout": "poster-right",
+    "surface": "glass",
+    "corners": "cut",
+    "motion": "orbit",
+    "sidebar": "navigation",
+    "composer": "console",
+    "texture": "grid"
+  },
+  "colors": {
+    "background": "#0e1722",
+    "panel": "#132235",
+    "panelAlt": "#1b3048",
+    "accent": "#70c0ff",
+    "secondary": "#f4be5c",
+    "text": "#edf7ff",
+    "muted": "#a9bfd1",
+    "line": "#35536d"
+  },
+  "art": {
+    "focusX": 0.68,
+    "focusY": 0.46,
+    "safeArea": "left",
+    "taskMode": "full"
+  },
+  "risk": {
+    "status": "approved",
+    "note": "现有自有目录主题，等待新版实机预览复核。"
+  }
+}

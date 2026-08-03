@@ -16,7 +16,8 @@ let package = Package(
   targets: [
     .target(
       name: "DreamSkinCore",
-      path: "Sources/DreamSkinCore"
+      path: "Sources/DreamSkinCore",
+      resources: [.process("Resources")]
     ),
     .executableTarget(
       name: "CodexDreamSkinMenuBar",

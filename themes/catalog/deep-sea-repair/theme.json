@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 2,
+  "id": "deep-sea-repair",
+  "name": "深海维修队",
+  "appearance": "dark",
+  "family": "pixel-retro",
+  "media": {
+    "poster": "background.webp",
+    "video": null
+  },
+  "typography": {
+    "body": "native-sans",
+    "title": "pixel",
+    "label": "pixel",
+    "code": "native-mono"
+  },
+  "visual": {
+    "layout": "pixel-console",
+    "surface": "pixel",
+    "corners": "pixel",
+    "motion": "sonar",
+    "sidebar": "submarine",
+    "composer": "sonar",
+    "texture": "dither"
+  },
+  "colors": {
+    "background": "#061820",
+    "panel": "#0a1f27",
+    "panelAlt": "#10313c",
+    "accent": "#36beb6",
+    "secondary": "#f17055",
+    "text": "#eaffff",
+    "muted": "#9cbec0",
+    "line": "#286973"
+  },
+  "art": {
+    "focusX": 0.72,
+    "focusY": 0.5,
+    "safeArea": "left",
+    "taskMode": "full"
+  },
+  "risk": {
+    "status": "approved",
+    "note": "现有自有目录主题，等待新版实机预览复核。"
+  }
+}

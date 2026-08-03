@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 2,
+  "id": "moon-platform-cat",
+  "name": "月台猫站长",
+  "appearance": "dark",
+  "family": "pixel-retro",
+  "media": {
+    "poster": "background.webp",
+    "video": null
+  },
+  "typography": {
+    "body": "native-sans",
+    "title": "pixel",
+    "label": "pixel",
+    "code": "native-mono"
+  },
+  "visual": {
+    "layout": "pixel-platform",
+    "surface": "pixel",
+    "corners": "pixel",
+    "motion": "pixel-rain",
+    "sidebar": "station",
+    "composer": "pixel-console",
+    "texture": "dither"
+  },
+  "colors": {
+    "background": "#080d22",
+    "panel": "#0d122b",
+    "panelAlt": "#171d3d",
+    "accent": "#f1aa48",
+    "secondary": "#6985d3",
+    "text": "#f6f4ff",
+    "muted": "#aaa8c6",
+    "line": "#414c83"
+  },
+  "art": {
+    "focusX": 0.75,
+    "focusY": 0.5,
+    "safeArea": "left",
+    "taskMode": "full"
+  },
+  "risk": {
+    "status": "approved",
+    "note": "现有自有目录主题，等待新版实机预览复核。"
+  }
+}

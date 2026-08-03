@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 2,
+  "id": "sakura-signal",
+  "name": "樱花信使",
+  "appearance": "dark",
+  "family": "cartoon-stationery",
+  "media": {
+    "poster": "background.webp",
+    "video": null
+  },
+  "typography": {
+    "body": "native-sans",
+    "title": "rounded",
+    "label": "rounded",
+    "code": "native-mono"
+  },
+  "visual": {
+    "layout": "poster-right",
+    "surface": "paper",
+    "corners": "stamp",
+    "motion": "petals",
+    "sidebar": "garden",
+    "composer": "letter",
+    "texture": "wash"
+  },
+  "colors": {
+    "background": "#19141f",
+    "panel": "#211a29",
+    "panelAlt": "#2a2134",
+    "accent": "#e897be",
+    "secondary": "#a689e8",
+    "text": "#fff8fc",
+    "muted": "#cabdca",
+    "line": "#735b7d"
+  },
+  "art": {
+    "focusX": 0.72,
+    "focusY": 0.45,
+    "safeArea": "left",
+    "taskMode": "full"
+  },
+  "risk": {
+    "status": "approved",
+    "note": "现有自有目录主题，等待新版实机预览复核。"
+  }
+}

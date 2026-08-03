@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 2,
+  "id": "ink-ridge-guardian",
+  "name": "墨岭守望",
+  "appearance": "dark",
+  "family": "warm-editorial",
+  "media": {
+    "poster": "background.webp",
+    "video": null
+  },
+  "typography": {
+    "body": "native-sans",
+    "title": "editorial",
+    "label": "editorial",
+    "code": "native-mono"
+  },
+  "visual": {
+    "layout": "editorial",
+    "surface": "ink",
+    "corners": "stamp",
+    "motion": "ink",
+    "sidebar": "scroll",
+    "composer": "label",
+    "texture": "paper"
+  },
+  "colors": {
+    "background": "#17130f",
+    "panel": "#1b1713",
+    "panelAlt": "#29211a",
+    "accent": "#cba661",
+    "secondary": "#a8534c",
+    "text": "#fff6e8",
+    "muted": "#bdae9a",
+    "line": "#67543c"
+  },
+  "art": {
+    "focusX": 0.7,
+    "focusY": 0.45,
+    "safeArea": "left",
+    "taskMode": "full"
+  },
+  "risk": {
+    "status": "approved",
+    "note": "现有自有目录主题，等待新版实机预览复核。"
+  }
+}
