@@ -5,11 +5,17 @@ import path from "node:path";
 import { validateThemeV2 } from "../themes/theme-v2.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
-const ids = [
+const existingOrder = [
   "stellar-voyager", "sakura-signal", "neon-courier", "mist-beacon", "rain-harbor", "crimson-forge",
   "cloud-antler", "midnight-terminal", "retro-orbit", "strategy-atrium", "aurora-leviathan", "ink-ridge-guardian",
   "post-raccoon", "night-shift-penguin", "workshop-otter", "moon-platform-cat", "floppy-wizard", "deep-sea-repair",
 ];
+const catalogDirectory = path.join(root, "themes", "catalog");
+const discovered = (await fs.readdir(catalogDirectory, { withFileTypes: true }))
+  .filter((entry) => entry.isDirectory() && entry.name.startsWith("material-"))
+  .map((entry) => entry.name)
+  .sort((left, right) => left.localeCompare(right, "en"));
+const ids = [...existingOrder, ...discovered];
 
 const items = [];
 for (const [index, id] of ids.entries()) {

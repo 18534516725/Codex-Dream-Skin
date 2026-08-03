@@ -1,5 +1,22 @@
 # Task Progress
 
+## Client release v1.6.9 — in progress (2026-08-03)
+
+- [scope] Promote the 69 de-duplicated materials that the platform administrator
+  explicitly confirmed as audited and approved. The fixed catalog now contains
+  87 formal Theme V2 entries, with matching macOS, Windows, and platform assets.
+- [implemented locally] The platform now exposes only the formal catalog; its
+  Windows first-use action links only to the platform-owned Release page before
+  continuing with the fixed `dreamskin://apply?skin=<approved-id>` protocol.
+- [verified locally] Runtime sync, 29 portable Node regressions, the complete
+  applicable macOS suite, six-source version consistency, platform asset
+  validation (87 masters/previews), 19 focused platform tests, and the frontend
+  production build pass. Native Xcode, signed-Codex integration, and PowerShell
+  execution are unavailable on this Mac and remain CI coverage.
+- [pending] Review/commit/push v1.6.9 to `main`, verify the public Release has
+  the exact DMG, Setup.exe, and SHA256SUMS assets, then deploy only the platform
+  frontend commit through the production Git workflow.
+
 ## Client release v1.5.11 — preparing (2026-08-01)
 
 - [base/merged] Settings renderer PR #334 passed exact-head CI run

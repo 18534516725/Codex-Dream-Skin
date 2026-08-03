@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 2,
+  "id": "material-774fd232d777-a59a0c1b",
+  "name": "【哲风壁纸】卡通-水面-治愈",
+  "appearance": "dark",
+  "family": "cartoon-stationery",
+  "media": {
+    "poster": "background.webp",
+    "video": "background.mp4"
+  },
+  "typography": {
+    "body": "native-sans",
+    "title": "rounded",
+    "label": "native-sans",
+    "code": "native-mono"
+  },
+  "visual": {
+    "layout": "poster-right",
+    "surface": "paper",
+    "corners": "round",
+    "motion": "none",
+    "sidebar": "garden",
+    "composer": "letter",
+    "texture": "wash"
+  },
+  "colors": {
+    "background": "#18131d",
+    "panel": "#241c2b",
+    "panelAlt": "#30243a",
+    "accent": "#ee91ba",
+    "secondary": "#7bcfd6",
+    "text": "#fff8fc",
+    "muted": "#cabac8",
+    "line": "#765b79"
+  },
+  "art": {
+    "focusX": 0.7,
+    "focusY": 0.48,
+    "safeArea": "left",
+    "taskMode": "full"
+  },
+  "risk": {
+    "status": "approved",
+    "note": "平台管理员已完成素材与公开授权审核。"
+  }
+}

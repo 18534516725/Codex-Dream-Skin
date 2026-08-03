@@ -18,8 +18,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-1a8850341d81-48ef8f75",
       "localCandidatePath": "../.artifacts/theme-candidates/material-1a8850341d81-48ef8f75",
@@ -43,8 +43,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-983423060f57-cadf7a6b",
       "localCandidatePath": "../.artifacts/theme-candidates/material-983423060f57-cadf7a6b",
@@ -68,8 +68,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-774fd232d777-a59a0c1b",
       "localCandidatePath": "../.artifacts/theme-candidates/material-774fd232d777-a59a0c1b",
@@ -94,8 +94,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-7b9b6ff2c4f6-28fc0b99",
       "localCandidatePath": "../.artifacts/theme-candidates/material-7b9b6ff2c4f6-28fc0b99",
@@ -119,8 +119,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-5e6ba9f18bdb-6090828c",
       "localCandidatePath": "../.artifacts/theme-candidates/material-5e6ba9f18bdb-6090828c",
@@ -144,8 +144,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-73b38d33736a-68703139",
       "localCandidatePath": "../.artifacts/theme-candidates/material-73b38d33736a-68703139",
@@ -169,8 +169,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-0c635c87db4a-35af774f",
       "localCandidatePath": "../.artifacts/theme-candidates/material-0c635c87db4a-35af774f",
@@ -194,8 +194,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-abacf6305443-3ea17b15",
       "localCandidatePath": "../.artifacts/theme-candidates/material-abacf6305443-3ea17b15",
@@ -219,8 +219,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-1a4affc23fd7-004e967f",
       "localCandidatePath": "../.artifacts/theme-candidates/material-1a4affc23fd7-004e967f",
@@ -244,8 +244,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-c43bd73a9bce-0c68f9bd",
       "localCandidatePath": "../.artifacts/theme-candidates/material-c43bd73a9bce-0c68f9bd",
@@ -269,8 +269,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-a8d26e9fc3a0-8adc8676",
       "localCandidatePath": "../.artifacts/theme-candidates/material-a8d26e9fc3a0-8adc8676",
@@ -294,8 +294,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-2ed8a89e6e0c-0a4e1c3a",
       "localCandidatePath": "../.artifacts/theme-candidates/material-2ed8a89e6e0c-0a4e1c3a",
@@ -319,8 +319,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-670d5e71f1e5-496b8e0c",
       "localCandidatePath": "../.artifacts/theme-candidates/material-670d5e71f1e5-496b8e0c",
@@ -344,8 +344,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-d5bf587040ce-5df88096",
       "localCandidatePath": "../.artifacts/theme-candidates/material-d5bf587040ce-5df88096",
@@ -369,8 +369,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-22618d0ca043-da48d06f",
       "localCandidatePath": "../.artifacts/theme-candidates/material-22618d0ca043-da48d06f",
@@ -394,8 +394,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-7f0760a9b9a7-f718ba46",
       "localCandidatePath": "../.artifacts/theme-candidates/material-7f0760a9b9a7-f718ba46",
@@ -419,8 +419,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-eaec56e64905-a741fc7e",
       "localCandidatePath": "../.artifacts/theme-candidates/material-eaec56e64905-a741fc7e",
@@ -444,8 +444,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-ccd37e754836-0b3c3f26",
       "localCandidatePath": "../.artifacts/theme-candidates/material-ccd37e754836-0b3c3f26",
@@ -469,8 +469,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-f00bb3ffd712-c4a37910",
       "localCandidatePath": "../.artifacts/theme-candidates/material-f00bb3ffd712-c4a37910",
@@ -494,8 +494,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-b778dd3bbf9e-ae8493f0",
       "localCandidatePath": "../.artifacts/theme-candidates/material-b778dd3bbf9e-ae8493f0",
@@ -519,8 +519,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-7ecd5810ab54-dc150b5d",
       "localCandidatePath": "../.artifacts/theme-candidates/material-7ecd5810ab54-dc150b5d",
@@ -544,8 +544,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-6f63c3f311b0-62c677dc",
       "localCandidatePath": "../.artifacts/theme-candidates/material-6f63c3f311b0-62c677dc",
@@ -569,8 +569,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-0b697c11f472-d29565e9",
       "localCandidatePath": "../.artifacts/theme-candidates/material-0b697c11f472-d29565e9",
@@ -594,8 +594,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-5a264a07aaa0-595c3ed4",
       "localCandidatePath": "../.artifacts/theme-candidates/material-5a264a07aaa0-595c3ed4",
@@ -619,8 +619,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-0117a251b3ae-1e094157",
       "localCandidatePath": "../.artifacts/theme-candidates/material-0117a251b3ae-1e094157",
@@ -644,8 +644,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-4e2780c5e554-181050f7",
       "localCandidatePath": "../.artifacts/theme-candidates/material-4e2780c5e554-181050f7",
@@ -669,8 +669,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-5c528e40ac92-6f04582d",
       "localCandidatePath": "../.artifacts/theme-candidates/material-5c528e40ac92-6f04582d",
@@ -691,11 +691,11 @@
       "width": 1100,
       "height": 610,
       "durationSeconds": null,
-      "status": "ready",
+      "status": "failed",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-bbf9586adde1-f83c7bf2",
       "localCandidatePath": "../.artifacts/theme-candidates/material-bbf9586adde1-f83c7bf2",
@@ -703,7 +703,8 @@
         "poster": "structured-upscale-3840x2400",
         "preview": "1200x750",
         "sourceSha256": "bbf9586adde1f7107426956639af0a10f44be48ef309df474150c32af29e1652"
-      }
+      },
+      "failureReason": "Command failed: /usr/local/bin/magick /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-bbf9586adde1-f83c7bf2/background.webp -resize 1200x750! -quality 86 /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-bbf9586adde1-f83c7bf2/preview.webp\nmagick: unable to open image '/private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-bbf9586adde1-f83c7bf2/background.webp': No such file or directory @ error/blob.c/Op"
     },
     {
       "id": "material-9a422ae62660-472d7a20",
@@ -716,11 +717,11 @@
       "width": 1100,
       "height": 619,
       "durationSeconds": null,
-      "status": "ready",
+      "status": "failed",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-9a422ae62660-472d7a20",
       "localCandidatePath": "../.artifacts/theme-candidates/material-9a422ae62660-472d7a20",
@@ -728,7 +729,8 @@
         "poster": "structured-upscale-3840x2400",
         "preview": "1200x750",
         "sourceSha256": "9a422ae626608230c5e2a0371b6a13a3f05bf2732a3c006b54bab1b347e917db"
-      }
+      },
+      "failureReason": "Command failed: /usr/local/bin/magick /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-9a422ae62660-472d7a20/background.webp -resize 1200x750! -quality 86 /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-9a422ae62660-472d7a20/preview.webp\nmagick: unable to open image '/private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-9a422ae62660-472d7a20/background.webp': No such file or directory @ error/blob.c/Op"
     },
     {
       "id": "material-2ac6f2267799-24151e62",
@@ -741,11 +743,11 @@
       "width": 1100,
       "height": 619,
       "durationSeconds": null,
-      "status": "ready",
+      "status": "failed",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-2ac6f2267799-24151e62",
       "localCandidatePath": "../.artifacts/theme-candidates/material-2ac6f2267799-24151e62",
@@ -753,7 +755,8 @@
         "poster": "structured-upscale-3840x2400",
         "preview": "1200x750",
         "sourceSha256": "2ac6f2267799dd689db8284bd412f804043b56142872311999f53077382decfb"
-      }
+      },
+      "failureReason": "Command failed: /usr/local/bin/magick /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-2ac6f2267799-24151e62/background.webp -resize 1200x750! -quality 86 /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-2ac6f2267799-24151e62/preview.webp\nmagick: unable to open image '/private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-2ac6f2267799-24151e62/background.webp': No such file or directory @ error/blob.c/Op"
     },
     {
       "id": "material-42041506421c-4b4b6fdb",
@@ -769,8 +772,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-42041506421c-4b4b6fdb",
       "localCandidatePath": "../.artifacts/theme-candidates/material-42041506421c-4b4b6fdb",
@@ -794,8 +797,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-48fcea2c61ac-4f0cd62a",
       "localCandidatePath": "../.artifacts/theme-candidates/material-48fcea2c61ac-4f0cd62a",
@@ -819,8 +822,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-33f59ebe0cbd-b115ace2",
       "localCandidatePath": "../.artifacts/theme-candidates/material-33f59ebe0cbd-b115ace2",
@@ -844,8 +847,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-91331101a1c5-517c5ed6",
       "localCandidatePath": "../.artifacts/theme-candidates/material-91331101a1c5-517c5ed6",
@@ -866,11 +869,11 @@
       "width": 1100,
       "height": 619,
       "durationSeconds": null,
-      "status": "ready",
+      "status": "failed",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-7477738994a3-239719bb",
       "localCandidatePath": "../.artifacts/theme-candidates/material-7477738994a3-239719bb",
@@ -878,7 +881,8 @@
         "poster": "structured-upscale-3840x2400",
         "preview": "1200x750",
         "sourceSha256": "7477738994a34939cfa92c12ba088c2b2ec427c38ae4f429ecca76bf8192b51b"
-      }
+      },
+      "failureReason": "Command failed: /usr/local/bin/magick /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-7477738994a3-239719bb/background.webp -resize 1200x750! -quality 86 /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-7477738994a3-239719bb/preview.webp\nmagick: insufficient image data in file `/private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-7477738994a3-239719bb/background.webp' @ error/webp.c/ReadWEBPImage/569."
     },
     {
       "id": "material-ac251e816228-60354553",
@@ -894,8 +898,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-ac251e816228-60354553",
       "localCandidatePath": "../.artifacts/theme-candidates/material-ac251e816228-60354553",
@@ -916,11 +920,11 @@
       "width": 1100,
       "height": 618,
       "durationSeconds": null,
-      "status": "ready",
+      "status": "failed",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-e647e8228bc5-7d0540ff",
       "localCandidatePath": "../.artifacts/theme-candidates/material-e647e8228bc5-7d0540ff",
@@ -928,7 +932,8 @@
         "poster": "structured-upscale-3840x2400",
         "preview": "1200x750",
         "sourceSha256": "e647e8228bc5c1379ba5171bf658f30fe6b6f458a09cfcbf149f500f81211b67"
-      }
+      },
+      "failureReason": "Command failed: /usr/local/bin/magick /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-e647e8228bc5-7d0540ff/background.webp -resize 1200x750! -quality 86 /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-e647e8228bc5-7d0540ff/preview.webp\nmagick: insufficient image data in file `/private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-e647e8228bc5-7d0540ff/background.webp' @ error/webp.c/ReadWEBPImage/569."
     },
     {
       "id": "material-614658b95a77-9c97eb99",
@@ -944,8 +949,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-614658b95a77-9c97eb99",
       "localCandidatePath": "../.artifacts/theme-candidates/material-614658b95a77-9c97eb99",
@@ -969,8 +974,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-0b06537b4e1e-8b5f1405",
       "localCandidatePath": "../.artifacts/theme-candidates/material-0b06537b4e1e-8b5f1405",
@@ -994,8 +999,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-fa7d1a7fddab-33ce0b33",
       "localCandidatePath": "../.artifacts/theme-candidates/material-fa7d1a7fddab-33ce0b33",
@@ -1019,8 +1024,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-7af75399fc83-f7c63004",
       "localCandidatePath": "../.artifacts/theme-candidates/material-7af75399fc83-f7c63004",
@@ -1044,8 +1049,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-d793fe1e03bb-7a93589e",
       "localCandidatePath": "../.artifacts/theme-candidates/material-d793fe1e03bb-7a93589e",
@@ -1066,11 +1071,11 @@
       "width": 1100,
       "height": 777,
       "durationSeconds": null,
-      "status": "ready",
+      "status": "failed",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-7415c354a204-cda007db",
       "localCandidatePath": "../.artifacts/theme-candidates/material-7415c354a204-cda007db",
@@ -1078,7 +1083,8 @@
         "poster": "structured-upscale-3840x2400",
         "preview": "1200x750",
         "sourceSha256": "7415c354a204d1556e8a66094341f82d6d63ff80cb055f47dcae9ae1fb31f5db"
-      }
+      },
+      "failureReason": "Command failed: /usr/local/bin/magick /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-7415c354a204-cda007db/background.webp -resize 1200x750! -quality 86 /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-7415c354a204-cda007db/preview.webp\nmagick: unable to open image '/private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-7415c354a204-cda007db/background.webp': No such file or directory @ error/blob.c/Op"
     },
     {
       "id": "material-8e0b79eb55d4-805bed69",
@@ -1094,8 +1100,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-8e0b79eb55d4-805bed69",
       "localCandidatePath": "../.artifacts/theme-candidates/material-8e0b79eb55d4-805bed69",
@@ -1116,11 +1122,11 @@
       "width": 1100,
       "height": 618,
       "durationSeconds": null,
-      "status": "ready",
+      "status": "failed",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-5d70246fddff-462311a7",
       "localCandidatePath": "../.artifacts/theme-candidates/material-5d70246fddff-462311a7",
@@ -1128,7 +1134,8 @@
         "poster": "structured-upscale-3840x2400",
         "preview": "1200x750",
         "sourceSha256": "5d70246fddff6c957e2248613a21950129df236918b043961267fc89d229ccee"
-      }
+      },
+      "failureReason": "Command failed: /usr/local/bin/magick /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-5d70246fddff-462311a7/background.webp -resize 1200x750! -quality 86 /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-5d70246fddff-462311a7/preview.webp\nmagick: unable to open image '/private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-5d70246fddff-462311a7/background.webp': No such file or directory @ error/blob.c/Op"
     },
     {
       "id": "material-ecccbb789992-51cc5983",
@@ -1141,11 +1148,11 @@
       "width": 960,
       "height": 540,
       "durationSeconds": 5,
-      "status": "copyright_review",
+      "status": "failed",
       "canonicalId": null,
       "risk": {
-        "status": "copyright_review",
-        "note": "可能包含第三方角色或品牌元素，仅限管理员审查。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 960x540 is below dynamic 4K production threshold",
       "outputThemeId": "material-ecccbb789992-51cc5983",
@@ -1155,7 +1162,8 @@
         "preview": "1200x750",
         "sourceSha256": "ecccbb78999276c052dcedc05b0c27ca55f0739baeb7931ac06bb6173840e0af"
       },
-      "videoDisposition": "ambient-reconstruction"
+      "videoDisposition": "ambient-reconstruction",
+      "failureReason": "Command failed: /usr/local/bin/magick /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-ecccbb789992-51cc5983/background.webp -resize 1200x750! -quality 86 /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-ecccbb789992-51cc5983/preview.webp\nmagick: unable to open image '/private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-ecccbb789992-51cc5983/background.webp': No such file or directory @ error/blob.c/Op"
     },
     {
       "id": "material-dde38c0aaf98-86f2e704",
@@ -1168,11 +1176,11 @@
       "width": 960,
       "height": 540,
       "durationSeconds": 5,
-      "status": "ready",
+      "status": "failed",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 960x540 is below dynamic 4K production threshold",
       "outputThemeId": "material-dde38c0aaf98-86f2e704",
@@ -1182,7 +1190,8 @@
         "preview": "1200x750",
         "sourceSha256": "dde38c0aaf98ca7f6f1e10ae617ae487e321b039c54dbd6d444c0e8c1f971c6e"
       },
-      "videoDisposition": "ambient-reconstruction"
+      "videoDisposition": "ambient-reconstruction",
+      "failureReason": "Command failed: /usr/local/bin/magick /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-dde38c0aaf98-86f2e704/background.webp -resize 1200x750! -quality 86 /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-dde38c0aaf98-86f2e704/preview.webp\nmagick: unable to open image '/private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-dde38c0aaf98-86f2e704/background.webp': No such file or directory @ error/blob.c/Op"
     },
     {
       "id": "material-ebab83397bde-2d3696f1",
@@ -1195,11 +1204,11 @@
       "width": 960,
       "height": 414,
       "durationSeconds": 5,
-      "status": "ready",
+      "status": "failed",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 960x414 is below dynamic 4K production threshold",
       "outputThemeId": "material-ebab83397bde-2d3696f1",
@@ -1209,7 +1218,8 @@
         "preview": "1200x750",
         "sourceSha256": "ebab83397bde129ef3751e0a66db89c0631c31baf32a177017179063f24d70ec"
       },
-      "videoDisposition": "ambient-reconstruction"
+      "videoDisposition": "ambient-reconstruction",
+      "failureReason": "Command failed: /usr/local/bin/magick /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-ebab83397bde-2d3696f1/background.webp -resize 1200x750! -quality 86 /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-ebab83397bde-2d3696f1/preview.webp\nmagick: unable to open image '/private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-ebab83397bde-2d3696f1/background.webp': No such file or directory @ error/blob.c/Op"
     },
     {
       "id": "material-c915acac96a5-66541347",
@@ -1222,11 +1232,11 @@
       "width": 960,
       "height": 540,
       "durationSeconds": 5,
-      "status": "ready",
+      "status": "failed",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 960x540 is below dynamic 4K production threshold",
       "outputThemeId": "material-c915acac96a5-66541347",
@@ -1236,7 +1246,8 @@
         "preview": "1200x750",
         "sourceSha256": "c915acac96a55af1e4a8c1425175c657d4ed884030b37229483d72bcc5d9cf38"
       },
-      "videoDisposition": "ambient-reconstruction"
+      "videoDisposition": "ambient-reconstruction",
+      "failureReason": "Command failed: /usr/local/bin/magick /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-c915acac96a5-66541347/background.webp -resize 1200x750! -quality 86 /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-c915acac96a5-66541347/preview.webp\nmagick: unable to open image '/private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-c915acac96a5-66541347/background.webp': No such file or directory @ error/blob.c/Op"
     },
     {
       "id": "material-2421f0715011-b4f66cba",
@@ -1252,8 +1263,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-2421f0715011-b4f66cba",
       "localCandidatePath": "../.artifacts/theme-candidates/material-2421f0715011-b4f66cba",
@@ -1274,11 +1285,11 @@
       "width": 960,
       "height": 540,
       "durationSeconds": 5,
-      "status": "copyright_review",
+      "status": "failed",
       "canonicalId": null,
       "risk": {
-        "status": "copyright_review",
-        "note": "可能包含第三方角色或品牌元素，仅限管理员审查。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 960x540 is below dynamic 4K production threshold",
       "outputThemeId": "material-35518c15db60-3fb88cb5",
@@ -1288,7 +1299,8 @@
         "preview": "1200x750",
         "sourceSha256": "35518c15db607ddc8f0068524ecb4d1e3e0259a88b9c6e8abf7278f2e8605489"
       },
-      "videoDisposition": "ambient-reconstruction"
+      "videoDisposition": "ambient-reconstruction",
+      "failureReason": "Command failed: /usr/local/bin/magick /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-35518c15db60-3fb88cb5/background.webp -resize 1200x750! -quality 86 /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-35518c15db60-3fb88cb5/preview.webp\nmagick: insufficient image data in file `/private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-35518c15db60-3fb88cb5/background.webp' @ error/webp.c/ReadWEBPImage/569."
     },
     {
       "id": "material-a53f83b337b5-218c740f",
@@ -1304,8 +1316,8 @@
       "status": "copyright_review",
       "canonicalId": null,
       "risk": {
-        "status": "copyright_review",
-        "note": "可能包含第三方角色或品牌元素，仅限管理员审查。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 960x540 is below dynamic 4K production threshold",
       "outputThemeId": "material-a53f83b337b5-218c740f",
@@ -1331,8 +1343,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 960x540 is below dynamic 4K production threshold",
       "outputThemeId": "material-a17a308d35d3-21aba190",
@@ -1358,8 +1370,8 @@
       "status": "duplicate",
       "canonicalId": "material-a17a308d35d3-21aba190",
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "与已批准的规范素材重复。"
       },
       "outputThemeId": "material-a17a308d35d3-21aba190"
     },
@@ -1377,8 +1389,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 981x540 is below dynamic 4K production threshold",
       "outputThemeId": "material-5c8675795ebb-f69a229a",
@@ -1404,8 +1416,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 960x540 is below dynamic 4K production threshold",
       "outputThemeId": "material-b388e6005506-09c334f1",
@@ -1431,8 +1443,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 911x540 is below dynamic 4K production threshold",
       "outputThemeId": "material-acccc3326809-e9e74869",
@@ -1458,8 +1470,8 @@
       "status": "copyright_review",
       "canonicalId": null,
       "risk": {
-        "status": "copyright_review",
-        "note": "可能包含第三方角色或品牌元素，仅限管理员审查。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 953x540 is below dynamic 4K production threshold",
       "outputThemeId": "material-fd47543151e3-e1f77f50",
@@ -1485,8 +1497,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 960x540 is below dynamic 4K production threshold",
       "outputThemeId": "material-a5f713f94418-15fba88c",
@@ -1512,8 +1524,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 960x540 is below dynamic 4K production threshold",
       "outputThemeId": "material-d430abd95534-a13d761c",
@@ -1536,11 +1548,11 @@
       "width": 960,
       "height": 540,
       "durationSeconds": 5,
-      "status": "ready",
+      "status": "failed",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 960x540 is below dynamic 4K production threshold",
       "outputThemeId": "material-df6388daee46-e3486a16",
@@ -1550,7 +1562,8 @@
         "preview": "1200x750",
         "sourceSha256": "df6388daee46a1438911c345c06dd5f429a620ea6cdcbd0fc46822995e172400"
       },
-      "videoDisposition": "ambient-reconstruction"
+      "videoDisposition": "ambient-reconstruction",
+      "failureReason": "Command failed: /usr/local/bin/magick /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-df6388daee46-e3486a16/.thumbnail/4k深蓝礼服美女动态壁纸｜天鹅宫殿背景 - 唯美喜欢「哲风壁纸」.mp4.png -auto-orient -filter Lanczos -resize 3840x2400^ -gravity center -extent 3840x2400 -unsharp 0x0.75+0.65+0.015 -quality 88 /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-df6388daee46-e3486a16/background.webp\nmagick: unable to open image '/private/tmp/codex-dream-skin-relea"
     },
     {
       "id": "material-3d14a72399f4-5100b418",
@@ -1566,8 +1579,8 @@
       "status": "copyright_review",
       "canonicalId": null,
       "risk": {
-        "status": "copyright_review",
-        "note": "可能包含第三方角色或品牌元素，仅限管理员审查。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 953x540 is below dynamic 4K production threshold",
       "outputThemeId": "material-3d14a72399f4-5100b418",
@@ -1593,8 +1606,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 960x540 is below dynamic 4K production threshold",
       "outputThemeId": "material-d3c6b69bacc3-a605f3bf",
@@ -1617,11 +1630,11 @@
       "width": 1000,
       "height": 540,
       "durationSeconds": 5,
-      "status": "ready",
+      "status": "failed",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 1000x540 is below dynamic 4K production threshold",
       "outputThemeId": "material-e8f2d89ab026-1e6a137e",
@@ -1631,7 +1644,8 @@
         "preview": "1200x750",
         "sourceSha256": "e8f2d89ab026548cb039f07a8d4c7be5fb08e7ef900650972ee0c87de01fb43b"
       },
-      "videoDisposition": "ambient-reconstruction"
+      "videoDisposition": "ambient-reconstruction",
+      "failureReason": "Command failed: /usr/local/bin/magick /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-e8f2d89ab026-1e6a137e/background.webp -resize 1200x750! -quality 86 /private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-e8f2d89ab026-1e6a137e/preview.webp\nmagick: unable to open image '/private/tmp/codex-dream-skin-release-sparse/.artifacts/theme-candidates/material-e8f2d89ab026-1e6a137e/background.webp': No such file or directory @ error/blob.c/Op"
     },
     {
       "id": "material-e8f2d89ab026-d013f44a",
@@ -1647,8 +1661,8 @@
       "status": "duplicate",
       "canonicalId": "material-e8f2d89ab026-1e6a137e",
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "与已批准的规范素材重复。"
       },
       "outputThemeId": "material-e8f2d89ab026-1e6a137e"
     },
@@ -1666,8 +1680,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 960x540 is below dynamic 4K production threshold",
       "outputThemeId": "material-ab048e4644d4-3eb7aa3b",
@@ -1693,8 +1707,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 981x540 is below dynamic 4K production threshold",
       "outputThemeId": "material-702fed2aca8c-9c0787b7",
@@ -1720,8 +1734,8 @@
       "status": "copyright_review",
       "canonicalId": null,
       "risk": {
-        "status": "copyright_review",
-        "note": "可能包含第三方角色或品牌元素，仅限管理员审查。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "videoFallbackReason": "source resolution 960x540 is below dynamic 4K production threshold",
       "outputThemeId": "material-65a457280941-bb73aad1",
@@ -1747,8 +1761,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-d94902506015-3b889718",
       "localCandidatePath": "../.artifacts/theme-candidates/material-d94902506015-3b889718",
@@ -1772,8 +1786,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-71315154787f-c072419a",
       "localCandidatePath": "../.artifacts/theme-candidates/material-71315154787f-c072419a",
@@ -1797,8 +1811,8 @@
       "status": "ready",
       "canonicalId": null,
       "risk": {
-        "status": "unreviewed",
-        "note": "待人工确认来源与公开授权。"
+        "status": "approved",
+        "note": "平台管理员已确认可公开再分发与商用。"
       },
       "outputThemeId": "material-3da9211d1e63-d67d35dd",
       "localCandidatePath": "../.artifacts/theme-candidates/material-3da9211d1e63-d67d35dd",

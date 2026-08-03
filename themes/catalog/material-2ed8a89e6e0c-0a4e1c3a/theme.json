@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 2,
+  "id": "material-2ed8a89e6e0c-0a4e1c3a",
+  "name": "16976930049281408",
+  "appearance": "dark",
+  "family": "warm-editorial",
+  "media": {
+    "poster": "background.webp",
+    "video": null
+  },
+  "typography": {
+    "body": "native-sans",
+    "title": "editorial",
+    "label": "native-sans",
+    "code": "native-mono"
+  },
+  "visual": {
+    "layout": "collage",
+    "surface": "paper",
+    "corners": "tape",
+    "motion": "none",
+    "sidebar": "notebook",
+    "composer": "workbench",
+    "texture": "grain"
+  },
+  "colors": {
+    "background": "#19140f",
+    "panel": "#251e17",
+    "panelAlt": "#33281e",
+    "accent": "#d7aa68",
+    "secondary": "#7ba891",
+    "text": "#fff8e9",
+    "muted": "#c4b39a",
+    "line": "#6e5a3d"
+  },
+  "art": {
+    "focusX": 0.7,
+    "focusY": 0.48,
+    "safeArea": "left",
+    "taskMode": "full"
+  },
+  "risk": {
+    "status": "approved",
+    "note": "平台管理员已完成素材与公开授权审核。"
+  }
+}

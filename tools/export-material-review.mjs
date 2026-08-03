@@ -36,7 +36,7 @@ for (const source of uniqueItems) {
     sourceLabel: source.sourcePath,
     sourceSha256: source.sha256,
     status: source.status,
-    publication: source.risk?.status === "unreviewed" ? "admin_review_only" : "blocked_pending_rights_review",
+    publication: source.risk?.status === "approved" ? "public" : source.risk?.status === "unreviewed" ? "admin_review_only" : "blocked_pending_rights_review",
     mediaMode: source.videoDisposition ?? "static",
     title: theme.name ?? theme.title ?? source.outputThemeId,
     family: theme.family ?? null,
@@ -55,8 +55,8 @@ const output = {
   dynamicCount: items.filter((item) => item.video).length,
   ambientReconstructionCount: items.filter((item) => item.mediaMode === "ambient-reconstruction").length,
   staticCount: items.filter((item) => item.mediaMode === "static").length,
-  publicThemeCount: 0,
-  note: "候选包全部进入管理员审核队列；完成原创或再分发授权审查后，才可晋级公共目录。",
+  publicThemeCount: items.filter((item) => item.publication === "public").length,
+  note: "已通过授权审核的候选包可进入正式目录；其余候选仅保留在管理员审核队列。",
   items,
 };
 

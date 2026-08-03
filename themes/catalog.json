@@ -1189,6 +1189,4560 @@
           "note": "现有自有目录主题，等待新版实机预览复核。"
         }
       }
+    },
+    {
+      "id": "material-0117a251b3ae-1e094157",
+      "name": "18634748875165056",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "19-material-0117a251b3ae-1e094157.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "c0cdb6a5ebc6709b4563f231abba288513ef11758496189d57f0cac0412643e9",
+        "poster": "bf1f0497829e0090a8c5b31bd63dc59a9345561cfef1cbc79dc11c00a1113818",
+        "preview": "8b5882e84a6a04896d6f6cc1d3518a7b3b61e31e566b512a5e427c67be91e737",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-0117a251b3ae-1e094157",
+        "name": "18634748875165056",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-0b06537b4e1e-8b5f1405",
+      "name": "19258353735193472",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "20-material-0b06537b4e1e-8b5f1405.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "2cc43f48a26db5daf9c5f9e2a5325d3b7e02e3ea358d6d37289fd0cb4fbfa458",
+        "poster": "1e3e09fae62c1761d5aaf34d90e14d14a19adfa29245ce4d1c653fe1fa21c28a",
+        "preview": "6ea9605f8d46a7103a4aa56750119976b86d15344e55b3340787c066b7e054d6",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-0b06537b4e1e-8b5f1405",
+        "name": "19258353735193472",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-0b697c11f472-d29565e9",
+      "name": "18313627342523776",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "21-material-0b697c11f472-d29565e9.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "e4c9335cf01d54b397209e95b8431a6eeefc3874fae173cb0afbc6d0c5b024eb",
+        "poster": "28ce4108b3e9cf6802aa80f703c79552bfd9b5f030b04b27526e1b4145255772",
+        "preview": "35b7ea8ad40760395b6a7b9911e052c219b355651bc5139482c48fd4a5984724",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-0b697c11f472-d29565e9",
+        "name": "18313627342523776",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-0c635c87db4a-35af774f",
+      "name": "15764843320742208",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "22-material-0c635c87db4a-35af774f.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "0b4a2cb1ceaab80c43b295e296481116ae9dd008ac9dac3399f97e87e503a69d",
+        "poster": "56a54c05696bdc6298fd6b77d44774ebb6823f1ec17d0e832f866823b6f94f27",
+        "preview": "244bfda51f173901e8908cec58da80277747032565fe97ba38c9d9dabbcb9a9f",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-0c635c87db4a-35af774f",
+        "name": "15764843320742208",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-1a4affc23fd7-004e967f",
+      "name": "16084174181879168",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "23-material-1a4affc23fd7-004e967f.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "17fde727af1b34a3278125ecc7717f5bf4726795dc9188ca05a13e227a166f22",
+        "poster": "8a1a61e076ee8edcd6ba7b40a0dcea4cc8900693a822f58620974633e1dc0801",
+        "preview": "80c3890e78173ac7be2f73a98701156c4cc4a9266d1438787242be359c3c8728",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-1a4affc23fd7-004e967f",
+        "name": "16084174181879168",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-1a8850341d81-48ef8f75",
+      "name": "【哲风壁纸】店铺场景-插画",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "24-material-1a8850341d81-48ef8f75.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "f03305d42f0092a05be16b691312ab102819a68aa1e1c915d0cb0bb3d1e10a32",
+        "poster": "a9edc24d7a06e04900d679372a331d5c8ef6cc094d36f7b60d6c78bb6ee87aac",
+        "preview": "2908f54fc3d65620df3e01dbb5f81e483967b577043e8b5a8b977b38c4d655f4",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-1a8850341d81-48ef8f75",
+        "name": "【哲风壁纸】店铺场景-插画",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-22618d0ca043-da48d06f",
+      "name": "17231685368597888",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "25-material-22618d0ca043-da48d06f.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "b8b9959f320e65c4dafe3c8e6217fe8ecfcfac89b9448a1892f23c72dc034f90",
+        "poster": "00e8cd4621771c040f2ccdd2dea765ce08ae60f7aaf1960c66917a23ceb3c4a1",
+        "preview": "b412616cabbe171e46b60ab01694ac20d68a6a3e23f3fb7c553fc20a90688579",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-22618d0ca043-da48d06f",
+        "name": "17231685368597888",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-2421f0715011-b4f66cba",
+      "name": "4b00e7bfb00de4ae75e837d0232d37e7",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "26-material-2421f0715011-b4f66cba.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "e0e09c5c79c944b2ce41ccd541f1ea245d297af7435d8c92e1db6a8076de532a",
+        "poster": "b38de5c807d2f2224ca08da20f955fc0c3c9964894873eb40fcac8a5bf74e0d5",
+        "preview": "7eead6d562b2c81ea08e9fee12645e3cd6277aac20d4193574b1df2cd8f0296d",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-2421f0715011-b4f66cba",
+        "name": "4b00e7bfb00de4ae75e837d0232d37e7",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-2ac6f2267799-24151e62",
+      "name": "19044008101761920",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "27-material-2ac6f2267799-24151e62.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "25c231a7dc5373c92d52c825d037c34c0f1db6b441cf04848de452464e0b10f5",
+        "poster": "22a02a707197d1e6abdd8e6507130d080f15d76faa71fb4c729ebbabeadf4d53",
+        "preview": "63854f51ab1f72fe0d545b9c104c5d37a059b9984f6451d04347060668674005",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-2ac6f2267799-24151e62",
+        "name": "19044008101761920",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-2ed8a89e6e0c-0a4e1c3a",
+      "name": "16976930049281408",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "28-material-2ed8a89e6e0c-0a4e1c3a.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "164c50c5893d35a8dde5d31827fe40e2ae0b97e83dd9a9bd55919cfbb60e1f0f",
+        "poster": "c4fb49b5cedd487bae626577d8dc4ab840d1fe32f82bcb0b489004dffb06ba06",
+        "preview": "a33f0aa416096b508adc88509e2ac18db46f112c24b42709a6c9e7997a254f81",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-2ed8a89e6e0c-0a4e1c3a",
+        "name": "16976930049281408",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-33f59ebe0cbd-b115ace2",
+      "name": "19157340044809088",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "29-material-33f59ebe0cbd-b115ace2.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "659d0c7054298dbcc5ec06510c5965107b3a5c8f0c3f1337780477d660d794fb",
+        "poster": "a7844db058b9af28b91e9e2c02c86768127557daf7825d89ebab0b895469aab9",
+        "preview": "e983e98ff3a5ba48142bd010513689a6ff3edc60097eb89fbfb8312d5fdcf86b",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-33f59ebe0cbd-b115ace2",
+        "name": "19157340044809088",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-35518c15db60-3fb88cb5",
+      "name": "4k暗影蜘蛛侠动态壁纸｜漫威超级英雄背景视频 - 黑色战衣「哲风壁纸」",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "30-material-35518c15db60-3fb88cb5.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "c9d8fc2b8cc3b80db2aa845795b3be24f53d18f4df3c2ae1491917d40f04b848",
+        "poster": "19699dbe5cfc91b44f691de376f3dc8e22ad2ddec2fd41b4289297047f7bb109",
+        "preview": "9e9aa5b66cecc374fb7c1b069297950c243b1fd5b9bd04f540704a041d0aad1f",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-35518c15db60-3fb88cb5",
+        "name": "4k暗影蜘蛛侠动态壁纸｜漫威超级英雄背景视频 - 黑色战衣「哲风壁纸」",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-3d14a72399f4-5100b418",
+      "name": "4k遐蝶动态壁纸｜黄昏大海背景视频 - 婚纱蝴蝶少女「哲风壁纸」",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "31-material-3d14a72399f4-5100b418.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "47e1a3fa13a88759d31d14a3dc08ebf541801deb91b9c202c99911fbb1e423b3",
+        "poster": "1c0d21e633fd06d9bfdc447eab9624ee145510e052e9557b947cf82a878d44fd",
+        "preview": "7d9e3220dd2a71085fbb86fd2b1df04081cc68f6ea68cfa8ff6e8f9309121f30",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-3d14a72399f4-5100b418",
+        "name": "4k遐蝶动态壁纸｜黄昏大海背景视频 - 婚纱蝴蝶少女「哲风壁纸」",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-3da9211d1e63-d67d35dd",
+      "name": "videoframe_3694",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "32-material-3da9211d1e63-d67d35dd.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "b8a32e8db44302f987063c9e80cb245a40c71c63851a3da45c586a3870cb924d",
+        "poster": "5b639a43ad665d97dd276ad744ecdc3f3d2d5e05f891fa535909c64c9f1ef54a",
+        "preview": "dd86a8f10e853504d80d077176d6638483fbaa9b7de7452e2bf205679bd1205f",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-3da9211d1e63-d67d35dd",
+        "name": "videoframe_3694",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-42041506421c-4b4b6fdb",
+      "name": "19124275306124160",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "33-material-42041506421c-4b4b6fdb.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "765e70eaf0cfd06e406a2ee9a9792d5ab2e5770b1369657ec3601188a8abf4c1",
+        "poster": "72b919f3c2772b61ccdf9ca225c8661ae1ea1bba4217fb6365aaa47e961c9432",
+        "preview": "a2a0c945acd23c48d9a883daaaec6d3a58a8500ade97d4d3bd65aebf95ce6d3f",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-42041506421c-4b4b6fdb",
+        "name": "19124275306124160",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-48fcea2c61ac-4f0cd62a",
+      "name": "19139962060231552",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "34-material-48fcea2c61ac-4f0cd62a.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "d2ebb5837f382faadbd918a905f6420068b0b452e02e7606643ffcc3e119e48a",
+        "poster": "8f431b231c858a121e13288f7932cc15a4881f826ae3b9533f7b5d9607217840",
+        "preview": "1678c2024cf1b002426c31237ee73dc8f1cf3927937976761a2499a36c40c2da",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-48fcea2c61ac-4f0cd62a",
+        "name": "19139962060231552",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-4e2780c5e554-181050f7",
+      "name": "18787556858973568",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "35-material-4e2780c5e554-181050f7.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "781f98c4df0a9abdd05cecadadd89a96a78299003bf0a557ec2784879aa3fdbf",
+        "poster": "91feb439db664ce78698ec38a1de0b07e446aaec6eb453403e81157782052b92",
+        "preview": "cdb79ccee4872b5142a1e6403844624d97a74cb1300878bac7fca811c4e56435",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-4e2780c5e554-181050f7",
+        "name": "18787556858973568",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-5a264a07aaa0-595c3ed4",
+      "name": "18325667651636608",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "36-material-5a264a07aaa0-595c3ed4.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "dbd948f8181b903db331c6e94799353571b72200dc3f6e643a2f237fd7ec4410",
+        "poster": "80c801bb1629efd7898e17b9df9f7247c17923cacf5147e79949d36c37d7ebfb",
+        "preview": "887154697ff051643790d5fb8886e3d877bc8954c2f3e85d75f03c9bb9aae16e",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-5a264a07aaa0-595c3ed4",
+        "name": "18325667651636608",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-5c528e40ac92-6f04582d",
+      "name": "18800103947029888",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "37-material-5c528e40ac92-6f04582d.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "38cb8422d419c72a002826f7cfa4d3ad03c85cab157f958e9d357f171c74608c",
+        "poster": "7c10f2e33fc9208a1c70e4e6ff781742759b23791a6ffba63a01edadfb22b58e",
+        "preview": "87b4cb405d7c933c6ab58e21eb3b2d4315abae93bfe31eca1eccb06b7144b231",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-5c528e40ac92-6f04582d",
+        "name": "18800103947029888",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-5c8675795ebb-f69a229a",
+      "name": "4k动漫风蓝天山脉动态壁纸｜云层霞光背景视频 - 视觉震撼「哲风壁纸」",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "38-material-5c8675795ebb-f69a229a.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "402a84c1f98bf0911459906f1ccb5b6767eac96f772770a96fe25df54d79705d",
+        "poster": "840919085594066b3cd3c625aa9460ecd8068f4f066639f23ff0378d34fb8e63",
+        "preview": "1e301524492262fea866fb1caf4f5ce0367232d6be0dffb8f4dd4b8a91dad7bc",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-5c8675795ebb-f69a229a",
+        "name": "4k动漫风蓝天山脉动态壁纸｜云层霞光背景视频 - 视觉震撼「哲风壁纸」",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-5d70246fddff-462311a7",
+      "name": "19429438505571200",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "39-material-5d70246fddff-462311a7.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "432b7b0e992c56692cb330bfdef10973d49a4f7615fbdedc3f7a279675cdec44",
+        "poster": "7f9f3c9b627b0fda1585517ab333019fbb7d9184693f402666ea810710688cc4",
+        "preview": "d5b638072ba75590c69035f31b5d2622d5b5b24106241fe642c06c389974d026",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-5d70246fddff-462311a7",
+        "name": "19429438505571200",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-5e6ba9f18bdb-6090828c",
+      "name": "15640676994355520",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "40-material-5e6ba9f18bdb-6090828c.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "31bee29b672e3eb365ef97cd3db673bc5db5cdea46218d4154630bfed92c3494",
+        "poster": "cc296c628096092c99263fee2f849e846aab48a74d18f5745972facb3edee783",
+        "preview": "7ebef3e7e4a686aeedc64e7dcb2f43d7e4189f7784bafe8242dfe058d9318749",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-5e6ba9f18bdb-6090828c",
+        "name": "15640676994355520",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-614658b95a77-9c97eb99",
+      "name": "19247907607237504",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "41-material-614658b95a77-9c97eb99.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "badd14f07c399950a4657de53dd9da96120f21b50f31ca07c1c1f5d8487c9b5c",
+        "poster": "bbef4bc6d67c1e8b2d0d4c512e65b2e0ee982a7f6abfdccbe5a111eb398b7a29",
+        "preview": "b0bdff5efa23c2ec5eb71c77e2a69a2a5789a51ae4328084e9db02610c6198ef",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-614658b95a77-9c97eb99",
+        "name": "19247907607237504",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-65a457280941-bb73aad1",
+      "name": "4k长离动态壁纸｜鸣潮背景视频 - 龙 火焰 冰雪「哲风壁纸」",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "42-material-65a457280941-bb73aad1.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "bc4561af202aa3e100b5a1c72cc3ddf49dc2fa48d64710360fd6f0163457b598",
+        "poster": "7fab82170f4bf3836fe2cada2bc41878f5e9919ff7d38315279406195179fe9a",
+        "preview": "b03e7912e28ec94ef5c3655a34f5ca8770223bba3789f84c6f826566145e8e01",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-65a457280941-bb73aad1",
+        "name": "4k长离动态壁纸｜鸣潮背景视频 - 龙 火焰 冰雪「哲风壁纸」",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-670d5e71f1e5-496b8e0c",
+      "name": "17001030816484736",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "43-material-670d5e71f1e5-496b8e0c.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "3c5383ecd201a95378c9f806c65524c6e871fd8ac8dcfd42f10951f8928c5369",
+        "poster": "426f41587607bd1a67d23a744a2c611e871975194d9068a1f9731bddcc299202",
+        "preview": "46bfc85d236b86d2b3cb4d953392b3716adbb11183497841cea810ebdb2023bd",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-670d5e71f1e5-496b8e0c",
+        "name": "17001030816484736",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-6f63c3f311b0-62c677dc",
+      "name": "18311870436396416",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "44-material-6f63c3f311b0-62c677dc.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "3b5c884a45f76b6cd37ee7fe9355440e9c8b04823ca9b9999f5813c0b783610a",
+        "poster": "87499a64eac4a841844d7c17ee240b0f2b2d09d9e0c0604d1a307ba36c13ba1a",
+        "preview": "5f5995f9efedc693b554637cbd4ddf3fd6c0aa923d8b2b7a0447cd28f0608d30",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-6f63c3f311b0-62c677dc",
+        "name": "18311870436396416",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-702fed2aca8c-9c0787b7",
+      "name": "4k云海漩涡动态壁纸｜高空云层背景视频 - 震撼天空景观「哲风壁纸」",
+      "version": 2,
+      "family": "celestial-fantasy",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "45-material-702fed2aca8c-9c0787b7.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "60161a7f196dc569e5a38e617b09fee23243cf9aca35c951e98e63d5a5c2403c",
+        "poster": "b8d32de6761327d43c5a210f68ffb1f994be5f1b80f840bb8ac7142de3949150",
+        "preview": "bcfccb522ef8e3b5cd1537deaf30705e2e0d1899723978b194a7da93d0c17171",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-702fed2aca8c-9c0787b7",
+        "name": "4k云海漩涡动态壁纸｜高空云层背景视频 - 震撼天空景观「哲风壁纸」",
+        "appearance": "dark",
+        "family": "celestial-fantasy",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "glass",
+          "corners": "round",
+          "motion": "orbit",
+          "sidebar": "aurora",
+          "composer": "console",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#08101f",
+          "panel": "#101a31",
+          "panelAlt": "#182744",
+          "accent": "#78bfff",
+          "secondary": "#a783ee",
+          "text": "#f4f8ff",
+          "muted": "#aab9d3",
+          "line": "#405a88"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-71315154787f-c072419a",
+      "name": "videoframe_1877",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "46-material-71315154787f-c072419a.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "801b426fa13b672d155d22e8a908814d0010e2e4d944b821c313d85043047601",
+        "poster": "78834098a00511edac7679c9f33e63550b3369c0e0c89d5e9e88e34217ae03ad",
+        "preview": "e6c3129fedada5f1d4322151f596f7816f4243640edbd0c412f01b3d4bfa89ba",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-71315154787f-c072419a",
+        "name": "videoframe_1877",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-73b38d33736a-68703139",
+      "name": "15691093024608576",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "47-material-73b38d33736a-68703139.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "f2268db88e1031fb057aee73b63270aa87ecf80fc2538c7a1a9cdce9416c10fc",
+        "poster": "ff2f8028bd1c1d62364161cd1c3afa99cb67101f01a218c64a8ed21c8efeab43",
+        "preview": "84e752c48ee451fe084651f22879d66c399bbfd25f9d7dbcddc848bf92516eb3",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-73b38d33736a-68703139",
+        "name": "15691093024608576",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-7415c354a204-cda007db",
+      "name": "19413636230239104",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "48-material-7415c354a204-cda007db.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "8e1d2b8307c40c581aeb58e44d6bb3b193630b2fab72d6e0a2806a504aac7152",
+        "poster": "d42b1561fb57db63cc3fe3c80bc4ed5bbe1fb099a667db628814dd2e91cb8583",
+        "preview": "57ad150aaec0d1c762a44148f84b1f430ff6e09f90035a9b462de72878ed752b",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-7415c354a204-cda007db",
+        "name": "19413636230239104",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-7477738994a3-239719bb",
+      "name": "19184665389650816",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "49-material-7477738994a3-239719bb.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "2ce0432ec8b77c4afcdd63d0ed99c5fd5021645c88a99df9a1756d6ee08069aa",
+        "poster": "0638211cf8461cf99346fde602fcf2001d4aba57028130ae074119d745571690",
+        "preview": "5bb3a6b1e3e46adead9788000f22e484786be6776e3c6a630836eb40a63c8135",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-7477738994a3-239719bb",
+        "name": "19184665389650816",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-774fd232d777-a59a0c1b",
+      "name": "【哲风壁纸】卡通-水面-治愈",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "video",
+      "riskStatus": "approved",
+      "assetFile": "50-material-774fd232d777-a59a0c1b.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "0738849a4f83e36eada787d2aae6d37eeac19290ee1adcb49237f298fc7e16e0",
+        "poster": "acb2874515bf29638303fcfd0b3ecf5f8493d7f2bb327d8b763f6e5f9b580fc1",
+        "preview": "f009a1a0da4b6c829401564b1bcd0a2f35b18f32250a569fc6a551c2f266c6ab",
+        "video": "501d80d5f92eba40c61e878ae1c50e9f23f6a2b0794d94b858615b268fa5cfe5"
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-774fd232d777-a59a0c1b",
+        "name": "【哲风壁纸】卡通-水面-治愈",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": "background.mp4"
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "none",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-7af75399fc83-f7c63004",
+      "name": "19393492108727168",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "51-material-7af75399fc83-f7c63004.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "cf62bc673fb64953efee0158a6fed881421134c8bb61a3d3c30c2badf85e2ccb",
+        "poster": "0c530efc12bea0a5784249e734e316928969256f08810774b54ed02c5ca43baa",
+        "preview": "eb9611ca16ea72b76ede491537ade509d1ce26921203fbbc52c69a5f020bb781",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-7af75399fc83-f7c63004",
+        "name": "19393492108727168",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-7b9b6ff2c4f6-28fc0b99",
+      "name": "【哲风壁纸】下雨-绿色护眼-车站",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "52-material-7b9b6ff2c4f6-28fc0b99.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "edac8505281a11d91b54964cf71849bf39dae0f726984de852b6a7dd5478860e",
+        "poster": "948d02387714bffc4cbdc4cc053967fa8b5a5a5543e7dc64b0614ec26e9a8b66",
+        "preview": "0465da7cd30d70716ba623bc881d26da1606de46df161402baf1893c52a30b20",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-7b9b6ff2c4f6-28fc0b99",
+        "name": "【哲风壁纸】下雨-绿色护眼-车站",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-7ecd5810ab54-dc150b5d",
+      "name": "18311870343007616",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "53-material-7ecd5810ab54-dc150b5d.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "fe8a646ac6d88c8ad2a86143c1c3a3cc6baa3a98daf94589a9c920559906b4e7",
+        "poster": "c69718db8fb0ec9098ab8dafbe2c38f9de7360034c835563b5d5d6ad96281bb3",
+        "preview": "d296544159b087f926550cbbf778d399463707d15b2de1c338afc59d1f7564f5",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-7ecd5810ab54-dc150b5d",
+        "name": "18311870343007616",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-7f0760a9b9a7-f718ba46",
+      "name": "17675651674262912",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "54-material-7f0760a9b9a7-f718ba46.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "203a93da296cc10b3b66988c1d4f6ad4c312be5d2407670d4c1f494375fc5d79",
+        "poster": "13be4ae6bc235ce1867ca33ceb447b183faaa222dd71c40e9a6cc86d9b4d8de9",
+        "preview": "afb603cd577e67d80789eca8f1fb7dd4eb1af9dac597779e1d731cb2471fc83e",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-7f0760a9b9a7-f718ba46",
+        "name": "17675651674262912",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-8e0b79eb55d4-805bed69",
+      "name": "19428214818755456",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "55-material-8e0b79eb55d4-805bed69.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "f2c33677e62c074613a5d5ea4e245b8a0de990150d419dc0a70b91ca628998a0",
+        "poster": "33523332260678f559ea88ae1205d1b50974bc726baf14db0a083784c4f5d4eb",
+        "preview": "10854a6783cdcba6b6bf2775152017490dac95051d6c181197107b02d3556a16",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-8e0b79eb55d4-805bed69",
+        "name": "19428214818755456",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-91331101a1c5-517c5ed6",
+      "name": "19168413627798400",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "56-material-91331101a1c5-517c5ed6.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "8de83bc696daa34a506be0ed37feafab7f216dd0f5f7f9e212b27facc60c87bc",
+        "poster": "5b5e51fda0eb43ad4440851d77dbe22caf4154a9b133613372d53edccb185c3b",
+        "preview": "a9402ed8c06a896e99599134126906ebbfcc17509e963e9a7f48df8165f5988b",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-91331101a1c5-517c5ed6",
+        "name": "19168413627798400",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-983423060f57-cadf7a6b",
+      "name": "【哲风壁纸】街景-风景",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "57-material-983423060f57-cadf7a6b.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "a7c47663bc1ab96121cf707d24aedd511936e33e4d48a898c874d3cc6f73da9b",
+        "poster": "fe6a4d64c29274d4db9a6a4cf0d8ae5c6f9ef94de345c1cf7ec0d04e6454ded2",
+        "preview": "b56a403d1ab1d84786d954d147105f792edebcc931b27df5894934d345e93b0e",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-983423060f57-cadf7a6b",
+        "name": "【哲风壁纸】街景-风景",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-9a422ae62660-472d7a20",
+      "name": "18926116189031808",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "58-material-9a422ae62660-472d7a20.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "b93d331c531afc8e817d944245e5fba2cac797d26cf58901723ebe98adf68480",
+        "poster": "4f91a2173a793d3d9f008285a93a2b4b24547d23b5713111bcb49c4c0bab72b2",
+        "preview": "7bd48bd768642f45390d0187406abd342f550ab947313535b2da118376ad84c4",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-9a422ae62660-472d7a20",
+        "name": "18926116189031808",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-a17a308d35d3-21aba190",
+      "name": "4k电竞少女动态壁纸｜赛博朋克房间背景 - 游戏「哲风壁纸」 (1)",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "59-material-a17a308d35d3-21aba190.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "a6da07547a894ee3211fef7d01f4d990ac9dc12a2b06bcfe2fae0ae5cef0acc8",
+        "poster": "d7f6b828f8083508650b0ebd71218c95251a4453038bb249853bee5ebf338d8e",
+        "preview": "6fa9e42ae725f2d95652f6f21d5238686ae1a0723428c71bcf30bb0a6e04f05f",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-a17a308d35d3-21aba190",
+        "name": "4k电竞少女动态壁纸｜赛博朋克房间背景 - 游戏「哲风壁纸」 (1)",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-a53f83b337b5-218c740f",
+      "name": "4k超级马里奥动态壁纸｜像素房间背景 - 游戏场景「哲风壁纸」",
+      "version": 2,
+      "family": "pixel-retro",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "60-material-a53f83b337b5-218c740f.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "9506e73bbc22d92ea6f6795de822f30360640e2ce07df33fa04da56c90bd952b",
+        "poster": "e5bad28c000c091fe6df848dbedc6a409a87cacb587b6c2575a599ba2776eb02",
+        "preview": "e8cae0742e4a42e3e8d5a1a30e6f74cc1d6d49961b2cce9e98463567ce6d53dd",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-a53f83b337b5-218c740f",
+        "name": "4k超级马里奥动态壁纸｜像素房间背景 - 游戏场景「哲风壁纸」",
+        "appearance": "dark",
+        "family": "pixel-retro",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "pixel",
+          "label": "pixel",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "pixel-desktop",
+          "surface": "pixel",
+          "corners": "pixel",
+          "motion": "pixel-rain",
+          "sidebar": "file-tree",
+          "composer": "pixel-console",
+          "texture": "dither"
+        },
+        "colors": {
+          "background": "#0c0b1a",
+          "panel": "#151229",
+          "panelAlt": "#211b3c",
+          "accent": "#ed5bb5",
+          "secondary": "#50d7dd",
+          "text": "#fff6ff",
+          "muted": "#b5a7c7",
+          "line": "#5d477d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-a5f713f94418-15fba88c",
+      "name": "4k日式街道落日动态壁纸｜霓虹黄昏 - 复古汽车「哲风壁纸」",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "61-material-a5f713f94418-15fba88c.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "f5e3c6264a7e6439c5370460d109e37e8d4f06084a02d71389a4de616a4983f7",
+        "poster": "e27dd3aedaf7939be6415f55e568522fc4af67208490f49c715b97d2c6ca70ae",
+        "preview": "59ea004d9af485070fea1900c23f605fe1bf1b9222379c721f28c8ee70cedda2",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-a5f713f94418-15fba88c",
+        "name": "4k日式街道落日动态壁纸｜霓虹黄昏 - 复古汽车「哲风壁纸」",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-a8d26e9fc3a0-8adc8676",
+      "name": "16796185410915712",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "62-material-a8d26e9fc3a0-8adc8676.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "4c2481d59c8d1797d6bc569a5a9fb39b2d4ea0cb342605d62b307587bc3744a5",
+        "poster": "f77a49b1785f4ba8db6b9e9f7d0bae443bbefa49ae95ee487ff573eb8b590b8a",
+        "preview": "87c8820309dced540f4f249a8f01d9befa4dfef53fce3788455e0c6281899de9",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-a8d26e9fc3a0-8adc8676",
+        "name": "16796185410915712",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-ab048e4644d4-3eb7aa3b",
+      "name": "4k星瞳藏刃动态壁纸｜蓝光背景视频 - 剑客少女「哲风壁纸」",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "63-material-ab048e4644d4-3eb7aa3b.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "e8798b0d9dd1fe6de6308e0875369a160f9f7b163a223877034c54939b66f2d0",
+        "poster": "b7c4c9e750abeb2526384fc39f6bf900f6af82fcd0a51aa7ab2fd10f267a1afd",
+        "preview": "62b73c8e459a2fce361402590c2fe6cc2604f175c8fffad30733a044db5d93ec",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-ab048e4644d4-3eb7aa3b",
+        "name": "4k星瞳藏刃动态壁纸｜蓝光背景视频 - 剑客少女「哲风壁纸」",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-abacf6305443-3ea17b15",
+      "name": "16082350519274880",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "64-material-abacf6305443-3ea17b15.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "abdd307274410ec6fed12fb222e326f84138961c5c48f3205a3395d76ecf68b5",
+        "poster": "e04fe57c404d6739834ba17002ac83ad2abb0865f6872e4d1d7a3fad705c8b75",
+        "preview": "f5e2504d58635f74a6ff2ca5599e646eb4d7894aee88ce1bb114f2e7c75df33b",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-abacf6305443-3ea17b15",
+        "name": "16082350519274880",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-ac251e816228-60354553",
+      "name": "19190717765276544",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "65-material-ac251e816228-60354553.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "e763bd02246c278f247d37babfc1cb37376bad5a5ccb9d5ffa5d0bee3dbae8b4",
+        "poster": "4bd6d225883fa7b0a310d83c71fac402db1febcf94b9c91e962ad97435cc864a",
+        "preview": "bc6884586e1d439432855bfde2ba7afcb4418b3c6f8b8d07e8fc7b1bd3adf30f",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-ac251e816228-60354553",
+        "name": "19190717765276544",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-acccc3326809-e9e74869",
+      "name": "4k动漫少女动态壁纸｜居家休憩背景视频 - 温暖室内休闲场景「哲风壁纸」",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "66-material-acccc3326809-e9e74869.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "a55135db3d2fe2683b697a3a67d5dcaacf69965a904abedd27a9ca02ee02db44",
+        "poster": "f39cd8b6b8475a729534b7a60ba5478c12c0a1011b70fc6710a3faa84525f57d",
+        "preview": "ec4efbadc72a0bc0db2cef0c511576fa0a72ca9f962abea2279b6fa19bf73322",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-acccc3326809-e9e74869",
+        "name": "4k动漫少女动态壁纸｜居家休憩背景视频 - 温暖室内休闲场景「哲风壁纸」",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-b388e6005506-09c334f1",
+      "name": "4k动漫美女水中动态壁纸｜彩色星空背景 - 梦幻「哲风壁纸」",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "67-material-b388e6005506-09c334f1.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "fbc903cf94a27e38f08ecaa403976c46ec57d021ed75682b410a1cc19db6dd6c",
+        "poster": "64ccc2ca6331350ef818d6a7cf064810e8414232b7b2703dfcc5632a09efd464",
+        "preview": "9b0e175468a3402e59e03a1031abfc0db458523b3a275032d7d8519cf65168e9",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-b388e6005506-09c334f1",
+        "name": "4k动漫美女水中动态壁纸｜彩色星空背景 - 梦幻「哲风壁纸」",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-b778dd3bbf9e-ae8493f0",
+      "name": "18193731367128448",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "68-material-b778dd3bbf9e-ae8493f0.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "52cda6c7620347c21df38f39e23bd591997aa9be7f59ff552be4265b4c234e8c",
+        "poster": "0a3f6c538876de64b2d9bf0cb0d519689d453f8609a33ac20c055228976074dc",
+        "preview": "73daa706f732713965629bbb62be3f228f480e4e7b19901ab8643fc78455726c",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-b778dd3bbf9e-ae8493f0",
+        "name": "18193731367128448",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-bbf9586adde1-f83c7bf2",
+      "name": "18891189948894592",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "69-material-bbf9586adde1-f83c7bf2.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "0e265c68ac96a591b812b367171596c66cc00dc885c463a46959c6baffe98efd",
+        "poster": "e0e338927a5b75d5621e77c1954f4638e763d19c94e48660ee358fa31d10999f",
+        "preview": "03b7f5e2bfb4812a03b05ec14eb6eecfa5bb2259c1d7d0a1a89a3d607b9b7594",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-bbf9586adde1-f83c7bf2",
+        "name": "18891189948894592",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-c43bd73a9bce-0c68f9bd",
+      "name": "16557623021784448",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "70-material-c43bd73a9bce-0c68f9bd.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "9e4cc1a0e07e853d190c7b98145ef367e657cecbbac96e109c574e6c85506f66",
+        "poster": "814d7ea65f584802bb2067f716f10758e7e743ffbe5e3019a3f199945a925383",
+        "preview": "2c24dc440c974f0a760c22cbd6dcc61a2f21e761c928d41c10457ba455b66f79",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-c43bd73a9bce-0c68f9bd",
+        "name": "16557623021784448",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-c915acac96a5-66541347",
+      "name": "3k赛博朋克都市动态壁纸｜夜晚霓虹背景视频 - 未来科幻风景「哲风壁纸」",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "71-material-c915acac96a5-66541347.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "312609eaaaf99334093754f3b8d0bbba5b3466c5c567b48d08744e5c33396e79",
+        "poster": "6ffa9cf3b369f35c48eea403804cb0153ddbd161b1efbb6220cc1784fff24d0d",
+        "preview": "883993864f0b8788330116aa3e0c8e126316e8224e8ff9256c0dfbe533277a7c",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-c915acac96a5-66541347",
+        "name": "3k赛博朋克都市动态壁纸｜夜晚霓虹背景视频 - 未来科幻风景「哲风壁纸」",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-ccd37e754836-0b3c3f26",
+      "name": "17749568777801088",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "72-material-ccd37e754836-0b3c3f26.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "84c29d57b9407725fa24454227cc9c93efeb55d4bdacf7a7a6b36b8ca99b6c74",
+        "poster": "386c877a4dcd1ccb266c60fb5ede4d258bee628e16363dce598f9b1876a17ebc",
+        "preview": "82dc0b57fe55ffb4e48f4525d66960025e649f99d1b45b320362f13cc072d1c5",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-ccd37e754836-0b3c3f26",
+        "name": "17749568777801088",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-d3c6b69bacc3-a605f3bf",
+      "name": "4k像素风小猩猩动态壁纸｜复古游戏房背景图 - 红色「哲风壁纸」",
+      "version": 2,
+      "family": "pixel-retro",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "73-material-d3c6b69bacc3-a605f3bf.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "4f62686018b6e1e48a0930955c73825c05cb84811ba5f16a01d0899f8358de62",
+        "poster": "eb95fb3fb57fb7ea4a942180823e14ae62a03f5e41b9280d0c4ed69b55d1f317",
+        "preview": "2e80d5071ed0840925a2f71ee0ce0c0c1f11307a805fa40a0317c2b7188b1514",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-d3c6b69bacc3-a605f3bf",
+        "name": "4k像素风小猩猩动态壁纸｜复古游戏房背景图 - 红色「哲风壁纸」",
+        "appearance": "dark",
+        "family": "pixel-retro",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "pixel",
+          "label": "pixel",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "pixel-desktop",
+          "surface": "pixel",
+          "corners": "pixel",
+          "motion": "pixel-rain",
+          "sidebar": "file-tree",
+          "composer": "pixel-console",
+          "texture": "dither"
+        },
+        "colors": {
+          "background": "#0c0b1a",
+          "panel": "#151229",
+          "panelAlt": "#211b3c",
+          "accent": "#ed5bb5",
+          "secondary": "#50d7dd",
+          "text": "#fff6ff",
+          "muted": "#b5a7c7",
+          "line": "#5d477d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-d430abd95534-a13d761c",
+      "name": "4k日式杂货铺动态壁纸｜雨天背景视频 - 落叶「哲风壁纸」",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "74-material-d430abd95534-a13d761c.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "6ec455198ed705457f3e629aa4200f2d9a5aa4c8b2e1a82bdf30d100f1ea75fc",
+        "poster": "c4559cd278a9a2350473c98742e992929d2344e8ef504d4e6e2e146eab9b4dd8",
+        "preview": "23c329fbdb59bb6f1b83cfc42f0b94c4561f4474cc00da0115c0129fa6fe93de",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-d430abd95534-a13d761c",
+        "name": "4k日式杂货铺动态壁纸｜雨天背景视频 - 落叶「哲风壁纸」",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-d5bf587040ce-5df88096",
+      "name": "17231683527757184",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "75-material-d5bf587040ce-5df88096.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "6b413c8c9fc57ed9cd924a5e010310b070df4342fa1f576c959f7810898c6bb5",
+        "poster": "6336265805f35c9ecc020e7b581968a0bc9d4832aaa594bc4ed19347d5aeed9c",
+        "preview": "8ce630e5182b82bf1d3102ea817ca39afe1c5692d98bf7771482dccfca83f8b1",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-d5bf587040ce-5df88096",
+        "name": "17231683527757184",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-d793fe1e03bb-7a93589e",
+      "name": "19407561643807616",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "76-material-d793fe1e03bb-7a93589e.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "085c18136d459ccb7af90ce9afd8ef43c9103ae5a8055ba79d3ef3f9fb1a3b0a",
+        "poster": "28439a075115f114195c9318fc59d15717aee1f6f0edd747f0d7122f5eb4dd38",
+        "preview": "6d3883fa0903d420c7ed6920576bb3a27dc78d91517a689de17f745e2b51a458",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-d793fe1e03bb-7a93589e",
+        "name": "19407561643807616",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-d94902506015-3b889718",
+      "name": "aea128731e8ce04ef14ed6cb9476d2fb",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "77-material-d94902506015-3b889718.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "407c4eee06d1a9c92c8fe12f69bb51631ce338fa41d06fa3b6b28ac1f5833ec3",
+        "poster": "5dd44284b5edef6961ffa8d7ac2a29733a337ae29d7f731e3a9c332b16accb43",
+        "preview": "1c5e3696a6c2c5c1057ba3f2149738b9b686d50d6525cdd44b6d6fc34b31f9db",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-d94902506015-3b889718",
+        "name": "aea128731e8ce04ef14ed6cb9476d2fb",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-dde38c0aaf98-86f2e704",
+      "name": "2k霓虹灯房间动态壁纸｜城市夜景背景视频 - 沙发「哲风壁纸」",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "78-material-dde38c0aaf98-86f2e704.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "dbeb572a71555ad5db52147f15a9434b25affd840026a5c7e87c5d122347e7e2",
+        "poster": "f842f4de534a1af497fa6623500c44f4143392e45fe62214843a4b4cfb9560b3",
+        "preview": "ad391c94678178dc049c65d9d7af80b5b0e9d7db6906491ac4edf920f9148094",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-dde38c0aaf98-86f2e704",
+        "name": "2k霓虹灯房间动态壁纸｜城市夜景背景视频 - 沙发「哲风壁纸」",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-df6388daee46-e3486a16",
+      "name": "4k深蓝礼服美女动态壁纸｜天鹅宫殿背景 - 唯美喜欢「哲风壁纸」",
+      "version": 2,
+      "family": "celestial-fantasy",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "79-material-df6388daee46-e3486a16.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "2b287f24148942d841b527b016782d2d48c86a5dc1806c453195b182da251ab4",
+        "poster": "277858575bb46036466f13ff47e2cbbaf08ddaaf7d894b485bd6521d99f1b922",
+        "preview": "8ade14682fca560d8c322e89078253170e382cecdf84a218a036a4294645dd87",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-df6388daee46-e3486a16",
+        "name": "4k深蓝礼服美女动态壁纸｜天鹅宫殿背景 - 唯美喜欢「哲风壁纸」",
+        "appearance": "dark",
+        "family": "celestial-fantasy",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "glass",
+          "corners": "round",
+          "motion": "orbit",
+          "sidebar": "aurora",
+          "composer": "console",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#08101f",
+          "panel": "#101a31",
+          "panelAlt": "#182744",
+          "accent": "#78bfff",
+          "secondary": "#a783ee",
+          "text": "#f4f8ff",
+          "muted": "#aab9d3",
+          "line": "#405a88"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-e647e8228bc5-7d0540ff",
+      "name": "19191275940172672",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "80-material-e647e8228bc5-7d0540ff.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "0b0c33ccd7c5a4a716b3b90d255f1f4f1f9ce02c72671872e657e326c817bc45",
+        "poster": "b1625c20b4470e9c8fcb308df548f45f09d628838e31966181a662dcde23171c",
+        "preview": "451fc77910a3686bd0529359c58db93ca3d32dd726e2ca79dd272d7a7cce1a56",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-e647e8228bc5-7d0540ff",
+        "name": "19191275940172672",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-e8f2d89ab026-1e6a137e",
+      "name": "4k星空眼眸动态壁纸｜白发少女背景视频 - 光影「哲风壁纸」 (1)",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "81-material-e8f2d89ab026-1e6a137e.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "317e80df17b3e159e4d8752f247286e5495912203a0c2042582e86362759eb7c",
+        "poster": "c70621897a48683e56bce1d8003955cf9931d33760702b4718e471382c6eedbf",
+        "preview": "32b9a65684fbe5b7964aae4c0790dd5e5c4c8e7c9abe5e420957c29d00055a52",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-e8f2d89ab026-1e6a137e",
+        "name": "4k星空眼眸动态壁纸｜白发少女背景视频 - 光影「哲风壁纸」 (1)",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-eaec56e64905-a741fc7e",
+      "name": "17690718978690432",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "82-material-eaec56e64905-a741fc7e.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "041f5b224cc1d15bc9d06d6cb283a47fa6f61d7b26aad740146aebad86245729",
+        "poster": "d417d2d2aab0a1657f4fd1b527413da060a7e5955622048604e3ae73488eda23",
+        "preview": "1d6d46f1ce8e7560cc1bff54d24a7add05690d58d3dbc3a13d7e528e69181723",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-eaec56e64905-a741fc7e",
+        "name": "17690718978690432",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-ebab83397bde-2d3696f1",
+      "name": "3k赛博朋克城市动态壁纸｜夜景背景视频 - 高楼霓虹「哲风壁纸」",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "83-material-ebab83397bde-2d3696f1.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "11efef9993af76ed99d3f0174df35db43af9094dfa0671f3ab6970d25b231cfc",
+        "poster": "82487f5f4fdcfe36ac217fe2f135852a76b4f05ba9b54c94e00cc77b8557d10f",
+        "preview": "8ab155c920a2d9327ab2dac845156af68d8254c867f2d79431d2ac8751e84d70",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-ebab83397bde-2d3696f1",
+        "name": "3k赛博朋克城市动态壁纸｜夜景背景视频 - 高楼霓虹「哲风壁纸」",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-ecccbb789992-51cc5983",
+      "name": "2k迈尔斯莫拉莱斯动态壁纸｜蜘蛛侠平行宇宙背景视频 - 漫威超级英雄「哲风壁纸」",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "84-material-ecccbb789992-51cc5983.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "5dcb07b046883db8d671f2cb8256e46e5753af062613c862f7b2f807e9ace259",
+        "poster": "e567d13ccaf452859627b5f12d689a3860fe207f1fde35913a0b08746baa1657",
+        "preview": "3dfe278b790f5dc260328f4d4a8ada98bbabd4c8428300d2e40a26d332f64bee",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-ecccbb789992-51cc5983",
+        "name": "2k迈尔斯莫拉莱斯动态壁纸｜蜘蛛侠平行宇宙背景视频 - 漫威超级英雄「哲风壁纸」",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-f00bb3ffd712-c4a37910",
+      "name": "17832391416466816",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "85-material-f00bb3ffd712-c4a37910.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "0acd8d6b9e7212b30f7096455bac5e813649bacbfb3be4a1ecd22d5ac34b6fb8",
+        "poster": "d7082412cc5168697acb4a80fc51873157e854b5edf54de91d8d769aa2769975",
+        "preview": "2525f2f4f3f0170eb64e4fa249f3a132d383a277169b2205efaaff9c9f4280ff",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-f00bb3ffd712-c4a37910",
+        "name": "17832391416466816",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-fa7d1a7fddab-33ce0b33",
+      "name": "19285714629383040",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "86-material-fa7d1a7fddab-33ce0b33.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "b684f24735061335d411c738330b3684bae6898f9ff6a0eae12dd55f4bf1460f",
+        "poster": "2cc6cd1471c9daa84b4664fc9a99a954c7292e31a1d207b6cfb0d01726b5652d",
+        "preview": "02c3049ffbca3c95db18bba4dae3e273d0b5b44bbec181bd1d0f60055d893cb7",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-fa7d1a7fddab-33ce0b33",
+        "name": "19285714629383040",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-fd47543151e3-e1f77f50",
+      "name": "4k芙宁娜动态壁纸｜海边日落婚纱背景视频 - 蝴蝶少女「哲风壁纸」",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "87-material-fd47543151e3-e1f77f50.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "c552bb2980a6c77c6c480a568b4c6e4977066b6df5834da7fa566fd74d4b8a30",
+        "poster": "11a0bd83b9c3cec6edcee5ce65cbf319ef6cf88bfe4e21bb49ec6b4e04f48afe",
+        "preview": "14648ff34c676d06e01b873cf2326cbc3ebdb83383495af02b77062889d87c5a",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-fd47543151e3-e1f77f50",
+        "name": "4k芙宁娜动态壁纸｜海边日落婚纱背景视频 - 蝴蝶少女「哲风壁纸」",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
     }
   ]
 }

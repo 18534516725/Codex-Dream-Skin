@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 2,
+  "id": "material-a53f83b337b5-218c740f",
+  "name": "4k超级马里奥动态壁纸｜像素房间背景 - 游戏场景「哲风壁纸」",
+  "appearance": "dark",
+  "family": "pixel-retro",
+  "media": {
+    "poster": "background.webp",
+    "video": null
+  },
+  "typography": {
+    "body": "native-sans",
+    "title": "pixel",
+    "label": "pixel",
+    "code": "native-mono"
+  },
+  "visual": {
+    "layout": "pixel-desktop",
+    "surface": "pixel",
+    "corners": "pixel",
+    "motion": "pixel-rain",
+    "sidebar": "file-tree",
+    "composer": "pixel-console",
+    "texture": "dither"
+  },
+  "colors": {
+    "background": "#0c0b1a",
+    "panel": "#151229",
+    "panelAlt": "#211b3c",
+    "accent": "#ed5bb5",
+    "secondary": "#50d7dd",
+    "text": "#fff6ff",
+    "muted": "#b5a7c7",
+    "line": "#5d477d"
+  },
+  "art": {
+    "focusX": 0.7,
+    "focusY": 0.48,
+    "safeArea": "left",
+    "taskMode": "full"
+  },
+  "risk": {
+    "status": "approved",
+    "note": "平台管理员已完成素材与公开授权审核。"
+  }
+}

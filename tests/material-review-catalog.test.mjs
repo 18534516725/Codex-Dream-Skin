@@ -12,7 +12,7 @@ test("review catalog records all unique candidate themes", () => {
   assert.equal(catalog.duplicateCount, 2);
   assert.equal(catalog.items.length, 69);
   assert.equal(new Set(catalog.items.map((item) => item.id)).size, 69);
-  assert.equal(catalog.publicThemeCount, 0);
+  assert.equal(catalog.publicThemeCount, 69);
 });
 
 test("review catalog contains reproducible 4K artifacts without local paths", () => {
@@ -20,6 +20,6 @@ test("review catalog contains reproducible 4K artifacts without local paths", ()
   assert.ok(catalog.items.every((item) => item.preview.width === 1200 && item.preview.height === 750));
   assert.ok(catalog.items.every((item) => /^[a-f0-9]{64}$/.test(item.poster.sha256)));
   assert.ok(catalog.items.every((item) => /^[a-f0-9]{64}$/.test(item.preview.sha256)));
-  assert.ok(catalog.items.every((item) => ["admin_review_only", "blocked_pending_rights_review"].includes(item.publication)));
+  assert.ok(catalog.items.every((item) => item.publication === "public"));
   assert.doesNotMatch(JSON.stringify(catalog), /\/Users\/|[A-Z]:\\\\/);
 });

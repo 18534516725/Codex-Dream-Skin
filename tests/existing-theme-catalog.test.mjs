@@ -39,7 +39,9 @@ test("generated native catalogs match the canonical catalog", async () => {
   const catalog = JSON.parse(await fs.readFile(path.join(root, "themes", "catalog.json"), "utf8"));
   const mac = JSON.parse(await fs.readFile(path.join(root, "macos", "menubar-app", "Sources", "DreamSkinCore", "Resources", "nexo-skin-catalog.json"), "utf8"));
   const windows = JSON.parse(await fs.readFile(path.join(root, "windows", "assets", "nexo-skin-catalog.json"), "utf8"));
-  assert.deepEqual(catalog.items.map((item) => item.id), ids);
+  assert.equal(catalog.items.length, 87);
+  assert.deepEqual(catalog.items.slice(0, ids.length).map((item) => item.id), ids);
+  assert.equal(new Set(catalog.items.map((item) => item.id)).size, 87);
   assert.deepEqual(mac, catalog);
   assert.deepEqual(windows, catalog);
   const swift = await fs.readFile(path.join(root, "macos", "menubar-app", "Sources", "DreamSkinCore", "NexoSkinLink.swift"), "utf8");

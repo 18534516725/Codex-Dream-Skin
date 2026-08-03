@@ -49,9 +49,11 @@ async function posterSource(item, themeDir) {
   const input = path.join(sourceRoot, item.sourcePath);
   if (item.kind === "static") return input;
   const thumbnailRoot = path.join(themeDir, ".thumbnail");
+  await fs.rm(thumbnailRoot, { recursive: true, force: true });
   await fs.mkdir(thumbnailRoot);
   await run("/usr/bin/qlmanage", ["-t", "-s", "2400", "-o", thumbnailRoot, input]);
-  const generated = path.join(thumbnailRoot, `${item.sourcePath}.png`);
+  const generated = path.join(thumbnailRoot, (await fs.readdir(thumbnailRoot)).find((name) => name.endsWith(".png")) ?? "");
+  if (!generated || !await fs.stat(generated).then(() => true, () => false)) throw new Error("Could not render a video poster frame");
   return generated;
 }
 
@@ -60,6 +62,15 @@ for (const item of manifest.items) {
   const outputThemeId = `material-${item.id.slice("material-".length)}`;
   const themeDir = path.join(outputRoot, outputThemeId);
   try {
+    try {
+      await Promise.all([
+        fs.access(path.join(themeDir, "theme.json")),
+        fs.access(path.join(themeDir, "background.webp")),
+        fs.access(path.join(themeDir, "preview.webp")),
+      ]);
+      process.stdout.write(`reused ${outputThemeId}\n`);
+      continue;
+    } catch {}
     await fs.rm(themeDir, { recursive: true, force: true });
     await fs.mkdir(themeDir, { recursive: true });
     const source = await posterSource(item, themeDir);

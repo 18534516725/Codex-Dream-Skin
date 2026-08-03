@@ -10,8 +10,8 @@ const catalog = JSON.parse(await fs.readFile(path.join(root, "themes", "catalog.
 
 test("generated theme catalog is strict, unique and cross-platform", () => {
   assert.equal(catalog.schemaVersion, 2);
-  assert.equal(catalog.items.length, 18);
-  assert.equal(new Set(catalog.items.map((item) => item.id)).size, 18);
+  assert.equal(catalog.items.length, 87);
+  assert.equal(new Set(catalog.items.map((item) => item.id)).size, 87);
   for (const item of catalog.items) {
     assert.equal(validateThemeV2(item.theme).id, item.id);
     assert.deepEqual(item.platforms, ["macos", "windows"]);
