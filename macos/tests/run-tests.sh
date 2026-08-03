@@ -84,12 +84,13 @@ UPDATE_JSON="$({
   CODEX_DREAM_SKIN_TEST_RESPONSE_FILE="$ROOT/tests/fixtures/latest-release.json" \
     "$ROOT/scripts/check-update-macos.sh" --json
 })"
+CURRENT_TEST_VERSION="v$(/usr/bin/tr -d '[:space:]' < "$ROOT/VERSION")"
 "$NODE" -e '
   const value = JSON.parse(process.argv[1]);
-  if (value.currentVersion !== "v1.5.14" || value.latestVersion !== "v9.8.7") process.exit(1);
+  if (value.currentVersion !== process.argv[2] || value.latestVersion !== "v9.8.7") process.exit(1);
   if (!value.updateAvailable) process.exit(1);
   if (value.releaseUrl !== "https://github.com/18534516725/Codex-Dream-Skin/releases/latest") process.exit(1);
-' "$UPDATE_JSON"
+' "$UPDATE_JSON" "$CURRENT_TEST_VERSION"
 if /usr/bin/grep -R -n -E --exclude-dir='.build*' \
   'xattr|spctl[[:space:]]+--master-disable' \
   "$ROOT/menubar-app" "$ROOT/scripts/build-menubar-app.sh" "$ROOT/scripts/build-dmg.sh" >/dev/null; then

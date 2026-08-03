@@ -12,6 +12,7 @@ param([Parameter(Mandatory = $true)][string]$Root)
 
 $ErrorActionPreference = 'Stop'
 $startPath = Join-Path $Root 'scripts\start-dream-skin.ps1'
+$skinVersion = [System.IO.File]::ReadAllText((Join-Path $Root 'VERSION')).Trim()
 $rawSource = [System.IO.File]::ReadAllText($startPath)
 $dotSourcePattern = '(?m)^\.\s+\(Join-Path \$PSScriptRoot ''(?:common-windows|theme-windows)\.ps1''\)\r?\n'
 if ([regex]::Matches($rawSource, $dotSourcePattern).Count -ne 2) {
@@ -172,14 +173,14 @@ function Invoke-DreamSkinStartupFixture {
 
 # The exact renderer output from #267: theme installed and painted, every
 # readiness signal true except the native-window probe.
-$renderedPayload = @'
-{"installed":true,"version":"1.5.14","stylePresent":true,"homePresent":true,
+$renderedPayload = @"
+{"installed":true,"version":"$skinVersion","stylePresent":true,"homePresent":true,
 "nativeWindow":{"pass":false,"bound":false,"reason":"target-window-unavailable"},
 "documentVisibility":"visible","documentHidden":false,
 "viewport":{"width":1289,"height":829},
 "readiness":{"windowPass":false,"documentPass":true,"viewportPass":true,"structurePass":true},
 "pass":false}
-'@
+"@
 
 $rendered = Invoke-DreamSkinStartupFixture -VerifyPayload $renderedPayload
 if (-not $rendered.Failed) {

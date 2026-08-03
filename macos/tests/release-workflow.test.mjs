@@ -28,5 +28,15 @@ assert.doesNotMatch(
   /main_sha="\$\(git rev-parse origin\/main\)"/,
   "The release candidate must not be rebound to a later origin/main tip.",
 );
+assert.match(
+  workflow,
+  /https:\/\/github\.com\/\$\{GITHUB_REPOSITORY\}\/releases\/download/,
+  "Release notes must point at the repository that actually publishes the assets.",
+);
+assert.doesNotMatch(
+  workflow,
+  /Fei-Away\/Codex-Dream-Skin/,
+  "Owned releases must not send downloads back to the upstream repository.",
+);
 
 console.log("PASS: Release workflow binds assets and tag to the exact event commit.");

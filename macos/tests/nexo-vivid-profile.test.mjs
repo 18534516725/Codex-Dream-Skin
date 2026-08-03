@@ -5,8 +5,9 @@ import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, "..");
-const [contract, appDelegate, loader, writer] = await Promise.all([
+const [contract, catalogSource, appDelegate, loader, writer] = await Promise.all([
   fs.readFile(path.join(root, "menubar-app/Sources/DreamSkinCore/NexoSkinLink.swift"), "utf8"),
+  fs.readFile(path.join(root, "menubar-app/Sources/DreamSkinCore/Resources/nexo-skin-catalog.json"), "utf8"),
   fs.readFile(path.join(root, "menubar-app/Sources/CodexDreamSkinMenuBar/AppDelegate.swift"), "utf8"),
   fs.readFile(path.join(root, "scripts/load-image-theme-macos.sh"), "utf8"),
   fs.readFile(path.join(root, "scripts/write-theme.mjs"), "utf8"),
@@ -18,16 +19,14 @@ for (const field of [
 ]) {
   assert.match(contract, new RegExp(`public let ${field}:`), `macOS fixed skin profiles must expose ${field}`);
 }
-assert.equal(
-  [...contract.matchAll(/^\s*"[a-z0-9-]+":\s*\.init\(/gm)].length,
-  18,
-  "macOS must define one visual profile for each of the 18 fixed skins",
-);
+const catalog = JSON.parse(catalogSource);
+assert.equal(catalog.schemaVersion, 2, "macOS must consume the Theme V2 catalog");
+assert.equal(catalog.items.length, 18, "macOS must package all 18 fixed skins");
 for (const id of [
   "post-raccoon", "night-shift-penguin", "workshop-otter",
   "moon-platform-cat", "floppy-wizard", "deep-sea-repair",
 ]) {
-  assert.match(contract, new RegExp(`"${id}"`), `macOS must expose ${id}`);
+  assert.ok(catalog.items.some((item) => item.id === id), `macOS must expose ${id}`);
 }
 
 assert.match(
