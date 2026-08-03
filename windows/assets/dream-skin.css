@@ -1400,7 +1400,37 @@ html[data-dream-skin="active"][data-dream-corners="pixel"] {
   --ds-card-radius: 0px;
   --ds-card-shadow: 6px 6px 0 rgb(var(--ds-bg-rgb) / .58);
   --ds-profile-line: 2px solid var(--ds-card-border);
+  --ds-font-body: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+  --ds-font-title: "SF Pro Rounded", "PingFang SC", "Microsoft YaHei UI", "Segoe UI", sans-serif;
+  --ds-font-label: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+  --ds-font-code: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  --ds-sidebar-bg: rgb(var(--ds-panel-rgb) / .82);
+  --ds-sidebar-text: var(--ds-text);
+  --ds-sidebar-muted: var(--ds-muted);
+  --ds-sidebar-hover: rgb(var(--ds-accent-rgb) / .14);
+  --ds-sidebar-selected: rgb(var(--ds-accent-rgb) / .23);
+  --ds-sidebar-border: var(--ds-line);
 }
+
+html[data-dream-skin="active"] body,
+html[data-dream-skin="active"] [data-ds-part="main"],
+html[data-dream-skin="active"] [data-ds-part="dialog"] {
+  font-family: var(--ds-font-body) !important;
+}
+html[data-dream-skin="active"] :is(h1, h2, h3, [role="heading"]),
+html[data-dream-skin="active"] [data-ds-part="home-hero"] {
+  font-family: var(--ds-font-title) !important;
+}
+html[data-dream-skin="active"] :is(code, pre, kbd, samp) {
+  font-family: var(--ds-font-code) !important;
+}
+
+html[data-dream-skin="active"][data-dream-family="cinematic-cyber"] { --ds-sidebar-texture-opacity: .22; }
+html[data-dream-skin="active"][data-dream-family="nature-healing"] { --ds-sidebar-texture-opacity: .12; --ds-card-radius: 22px; }
+html[data-dream-skin="active"][data-dream-family="warm-editorial"] { --ds-sidebar-texture-opacity: .10; --ds-profile-line: 1px solid var(--ds-sidebar-border); }
+html[data-dream-skin="active"][data-dream-family="cartoon-stationery"] { --ds-sidebar-texture-opacity: .16; --ds-card-radius: 24px; }
+html[data-dream-skin="active"][data-dream-family="pixel-retro"] { --ds-sidebar-texture-opacity: .25; --ds-card-radius: 2px; }
+html[data-dream-skin="active"][data-dream-family="celestial-fantasy"] { --ds-sidebar-texture-opacity: .18; --ds-card-radius: 20px; }
 html[data-dream-skin="active"][data-dream-corners="tape"] { --ds-card-radius: 4px 16px 6px 14px; }
 html[data-dream-skin="active"][data-dream-corners="ticket"] { --ds-card-radius: 8px 20px 8px 20px; --ds-profile-line: 1px dashed var(--ds-card-border); }
 
@@ -1517,7 +1547,10 @@ html[data-dream-skin="active"] aside.app-shell-left-panel {
   position: relative !important;
   overflow: hidden !important;
   border-radius: var(--ds-card-radius) !important;
-  font-family: var(--ds-profile-font) !important;
+  color: var(--ds-sidebar-text) !important;
+  border-right: 1px solid var(--ds-sidebar-border) !important;
+  background-color: var(--ds-sidebar-bg) !important;
+  font-family: var(--ds-font-body) !important;
 }
 html[data-dream-skin="active"] aside.app-shell-left-panel > * { position: relative; z-index: 1; }
 html[data-dream-skin="active"] aside.app-shell-left-panel::after {
@@ -1528,6 +1561,63 @@ html[data-dream-skin="active"] aside.app-shell-left-panel::after {
   opacity: var(--ds-sidebar-texture-opacity);
   pointer-events: none;
   background: var(--ds-card-pattern);
+}
+html[data-dream-skin="active"] aside.app-shell-left-panel [data-ds-sidebar-group] {
+  color: var(--ds-sidebar-muted) !important;
+  font-family: var(--ds-font-label) !important;
+  font-size: .78em !important;
+  font-weight: 650 !important;
+  letter-spacing: .08em !important;
+  text-transform: none !important;
+}
+html[data-dream-skin="active"] aside.app-shell-left-panel [data-ds-sidebar-row] {
+  color: var(--ds-sidebar-text) !important;
+  border: 1px solid transparent !important;
+  transition: background-color .16s ease, border-color .16s ease, transform .16s ease !important;
+}
+html[data-dream-skin="active"] aside.app-shell-left-panel [data-ds-sidebar-row]:hover {
+  color: var(--ds-sidebar-text) !important;
+  border-color: rgb(var(--ds-accent-rgb) / .18) !important;
+  background: var(--ds-sidebar-hover) !important;
+}
+html[data-dream-skin="active"] aside.app-shell-left-panel [data-ds-sidebar-row][aria-current="page"],
+html[data-dream-skin="active"] aside.app-shell-left-panel [data-ds-sidebar-row][data-selected="true"] {
+  border-color: rgb(var(--ds-accent-rgb) / .34) !important;
+  background: var(--ds-sidebar-selected) !important;
+  box-shadow: inset 3px 0 var(--ds-accent), 0 8px 24px rgb(var(--ds-bg-rgb) / .20) !important;
+}
+html[data-dream-skin="active"] aside.app-shell-left-panel [data-ds-sidebar-account] {
+  color: var(--ds-sidebar-text) !important;
+  border-top: 1px solid var(--ds-sidebar-border) !important;
+  background: linear-gradient(180deg, transparent, rgb(var(--ds-panel-rgb) / .44)) !important;
+  font-family: var(--ds-font-label) !important;
+}
+html[data-dream-skin="active"] aside.app-shell-left-panel *::-webkit-scrollbar { width: 8px; }
+html[data-dream-skin="active"] aside.app-shell-left-panel *::-webkit-scrollbar-track { background: transparent; }
+html[data-dream-skin="active"] aside.app-shell-left-panel *::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background: rgb(var(--ds-accent-rgb) / .36);
+  background-clip: padding-box;
+}
+
+html[data-dream-skin="active"] [data-ds-part="header"] {
+  color: var(--ds-sidebar-text) !important;
+  border-bottom-color: var(--ds-sidebar-border) !important;
+  background: linear-gradient(180deg, rgb(var(--ds-panel-rgb) / .84), rgb(var(--ds-panel-rgb) / .52)) !important;
+  font-family: var(--ds-font-label) !important;
+}
+html[data-dream-skin="active"] [data-ds-part="dialog"] {
+  color: var(--ds-text) !important;
+  border: var(--ds-profile-line) !important;
+  border-radius: var(--ds-card-radius) !important;
+  background-color: var(--ds-card-bg) !important;
+  background-image: var(--ds-card-pattern) !important;
+  box-shadow: var(--ds-card-shadow) !important;
+}
+html[data-dream-skin="active"][data-dream-new-window="themed"] [data-ds-part="home"] {
+  color: var(--ds-text) !important;
+  font-family: var(--ds-font-body) !important;
 }
 html[data-dream-skin="active"][data-dream-sidebar-style="garden"] aside.app-shell-left-panel::after {
   background: radial-gradient(circle at 12px 14px, rgb(var(--ds-accent-rgb) / .55) 0 2px, transparent 3px) 0 0 / 30px 34px;

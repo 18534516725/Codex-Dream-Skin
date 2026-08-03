@@ -12,6 +12,7 @@
     "data-dream-art-wide", "data-dream-art-safe", "data-dream-task-mode",
     "data-dream-art-safe-area", "data-dream-art-task-mode", "data-dream-art-aspect",
     "data-dream-art-ready",
+    "data-dream-family", "data-dream-new-window",
     "data-dream-layout", "data-dream-surface", "data-dream-corners", "data-dream-motion",
     "data-dream-sidebar-style", "data-dream-composer-style", "data-dream-texture",
   ];
@@ -48,6 +49,9 @@
     "--ds-theme-image-dim", "--ds-theme-image-task-intensity",
     "--ds-theme-density-scale", "--ds-theme-motion-level",
     "--ds-glow-strength", "--dream-skin-signature",
+    "--ds-family-signature", "--ds-font-body", "--ds-font-title", "--ds-font-label",
+    "--ds-font-code", "--ds-sidebar-bg", "--ds-sidebar-text", "--ds-sidebar-muted",
+    "--ds-sidebar-hover", "--ds-sidebar-selected", "--ds-sidebar-border",
   ];
   const selectorByKey = new Map(SELECTOR_CONTRACT.selectors.map((entry) => [entry.key, entry]));
   const stableTestidSelector = (testid) => SELECTOR_CONTRACT.stableTestids?.includes(testid)
@@ -120,6 +124,20 @@
     sidebarStyle: "navigation",
     composerStyle: "console",
     textureStyle: "grain",
+  };
+  const FAMILY_CHOICES = [
+    "cinematic-cyber", "nature-healing", "warm-editorial",
+    "cartoon-stationery", "pixel-retro", "celestial-fantasy",
+  ];
+  const familyChoice = () => {
+    if (FAMILY_CHOICES.includes(THEME.family)) return THEME.family;
+    return ({
+      glass: "celestial-fantasy",
+      paper: "warm-editorial",
+      metal: "cinematic-cyber",
+      ink: "nature-healing",
+      pixel: "pixel-retro",
+    })[visualChoice("surfaceStyle", VISUAL.surfaceStyle)] || "cinematic-cyber";
   };
   const visualChoice = (field, value) => VISUAL_CHOICES[field]?.includes(value)
     ? value : VISUAL_DEFAULTS[field];
@@ -327,6 +345,26 @@
     };
     for (const [name, value] of Object.entries(publicColors)) {
       if (typeof value === "string" && value) setStyleProperty(root, name, value);
+    }
+    const renderProfile = THEME.renderProfile && typeof THEME.renderProfile === "object"
+      ? THEME.renderProfile : {};
+    const profileDefaults = {
+      "--ds-family-signature": familyChoice(),
+      "--ds-font-body": '-apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif',
+      "--ds-font-title": '"SF Pro Rounded", "PingFang SC", "Microsoft YaHei UI", "Segoe UI", sans-serif',
+      "--ds-font-label": '-apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif',
+      "--ds-font-code": '"SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace',
+      "--ds-sidebar-bg": `rgb(${rgbString(variables["--ds-panel"])} / .82)`,
+      "--ds-sidebar-text": variables["--ds-text"],
+      "--ds-sidebar-muted": variables["--ds-muted"],
+      "--ds-sidebar-hover": `rgb(${rgbString(variables["--ds-green"])} / .14)`,
+      "--ds-sidebar-selected": `rgb(${rgbString(variables["--ds-green"])} / .23)`,
+      "--ds-sidebar-border": variables["--ds-line"],
+    };
+    for (const [name, fallback] of Object.entries(profileDefaults)) {
+      const value = typeof renderProfile[name] === "string" && renderProfile[name]
+        ? renderProfile[name] : fallback;
+      setStyleProperty(root, name, value);
     }
     setStyleProperty(root, "--ds-theme-surface-radius", "12px");
     setStyleProperty(root, "--ds-theme-surface-opacity", "1");
@@ -602,6 +640,8 @@
     const shell = resolvedShell();
     setAttribute(root, "data-dream-skin", "active");
     setAttribute(root, SHELL_ATTR, shell);
+    setAttribute(root, "data-dream-family", familyChoice());
+    setAttribute(root, "data-dream-new-window", "themed");
     setAttribute(root, "data-dream-layout", visualChoice("layoutVariant", VISUAL.layoutVariant));
     setAttribute(root, "data-dream-surface", visualChoice("surfaceStyle", VISUAL.surfaceStyle));
     setAttribute(root, "data-dream-corners", visualChoice("cornerStyle", VISUAL.cornerStyle));
@@ -628,9 +668,14 @@
   };
 
   const partNodes = new Set();
+  const sidebarMarkerNodes = new Set();
   const queryAll = (selector) => {
     if (!selector) return [];
     try { return [...document.querySelectorAll(selector)]; } catch { return []; }
+  };
+  const queryAllWithin = (root, selector) => {
+    if (!root || !selector) return [];
+    try { return [...root.querySelectorAll(selector)]; } catch { return []; }
   };
   const selectorNodes = (key) => queryAll(selectorByKey.get(key)?.selector);
   const genericNodes = (selector) => queryAll(selector)
@@ -683,11 +728,38 @@
       }
     }
   };
+  const clearSidebarMarkers = () => {
+    for (const node of sidebarMarkerNodes) {
+      node.removeAttribute?.("data-ds-sidebar-group");
+      node.removeAttribute?.("data-ds-sidebar-row");
+      node.removeAttribute?.("data-ds-sidebar-account");
+    }
+    sidebarMarkerNodes.clear();
+  };
+  const markSidebarNodes = (sidebars) => {
+    clearSidebarMarkers();
+    for (const sidebar of sidebars) {
+      for (const node of queryAllWithin(sidebar, 'h2, h3, [role="heading"]')) {
+        node.setAttribute("data-ds-sidebar-group", "true");
+        sidebarMarkerNodes.add(node);
+      }
+      for (const node of queryAllWithin(sidebar, 'a, button, [role="treeitem"], [role="listitem"]')) {
+        node.setAttribute("data-ds-sidebar-row", "true");
+        sidebarMarkerNodes.add(node);
+      }
+      for (const node of queryAllWithin(sidebar,
+        '[data-testid*="account" i], [aria-label*="account" i], [class*="_account" i]')) {
+        node.setAttribute("data-ds-sidebar-account", "true");
+        sidebarMarkerNodes.add(node);
+      }
+    }
+  };
   const refreshParts = () => {
     metrics.partPasses += 1;
     const desired = new Map();
     addPart(desired, "root", [document.documentElement]);
-    addPart(desired, "sidebar", [...selectorNodes("left-panel"), ...fallbackSidebarNodes()]);
+    const sidebars = [...selectorNodes("left-panel"), ...fallbackSidebarNodes()];
+    addPart(desired, "sidebar", sidebars);
     addPart(desired, "header", selectorNodes("header-tint"));
     // Route-specific parts win when a generic shell collapses home and main
     // onto the same element.
@@ -717,12 +789,14 @@
       }
       partNodes.add(node);
     }
+    markSidebarNodes(sidebars);
   };
 
   const removeParts = () => {
     for (const node of partNodes) node.removeAttribute?.(PART_ATTR);
     partNodes.clear();
     for (const node of queryAll(`[${PART_ATTR}]`)) node.removeAttribute?.(PART_ATTR);
+    clearSidebarMarkers();
   };
 
   const scopeMatches = (scope, baseState, overlay) => {

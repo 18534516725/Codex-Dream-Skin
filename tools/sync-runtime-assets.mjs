@@ -127,6 +127,10 @@ const sourceThemeV2 = await fs.readFile(
   path.join(projectRoot, "themes", "theme-v2.mjs"),
   "utf8",
 );
+const sourceThemeProfile = await fs.readFile(
+  path.join(projectRoot, "runtime", "theme-profile.mjs"),
+  "utf8",
+);
 const sourceSafeCssValidator = await fs.readFile(
   path.join(projectRoot, "runtime", "safe-css-validator.mjs"),
   "utf8",
@@ -169,6 +173,10 @@ const outputs = [
   {
     content: sourceThemeV2,
     paths: ["macos/assets/theme-v2.mjs", "windows/assets/theme-v2.mjs"],
+  },
+  {
+    content: sourceThemeProfile,
+    paths: ["macos/assets/theme-profile.mjs", "windows/assets/theme-profile.mjs"],
   },
   {
     content: sourceSafeCssValidator,
