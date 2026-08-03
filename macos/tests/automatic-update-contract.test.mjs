@@ -22,6 +22,20 @@ test("macOS schedules a throttled startup update check and packages a detached u
   assert.match(updater, /shasum -a 256/);
   assert.match(updater, /cc\.dreamskin\.menubar/);
   assert.doesNotMatch(updater, /killall .*Codex|pkill .*Codex|com\.openai\.codex/);
+  assert.match(app, /completeDeferredEngineUpdateIfPossible\(\)/);
+  assert.match(app, /更新已就绪，关闭 ChatGPT 后自动完成/);
+  assert.match(app, /if installedScript\(named: "status-dream-skin-macos\.sh"\) == nil/);
+});
+
+test("release packaging does not repeat the full Windows matrix", () => {
+  const workflow = read(".github/workflows/release.yml");
+  const buildWindows = workflow.slice(
+    workflow.indexOf("  build-windows:"),
+    workflow.indexOf("  publish-release:")
+  );
+  assert.doesNotMatch(buildWindows, /windows\\tests\\run-tests\.ps1/);
+  assert.match(buildWindows, /windows\\tests\\installer-static\.tests\.ps1/);
+  assert.match(buildWindows, /NodeArchivePath/);
 });
 
 test("Windows stages verified updates and waits for Codex to close naturally", () => {

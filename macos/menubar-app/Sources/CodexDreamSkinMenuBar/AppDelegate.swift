@@ -28,6 +28,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   private var pendingNexoSkin: NexoSkinCatalogEntry?
   private var communityBaselineThemeID = ""
   private var communityStageMessage = ""
+  private var engineUpdateMessage = ""
   private var refreshTimer: Timer?
   private var automaticUpdateCheckInFlight = false
   private let automaticUpdateLastCheckKey = "automaticUpdateLastCheck"
@@ -114,7 +115,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     ensureUserDirectories()
     cleanupStalePrivateOperationDirectories()
     migrateLegacySwiftBarIfNeeded()
-    installBundledEngineIfNeeded(force: false)
+    // 全新安装没有状态脚本，必须立即初始化；已有安装则先读取 Codex
+    // 运行状态，避免自动更新后在 Codex 尚未关闭时争用 config.toml。
+    if installedScript(named: "status-dream-skin-macos.sh") == nil {
+      installBundledEngineIfNeeded(force: false)
+    }
     refreshStatus()
     refreshTimer = Timer.scheduledTimer(
       timeInterval: 10,
@@ -273,6 +278,9 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
     if !communityStageMessage.isEmpty {
       addDisabledItem(cleanMenuText(communityStageMessage))
+    }
+    if !engineUpdateMessage.isEmpty {
+      addDisabledItem(cleanMenuText(engineUpdateMessage))
     }
     addDisabledItem("版本：v\(appVersion)")
 
@@ -466,6 +474,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       if result.succeeded,
          let parsed = StatusSnapshot(jsonData: Data(result.output.utf8)) {
         self.snapshot = parsed
+        self.completeDeferredEngineUpdateIfPossible()
         self.statusItem.button?.toolTip = "Nexo Codex Skin · \(parsed.title)"
         self.statusItem.button?.appearsDisabled = parsed.session == "unknown" || parsed.session == "stale"
         self.rebuildMenu()
@@ -484,6 +493,20 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   @objc private func reinstallEngine() {
     guard !operationInFlight, !snapshot.busy else { return }
     installBundledEngineIfNeeded(force: true)
+  }
+
+  private func completeDeferredEngineUpdateIfPossible() {
+    guard engineNeedsInstall() else {
+      engineUpdateMessage = ""
+      return
+    }
+    guard !engineInstallInFlight, !operationInFlight, !themeRecoveryInFlight else { return }
+    if snapshot.codexRunning {
+      engineUpdateMessage = "更新已就绪，关闭 ChatGPT 后自动完成"
+      return
+    }
+    engineUpdateMessage = ""
+    installBundledEngineIfNeeded(force: false)
   }
 
   @objc private func chooseBackgroundImage() {

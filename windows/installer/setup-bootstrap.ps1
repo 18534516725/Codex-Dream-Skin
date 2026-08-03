@@ -163,7 +163,7 @@ try {
     }
   }
 
-  # 1.6.3 品牌迁移：移除旧名称的登录快捷方式，避免升级后出现两个入口。
+  # Remove the legacy startup shortcut so upgrades expose one Nexo entry.
   Remove-Item -LiteralPath $legacyStartupShortcut -Force -ErrorAction SilentlyContinue
 
   if ($LaunchTray -and -not (Test-DreamSkinTrayActive)) {
