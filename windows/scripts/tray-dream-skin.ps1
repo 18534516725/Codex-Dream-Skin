@@ -282,15 +282,6 @@ try {
     $null = Add-DreamSkinTrayItem -Items $menu.Items -Text '检查更新…' -Action {
       Start-DreamSkinPowerShell -Script $checkUpdateScript -Arguments @('-Interactive')
     }
-    $null = Add-DreamSkinTrayItem -Items $menu.Items -Text '主题库 Gallery' -Action {
-      Start-Process -FilePath 'https://dreamskin.cc/gallery' | Out-Null
-    }
-    $null = Add-DreamSkinTrayItem -Items $menu.Items -Text '在线 Studio' -Action {
-      Start-Process -FilePath 'https://dreamskin.cc/studio' | Out-Null
-    }
-    $null = Add-DreamSkinTrayItem -Items $menu.Items -Text '打开 DreamSkin.cc' -Action {
-      Start-Process -FilePath 'https://dreamskin.cc' | Out-Null
-    }
     $autoStartEnabled = Test-Path -LiteralPath $startupShortcut -PathType Leaf
     $autoStartAction = {
       Set-DreamSkinAutoStart -Enabled:(-not $autoStartEnabled)

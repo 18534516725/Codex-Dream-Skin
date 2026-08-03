@@ -310,9 +310,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     menu.addItem(.separator())
     addActionItem("检查更新…", action: #selector(checkForUpdates), enabled: !operationInFlight)
-    addActionItem("主题库 Gallery", action: #selector(openThemeGallery))
-    addActionItem("在线 Studio", action: #selector(openOnlineStudio))
-    addActionItem("打开 DreamSkin.cc", action: #selector(openDreamSkinWebsite))
     let loginItem = addActionItem("登录时启动", action: #selector(toggleLoginItem))
     loginItem.state = SMAppService.mainApp.status == .enabled ? .on : .off
     if !legacyPluginURLs().isEmpty {
@@ -1108,21 +1105,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         }
       }
     }
-  }
-
-  @objc private func openDreamSkinWebsite() {
-    guard let url = URL(string: "https://dreamskin.cc") else { return }
-    NSWorkspace.shared.open(url)
-  }
-
-  @objc private func openThemeGallery() {
-    guard let url = URL(string: "https://dreamskin.cc/gallery") else { return }
-    NSWorkspace.shared.open(url)
-  }
-
-  @objc private func openOnlineStudio() {
-    guard let url = URL(string: "https://dreamskin.cc/studio") else { return }
-    NSWorkspace.shared.open(url)
   }
 
   @objc private func checkForUpdates() {
