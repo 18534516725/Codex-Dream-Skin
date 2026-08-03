@@ -7,11 +7,17 @@ REPOSITORY="18534516725/Codex-Dream-Skin"
 RELEASE_URL="https://github.com/$REPOSITORY/releases/latest"
 JSON="false"
 INTERACTIVE="false"
+CURRENT_OVERRIDE=""
 
 while [ "$#" -gt 0 ]; do
   case "$1" in
     --json) JSON="true"; shift ;;
     --interactive) INTERACTIVE="true"; shift ;;
+    --current-version)
+      [ "$#" -ge 2 ] || { printf '%s\n' 'Missing value for --current-version.' >&2; exit 2; }
+      CURRENT_OVERRIDE="$2"
+      shift 2
+      ;;
     *) printf 'Unknown update argument: %s\n' "$1" >&2; exit 2 ;;
   esac
 done
@@ -46,8 +52,12 @@ version_is_newer() {
   fi
 }
 
-[ -f "$VERSION_PATH" ] || fail "Installed VERSION file is missing: $VERSION_PATH"
-CURRENT_RAW="$(/usr/bin/tr -d '[:space:]' < "$VERSION_PATH")"
+if [ -n "$CURRENT_OVERRIDE" ]; then
+  CURRENT_RAW="$CURRENT_OVERRIDE"
+else
+  [ -f "$VERSION_PATH" ] || fail "Installed VERSION file is missing: $VERSION_PATH"
+  CURRENT_RAW="$(/usr/bin/tr -d '[:space:]' < "$VERSION_PATH")"
+fi
 CURRENT_VERSION="$(normalize_version "$CURRENT_RAW")" \
   || fail "Installed version is invalid: $CURRENT_RAW"
 
@@ -76,6 +86,9 @@ LATEST_TAG="$(/usr/bin/plutil -extract tag_name raw -o - "$RESPONSE" 2>/dev/null
 [ -n "$LATEST_TAG" ] || fail "GitHub response does not contain a release tag."
 LATEST_VERSION="$(normalize_version "$LATEST_TAG")" \
   || fail "GitHub returned an unsupported release tag: $LATEST_TAG"
+RELEASE_NOTES="$(/usr/bin/plutil -extract body raw -o - "$RESPONSE" 2>/dev/null || true)"
+RELEASE_NOTES="$(printf '%s' "$RELEASE_NOTES" | /usr/bin/head -c 4000)"
+RELEASE_NOTES_BASE64="$(printf '%s' "$RELEASE_NOTES" | /usr/bin/base64)"
 
 UPDATE_AVAILABLE="false"
 if version_is_newer "$LATEST_VERSION" "$CURRENT_VERSION"; then
@@ -83,9 +96,9 @@ if version_is_newer "$LATEST_VERSION" "$CURRENT_VERSION"; then
 fi
 
 if [ "$JSON" = "true" ]; then
-  printf '{"currentVersion":"v%s","latestVersion":"v%s","latestVersionNumber":"%s","updateAvailable":%s,"releaseUrl":"%s","artifactName":"CodexDreamSkin-v%s.dmg","checksumName":"SHA256SUMS.txt"}\n' \
+  printf '{"currentVersion":"v%s","latestVersion":"v%s","latestVersionNumber":"%s","updateAvailable":%s,"releaseUrl":"%s","artifactName":"CodexDreamSkin-v%s.dmg","checksumName":"SHA256SUMS.txt","releaseNotesBase64":"%s"}\n' \
     "$CURRENT_VERSION" "$LATEST_VERSION" "$LATEST_VERSION" "$UPDATE_AVAILABLE" "$RELEASE_URL" \
-    "$LATEST_VERSION"
+    "$LATEST_VERSION" "$RELEASE_NOTES_BASE64"
 fi
 
 if [ "$INTERACTIVE" = "true" ]; then

@@ -16,6 +16,9 @@ test("macOS schedules a throttled startup update check and packages a detached u
   assert.match(app, /24 \* 60 \* 60/);
   assert.match(app, /NexoSkinContract\.isCanonicalApplyURL/);
   assert.match(app, /launchVerifiedUpdate/);
+  assert.match(app, /arguments: \["--json", "--current-version", appVersion\]/);
+  assert.match(app, /releaseNotesBase64/);
+  assert.match(app, /更新说明/);
   assert.match(builder, /install-update-macos\.sh/);
   assert.match(updater, /CodexDreamSkin-v\$VERSION\.dmg/);
   assert.match(updater, /SHA256SUMS\.txt/);
@@ -25,6 +28,14 @@ test("macOS schedules a throttled startup update check and packages a detached u
   assert.match(app, /completeDeferredEngineUpdateIfPossible\(\)/);
   assert.match(app, /更新已就绪，关闭 ChatGPT 后自动完成/);
   assert.match(app, /if installedScript\(named: "status-dream-skin-macos\.sh"\) == nil/);
+});
+
+test("macOS update checker accepts the signed app version and returns safe release notes", () => {
+  const checker = read("macos/scripts/check-update-macos.sh");
+  assert.match(checker, /--current-version/);
+  assert.match(checker, /CURRENT_OVERRIDE/);
+  assert.match(checker, /releaseNotesBase64/);
+  assert.match(checker, /base64/);
 });
 
 test("release packaging does not repeat the full Windows matrix", () => {

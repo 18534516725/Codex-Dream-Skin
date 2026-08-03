@@ -468,7 +468,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       return
     }
     statusRefreshRunning = true
-    ScriptRunner.run(script: script, arguments: ["--json"]) { [weak self] result in
+    ScriptRunner.run(script: script, arguments: ["--json", "--current-version", appVersion]) { [weak self] result in
       guard let self else { return }
       self.statusRefreshRunning = false
       if result.succeeded,
@@ -1181,11 +1181,24 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       }
       UserDefaults.standard.set(Date(), forKey: self.automaticUpdateLastCheckKey)
       if available {
+        var releaseNotes = ""
+        if let encoded = value["releaseNotesBase64"] as? String,
+           let decoded = Data(base64Encoded: encoded),
+           let text = String(data: decoded, encoding: .utf8) {
+          releaseNotes = text.unicodeScalars
+            .filter { $0.value == 9 || $0.value == 10 || $0.value >= 32 }
+            .map(String.init)
+            .joined()
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        }
         let alert = NSAlert()
         alert.messageText = "发现新版本 \(latest)"
-        alert.informativeText = triggeredByUnknownSkin
+        let updateContext = triggeredByUnknownSkin
           ? "当前助手版本过旧，无法识别这个新皮肤。更新完成后请再次点击一键应用。"
           : "当前版本为 \(current)。更新只会重启换肤助手，不会关闭或重启 Codex。"
+        alert.informativeText = releaseNotes.isEmpty
+          ? updateContext
+          : "\(updateContext)\n\n更新说明\n\(String(releaseNotes.prefix(1200)))"
         alert.addButton(withTitle: "立即更新")
         alert.addButton(withTitle: "稍后")
         self.activateForUserInteraction()

@@ -85,6 +85,22 @@ test("Canonical CSS themes every required native UI region", () => {
   assert.match(css, /font-family:\s*var\(--ds-font-label\)/);
 });
 
+test("Every family themes the home surface, shortcut cards, header and new windows", () => {
+  for (const variable of ["--ds-family-hero-glow", "--ds-family-card-highlight", "--ds-family-window-frame"]) {
+    assert.ok(css.includes(variable), `missing family effect token: ${variable}`);
+  }
+  for (const family of [
+    "cinematic-cyber", "nature-healing", "warm-editorial",
+    "cartoon-stationery", "pixel-retro", "celestial-fantasy",
+  ]) assert.match(css, new RegExp(`data-dream-family="${family}"[^}]+--ds-family-hero-glow`));
+  for (const fragment of [
+    "__DREAM_SELECTOR_HOME_ROUTE__::after",
+    "__DREAM_SELECTOR_HOME_SUGGESTIONS__ button::after",
+    "[data-ds-part=\"header\"]::after",
+    "[data-dream-new-window=\"themed\"] [data-ds-part=\"main\"]",
+  ]) assert.ok(css.includes(fragment), `missing themed surface selector: ${fragment}`);
+});
+
 test("All decorative layers remain inert", () => {
   for (const selector of ["__DREAM_SELECTOR_LEFT_PANEL__::after", "body::after"]) {
     const start = css.indexOf(`${selector} {\n  content:`);
