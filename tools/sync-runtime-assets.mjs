@@ -66,6 +66,15 @@ function compileSafeCssFileValidator(source) {
   return source.replace(canonicalImport, 'from "../assets/safe-css-validator.mjs"');
 }
 
+function compileThemePackageValidator(source) {
+  const canonicalImport = 'from "../themes/theme-v2.mjs"';
+  const occurrences = source.split(canonicalImport).length - 1;
+  if (occurrences !== 1) {
+    throw new Error("runtime/theme-package-validator.mjs must import the canonical Theme V2 validator once");
+  }
+  return source.replace(canonicalImport, 'from "./theme-v2.mjs"');
+}
+
 // Both injectors enforce the 16384px / 50MP decode limits through this parser,
 // so the two platform copies must not drift. Windows additionally needs a tiny
 // CLI so theme-windows.ps1 can shell out to it; that entry point is appended
@@ -114,6 +123,10 @@ const sourceThemePackageValidator = await fs.readFile(
   path.join(projectRoot, "runtime", "theme-package-validator.mjs"),
   "utf8",
 );
+const sourceThemeV2 = await fs.readFile(
+  path.join(projectRoot, "themes", "theme-v2.mjs"),
+  "utf8",
+);
 const sourceSafeCssValidator = await fs.readFile(
   path.join(projectRoot, "runtime", "safe-css-validator.mjs"),
   "utf8",
@@ -147,11 +160,15 @@ const outputs = [
     paths: ["macos/assets/renderer-inject.js", "windows/assets/renderer-inject.js"],
   },
   {
-    content: sourceThemePackageValidator,
+    content: compileThemePackageValidator(sourceThemePackageValidator),
     paths: [
       "macos/assets/theme-package-validator.mjs",
       "windows/assets/theme-package-validator.mjs",
     ],
+  },
+  {
+    content: sourceThemeV2,
+    paths: ["macos/assets/theme-v2.mjs", "windows/assets/theme-v2.mjs"],
   },
   {
     content: sourceSafeCssValidator,

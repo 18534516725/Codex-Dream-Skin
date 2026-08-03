@@ -7,6 +7,7 @@ import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
 import { decodeAndValidateSafeCss } from "./safe-css-validator.mjs";
+import { validateThemeV2 } from "../themes/theme-v2.mjs";
 
 const LIMITS = Object.freeze({
   manifest: 65_536,
@@ -14,6 +15,7 @@ const LIMITS = Object.freeze({
   simpleTheme: 1_048_576,
   css: 262_144,
   image: 10_485_760,
+  video: 83_886_080,
   license: 65_536,
   signature: 4_096,
 });
@@ -23,9 +25,13 @@ const BACKGROUND_MEDIA = new Map([
   ["background.jpg", "image/jpeg"],
   ["background.png", "image/png"],
 ]);
+const VIDEO_MEDIA = new Map([
+  ["background.mp4", "video/mp4"],
+]);
 const PAYLOAD_MEDIA = new Map([
   ["theme.json", "application/json"],
   ...BACKGROUND_MEDIA,
+  ...VIDEO_MEDIA,
   ["theme.css", "text/css"],
   ["LICENSE.txt", "text/plain"],
 ]);
@@ -207,6 +213,7 @@ function expectedLimit(name, simple = false) {
   if (name === "LICENSE.txt") return LIMITS.license;
   if (name === "manifest.sig") return LIMITS.signature;
   if (BACKGROUND_MEDIA.has(name) || /\.(?:png|jpe?g|webp)$/i.test(name)) return LIMITS.image;
+  if (VIDEO_MEDIA.has(name)) return LIMITS.video;
   return 0;
 }
 
@@ -269,6 +276,7 @@ function validateTimestamp(value) {
 }
 
 function validateOfficialTheme(value) {
+  if (value?.schemaVersion === 2) return validateThemeV2(value);
   const theme = assertObject(value, "theme.json");
   assertExactKeys(
     theme,
@@ -322,7 +330,9 @@ function validateManifest(value, platform, clientVersion) {
   const manifest = assertObject(value, "manifest.json");
   assertExactKeys(manifest, MANIFEST_REQUIRED, ["keyId"], "manifest.json");
   if (manifest.packageVersion !== 1) fail("manifest.json must use packageVersion 1");
-  if (manifest.skinApiVersion !== 1) fail("manifest.json requires an unsupported Skin API version");
+  if (!new Set([1, 2]).has(manifest.skinApiVersion)) {
+    fail("manifest.json requires an unsupported Skin API version");
+  }
   assertString(manifest.themeId, "manifest.themeId", {
     min: 3,
     max: 64,
@@ -343,8 +353,8 @@ function validateManifest(value, platform, clientVersion) {
   if (!platforms.has(platform)) fail(`Theme package does not support ${platform}`);
   const capabilities = assertStringSet(manifest.capabilities, "manifest.capabilities", {
     min: 1,
-    max: 3,
-    allowed: new Set(["background", "tokens", "safe-css"]),
+    max: 4,
+    allowed: new Set(["background", "tokens", "safe-css", "dynamic-background"]),
   });
 
   const publisher = assertObject(manifest.publisher, "manifest.publisher");
@@ -413,7 +423,20 @@ function validateManifest(value, platform, clientVersion) {
   if (!files.has("theme.css")) {
     fail("New official theme imports require theme.css and the safe-css capability");
   }
-  return { manifest, files, background: backgrounds[0] };
+  const videos = [...files.keys()].filter((name) => VIDEO_MEDIA.has(name));
+  if (videos.length > 1) fail("manifest.files contains too many video backgrounds");
+  if (manifest.skinApiVersion === 1 && videos.length !== 0) {
+    fail("Skin API 1 packages cannot contain video backgrounds");
+  }
+  if (manifest.skinApiVersion === 2) {
+    if (backgrounds[0] !== "background.webp") fail("Skin API 2 packages require background.webp");
+    if (videos.length === 1 !== capabilities.has("dynamic-background")) {
+      fail("background.mp4 presence must match the dynamic-background capability");
+    }
+  } else if (capabilities.has("dynamic-background")) {
+    fail("Skin API 1 packages cannot declare dynamic-background");
+  }
+  return { manifest, files, background: backgrounds[0], video: videos[0] ?? null };
 }
 
 function setsEqual(left, right) {
@@ -440,6 +463,13 @@ function detectedImageMedia(bytes) {
   return "";
 }
 
+function isBoundedH264Mp4(bytes) {
+  if (bytes.length < 24 || bytes.subarray(4, 8).toString("ascii") !== "ftyp") return false;
+  const boxSize = bytes.readUInt32BE(0);
+  if (boxSize < 16 || boxSize > bytes.length) return false;
+  return bytes.includes(Buffer.from("avc1")) || bytes.includes(Buffer.from("avc3"));
+}
+
 async function validateOfficial(root, names, platform, clientVersion) {
   for (const name of names) {
     if (!PACKAGE_FILES.has(name)) fail(`Official theme package contains unregistered file ${name}`);
@@ -447,7 +477,7 @@ async function validateOfficial(root, names, platform, clientVersion) {
   if (!names.includes("manifest.json")) fail("Official theme package is missing manifest.json");
   const bytes = new Map();
   for (const name of names) bytes.set(name, await readStableFile(root, name, expectedLimit(name)));
-  const { manifest, files, background } = validateManifest(
+  const { manifest, files, background, video } = validateManifest(
     decodeJson(bytes.get("manifest.json"), "manifest.json"),
     platform,
     clientVersion,
@@ -464,14 +494,26 @@ async function validateOfficial(root, names, platform, clientVersion) {
   }
   const theme = validateOfficialTheme(decodeJson(bytes.get("theme.json"), "theme.json"));
   if (manifest.themeId !== theme.id) fail("manifest.themeId does not match theme.json id");
-  if (theme.image !== background) fail("theme.json image does not match the manifest background file");
+  if (theme.schemaVersion === 1 && theme.image !== background) {
+    fail("theme.json image does not match the manifest background file");
+  }
+  if (theme.schemaVersion === 2) {
+    if (manifest.skinApiVersion !== 2) fail("Theme V2 requires Skin API 2");
+    if (theme.media.poster !== background || theme.media.video !== video) {
+      fail("theme.json media does not match the manifest background files");
+    }
+  }
   if (detectedImageMedia(bytes.get(background)) !== BACKGROUND_MEDIA.get(background)) {
     fail(`${background} content does not match its extension and mediaType`);
+  }
+  if (video && !isBoundedH264Mp4(bytes.get(video))) {
+    fail(`${video} content is not a bounded H.264 MP4`);
   }
   decodeAndValidateSafeCss(bytes.get("theme.css"));
   return {
     format: "official",
     image: background,
+    video,
     safeCssStatus: "validated",
     signatureIgnored: bytes.has("manifest.sig"),
     bytes,
@@ -529,12 +571,14 @@ async function main() {
     await fs.writeFile(path.join(stage, name), bytes, { flag: "wx", mode: 0o600 });
     await fs.chmod(path.join(stage, name), 0o600);
   }
-  return {
+  const output = {
     format: result.format,
     image: result.image,
     safeCssStatus: result.safeCssStatus,
     signatureIgnored: result.signatureIgnored,
   };
+  if (result.video) output.video = result.video;
+  return output;
 }
 
 if (path.resolve(process.argv[1] || "") === path.resolve(scriptPath)) {
