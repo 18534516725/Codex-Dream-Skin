@@ -17,7 +17,12 @@ runtime/*
 !runtime/safe-css-policy.json
 !runtime/safe-css-validator.mjs
 !runtime/theme-package-validator.mjs
+!runtime/media-layer.js
 !runtime/validate-safe-css-file.mjs
+
+# Local repaired/source-media production outputs stay outside Git until cleared.
+.artifacts/
+repaired-sources/
 
 # local agent context
 TASK_PROGRESS.md

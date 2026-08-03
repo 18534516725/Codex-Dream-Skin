@@ -1,0 +1,1286 @@
+{
+  "schemaVersion": 1,
+  "sourceCount": 71,
+  "generatedFrom": "Downloads",
+  "sourceSnapshotAt": "2026-08-03T03:54:53.987Z",
+  "items": [
+    {
+      "id": "material-1a8850341d81-48ef8f75",
+      "sourcePath": "【哲风壁纸】店铺场景-插画.png",
+      "sourceExtension": "png",
+      "kind": "static",
+      "actualFormat": "png",
+      "bytes": 9738141,
+      "sha256": "1a8850341d81687772cafcd3955eb537cc3c683ca5594e1b37bae3e9d04ac531",
+      "width": 3456,
+      "height": 1943,
+      "durationSeconds": null,
+      "status": "ready_source",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-983423060f57-cadf7a6b",
+      "sourcePath": "【哲风壁纸】街景-风景.png",
+      "sourceExtension": "png",
+      "kind": "static",
+      "actualFormat": "jpeg",
+      "bytes": 4038439,
+      "sha256": "983423060f57b7bf3e88d85c111eea3b4f990f2d14e22d6aa5e647344a0bc879",
+      "width": 4197,
+      "height": 3148,
+      "durationSeconds": null,
+      "status": "ready_source",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-774fd232d777-a59a0c1b",
+      "sourcePath": "【哲风壁纸】卡通-水面-治愈.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 19033631,
+      "sha256": "774fd232d777d86288259a9eb1be289cf6ce20286286cd6765ed6c41e8aa4c29",
+      "width": 2850,
+      "height": 1604,
+      "durationSeconds": 7.033,
+      "status": "ready_source",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-7b9b6ff2c4f6-28fc0b99",
+      "sourcePath": "【哲风壁纸】下雨-绿色护眼-车站.png",
+      "sourceExtension": "png",
+      "kind": "static",
+      "actualFormat": "jpeg",
+      "bytes": 1055600,
+      "sha256": "7b9b6ff2c4f65f1608549bdf3a5dab80ebac12316584f27e4e2352dc25499aa8",
+      "width": 4096,
+      "height": 3070,
+      "durationSeconds": null,
+      "status": "ready_source",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-5e6ba9f18bdb-6090828c",
+      "sourcePath": "15640676994355520.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 49240,
+      "sha256": "5e6ba9f18bdbda079fb34efb2e28320aa2858f7f3db2597a2193c8e153be6782",
+      "width": 1100,
+      "height": 646,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-73b38d33736a-68703139",
+      "sourcePath": "15691093024608576.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 94744,
+      "sha256": "73b38d33736afd9845ce96112bf36ae28315b41a833d1f1887192d2e4e73c923",
+      "width": 1100,
+      "height": 619,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-0c635c87db4a-35af774f",
+      "sourcePath": "15764843320742208.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 87944,
+      "sha256": "0c635c87db4a2c8077338b06529abc959eb172489822366b78cd5ff4185261fe",
+      "width": 1100,
+      "height": 825,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-abacf6305443-3ea17b15",
+      "sourcePath": "16082350519274880.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 64178,
+      "sha256": "abacf6305443700480569dbbceecf9afb5632e56b814e74f4f8254f94fbda637",
+      "width": 1100,
+      "height": 619,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-1a4affc23fd7-004e967f",
+      "sourcePath": "16084174181879168.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 111754,
+      "sha256": "1a4affc23fd705f98ed77017275378f932567829fabe22b2ada6fa192e05e5b3",
+      "width": 1100,
+      "height": 619,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-c43bd73a9bce-0c68f9bd",
+      "sourcePath": "16557623021784448.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 118364,
+      "sha256": "c43bd73a9bcea87619f4f98ae8fff3838b5c912c8b9523f2ef0c35ddbab467db",
+      "width": 1100,
+      "height": 619,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-a8d26e9fc3a0-8adc8676",
+      "sourcePath": "16796185410915712.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 130438,
+      "sha256": "a8d26e9fc3a072f3eca27539659fcd9d60ecd7a839fec3454913049531c312d0",
+      "width": 1100,
+      "height": 619,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-2ed8a89e6e0c-0a4e1c3a",
+      "sourcePath": "16976930049281408.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 74876,
+      "sha256": "2ed8a89e6e0c147522078c66fbd823e8683ade38d516f81095755cf27286cc80",
+      "width": 1100,
+      "height": 619,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-670d5e71f1e5-496b8e0c",
+      "sourcePath": "17001030816484736.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 103222,
+      "sha256": "670d5e71f1e5c8d9b22f7113f553fc87d2759445ef047ab896daeecbe716463f",
+      "width": 1100,
+      "height": 619,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-d5bf587040ce-5df88096",
+      "sourcePath": "17231683527757184.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 98926,
+      "sha256": "d5bf587040ce10c638e213e63ce7f00770d86cd92bba46286e4a9e1c01fc741b",
+      "width": 1100,
+      "height": 619,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-22618d0ca043-da48d06f",
+      "sourcePath": "17231685368597888.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 113682,
+      "sha256": "22618d0ca04395dee43775326d3a5c9bca89dfaeaca1286b96974cd0d9b084f2",
+      "width": 1100,
+      "height": 619,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-7f0760a9b9a7-f718ba46",
+      "sourcePath": "17675651674262912.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 47092,
+      "sha256": "7f0760a9b9a70d86d592ebf5dbd0c9a4d68fba1eae29b60d0e4d989ef6847faf",
+      "width": 1100,
+      "height": 730,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-eaec56e64905-a741fc7e",
+      "sourcePath": "17690718978690432.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 100596,
+      "sha256": "eaec56e6490540c707bcac33a6f6a44e02517c84a6ac95b4cd12006ae5ee8642",
+      "width": 1100,
+      "height": 733,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-ccd37e754836-0b3c3f26",
+      "sourcePath": "17749568777801088.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 37074,
+      "sha256": "ccd37e754836ca4ac47afe3221203413c35963f093346f65cabfbb2aeb1c8962",
+      "width": 1100,
+      "height": 619,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-f00bb3ffd712-c4a37910",
+      "sourcePath": "17832391416466816.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 109244,
+      "sha256": "f00bb3ffd71270d135408d1d4fab3c06d9507abc894a4b5be3edc15440134d48",
+      "width": 1100,
+      "height": 717,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-b778dd3bbf9e-ae8493f0",
+      "sourcePath": "18193731367128448.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 106988,
+      "sha256": "b778dd3bbf9e2cf05ace60aa828df345e1daf3e27be2457175ae6d2766c9a7e2",
+      "width": 1100,
+      "height": 714,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-7ecd5810ab54-dc150b5d",
+      "sourcePath": "18311870343007616.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 63196,
+      "sha256": "7ecd5810ab5400f1b6778385f330efda14c265ba0937606753bd273c55eba144",
+      "width": 1100,
+      "height": 619,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-6f63c3f311b0-62c677dc",
+      "sourcePath": "18311870436396416.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 70596,
+      "sha256": "6f63c3f311b09426864da44d20c6be9a22e70abafee8e175f8cd3c8dd398f33f",
+      "width": 1100,
+      "height": 618,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-0b697c11f472-d29565e9",
+      "sourcePath": "18313627342523776.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 123258,
+      "sha256": "0b697c11f472466ff063f427d9063a488dd771e85d5c375bb8771579118f4b27",
+      "width": 1100,
+      "height": 614,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-5a264a07aaa0-595c3ed4",
+      "sourcePath": "18325667651636608.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 56494,
+      "sha256": "5a264a07aaa07c1588c19bf6534e3a17fa7acb412d9de7fd1a5cc62dc07ba779",
+      "width": 1100,
+      "height": 619,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-0117a251b3ae-1e094157",
+      "sourcePath": "18634748875165056.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 64028,
+      "sha256": "0117a251b3ae9e80db11a8f2729230c84a81afb771831aedc20e2dbb70c1110b",
+      "width": 1100,
+      "height": 596,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-4e2780c5e554-181050f7",
+      "sourcePath": "18787556858973568.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 122380,
+      "sha256": "4e2780c5e55485665d35c86d2dd5539b8ca3af2bef9ab244d934dae6d60dcbe9",
+      "width": 1100,
+      "height": 619,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-5c528e40ac92-6f04582d",
+      "sourcePath": "18800103947029888.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 22530,
+      "sha256": "5c528e40ac92e14c0ab8030ea30825e7772388ba7d1f32df1663782f7f7ecb2c",
+      "width": 1100,
+      "height": 619,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-bbf9586adde1-f83c7bf2",
+      "sourcePath": "18891189948894592.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 42298,
+      "sha256": "bbf9586adde1f7107426956639af0a10f44be48ef309df474150c32af29e1652",
+      "width": 1100,
+      "height": 610,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-9a422ae62660-472d7a20",
+      "sourcePath": "18926116189031808.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 42742,
+      "sha256": "9a422ae626608230c5e2a0371b6a13a3f05bf2732a3c006b54bab1b347e917db",
+      "width": 1100,
+      "height": 619,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-2ac6f2267799-24151e62",
+      "sourcePath": "19044008101761920.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 124870,
+      "sha256": "2ac6f2267799dd689db8284bd412f804043b56142872311999f53077382decfb",
+      "width": 1100,
+      "height": 619,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-42041506421c-4b4b6fdb",
+      "sourcePath": "19124275306124160.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 15818,
+      "sha256": "42041506421cf36dd607ef69aeea84f4d9fb20b850a2ae2746fab528d2c312fa",
+      "width": 1100,
+      "height": 618,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-48fcea2c61ac-4f0cd62a",
+      "sourcePath": "19139962060231552.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 54376,
+      "sha256": "48fcea2c61ac473df74bba76859be58fb8ee671e76d0b59e1a9b1d3da7cc6b41",
+      "width": 1100,
+      "height": 600,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-33f59ebe0cbd-b115ace2",
+      "sourcePath": "19157340044809088.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 50880,
+      "sha256": "33f59ebe0cbdfc1f01ce022cc423cf12a0c64fadca8155af96bc00fac34a6933",
+      "width": 1100,
+      "height": 618,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-91331101a1c5-517c5ed6",
+      "sourcePath": "19168413627798400.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 124832,
+      "sha256": "91331101a1c5d6a204f0251e205abfd245e92771f5c874deb435e5859ffaa8f6",
+      "width": 1100,
+      "height": 618,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-7477738994a3-239719bb",
+      "sourcePath": "19184665389650816.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 16762,
+      "sha256": "7477738994a34939cfa92c12ba088c2b2ec427c38ae4f429ecca76bf8192b51b",
+      "width": 1100,
+      "height": 619,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-ac251e816228-60354553",
+      "sourcePath": "19190717765276544.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 37626,
+      "sha256": "ac251e81622873228c3c0cb3ce4b2cd6b3fd6fc88d7095f489f22c81e6edcc08",
+      "width": 1100,
+      "height": 619,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-e647e8228bc5-7d0540ff",
+      "sourcePath": "19191275940172672.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 88180,
+      "sha256": "e647e8228bc5c1379ba5171bf658f30fe6b6f458a09cfcbf149f500f81211b67",
+      "width": 1100,
+      "height": 618,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-614658b95a77-9c97eb99",
+      "sourcePath": "19247907607237504.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 34606,
+      "sha256": "614658b95a77e47f37cd9adb9859f5e96b35944f03330eb20d3e29aa7319132a",
+      "width": 1100,
+      "height": 618,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-0b06537b4e1e-8b5f1405",
+      "sourcePath": "19258353735193472.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 108958,
+      "sha256": "0b06537b4e1e96d6445278d1d63d0ff1c5dd5fd898a1be1045130277dd2ce43e",
+      "width": 1100,
+      "height": 619,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-fa7d1a7fddab-33ce0b33",
+      "sourcePath": "19285714629383040.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 88246,
+      "sha256": "fa7d1a7fddab7dd7ca7f213b96073a5b94ced793405247217a42c25af7cf1534",
+      "width": 1100,
+      "height": 688,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-7af75399fc83-f7c63004",
+      "sourcePath": "19393492108727168.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 34068,
+      "sha256": "7af75399fc83647bb431b09fda45a1d4b08b5b6c99d1558205cb70fdda1649a8",
+      "width": 1100,
+      "height": 618,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-d793fe1e03bb-7a93589e",
+      "sourcePath": "19407561643807616.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 94460,
+      "sha256": "d793fe1e03bb8f9c81b66f160be3cd75fb66811d40dc0d8b5d3313e204e2299b",
+      "width": 1100,
+      "height": 734,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-7415c354a204-cda007db",
+      "sourcePath": "19413636230239104.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 130896,
+      "sha256": "7415c354a204d1556e8a66094341f82d6d63ff80cb055f47dcae9ae1fb31f5db",
+      "width": 1100,
+      "height": 777,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-8e0b79eb55d4-805bed69",
+      "sourcePath": "19428214818755456.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 53536,
+      "sha256": "8e0b79eb55d4ff8121713366238c26f4ce67b1e10f3aaf203e1ce853752c09af",
+      "width": 1100,
+      "height": 618,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-5d70246fddff-462311a7",
+      "sourcePath": "19429438505571200.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 110042,
+      "sha256": "5d70246fddff6c957e2248613a21950129df236918b043961267fc89d229ccee",
+      "width": 1100,
+      "height": 618,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-ecccbb789992-51cc5983",
+      "sourcePath": "2k迈尔斯莫拉莱斯动态壁纸｜蜘蛛侠平行宇宙背景视频 - 漫威超级英雄「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 368593,
+      "sha256": "ecccbb78999276c052dcedc05b0c27ca55f0739baeb7931ac06bb6173840e0af",
+      "width": 960,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "copyright_review",
+      "canonicalId": null,
+      "risk": {
+        "status": "copyright_review",
+        "note": "可能包含第三方角色或品牌元素，仅限管理员审查。"
+      }
+    },
+    {
+      "id": "material-dde38c0aaf98-86f2e704",
+      "sourcePath": "2k霓虹灯房间动态壁纸｜城市夜景背景视频 - 沙发「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 124913,
+      "sha256": "dde38c0aaf98ca7f6f1e10ae617ae487e321b039c54dbd6d444c0e8c1f971c6e",
+      "width": 960,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-ebab83397bde-2d3696f1",
+      "sourcePath": "3k赛博朋克城市动态壁纸｜夜景背景视频 - 高楼霓虹「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 401551,
+      "sha256": "ebab83397bde129ef3751e0a66db89c0631c31baf32a177017179063f24d70ec",
+      "width": 960,
+      "height": 414,
+      "durationSeconds": 5,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-c915acac96a5-66541347",
+      "sourcePath": "3k赛博朋克都市动态壁纸｜夜晚霓虹背景视频 - 未来科幻风景「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 210492,
+      "sha256": "c915acac96a55af1e4a8c1425175c657d4ed884030b37229483d72bcc5d9cf38",
+      "width": 960,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-2421f0715011-b4f66cba",
+      "sourcePath": "4b00e7bfb00de4ae75e837d0232d37e7.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 80504,
+      "sha256": "2421f0715011a097a3687db06f155a11143e7e557f066b602c138089d72662f5",
+      "width": 1000,
+      "height": 563,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-35518c15db60-3fb88cb5",
+      "sourcePath": "4k暗影蜘蛛侠动态壁纸｜漫威超级英雄背景视频 - 黑色战衣「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 326277,
+      "sha256": "35518c15db607ddc8f0068524ecb4d1e3e0259a88b9c6e8abf7278f2e8605489",
+      "width": 960,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "copyright_review",
+      "canonicalId": null,
+      "risk": {
+        "status": "copyright_review",
+        "note": "可能包含第三方角色或品牌元素，仅限管理员审查。"
+      }
+    },
+    {
+      "id": "material-a53f83b337b5-218c740f",
+      "sourcePath": "4k超级马里奥动态壁纸｜像素房间背景 - 游戏场景「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 95273,
+      "sha256": "a53f83b337b5b970a13bbd4f0684414c61a33b79f93aad154af1cb37aa2725d6",
+      "width": 960,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "copyright_review",
+      "canonicalId": null,
+      "risk": {
+        "status": "copyright_review",
+        "note": "可能包含第三方角色或品牌元素，仅限管理员审查。"
+      }
+    },
+    {
+      "id": "material-a17a308d35d3-21aba190",
+      "sourcePath": "4k电竞少女动态壁纸｜赛博朋克房间背景 - 游戏「哲风壁纸」 (1).mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 145291,
+      "sha256": "a17a308d35d3c0ce7d42b6741c5b5c3420f7362167e6df49e1c304b6adc8f8a9",
+      "width": 960,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-a17a308d35d3-a8b911fc",
+      "sourcePath": "4k电竞少女动态壁纸｜赛博朋克房间背景 - 游戏「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 145291,
+      "sha256": "a17a308d35d3c0ce7d42b6741c5b5c3420f7362167e6df49e1c304b6adc8f8a9",
+      "width": 960,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "duplicate",
+      "canonicalId": "material-a17a308d35d3-21aba190",
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-5c8675795ebb-f69a229a",
+      "sourcePath": "4k动漫风蓝天山脉动态壁纸｜云层霞光背景视频 - 视觉震撼「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 1167173,
+      "sha256": "5c8675795ebbf845ae810b4e45bbce1728c7760cf7fb1caec171712d8deba26a",
+      "width": 981,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-b388e6005506-09c334f1",
+      "sourcePath": "4k动漫美女水中动态壁纸｜彩色星空背景 - 梦幻「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 1257371,
+      "sha256": "b388e6005506d16693c2bda66def411b19c00013b5bcc9fb0b474ebb77c7b564",
+      "width": 960,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-acccc3326809-e9e74869",
+      "sourcePath": "4k动漫少女动态壁纸｜居家休憩背景视频 - 温暖室内休闲场景「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 103004,
+      "sha256": "acccc33268090c1776a042f60df5e549d30a7f2af106a67048a6fe247b59c3ab",
+      "width": 911,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-fd47543151e3-e1f77f50",
+      "sourcePath": "4k芙宁娜动态壁纸｜海边日落婚纱背景视频 - 蝴蝶少女「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 551882,
+      "sha256": "fd47543151e37634eb5c6c1f8f667b0bae339edc636eec9c2202474222b3a55e",
+      "width": 953,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "copyright_review",
+      "canonicalId": null,
+      "risk": {
+        "status": "copyright_review",
+        "note": "可能包含第三方角色或品牌元素，仅限管理员审查。"
+      }
+    },
+    {
+      "id": "material-a5f713f94418-15fba88c",
+      "sourcePath": "4k日式街道落日动态壁纸｜霓虹黄昏 - 复古汽车「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 262674,
+      "sha256": "a5f713f944187dbacafdb95fd13c92eef1476c83291590818eafee0c40df0cad",
+      "width": 960,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-d430abd95534-a13d761c",
+      "sourcePath": "4k日式杂货铺动态壁纸｜雨天背景视频 - 落叶「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 417430,
+      "sha256": "d430abd95534e252e74d4d0c512a662782fd54c1803b20469e179a34cf106b2b",
+      "width": 960,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-df6388daee46-e3486a16",
+      "sourcePath": "4k深蓝礼服美女动态壁纸｜天鹅宫殿背景 - 唯美喜欢「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 360094,
+      "sha256": "df6388daee46a1438911c345c06dd5f429a620ea6cdcbd0fc46822995e172400",
+      "width": 960,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-3d14a72399f4-5100b418",
+      "sourcePath": "4k遐蝶动态壁纸｜黄昏大海背景视频 - 婚纱蝴蝶少女「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 708842,
+      "sha256": "3d14a72399f495d3ebf0493de78fd589726adf074c788508c402680f59748b1f",
+      "width": 953,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "copyright_review",
+      "canonicalId": null,
+      "risk": {
+        "status": "copyright_review",
+        "note": "可能包含第三方角色或品牌元素，仅限管理员审查。"
+      }
+    },
+    {
+      "id": "material-d3c6b69bacc3-a605f3bf",
+      "sourcePath": "4k像素风小猩猩动态壁纸｜复古游戏房背景图 - 红色「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 141894,
+      "sha256": "d3c6b69bacc3e6141fd2d64fad6929942190be2c41028f7b70f16f0a81d6ee51",
+      "width": 960,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-e8f2d89ab026-1e6a137e",
+      "sourcePath": "4k星空眼眸动态壁纸｜白发少女背景视频 - 光影「哲风壁纸」 (1).mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 872673,
+      "sha256": "e8f2d89ab026548cb039f07a8d4c7be5fb08e7ef900650972ee0c87de01fb43b",
+      "width": 1000,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-e8f2d89ab026-d013f44a",
+      "sourcePath": "4k星空眼眸动态壁纸｜白发少女背景视频 - 光影「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 872673,
+      "sha256": "e8f2d89ab026548cb039f07a8d4c7be5fb08e7ef900650972ee0c87de01fb43b",
+      "width": 1000,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "duplicate",
+      "canonicalId": "material-e8f2d89ab026-1e6a137e",
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-ab048e4644d4-3eb7aa3b",
+      "sourcePath": "4k星瞳藏刃动态壁纸｜蓝光背景视频 - 剑客少女「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 720442,
+      "sha256": "ab048e4644d452e6983ba3e5cee49ce0d70577fad784c4bcf5d4686bdb029654",
+      "width": 960,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-702fed2aca8c-9c0787b7",
+      "sourcePath": "4k云海漩涡动态壁纸｜高空云层背景视频 - 震撼天空景观「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 859986,
+      "sha256": "702fed2aca8c1f8f607ce7b152b35c4a3200e74b333fe22561543737cec14c94",
+      "width": 981,
+      "height": 540,
+      "durationSeconds": 5,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-65a457280941-bb73aad1",
+      "sourcePath": "4k长离动态壁纸｜鸣潮背景视频 - 龙 火焰 冰雪「哲风壁纸」.mp4",
+      "sourceExtension": "mp4",
+      "kind": "video",
+      "actualFormat": "mp4",
+      "bytes": 649997,
+      "sha256": "65a4572809419668a7226558b9c6db00d2df96329ab8fa2f5988d4957fde64d2",
+      "width": 960,
+      "height": 540,
+      "durationSeconds": 4.8,
+      "status": "copyright_review",
+      "canonicalId": null,
+      "risk": {
+        "status": "copyright_review",
+        "note": "可能包含第三方角色或品牌元素，仅限管理员审查。"
+      }
+    },
+    {
+      "id": "material-d94902506015-3b889718",
+      "sourcePath": "aea128731e8ce04ef14ed6cb9476d2fb.jpeg",
+      "sourceExtension": "jpeg",
+      "kind": "static",
+      "actualFormat": "webp",
+      "bytes": 30690,
+      "sha256": "d949025060153bd57c92fe82d830bd64bbfd50b366a7cdf3a9824f671afb33d9",
+      "width": 1000,
+      "height": 563,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-71315154787f-c072419a",
+      "sourcePath": "videoframe_1877.png",
+      "sourceExtension": "png",
+      "kind": "static",
+      "actualFormat": "png",
+      "bytes": 1041188,
+      "sha256": "71315154787fe543c02810549ce84de6eecf4496748e507b8b5db04d006674b4",
+      "width": 960,
+      "height": 540,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    },
+    {
+      "id": "material-3da9211d1e63-d67d35dd",
+      "sourcePath": "videoframe_3694.png",
+      "sourceExtension": "png",
+      "kind": "static",
+      "actualFormat": "png",
+      "bytes": 1044656,
+      "sha256": "3da9211d1e63d678437062a0e374454d148090f670d11e35cac80e62f24fe9cd",
+      "width": 960,
+      "height": 540,
+      "durationSeconds": null,
+      "status": "repairable",
+      "canonicalId": null,
+      "risk": {
+        "status": "unreviewed",
+        "note": "待人工确认来源与公开授权。"
+      }
+    }
+  ]
+}
