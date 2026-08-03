@@ -599,6 +599,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             arguments: [
               "--file", imageURL.path,
               "--name", entry.name,
+              "--theme-id", entry.id,
               "--appearance", entry.appearance,
               "--task-mode", entry.taskMode,
               "--accent-rgb", entry.visual.accentRGB,

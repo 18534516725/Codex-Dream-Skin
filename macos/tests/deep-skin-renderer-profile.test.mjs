@@ -26,5 +26,9 @@ for (const [attribute, field] of [
 assert.match(renderer, /const visualChoice\s*=\s*\(/, "renderer must validate profile choices before writing DOM attributes");
 assert.match(renderer, /layoutVariant:[\s\S]*poster-right[\s\S]*pixel-console/, "renderer must whitelist layout variants");
 assert.match(renderer, /motionPreset:[\s\S]*none[\s\S]*sonar/, "renderer must whitelist motion presets");
+assert.match(renderer, /const compactThemeName\s*=\s*\(/, "renderer must derive compact home titles");
+assert.match(renderer, /Array\.from\(compact\)\.slice\(0, 12\)/, "compact titles must be bounded to 12 visible characters");
+assert.match(renderer, /setAttribute\(root, "data-dream-theme-id", themeId\)/, "renderer must expose the validated fixed theme ID");
+assert.match(renderer, /setStyleProperty\(root, "--dream-skin-name", cssString\(compactThemeName\(/, "home title must use the compact display name");
 
 console.log("Deep skin renderer profile tests passed");

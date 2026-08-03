@@ -58,6 +58,13 @@ function validateText(value, name, maxLength, fallback) {
   return Array.from(normalized).slice(0, maxLength).join("") || fallback;
 }
 
+function validateThemeId(value) {
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value) || value.length > 80) {
+    throw new Error("theme-id must be a lowercase catalog-style identifier.");
+  }
+  return value;
+}
+
 function assertContainedPath(rootPath, candidatePath, label) {
   const relative = path.relative(rootPath, candidatePath);
   if (
@@ -126,6 +133,9 @@ if (!imageStat.isFile() || imageStat.size < 1 || imageStat.size > 10 * 1024 * 10
 }
 
 const name = validateText(valueFor("name", "我的 Codex Dream Skin"), "name", 80, "我的 Codex Dream Skin");
+const themeId = hasValue("theme-id")
+  ? validateThemeId(valueFor("theme-id"))
+  : `custom-${Date.now()}`;
 const tagline = validateText(
   valueFor("tagline", "把喜欢的画面变成可交互的 Codex 工作台。"),
   "tagline",
@@ -174,7 +184,7 @@ if (hasValue("highlight")) explicitColors.highlight = validateHex(valueFor("high
 
 const custom = {
   schemaVersion: 1,
-  id: `custom-${Date.now()}`,
+  id: themeId,
   name: name || "我的 Codex Dream Skin",
   brandSubtitle: "CODEX DREAM SKIN",
   tagline: tagline || "把喜欢的画面变成可交互的 Codex 工作台。",

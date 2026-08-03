@@ -40,6 +40,11 @@ assert.match(
   /arguments:\s*\[[^\]]*"--appearance",\s*entry\.appearance[^\]]*"--task-mode",\s*entry\.taskMode[^\]]*\]/s,
   "fixed Nexo skins must pass their vivid profile to the theme loader",
 );
+assert.match(
+  appDelegate,
+  /"--theme-id",\s*entry\.id/,
+  "fixed Nexo skins must preserve their approved catalog ID",
+);
 for (const [argument, field] of [
   ["--accent-rgb", "accentRGB"],
   ["--secondary-rgb", "secondaryRGB"],
@@ -63,6 +68,7 @@ for (const [argument, field] of [
   );
 }
 for (const argument of [
+  "--theme-id",
   "--layout-variant", "--surface-style", "--corner-style", "--motion-preset",
   "--sidebar-style", "--composer-style", "--texture-style",
 ]) {
@@ -83,6 +89,7 @@ assert.match(
   /\["auto",\s*"ambient",\s*"banner",\s*"full",\s*"off"\]/,
   "the theme writer must preserve the full task-art mode",
 );
+assert.match(writer, /id:\s*themeId/, "the theme writer must serialize the validated fixed theme ID");
 assert.match(writer, /const visual\s*=\s*hasVisual\s*\?\s*\{[\s\S]*accentRGB[\s\S]*secondaryRGB[\s\S]*panelRGB[\s\S]*glowStrength[\s\S]*signature[\s\S]*layoutVariant[\s\S]*surfaceStyle[\s\S]*cornerStyle[\s\S]*motionPreset[\s\S]*sidebarStyle[\s\S]*composerStyle[\s\S]*textureStyle[\s\S]*\}/, "the writer must serialize the complete deep visual profile");
 
 console.log("Nexo vivid profile tests passed");

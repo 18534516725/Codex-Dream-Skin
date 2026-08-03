@@ -121,7 +121,7 @@ if (typeof module === "object" && module?.exports) {
     "data-dream-art-wide", "data-dream-art-safe", "data-dream-task-mode",
     "data-dream-art-safe-area", "data-dream-art-task-mode", "data-dream-art-aspect",
     "data-dream-art-ready",
-    "data-dream-family", "data-dream-new-window",
+    "data-dream-family", "data-dream-new-window", "data-dream-theme-id",
     "data-dream-layout", "data-dream-surface", "data-dream-corners", "data-dream-motion",
     "data-dream-sidebar-style", "data-dream-composer-style", "data-dream-texture",
   ];
@@ -226,6 +226,20 @@ if (typeof module === "object" && module?.exports) {
   };
 
   const cssString = (value) => JSON.stringify(String(value ?? ""));
+  const compactThemeName = (value) => {
+    let compact = String(value || "Codex 皮肤")
+      .trim()
+      .replace(/^\d+\s*[kK]\s*/u, "")
+      .replace(/[【「][^】」]*壁纸[】」]/gu, "")
+      .split(/[｜|]/u)[0]
+      .replace(/(?:动态|静态)?壁纸|背景(?:视频|图)/gu, "")
+      .replace(/\s*[-—–]\s*$/u, "")
+      .trim();
+    if (!compact) compact = "Codex 皮肤";
+    return Array.from(compact).slice(0, 12).join("");
+  };
+  const themeId = typeof THEME.id === "string" && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(THEME.id)
+    ? THEME.id : "custom";
 
   const VISUAL_CHOICES = {
     layoutVariant: ["poster-right", "editorial", "stage", "console", "pixel-platform", "collage", "pixel-desktop", "pixel-console"],
@@ -519,7 +533,7 @@ if (typeof module === "object" && module?.exports) {
       const rgb = rgbString(value);
       if (rgb) setStyleProperty(root, name, rgb);
     }
-    setStyleProperty(root, "--dream-skin-name", cssString(THEME.name || "Codex Dream Skin"));
+    setStyleProperty(root, "--dream-skin-name", cssString(compactThemeName(THEME.name)));
     setStyleProperty(root, "--dream-skin-tagline", cssString(THEME.tagline || "Make something wonderful."));
     setStyleProperty(root, "--dream-skin-quote", cssString(THEME.quote || "MAKE SOMETHING WONDERFUL"));
     setStyleProperty(root, "--dream-skin-brand-subtitle", cssString(
@@ -762,6 +776,7 @@ if (typeof module === "object" && module?.exports) {
     setAttribute(root, SHELL_ATTR, shell);
     setAttribute(root, "data-dream-family", familyChoice());
     setAttribute(root, "data-dream-new-window", "themed");
+    setAttribute(root, "data-dream-theme-id", themeId);
     setAttribute(root, "data-dream-layout", visualChoice("layoutVariant", VISUAL.layoutVariant));
     setAttribute(root, "data-dream-surface", visualChoice("surfaceStyle", VISUAL.surfaceStyle));
     setAttribute(root, "data-dream-corners", visualChoice("cornerStyle", VISUAL.cornerStyle));

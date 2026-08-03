@@ -1507,6 +1507,10 @@ try {
   if ($imageMetadataTest.ExitCode -ne 0) { throw 'Image metadata regression test failed.' }
 
   Write-Host 'PASS: config transactions, restore scoping, state safety, argument quoting, and loopback CDP validation.'
+} catch {
+  $annotation = $_.Exception.Message.Replace('%', '%25').Replace("`r", '%0D').Replace("`n", '%0A')
+  Write-Host "::error title=Windows regression::$annotation"
+  throw
 } finally {
   Remove-Item -LiteralPath $temporaryRoot -Recurse -Force -ErrorAction SilentlyContinue
 }

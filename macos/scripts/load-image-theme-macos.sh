@@ -8,6 +8,7 @@ set -euo pipefail
 
 IMAGE=""
 THEME_NAME=""
+THEME_ID=""
 FROM_LIBRARY=""
 APPLY_NOW="true"
 APPEARANCE="auto"
@@ -33,6 +34,7 @@ while [ "$#" -gt 0 ]; do
     --file) IMAGE="${2:-}"; shift 2 ;;
     --from-library) FROM_LIBRARY="${2:-}"; shift 2 ;;
     --name) THEME_NAME="${2:-}"; shift 2 ;;
+    --theme-id) THEME_ID="${2:-}"; shift 2 ;;
     --appearance) APPEARANCE="${2:-}"; shift 2 ;;
     --safe-area) SAFE_AREA="${2:-}"; shift 2 ;;
     --task-mode) TASK_MODE="${2:-}"; shift 2 ;;
@@ -58,6 +60,10 @@ done
 case "$APPEARANCE" in auto|light|dark) ;; *) fail "Invalid appearance: $APPEARANCE" ;; esac
 case "$SAFE_AREA" in auto|left|right|center|none) ;; *) fail "Invalid safe area: $SAFE_AREA" ;; esac
 case "$TASK_MODE" in auto|ambient|banner|full|off) ;; *) fail "Invalid task mode: $TASK_MODE" ;; esac
+if [ -n "$THEME_ID" ]; then
+  case "$THEME_ID" in *[!a-z0-9-]*|''|-*|*-) fail "Invalid fixed theme id." ;; esac
+  [ "${#THEME_ID}" -le 80 ] || fail "Fixed theme id is too long."
+fi
 
 ensure_state_root
 IMAGES_DIR="$STATE_ROOT/images"
@@ -90,7 +96,7 @@ if [ -z "$THEME_NAME" ]; then
 fi
 [ -n "$THEME_NAME" ] || THEME_NAME="我的主题"
 
-theme_id="img-$(/bin/date '+%Y%m%d%H%M%S')-$$"
+theme_id="${THEME_ID:-img-$(/bin/date '+%Y%m%d%H%M%S')-$$}"
 
 progress() {
   printf '%s\n' "$*" >&2
@@ -137,6 +143,7 @@ theme_args=(
   --safe-area "$SAFE_AREA"
   --task-mode "$TASK_MODE"
 )
+[ -n "$THEME_ID" ] && theme_args+=(--theme-id "$THEME_ID")
 [ -n "$FOCUS_X" ] && theme_args+=(--focus-x "$FOCUS_X")
 [ -n "$FOCUS_Y" ] && theme_args+=(--focus-y "$FOCUS_Y")
 [ -n "$ACCENT_RGB" ] && theme_args+=(--accent-rgb "$ACCENT_RGB")

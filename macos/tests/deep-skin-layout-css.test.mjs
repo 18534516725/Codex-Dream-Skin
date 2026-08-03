@@ -32,5 +32,10 @@ assert.match(css, /--ds-reading-veil:/, "task pages need a bounded reading veil 
 assert.match(css, /not\(:has\(__DREAM_SELECTOR_HOME_ROUTE_CSS__\)\)[\s\S]*--ds-reading-veil/, "non-home pages must use the reading veil");
 assert.match(css, /pointer-events:\s*none/, "decorative layers must never intercept native controls");
 assert.match(css, /prefers-reduced-motion:\s*reduce[\s\S]*animation:\s*none\s*!important/, "reduced motion must disable environmental animation");
+assert.match(css, /__DREAM_SELECTOR_GAME_SOURCE__\s*\{[\s\S]*font-size:\s*0\s*!important/, "home must hide inherited long headline text");
+assert.match(css, /__DREAM_SELECTOR_GAME_SOURCE__::after\s*\{[\s\S]*display:\s*none\s*!important/, "home must hide the secondary tagline");
+assert.match(css, /data-dream-theme-id="material-df6388daee46-e3486a16"[\s\S]*body::after/, "only the selected skin may disable the particle layer");
+assert.match(css, /data-dream-theme-id="material-df6388daee46-e3486a16"[\s\S]*__DREAM_SELECTOR_LEFT_PANEL__::after/, "only the selected skin may disable the sidebar texture");
+assert.match(css, /data-dream-theme-id="nexo-material-df6388daee46-e3486a16"[\s\S]*body::after/, "the selected Windows fixed-skin ID must disable the particle layer too");
 
 console.log("Deep skin layout CSS tests passed");
