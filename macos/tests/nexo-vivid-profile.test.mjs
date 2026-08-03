@@ -27,7 +27,7 @@ for (const field of [
 }
 const catalog = JSON.parse(catalogSource);
 assert.equal(catalog.schemaVersion, 2, "macOS must consume the Theme V2 catalog");
-assert.equal(catalog.items.length, 18, "macOS must package all 18 fixed skins");
+assert.equal(catalog.items.length, 87, "macOS must package all 87 approved fixed skins");
 for (const id of [
   "post-raccoon", "night-shift-penguin", "workshop-otter",
   "moon-platform-cat", "floppy-wizard", "deep-sea-repair",

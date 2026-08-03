@@ -12,7 +12,7 @@ const [themeContract, applyScript] = await Promise.all([
 const catalog = JSON.parse(await fs.readFile(path.join(root, "assets/nexo-skin-catalog.json"), "utf8"));
 
 assert.equal(catalog.schemaVersion, 2);
-assert.equal(catalog.items.length, 18);
+assert.equal(catalog.items.length, 87);
 assert.ok(catalog.items.every((item) => ["dark", "light"].includes(item.theme.appearance)));
 assert.ok(catalog.items.every((item) => item.theme.art.taskMode === "full"));
 for (const field of [
