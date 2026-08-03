@@ -1233,9 +1233,14 @@ try {
     -not $traySource.Contains('Get-DreamSkinSavedThemes -StateRoot $StateRoot -SkipImageMetadata')) {
     throw 'Tray menu metadata enumeration still performs full image parsing on every open.'
   }
-  foreach ($requiredReleaseAction in @('check-update.ps1', '检查更新', '打开 DreamSkin.cc', '登录时启动')) {
+  foreach ($requiredReleaseAction in @('check-update.ps1', '检查更新', '登录时启动')) {
     if (-not $traySource.Contains($requiredReleaseAction)) {
       throw "Tray release action is missing: $requiredReleaseAction"
+    }
+  }
+  foreach ($forbiddenExternalAction in @('主题库 Gallery', '在线 Studio', '打开 DreamSkin.cc')) {
+    if ($traySource.Contains($forbiddenExternalAction)) {
+      throw "Tray must not expose an external theme-distribution shortcut: $forbiddenExternalAction"
     }
   }
   $trayTokens = $null
