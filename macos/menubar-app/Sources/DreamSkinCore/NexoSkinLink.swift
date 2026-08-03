@@ -101,6 +101,18 @@ public enum NexoSkinContract {
     )
   }
 
+  public static func isCanonicalApplyURL(_ url: URL) -> Bool {
+    let source = url.absoluteString
+    guard let expression = try? NSRegularExpression(pattern: linkPattern),
+          let match = expression.firstMatch(
+            in: source,
+            range: NSRange(source.startIndex..., in: source)
+          ) else {
+      return false
+    }
+    return match.range == NSRange(source.startIndex..., in: source)
+  }
+
   public static func isRestoreURL(_ url: URL) -> Bool {
     url.absoluteString == "dreamskin://restore"
   }

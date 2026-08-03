@@ -23,6 +23,7 @@ $mutex = [System.Threading.Mutex]::new($false, "Local\CodexDreamSkin.$sid.Tray")
 $acquired = $false
 $notify = $null
 $trayIcon = $null
+$updateTimer = $null
 try {
   try { $acquired = $mutex.WaitOne(0) } catch [System.Threading.AbandonedMutexException] { $acquired = $true }
   if (-not $acquired) { exit 0 }
@@ -318,8 +319,16 @@ try {
       Show-DreamSkinTrayError -Message $_.Exception.Message
     }
   })
+  Start-DreamSkinPowerShell -Script $checkUpdateScript -Arguments @('-Auto')
+  $updateTimer = [System.Windows.Forms.Timer]::new()
+  $updateTimer.Interval = 60000
+  $updateTimer.add_Tick({
+    Start-DreamSkinPowerShell -Script $checkUpdateScript -Arguments @('-InstallPending')
+  })
+  $updateTimer.Start()
   [System.Windows.Forms.Application]::Run()
 } finally {
+  if ($null -ne $updateTimer) { $updateTimer.Stop(); $updateTimer.Dispose() }
   if ($null -ne $notify) { $notify.Dispose() }
   if ($null -ne $trayIcon) { $trayIcon.Dispose() }
   if ($acquired) { try { $mutex.ReleaseMutex() } catch {} }

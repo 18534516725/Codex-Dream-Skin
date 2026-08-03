@@ -95,6 +95,7 @@ RUNTIME_SCRIPTS=(
   extract-theme-zip-macos.sh
   image-metadata.mjs
   import-theme-zip-macos.sh
+  install-update-macos.sh
   injector.mjs
   install-dream-skin-macos.sh
   load-image-theme-macos.sh

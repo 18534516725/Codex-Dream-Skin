@@ -65,6 +65,15 @@ function Resolve-DreamSkinNexoApplyUri {
   }
 }
 
+function Test-DreamSkinNexoApplyUri {
+  param([Parameter(Mandatory = $true)][string]$Uri)
+  return [regex]::IsMatch(
+    $Uri,
+    '\Adreamskin://apply/?\?skin=([a-z0-9-]{1,64})\z',
+    [System.Text.RegularExpressions.RegexOptions]::CultureInvariant
+  )
+}
+
 function Test-DreamSkinCommunityVersionId {
   param([AllowNull()][string]$Value)
   return [bool]($Value -and [regex]::IsMatch(

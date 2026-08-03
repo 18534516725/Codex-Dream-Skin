@@ -136,6 +136,12 @@ final class CoreTests: XCTestCase {
     ] {
       XCTAssertNil(NexoSkinContract.entry(from: try XCTUnwrap(URL(string: source))), source)
     }
+    XCTAssertTrue(NexoSkinContract.isCanonicalApplyURL(
+      try XCTUnwrap(URL(string: "dreamskin://apply?skin=future-reviewed-skin"))
+    ))
+    XCTAssertFalse(NexoSkinContract.isCanonicalApplyURL(
+      try XCTUnwrap(URL(string: "dreamskin://apply?skin=future-reviewed-skin&url=https://evil.example"))
+    ))
     XCTAssertTrue(NexoSkinContract.isRestoreURL(try XCTUnwrap(URL(string: "dreamskin://restore"))))
     XCTAssertFalse(NexoSkinContract.isRestoreURL(try XCTUnwrap(URL(string: "dreamskin://restore?extra=1"))))
   }

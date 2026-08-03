@@ -29,6 +29,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   private var communityBaselineThemeID = ""
   private var communityStageMessage = ""
   private var refreshTimer: Timer?
+  private var automaticUpdateCheckInFlight = false
+  private let automaticUpdateLastCheckKey = "automaticUpdateLastCheck"
   private lazy var communityHTTP = BoundedCommunityHTTPClient(
     userAgent: "CodexDreamSkin/\(appVersion)"
   )
@@ -55,6 +57,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     "scripts/import-theme-zip-macos.sh",
     "scripts/injector.mjs",
     "scripts/install-dream-skin-macos.sh",
+    "scripts/install-update-macos.sh",
     "scripts/load-image-theme-macos.sh",
     "scripts/pause-dream-skin-macos.sh",
     "scripts/publish-theme-import.mjs",
@@ -120,6 +123,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       userInfo: nil,
       repeats: true
     )
+    scheduleAutomaticUpdateCheck()
   }
 
   func applicationWillTerminate(_ notification: Notification) {
@@ -152,6 +156,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       beginNexoRestore()
     } else if let versionID = CommunityThemeContract.versionID(from: urls[0]) {
       beginCommunityThemeApply(versionID: versionID)
+    } else if NexoSkinContract.isCanonicalApplyURL(urls[0]) {
+      performUpdateCheck(showCurrentVersion: false, triggeredByUnknownSkin: true)
     } else {
       showError(
         title: "一键换肤链接无效",
@@ -1120,17 +1126,34 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   }
 
   @objc private func checkForUpdates() {
-    guard !operationInFlight,
-          let script = installedScript(named: "check-update-macos.sh")
-            ?? bundledScript(named: "check-update-macos.sh") else {
-      showError(title: "无法检查更新", message: "更新检查脚本缺失，请重新安装应用。")
+    performUpdateCheck(showCurrentVersion: true, triggeredByUnknownSkin: false)
+  }
+
+  private func scheduleAutomaticUpdateCheck() {
+    let defaults = UserDefaults.standard
+    if let lastCheck = defaults.object(forKey: automaticUpdateLastCheckKey) as? Date,
+       Date().timeIntervalSince(lastCheck) < 24 * 60 * 60 {
       return
     }
-    operationInFlight = true
+    DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
+      self?.performUpdateCheck(showCurrentVersion: false, triggeredByUnknownSkin: false)
+    }
+  }
+
+  private func performUpdateCheck(showCurrentVersion: Bool, triggeredByUnknownSkin: Bool) {
+    guard !operationInFlight, !automaticUpdateCheckInFlight,
+          let script = installedScript(named: "check-update-macos.sh")
+            ?? bundledScript(named: "check-update-macos.sh") else {
+      if showCurrentVersion || triggeredByUnknownSkin {
+        showError(title: "无法检查更新", message: "更新检查脚本缺失，请重新安装应用。")
+      }
+      return
+    }
+    automaticUpdateCheckInFlight = true
     rebuildMenu()
     ScriptRunner.run(script: script, arguments: ["--json"]) { [weak self] result in
       guard let self else { return }
-      self.operationInFlight = false
+      self.automaticUpdateCheckInFlight = false
       self.rebuildMenu()
       guard result.succeeded,
             let data = result.output.data(using: .utf8),
@@ -1138,27 +1161,60 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
             let value = object as? [String: Any],
             let current = value["currentVersion"] as? String,
             let latest = value["latestVersion"] as? String,
+            let latestNumber = value["latestVersionNumber"] as? String,
             let available = value["updateAvailable"] as? Bool else {
-        self.showError(
-          title: "检查更新失败",
-          message: self.conciseOutput(result.output, fallback: "无法连接 GitHub，请稍后重试。")
-        )
+        if showCurrentVersion || triggeredByUnknownSkin {
+          self.showError(
+            title: "检查更新失败",
+            message: self.conciseOutput(result.output, fallback: "无法连接 GitHub，请稍后重试。")
+          )
+        }
         return
       }
+      UserDefaults.standard.set(Date(), forKey: self.automaticUpdateLastCheckKey)
       if available {
         let alert = NSAlert()
         alert.messageText = "发现新版本 \(latest)"
-        alert.informativeText = "当前版本为 \(current)。是否前往 GitHub Releases 下载？"
-        alert.addButton(withTitle: "前往下载")
+        alert.informativeText = triggeredByUnknownSkin
+          ? "当前助手版本过旧，无法识别这个新皮肤。更新完成后请再次点击一键应用。"
+          : "当前版本为 \(current)。更新只会重启换肤助手，不会关闭或重启 Codex。"
+        alert.addButton(withTitle: "立即更新")
         alert.addButton(withTitle: "稍后")
         self.activateForUserInteraction()
-        if alert.runModal() == .alertFirstButtonReturn,
-           let url = URL(string: "https://github.com/Fei-Away/Codex-Dream-Skin/releases/latest") {
-          NSWorkspace.shared.open(url)
+        if alert.runModal() == .alertFirstButtonReturn {
+          self.launchVerifiedUpdate(version: latestNumber)
         }
-      } else {
+      } else if triggeredByUnknownSkin {
+        self.showError(title: "暂不支持这个皮肤", message: "客户端已是最新版本，但该皮肤不在已审核目录中。")
+      } else if showCurrentVersion {
         self.showInfo(title: "已是最新版本", message: "当前安装的是 \(current)。")
       }
+    }
+  }
+
+  private func launchVerifiedUpdate(version: String) {
+    guard let script = bundledScript(named: "install-update-macos.sh")
+            ?? installedScript(named: "install-update-macos.sh") else {
+      showError(title: "无法安装更新", message: "自动更新组件缺失，请重新安装应用。")
+      return
+    }
+    let process = Process()
+    process.executableURL = URL(fileURLWithPath: "/bin/bash")
+    process.arguments = [
+      script.path,
+      "--version", version,
+      "--target-app", Bundle.main.bundleURL.path,
+      "--parent-pid", String(ProcessInfo.processInfo.processIdentifier)
+    ]
+    process.standardOutput = FileHandle.nullDevice
+    process.standardError = FileHandle.nullDevice
+    do {
+      try process.run()
+      operationInFlight = false
+      automaticUpdateCheckInFlight = false
+      NSApp.terminate(nil)
+    } catch {
+      showError(title: "无法启动更新", message: error.localizedDescription)
     }
   }
 

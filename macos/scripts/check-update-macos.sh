@@ -83,8 +83,9 @@ if version_is_newer "$LATEST_VERSION" "$CURRENT_VERSION"; then
 fi
 
 if [ "$JSON" = "true" ]; then
-  printf '{"currentVersion":"v%s","latestVersion":"v%s","updateAvailable":%s,"releaseUrl":"%s"}\n' \
-    "$CURRENT_VERSION" "$LATEST_VERSION" "$UPDATE_AVAILABLE" "$RELEASE_URL"
+  printf '{"currentVersion":"v%s","latestVersion":"v%s","latestVersionNumber":"%s","updateAvailable":%s,"releaseUrl":"%s","artifactName":"CodexDreamSkin-v%s.dmg","checksumName":"SHA256SUMS.txt"}\n' \
+    "$CURRENT_VERSION" "$LATEST_VERSION" "$LATEST_VERSION" "$UPDATE_AVAILABLE" "$RELEASE_URL" \
+    "$LATEST_VERSION"
 fi
 
 if [ "$INTERACTIVE" = "true" ]; then

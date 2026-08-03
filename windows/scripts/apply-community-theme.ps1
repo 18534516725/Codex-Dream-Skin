@@ -889,6 +889,14 @@ $previousProtocol = [System.Net.ServicePointManager]::SecurityProtocol
 try {
   [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.SecurityProtocolType]::Tls12
   if ($Uri -cmatch '\Adreamskin://apply/?\?skin=') {
+    if (Test-DreamSkinNexoApplyUri -Uri $Uri) {
+      try {
+        $null = Resolve-DreamSkinNexoApplyUri -Uri $Uri
+      } catch {
+        & (Join-Path $PSScriptRoot 'check-update.ps1') -Interactive
+        exit $LASTEXITCODE
+      }
+    }
     $result = Invoke-DreamSkinNexoApply -ApplyUri $Uri
   } elseif ($Uri -ceq 'dreamskin://restore') {
     & (Join-Path $PSScriptRoot 'restore-dream-skin.ps1') -RestoreBaseTheme -PromptRestart
