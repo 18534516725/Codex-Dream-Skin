@@ -80,11 +80,17 @@ public enum NexoSkinContract {
     // SwiftPM test products keep resources in a sibling bundle. Resolve it
     // without Bundle.module because its generated accessor calls fatalError
     // when a hand-built app accidentally omits that bundle.
-    guard let executableDirectory = Bundle.main.executableURL?.deletingLastPathComponent() else {
+    guard var directory = Bundle.main.executableURL?.deletingLastPathComponent() else {
       return nil
     }
-    let resourceBundle = executableDirectory.appendingPathComponent("CodexDreamSkinMenuBar_DreamSkinCore.bundle", isDirectory: true)
-    return Bundle(url: resourceBundle)?.url(forResource: "nexo-skin-catalog", withExtension: "json")
+    for _ in 0..<5 {
+      let resourceBundle = directory.appendingPathComponent("CodexDreamSkinMenuBar_DreamSkinCore.bundle", isDirectory: true)
+      if let url = Bundle(url: resourceBundle)?.url(forResource: "nexo-skin-catalog", withExtension: "json") {
+        return url
+      }
+      directory.deleteLastPathComponent()
+    }
+    return nil
   }
 
   private static let catalog: GeneratedCatalog? = {
