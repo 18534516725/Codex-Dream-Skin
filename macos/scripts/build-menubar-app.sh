@@ -141,6 +141,10 @@ actual_public_preset_theme_sha256="$(LC_ALL=C /usr/bin/shasum -a 256 \
 /bin/cp "$ROOT/VERSION" "$ENGINE/VERSION"
 /bin/cp "$ROOT/LICENSE" "$RESOURCES/LICENSE.txt"
 /bin/cp "$ROOT/NOTICE.md" "$RESOURCES/NOTICE.md"
+/bin/cp "$PACKAGE_ROOT/Sources/DreamSkinCore/Resources/nexo-skin-catalog.json" \
+  "$RESOURCES/nexo-skin-catalog.json"
+[ -s "$RESOURCES/nexo-skin-catalog.json" ] \
+  || { printf 'Native skin catalog is missing from app resources.\n' >&2; exit 1; }
 /bin/chmod 755 "$ENGINE/scripts/"*.sh
 /bin/chmod 644 "$ENGINE/scripts/"*.mjs
 /bin/chmod 644 "$ENGINE/VERSION"

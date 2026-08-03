@@ -5,13 +5,18 @@ import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, "..");
-const [contract, catalogSource, appDelegate, loader, writer] = await Promise.all([
+const [contract, catalogSource, appDelegate, loader, writer, appBuilder] = await Promise.all([
   fs.readFile(path.join(root, "menubar-app/Sources/DreamSkinCore/NexoSkinLink.swift"), "utf8"),
   fs.readFile(path.join(root, "menubar-app/Sources/DreamSkinCore/Resources/nexo-skin-catalog.json"), "utf8"),
   fs.readFile(path.join(root, "menubar-app/Sources/CodexDreamSkinMenuBar/AppDelegate.swift"), "utf8"),
   fs.readFile(path.join(root, "scripts/load-image-theme-macos.sh"), "utf8"),
   fs.readFile(path.join(root, "scripts/write-theme.mjs"), "utf8"),
+  fs.readFile(path.join(root, "scripts/build-menubar-app.sh"), "utf8"),
 ]);
+
+assert.doesNotMatch(contract, /Bundle\.module\.url/, "installed app catalog lookup must never trap when a SwiftPM resource bundle is absent");
+assert.match(contract, /Bundle\.main\.url\(forResource: "nexo-skin-catalog"/, "installed app must load its catalog from the signed app resources");
+assert.match(appBuilder, /nexo-skin-catalog\.json/, "native app builder must package the fixed catalog beside the app resources");
 
 for (const field of [
   "accentRGB", "secondaryRGB", "panelRGB", "glowStrength", "signature", "focusX", "focusY",
