@@ -118,20 +118,25 @@ __DREAM_SKIN_MEDIA_LAYER_SOURCE__
   };
 
   const cssString = (value) => JSON.stringify(String(value ?? ""));
+  const COMPACT_THEME_NAMES = {
+    "material-df6388daee46-e3486a16": "深蓝礼服",
+    "nexo-material-df6388daee46-e3486a16": "深蓝礼服",
+  };
+  const themeId = typeof THEME.id === "string" && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(THEME.id)
+    ? THEME.id : "custom";
   const compactThemeName = (value) => {
+    if (COMPACT_THEME_NAMES[themeId]) return COMPACT_THEME_NAMES[themeId];
     let compact = String(value || "Codex 皮肤")
       .trim()
       .replace(/^\d+\s*[kK]\s*/u, "")
       .replace(/[【「][^】」]*壁纸[】」]/gu, "")
       .split(/[｜|]/u)[0]
-      .replace(/(?:动态|静态)?壁纸|背景(?:视频|图)/gu, "")
+      .replace(/4[kK]|动态|静态|壁纸|背景|视频|图片/gu, "")
       .replace(/\s*[-—–]\s*$/u, "")
       .trim();
-    if (!compact) compact = "Codex 皮肤";
-    return Array.from(compact).slice(0, 12).join("");
+    if (!compact) compact = "主题画面";
+    return Array.from(compact).slice(0, 5).join("");
   };
-  const themeId = typeof THEME.id === "string" && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(THEME.id)
-    ? THEME.id : "custom";
 
   const VISUAL_CHOICES = {
     layoutVariant: ["poster-right", "editorial", "stage", "console", "pixel-platform", "collage", "pixel-desktop", "pixel-console"],

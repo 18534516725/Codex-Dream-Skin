@@ -1825,8 +1825,8 @@ html[data-dream-skin="active"][data-dream-motion="sonar"] body::after {
   html[data-dream-skin="active"] [role="main"]:has([data-testid="home-icon"]) > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child {
     width: min(58%, 460px) !important;
   }
-  html[data-dream-skin="active"] [role="main"]:has([data-testid="home-icon"]) [data-feature="game-source"] { font-size: 18px !important; }
-  html[data-dream-skin="active"] [role="main"]:has([data-testid="home-icon"]) [data-feature="game-source"]::before { margin-bottom: 7px; font-size: 10px; }
+  html[data-dream-skin="active"] [role="main"]:has([data-testid="home-icon"]) [data-feature="game-source"] { font-size: 0 !important; }
+  html[data-dream-skin="active"] [role="main"]:has([data-testid="home-icon"]) [data-feature="game-source"]::before { margin-bottom: 0; font-size: clamp(24px, 5vw, 38px); }
   html[data-dream-skin="active"] [role="main"]:has([data-testid="home-icon"]) [data-feature="game-source"]::after { margin-top: 9px; font-size: 11px; }
   html[data-dream-skin="active"] [role="main"]:has([data-testid="home-icon"]) .group\/home-suggestions button { min-height: 112px !important; font-size: 12px !important; }
 }

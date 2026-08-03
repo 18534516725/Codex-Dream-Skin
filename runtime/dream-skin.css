@@ -1825,8 +1825,8 @@ html[data-dream-skin="active"][data-dream-motion="sonar"] body::after {
   html[data-dream-skin="active"] __DREAM_SELECTOR_HOME_ROUTE__ > div:first-child > div:first-child > div:first-child > div:first-child > div:first-child {
     width: min(58%, 460px) !important;
   }
-  html[data-dream-skin="active"] __DREAM_SELECTOR_HOME_ROUTE__ __DREAM_SELECTOR_GAME_SOURCE__ { font-size: 18px !important; }
-  html[data-dream-skin="active"] __DREAM_SELECTOR_HOME_ROUTE__ __DREAM_SELECTOR_GAME_SOURCE__::before { margin-bottom: 7px; font-size: 10px; }
+  html[data-dream-skin="active"] __DREAM_SELECTOR_HOME_ROUTE__ __DREAM_SELECTOR_GAME_SOURCE__ { font-size: 0 !important; }
+  html[data-dream-skin="active"] __DREAM_SELECTOR_HOME_ROUTE__ __DREAM_SELECTOR_GAME_SOURCE__::before { margin-bottom: 0; font-size: clamp(24px, 5vw, 38px); }
   html[data-dream-skin="active"] __DREAM_SELECTOR_HOME_ROUTE__ __DREAM_SELECTOR_GAME_SOURCE__::after { margin-top: 9px; font-size: 11px; }
   html[data-dream-skin="active"] __DREAM_SELECTOR_HOME_ROUTE__ __DREAM_SELECTOR_HOME_SUGGESTIONS__ button { min-height: 112px !important; font-size: 12px !important; }
 }

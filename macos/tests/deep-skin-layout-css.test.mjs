@@ -37,5 +37,15 @@ assert.match(css, /__DREAM_SELECTOR_GAME_SOURCE__::after\s*\{[\s\S]*display:\s*n
 assert.match(css, /data-dream-theme-id="material-df6388daee46-e3486a16"[\s\S]*body::after/, "only the selected skin may disable the particle layer");
 assert.match(css, /data-dream-theme-id="material-df6388daee46-e3486a16"[\s\S]*__DREAM_SELECTOR_LEFT_PANEL__::after/, "only the selected skin may disable the sidebar texture");
 assert.match(css, /data-dream-theme-id="nexo-material-df6388daee46-e3486a16"[\s\S]*body::after/, "the selected Windows fixed-skin ID must disable the particle layer too");
+assert.doesNotMatch(
+  css,
+  /@media \(max-width:\s*900px\)[\s\S]*?__DREAM_SELECTOR_GAME_SOURCE__\s*\{\s*font-size:\s*18px\s*!important;/,
+  "narrow windows must never restore the native marketplace headline",
+);
+assert.match(
+  css,
+  /@media \(max-width:\s*900px\)[\s\S]*?__DREAM_SELECTOR_GAME_SOURCE__\s*\{\s*font-size:\s*0\s*!important;/,
+  "narrow windows must keep the native marketplace headline hidden",
+);
 
 console.log("Deep skin layout CSS tests passed");
