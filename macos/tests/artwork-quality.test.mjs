@@ -1,7 +1,6 @@
 import assert from "node:assert/strict";
 import fs from "node:fs/promises";
 import path from "node:path";
-import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -37,8 +36,15 @@ for (const [basename, id] of expected) {
   const imagePath = path.join(masters, file);
   const stat = await fs.stat(imagePath);
   assert.ok(stat.size > minimumBytes, `${file} must be a detailed lossless master`);
-  const dimensions = execFileSync("magick", ["identify", "-format", "%w %h", imagePath], { encoding: "utf8" }).trim();
-  assert.equal(dimensions, "3840 2400", `${file} must be a 3840×2400 master`);
+  const imageHeader = await fs.readFile(imagePath);
+  assert.deepEqual(
+    [...imageHeader.subarray(0, 8)],
+    [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a],
+    `${file} must be a PNG master`,
+  );
+  assert.equal(imageHeader.toString("ascii", 12, 16), "IHDR", `${file} must start with a PNG IHDR chunk`);
+  assert.equal(imageHeader.readUInt32BE(16), 3840, `${file} must be 3840px wide`);
+  assert.equal(imageHeader.readUInt32BE(20), 2400, `${file} must be 2400px tall`);
   const palette = JSON.parse(await fs.readFile(path.join(palettes, `${basename}.json`), "utf8"));
   assert.equal(palette.id, id, `${basename} palette id must match the catalog`);
   assert.ok(Array.isArray(palette.colors) && palette.colors.length >= 4 && palette.colors.length <= 32);
