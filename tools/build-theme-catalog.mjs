@@ -18,6 +18,7 @@ for (const [index, id] of ids.entries()) {
   const theme = validateThemeV2(JSON.parse(themeBytes.toString("utf8")));
   if (theme.id !== id) throw new Error(`${id} has a mismatched theme id`);
   const poster = await fs.readFile(path.join(directory, theme.media.poster));
+  const preview = await fs.readFile(path.join(directory, "preview.webp"));
   const video = theme.media.video ? await fs.readFile(path.join(directory, theme.media.video)) : null;
   items.push({
     id,
@@ -32,6 +33,7 @@ for (const [index, id] of ids.entries()) {
     hashes: {
       theme: createHash("sha256").update(themeBytes).digest("hex"),
       poster: createHash("sha256").update(poster).digest("hex"),
+      preview: createHash("sha256").update(preview).digest("hex"),
       video: video ? createHash("sha256").update(video).digest("hex") : null,
     },
     theme,
