@@ -8,7 +8,8 @@
 - [implemented locally] Signed catalog schema v2 carries the complete full-interface visual profile. Both native clients pin the platform Ed25519 public key, reject unsafe/unknown fields, consume remote visual profiles, and let the appearance bridge recognize verified catalog additions without a helper rebuild.
 - [verified locally] Root catalog/theme regressions pass 45/45, portable macOS regressions pass 79/79, portable Windows regressions pass 21/21, and the complete applicable macOS repository suite exits 0. A universal `CodexDreamSkin-v1.6.28.dmg` builds, mounts, verifies and contains the dynamic-catalog runtime asset. Native Swift XCTest is skipped because this host lacks a full matching Xcode platform; PowerShell 5.1/7 and Setup.exe remain release-CI gates.
 - [platform local-only verified] The user skin flow passes 56 focused frontend tests, TypeScript checking and a production build; 17 backend skin suites pass 143/143. The recharge-skin homepage carousel and removal of the legacy bottom-right creator notice remain uncommitted and undeployed in `payment-platform` as requested.
-- [pending release] Commit and fast-forward push only this helper repository, then require the v1.6.28 Release workflow to publish DMG, Setup.exe and `SHA256SUMS.txt`.
+- [released] Commit `4fb102d4359b16cbf5bff7169704dd90ca260d6d` was fast-forwarded to `main` and published as `v1.6.28`. Release run `30935324310` and CI run `30935325507` completed successfully, including macOS DMG, macOS regressions, Windows Setup, PowerShell 5.1 and PowerShell 7.
+- [verified published] The public non-draft Release contains `CodexDreamSkin-v1.6.28.dmg` (4,028,767 bytes), `CodexDreamSkin-Setup-v1.6.28.exe` (24,521,276 bytes), and `SHA256SUMS.txt` (192 bytes). Fresh downloads of both installers match the published checksum manifest.
 
 ## Client release v1.6.27 — preparing (2026-08-05)
 
