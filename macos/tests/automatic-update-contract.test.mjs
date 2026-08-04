@@ -29,6 +29,10 @@ test("macOS schedules a throttled startup update check and packages a detached u
   assert.match(updater, /reopen_current_app_on_failure/);
   assert.match(updater, /\/usr\/bin\/open "\$TARGET_APP"/,
     "a failed detached update must restore the still-valid installed helper");
+  assert.match(updater, /hdiutil detach "\$MOUNT"/,
+    "cleanup must detach by mount point even when macOS canonicalizes \/tmp to \/private\/tmp");
+  assert.doesNotMatch(updater, /mount \| .*grep.*\$MOUNT/,
+    "cleanup must not compare non-canonical mount path strings");
   assert.doesNotMatch(updater, /killall .*Codex|pkill .*Codex|com\.openai\.codex/);
   assert.match(app, /completeDeferredEngineUpdateIfPossible\(\)/);
   assert.match(app, /更新已就绪，关闭 ChatGPT 后自动完成/);

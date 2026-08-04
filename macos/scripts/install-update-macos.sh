@@ -77,10 +77,8 @@ MOUNT="$TMP/mount"
 BACKUP="$TARGET_APP.previous-update-$PARENT_PID"
 
 cleanup() {
-  if /sbin/mount | /usr/bin/grep -F -q " on $MOUNT "; then
-    /usr/bin/hdiutil detach "$MOUNT" -quiet >/dev/null 2>&1 || true
-  fi
-  /bin/rm -rf "$TMP"
+  /usr/bin/hdiutil detach "$MOUNT" -quiet >/dev/null 2>&1 || true
+  /bin/rm -rf "$TMP" >/dev/null 2>&1 || true
 }
 trap cleanup EXIT
 /bin/mkdir -p "$MOUNT"
