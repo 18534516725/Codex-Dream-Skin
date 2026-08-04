@@ -250,8 +250,8 @@ html[data-dream-skin="active"] body::before {
 html[data-dream-skin="active"] __DREAM_SELECTOR_LEFT_PANEL__ {
   background:
     linear-gradient(180deg,
-      rgb(var(--ds-panel-rgb) / .98),
-      rgb(var(--ds-bg-rgb) / .96)) !important;
+      rgb(var(--ds-panel-rgb) / var(--ds-user-sidebar-opacity)),
+      rgb(var(--ds-bg-rgb) / var(--ds-user-sidebar-opacity))) !important;
   border: 1px solid var(--ds-line) !important;
   border-left: 0 !important;
   border-radius: 0 16px 16px 0 !important;
@@ -999,8 +999,8 @@ html[data-dream-skin="active"] __DREAM_SELECTOR_COMPOSER_CHROME__:focus-within {
 html[data-dream-skin="active"]:not(:has(__DREAM_SELECTOR_SHELL_MAIN__)) [data-ds-part="sidebar"] {
   background:
     linear-gradient(180deg,
-      rgb(var(--ds-panel-rgb) / .98),
-      rgb(var(--ds-bg-rgb) / .96)) !important;
+      rgb(var(--ds-panel-rgb) / var(--ds-user-sidebar-opacity)),
+      rgb(var(--ds-bg-rgb) / var(--ds-user-sidebar-opacity))) !important;
   border: 1px solid var(--ds-line) !important;
   color: var(--ds-text) !important;
   box-shadow: 10px 0 30px rgb(var(--ds-bg-rgb) / .22) !important;
@@ -1575,12 +1575,25 @@ html[data-dream-skin="active"] __DREAM_SELECTOR_LEFT_PANEL__ {
   background-color: var(--ds-sidebar-bg) !important;
   font-family: var(--ds-font-body) !important;
 }
-html[data-dream-skin="active"] __DREAM_SELECTOR_LEFT_PANEL__ > * { position: relative; z-index: 1; }
-html[data-dream-skin="active"] __DREAM_SELECTOR_LEFT_PANEL__::after {
+html[data-dream-skin="active"] :is(__DREAM_SELECTOR_LEFT_PANEL__, [data-ds-part="sidebar"])::before {
   content: "" !important;
   position: absolute;
   inset: 0;
   z-index: 0;
+  pointer-events: none;
+  background-image: var(--dream-skin-art);
+  background-repeat: no-repeat;
+  background-position: var(--ds-art-position);
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: calc(1 - var(--ds-user-sidebar-opacity));
+}
+html[data-dream-skin="active"] :is(__DREAM_SELECTOR_LEFT_PANEL__, [data-ds-part="sidebar"]) > * { position: relative; z-index: 2; }
+html[data-dream-skin="active"] __DREAM_SELECTOR_LEFT_PANEL__::after {
+  content: "" !important;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
   opacity: var(--ds-sidebar-texture-opacity);
   pointer-events: none;
   background: var(--ds-card-pattern);

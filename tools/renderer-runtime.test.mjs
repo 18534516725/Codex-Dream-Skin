@@ -424,6 +424,12 @@ export async function runRendererRuntimeTest(assetRoot) {
   assert.match(css,
     /--ds-task-immersive-sidebar:\s*rgb\(var\(--ds-panel-rgb\)\s*\/\s*var\(--ds-user-sidebar-opacity\)\)/,
     "task-page sidebar must consume the user-selected opacity instead of a fixed overlay");
+  assert.match(css,
+    /(?:__DREAM_SELECTOR_LEFT_PANEL__|aside\.app-shell-left-panel)\s*\{[\s\S]{0,260}rgb\(var\(--ds-panel-rgb\)\s*\/\s*var\(--ds-user-sidebar-opacity\)\)/,
+    "ordinary sidebar must consume the user-selected opacity instead of fixed dark gradients");
+  assert.match(css,
+    /:is\([^)]*(?:__DREAM_SELECTOR_LEFT_PANEL__|aside\.app-shell-left-panel)[^)]*\)::before\s*\{[\s\S]{0,520}background-image:\s*var\(--dream-skin-art\)[\s\S]{0,520}background-attachment:\s*fixed/,
+    "ordinary sidebar must paint the same fixed artwork behind its transparency layer");
   assert.match(css, /--ds-user-content-opacity/,
     "content opacity must be consumed by the live CSS");
   assert.match(css, /--ds-user-font-scale/,
