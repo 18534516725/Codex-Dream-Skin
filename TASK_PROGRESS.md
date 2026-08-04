@@ -856,4 +856,10 @@ Updated: 2026-07-31 14:29 HKT (Asia/Hong_Kong)
   platform asset origin and download the image when the user applies a skin.
   Because all 21 IDs and asset filenames remain stable, no new DMG/Setup
   version is required; only the platform frontend assets need deployment.
-- No client version change, installed app change, or Codex restart has occurred.
+- [published] Helper catalog source commit `70e15b9` and platform commit
+  `50c15088` are on their respective `origin/main` branches. Production was
+  fast-forwarded to `50c15088`; only the frontend image/container changed.
+  Public catalog validation reports 87 themes and zero video entries, and a
+  public 4K asset hash matches the committed master exactly.
+- Client Release remains v1.6.17. No client version change, installed app
+  change, backend/database restart, or Codex restart occurred.
