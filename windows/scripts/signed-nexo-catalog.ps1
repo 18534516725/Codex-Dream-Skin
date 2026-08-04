@@ -129,7 +129,13 @@ function ConvertFrom-DreamSkinSignedNexoCatalogPayload {
   try {
     $strictUtf8 = [Text.UTF8Encoding]::new($false, $true)
     $json = $strictUtf8.GetString($Payload)
-    $catalog = $json | ConvertFrom-Json -ErrorAction Stop
+    $jsonParameters = @{ ErrorAction = 'Stop' }
+    # PowerShell 7.5+ converts ISO timestamps to DateTime by default. Preserve
+    # the signed text so the canonical UTC check validates the original bytes.
+    if ((Get-Command ConvertFrom-Json).Parameters.ContainsKey('DateKind')) {
+      $jsonParameters.DateKind = 'String'
+    }
+    $catalog = $json | ConvertFrom-Json @jsonParameters
   } catch { throw 'The signed Nexo catalog payload is not strict UTF-8 JSON.' }
   Assert-DreamSkinSignedNexoExactKeys -Value $catalog -Label 'Signed Nexo catalog' -Expected @(
     'assetOrigin', 'catalogVersion', 'expiresAt', 'issuedAt', 'revocations', 'schemaVersion', 'skins'
