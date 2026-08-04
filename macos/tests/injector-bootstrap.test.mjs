@@ -210,5 +210,9 @@ assert.match(source, /await appearanceStore\.materialize\(saved\.skinId\)/,
   "Saved settings for the active skin must materialize before refresh.");
 assert.match(source, /await appearanceBridge\?\.close\(\)/,
   "Watcher shutdown must close the local appearance bridge.");
+assert.match(source, /"http:\/\/localhost:5173"/,
+  "The packaged helper must accept the platform's local Vite origin for appearance QA.");
+assert.match(source, /"http:\/\/127\.0\.0\.1:5173"/,
+  "The packaged helper must accept the loopback Vite origin for appearance QA.");
 
 console.log("PASS: early injection is L0-ready, generation-safe, and removed on shutdown.");

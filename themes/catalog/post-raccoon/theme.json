@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "id": "post-raccoon",
   "name": "邮差浣熊",
-  "appearance": "light",
+  "appearance": "dark",
   "family": "cartoon-stationery",
   "media": {
     "poster": "background.webp",
@@ -16,7 +16,7 @@
   },
   "visual": {
     "layout": "poster-right",
-    "surface": "paper",
+    "surface": "glass",
     "corners": "ticket",
     "motion": "mail",
     "sidebar": "postal",
@@ -24,14 +24,14 @@
     "texture": "halftone"
   },
   "colors": {
-    "background": "#f5eee0",
-    "panel": "#fff8eb",
-    "panelAlt": "#eadfcf",
-    "accent": "#da4342",
-    "secondary": "#f1be5c",
-    "text": "#332522",
-    "muted": "#78645f",
-    "line": "#c99b83"
+    "background": "#07172f",
+    "panel": "#10294a",
+    "panelAlt": "#163a61",
+    "accent": "#c54b32",
+    "secondary": "#e8c98e",
+    "text": "#f2dfb0",
+    "muted": "#b8b1a3",
+    "line": "#8f3025"
   },
   "art": {
     "focusX": 0.74,

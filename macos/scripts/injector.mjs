@@ -32,8 +32,9 @@ const APPEARANCE_BRIDGE_ORIGINS = new Set([
   "https://www.nexotoken.net",
   "https://nexotoken.top",
   "https://www.nexotoken.top",
+  "http://localhost:5173",
+  "http://127.0.0.1:5173",
 ]);
-if (process.env.DREAMSKIN_ALLOW_DEV_ORIGIN === "1") APPEARANCE_BRIDGE_ORIGINS.add("http://localhost:5173");
 const SELECTOR_CONTRACT = JSON.parse(await fs.readFile(
   path.join(root, "assets", "selectors.json"), "utf8",
 ));
@@ -60,7 +61,7 @@ const stableTestidLiteral = (testid) => {
   }
   return JSON.stringify(`[data-testid="${testid}"]`);
 };
-const SKIN_VERSION = "1.6.23";
+const SKIN_VERSION = "1.6.24";
 const LOOPBACK_HOSTS = new Set(["127.0.0.1", "localhost", "[::1]"]);
 const CDP_ID_PATTERN = /^[A-Za-z0-9._-]{1,200}$/;
 const MAX_ART_BYTES = 10 * 1024 * 1024;

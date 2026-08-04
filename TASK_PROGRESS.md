@@ -1,5 +1,13 @@
 # Task Progress
 
+## Client release v1.6.24 — in progress (2026-08-04)
+
+- [goal] Publish the administrator-tested helper repair: make the local appearance bridge accept only the two explicit Vite loopback origins in addition to the existing platform origins, persist all seven preview settings including text color, and bring the 邮差浣熊 shell into alignment with its navy/postal-red artwork.
+- [source branch] `codex/admin-managed-catalog`; release must be promoted to `main` before the Release workflow may build artifacts.
+- [implemented locally] macOS and Windows injectors allow `http://localhost:5173` and `http://127.0.0.1:5173`; the bridge remains loopback-bound and all other origins remain rejected. The shared settings renderer consumes `textColor`, and 邮差浣熊 now uses a dark navy glass profile with postal-red and warm-paper accents.
+- [verified locally] Bridge origin/setting regressions, dual-platform bootstrap contracts, shared renderer/runtime tests, catalog rebuild, asset synchronization, complete applicable macOS regressions, both payload checks, six-source version consistency, and `git diff --check` pass. A universal local `CodexDreamSkin-v1.6.24.dmg` is built and hashed as `a88f06f74bc719a27b0b0a53b547c15fedb244014f20fa766bf1f4b5729eb3a6`.
+- [next] Commit only this release scope, promote the commit to `main`, then verify the public v1.6.24 DMG, Setup.exe, and SHA256SUMS.txt. Windows Setup compilation remains a required GitHub Actions Windows gate.
+
 ## Administrator-managed signed catalog — in progress (2026-08-04)
 
 - [goal] Keep the existing strict `dreamskin://apply?skin=<approved-id>` protocol while allowing the platform-owned administrator catalog to publish future approved 4K skins without rebuilding the helper for every image.
