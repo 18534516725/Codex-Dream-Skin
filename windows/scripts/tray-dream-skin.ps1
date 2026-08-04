@@ -98,6 +98,29 @@ try {
     }
   }
 
+  function Edit-DreamSkinAppearanceSettings {
+    $current = Get-DreamSkinAppearanceSettings -StateRoot $StateRoot
+    $background = [Microsoft.VisualBasic.Interaction]::InputBox('背景显示度（0.15 - 1）：', '外观设置', "$($current.backgroundVisibility)")
+    if (-not $background.Trim()) { return }
+    $sidebar = [Microsoft.VisualBasic.Interaction]::InputBox('侧边栏透明度（0.2 - 1）：', '外观设置', "$($current.sidebarOpacity)")
+    if (-not $sidebar.Trim()) { return }
+    $content = [Microsoft.VisualBasic.Interaction]::InputBox('内容层透明度（0.2 - 1）：', '外观设置', "$($current.contentOpacity)")
+    if (-not $content.Trim()) { return }
+    $font = [Microsoft.VisualBasic.Interaction]::InputBox('字体：system、serif、rounded 或 mono', '外观设置', "$($current.font)")
+    if (-not $font.Trim()) { return }
+    $size = [Microsoft.VisualBasic.Interaction]::InputBox('字体大小（0.85 - 1.2）：', '外观设置', "$($current.fontSize)")
+    if (-not $size.Trim()) { return }
+    $contrast = [Microsoft.VisualBasic.Interaction]::InputBox('文字对比度（0.7 - 1）：', '外观设置', "$($current.contrast)")
+    if (-not $contrast.Trim()) { return }
+    $null = Invoke-DreamSkinTrayThemeOperation -Action {
+      Set-DreamSkinAppearanceSettings -BackgroundVisibility ([double]$background) -SidebarOpacity ([double]$sidebar) `
+        -ContentOpacity ([double]$content) -Font $font.Trim().ToLowerInvariant() -FontSize ([double]$size) `
+        -Contrast ([double]$contrast) -StateRoot $StateRoot | Out-Null
+    }
+    Start-DreamSkinPowerShell -Script $startScript -Arguments @('-Port', "$Port", '-PromptRestart')
+    $notify.ShowBalloonTip(1800, 'Nexo Codex Skin', '外观设置已保存并正在应用。', [System.Windows.Forms.ToolTipIcon]::Info)
+  }
+
   function Set-DreamSkinAutoStart {
     param([Parameter(Mandatory = $true)][bool]$Enabled)
     if (-not $Enabled) {
@@ -183,6 +206,9 @@ try {
       }
     }
     $advancedMenu = [System.Windows.Forms.ToolStripMenuItem]::new('高级工具')
+    $null = Add-DreamSkinTrayItem -Items $advancedMenu.DropDownItems -Text '外观设置…' -Action {
+      Edit-DreamSkinAppearanceSettings
+    } -Enabled (-not $busy)
     $null = Add-DreamSkinTrayItem -Items $advancedMenu.DropDownItems -Text '更换背景图' -Action {
       $dialog = [System.Windows.Forms.OpenFileDialog]::new()
       $dialog.Title = '选择 Nexo 皮肤背景图'

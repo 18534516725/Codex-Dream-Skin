@@ -101,6 +101,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     stateRootURL.appendingPathComponent("images", isDirectory: true)
   }
 
+  private var appearanceSettingsURL: URL {
+    stateRootURL.appendingPathComponent("appearance.json", isDirectory: false)
+  }
+
   private var bundledEngineURL: URL? {
     Bundle.main.resourceURL?.appendingPathComponent("engine", isDirectory: true)
   }
@@ -302,6 +306,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     let advancedRoot = NSMenuItem(title: "高级工具", action: nil, keyEquivalent: "")
     let advancedMenu = NSMenu(title: "高级工具")
     advancedMenu.autoenablesItems = false
+    addActionItem("外观设置…", action: #selector(configureAppearanceSettings), enabled: !busy, to: advancedMenu)
     addActionItem("更换背景图…", action: #selector(chooseBackgroundImage), enabled: !busy, to: advancedMenu)
     addActionItem("导入主题 ZIP…", action: #selector(chooseThemeArchive), enabled: !busy, to: advancedMenu)
     addSavedThemesMenu(enabled: !busy, to: advancedMenu)
@@ -524,6 +529,66 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       arguments: ["--file", imageURL.path],
       operation: "更换背景图"
     )
+  }
+
+  @objc private func configureAppearanceSettings() {
+    let defaults: [String: Any] = [
+      "backgroundVisibility": 1.0, "sidebarOpacity": 0.82, "contentOpacity": 0.82,
+      "font": "system", "fontSize": 1.0, "contrast": 1.0,
+    ]
+    let existing = ((try? Data(contentsOf: appearanceSettingsURL)).flatMap {
+      try? JSONSerialization.jsonObject(with: $0) as? [String: Any]
+    }) ?? [:]
+    let form = NSStackView()
+    form.orientation = .vertical
+    form.alignment = .leading
+    form.spacing = 8
+    var fields: [String: NSTextField] = [:]
+    for (key, title) in [
+      ("backgroundVisibility", "背景显示度 (0.15–1)"),
+      ("sidebarOpacity", "侧边栏透明度 (0.2–1)"),
+      ("contentOpacity", "内容层透明度 (0.2–1)"),
+      ("fontSize", "字体大小 (0.85–1.2)"),
+      ("contrast", "文字对比度 (0.7–1)"),
+    ] {
+      let row = NSStackView(); row.orientation = .horizontal; row.spacing = 10
+      row.addArrangedSubview(NSTextField(labelWithString: title))
+      let field = NSTextField(string: "\(existing[key] ?? defaults[key]!)")
+      field.frame.size.width = 90
+      row.addArrangedSubview(field); fields[key] = field; form.addArrangedSubview(row)
+    }
+    let fontRow = NSStackView(); fontRow.orientation = .horizontal; fontRow.spacing = 10
+    fontRow.addArrangedSubview(NSTextField(labelWithString: "字体"))
+    let font = NSPopUpButton(); font.addItems(withTitles: ["system", "serif", "rounded", "mono"])
+    font.selectItem(withTitle: (existing["font"] as? String) ?? "system")
+    fontRow.addArrangedSubview(font); form.addArrangedSubview(fontRow)
+    let alert = NSAlert(); alert.messageText = "外观设置"; alert.informativeText = "设置只保存到本机助手，不会写进皮肤链接。"
+    alert.accessoryView = form; alert.addButton(withTitle: "保存并应用"); alert.addButton(withTitle: "取消")
+    activateForUserInteraction()
+    guard alert.runModal() == .alertFirstButtonReturn else { return }
+    func number(_ key: String, _ lower: Double, _ upper: Double) -> Double? {
+      guard let value = Double(fields[key]?.stringValue ?? ""), value >= lower, value <= upper else { return nil }
+      return (value * 100).rounded() / 100
+    }
+    guard let background = number("backgroundVisibility", 0.15, 1),
+          let sidebar = number("sidebarOpacity", 0.2, 1),
+          let content = number("contentOpacity", 0.2, 1),
+          let size = number("fontSize", 0.85, 1.2),
+          let contrast = number("contrast", 0.7, 1),
+          let fontName = font.selectedItem?.title else {
+      showError(title: "外观设置无效", message: "请填写允许范围内的数值。")
+      return
+    }
+    let value: [String: Any] = ["backgroundVisibility": background, "sidebarOpacity": sidebar,
+      "contentOpacity": content, "font": fontName, "fontSize": size, "contrast": contrast]
+    do {
+      let data = try JSONSerialization.data(withJSONObject: value, options: [.sortedKeys])
+      try data.write(to: appearanceSettingsURL, options: [.atomic])
+      try fileManager.setAttributes([.posixPermissions: 0o600], ofItemAtPath: appearanceSettingsURL.path)
+      runInstalledScript(named: "apply-from-menubar-macos.sh", operation: "应用外观设置")
+    } catch {
+      showError(title: "无法保存外观设置", message: error.localizedDescription)
+    }
   }
 
   @objc private func chooseThemeArchive() {
@@ -1120,18 +1185,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   }
 
   @objc private func openCodex() {
-    guard let appURL = NSWorkspace.shared.urlForApplication(withBundleIdentifier: "com.openai.codex") else {
-      showError(title: "未找到 ChatGPT", message: "请先安装并至少启动一次官方 ChatGPT / Codex 桌面应用。")
-      return
-    }
-    let configuration = NSWorkspace.OpenConfiguration()
-    NSWorkspace.shared.openApplication(at: appURL, configuration: configuration) { _, error in
-      if let error {
-        DispatchQueue.main.async {
-          self.showError(title: "无法打开 ChatGPT", message: error.localizedDescription)
-        }
-      }
-    }
+    // A normal NSWorkspace launch drops the loopback CDP arguments, so the
+    // fresh Codex process cannot receive the saved skin. Use the same audited
+    // launch path as “应用皮肤”; it asks before any necessary restart.
+    runInstalledScript(named: "apply-from-menubar-macos.sh", operation: "打开并应用皮肤")
   }
 
   @objc private func checkForUpdates() {

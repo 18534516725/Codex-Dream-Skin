@@ -45,7 +45,7 @@ const stableTestidLiteral = (testid) => {
   }
   return JSON.stringify(`[data-testid="${testid}"]`);
 };
-const SKIN_VERSION = "1.6.15";
+const SKIN_VERSION = "1.6.16";
 const LOOPBACK_HOSTS = new Set(["127.0.0.1", "localhost", "[::1]"]);
 const CDP_ID_PATTERN = /^[A-Za-z0-9._-]{1,200}$/;
 const MAX_ART_BYTES = 10 * 1024 * 1024;
@@ -737,6 +737,16 @@ export async function loadTheme(themeDir) {
     },
     renderProfile: buildThemeProfile(v2),
   } : legacyTheme;
+  const appearancePath = path.join(path.dirname(assetsRoot), "appearance.json");
+  try {
+    const appearanceStat = await fs.lstat(appearancePath);
+    if (appearanceStat.isFile() && !appearanceStat.isSymbolicLink() && appearanceStat.size <= 4096) {
+      const value = JSON.parse(await fs.readFile(appearancePath, "utf8"));
+      if (value && typeof value === "object" && !Array.isArray(value)) theme.appearanceSettings = value;
+    }
+  } catch (error) {
+    if (error.code !== "ENOENT") throw new Error("Appearance settings could not be read safely");
+  }
   const requestedImagePath = path.join(assetsRoot, theme.image);
   let imagePath;
   try {

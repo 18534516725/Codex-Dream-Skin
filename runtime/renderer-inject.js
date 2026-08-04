@@ -124,6 +124,22 @@ __DREAM_SKIN_MEDIA_LAYER_SOURCE__
   };
   const themeId = typeof THEME.id === "string" && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(THEME.id)
     ? THEME.id : "custom";
+  const normalizeAppearanceSettings = (value) => {
+    const source = value && typeof value === "object" && !Array.isArray(value) ? value : {};
+    const bounded = (key, fallback, min, max) => {
+      const number = Number(source[key]);
+      return Number.isFinite(number) ? Number(Math.min(max, Math.max(min, number)).toFixed(2)) : fallback;
+    };
+    return {
+      backgroundVisibility: bounded("backgroundVisibility", 1, 0.15, 1),
+      sidebarOpacity: bounded("sidebarOpacity", 0.82, 0.2, 1),
+      contentOpacity: bounded("contentOpacity", 0.82, 0.2, 1),
+      font: ["system", "serif", "rounded", "mono"].includes(source.font) ? source.font : "system",
+      fontSize: bounded("fontSize", 1, 0.85, 1.2),
+      contrast: bounded("contrast", 1, 0.7, 1),
+    };
+  };
+  const APPEARANCE_SETTINGS = normalizeAppearanceSettings(THEME.appearanceSettings);
   const compactThemeName = (value) => {
     if (COMPACT_THEME_NAMES[themeId]) return COMPACT_THEME_NAMES[themeId];
     let compact = String(value || "Codex 皮肤")
@@ -379,6 +395,12 @@ __DREAM_SKIN_MEDIA_LAYER_SOURCE__
     }
     const renderProfile = THEME.renderProfile && typeof THEME.renderProfile === "object"
       ? THEME.renderProfile : {};
+    const userFonts = {
+      system: null,
+      serif: '"Songti SC", "STSong", "Times New Roman", serif',
+      rounded: '"SF Pro Rounded", "PingFang SC", "Microsoft YaHei UI", "Segoe UI", sans-serif',
+      mono: 'ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace',
+    };
     const profileDefaults = {
       "--ds-family-signature": familyChoice(),
       "--ds-font-body": '-apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif',
@@ -397,6 +419,18 @@ __DREAM_SKIN_MEDIA_LAYER_SOURCE__
         ? renderProfile[name] : fallback;
       setStyleProperty(root, name, value);
     }
+    if (userFonts[APPEARANCE_SETTINGS.font]) {
+      setStyleProperty(root, "--ds-font-body", userFonts[APPEARANCE_SETTINGS.font]);
+      setStyleProperty(root, "--ds-font-title", userFonts[APPEARANCE_SETTINGS.font]);
+      setStyleProperty(root, "--ds-font-label", userFonts[APPEARANCE_SETTINGS.font]);
+    }
+    setStyleProperty(root, "--ds-user-background-visibility", String(APPEARANCE_SETTINGS.backgroundVisibility));
+    setStyleProperty(root, "--ds-user-sidebar-opacity", String(APPEARANCE_SETTINGS.sidebarOpacity));
+    setStyleProperty(root, "--ds-user-content-opacity", String(APPEARANCE_SETTINGS.contentOpacity));
+    setStyleProperty(root, "--ds-user-font-scale", String(APPEARANCE_SETTINGS.fontSize));
+    setStyleProperty(root, "--ds-user-text-contrast", String(APPEARANCE_SETTINGS.contrast));
+    setStyleProperty(root, "--ds-sidebar-bg", `rgb(${rgbString(variables["--ds-panel"])} / ${APPEARANCE_SETTINGS.sidebarOpacity})`);
+    setStyleProperty(root, "--ds-card-bg", `rgb(${rgbString(variables["--ds-panel"])} / ${APPEARANCE_SETTINGS.contentOpacity})`);
     setStyleProperty(root, "--ds-theme-surface-radius", "12px");
     setStyleProperty(root, "--ds-theme-surface-opacity", "1");
     setStyleProperty(root, "--ds-theme-surface-blur", "0px");

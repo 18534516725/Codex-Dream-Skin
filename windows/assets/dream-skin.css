@@ -1412,10 +1412,23 @@ html[data-dream-skin="active"] [data-ds-part="main"],
 html[data-dream-skin="active"] [data-ds-part="dialog"] {
   font-family: var(--ds-font-body) !important;
 }
-html[data-dream-skin="active"] body { isolation: isolate; }
+html[data-dream-skin="active"] body {
+  isolation: isolate;
+  font-size: calc(100% * var(--ds-user-font-scale, 1)) !important;
+}
 html[data-dream-skin="active"] [data-dream-media-layer] {
-  opacity: 1;
+  opacity: var(--ds-user-background-visibility, 1);
   pointer-events: none !important;
+}
+html[data-dream-skin="active"] {
+  --ds-user-background-visibility: 1;
+  --ds-user-sidebar-opacity: .82;
+  --ds-user-content-opacity: .82;
+  --ds-user-font-scale: 1;
+  --ds-user-text-contrast: 1;
+  --ds-sidebar-bg: rgb(var(--ds-panel-rgb) / var(--ds-user-sidebar-opacity));
+  --ds-card-bg: rgb(var(--ds-panel-rgb) / var(--ds-user-content-opacity));
+  --ds-text: rgb(var(--ds-text-rgb) / var(--ds-user-text-contrast, 1));
 }
 html[data-dream-skin="active"] :is(h1, h2, h3, [role="heading"]),
 html[data-dream-skin="active"] [data-ds-part="home-hero"] {

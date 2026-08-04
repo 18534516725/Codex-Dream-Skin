@@ -398,6 +398,35 @@ export async function runRendererRuntimeTest(assetRoot) {
   }
   assert.equal(home.rootStyle.values.get("--ds-theme-image-focus-x"), "0.72");
   assert.equal(home.rootStyle.values.get("--ds-theme-image-focus-y"), "0.5");
+
+  const customized = makeFixture({ nativeAppearance: "dark" });
+  vm.runInNewContext(customized.payloadFor({
+    appearanceSettings: {
+      backgroundVisibility: 0.56,
+      sidebarOpacity: 0.42,
+      contentOpacity: 0.64,
+      font: "serif",
+      fontSize: 1.12,
+      contrast: 0.91,
+    },
+  }), customized.context);
+  const customizedValues = customized.rootStyle.values;
+  assert.equal(customizedValues.get("--ds-user-background-visibility"), "0.56");
+  assert.equal(customizedValues.get("--ds-user-sidebar-opacity"), "0.42");
+  assert.equal(customizedValues.get("--ds-user-content-opacity"), "0.64");
+  assert.equal(customizedValues.get("--ds-user-font-scale"), "1.12");
+  assert.equal(customizedValues.get("--ds-user-text-contrast"), "0.91");
+  assert.match(customizedValues.get("--ds-font-body"), /Songti|Times New Roman/);
+  assert.match(css, /--ds-user-background-visibility/,
+    "background visibility must be consumed by the live CSS");
+  assert.match(css, /--ds-user-sidebar-opacity/,
+    "sidebar opacity must be consumed by the live CSS");
+  assert.match(css, /--ds-user-content-opacity/,
+    "content opacity must be consumed by the live CSS");
+  assert.match(css, /--ds-user-font-scale/,
+    "font size must be consumed by the live CSS");
+  assert.match(css, /--ds-user-text-contrast/,
+    "text contrast must be consumed by the live CSS");
   assert.equal(state.metrics.routePasses, 1);
   assert.equal(state.metrics.partPasses, 1);
   assert.equal(state.metrics.layoutReads, 0, "Runtime must not perform layout reads");

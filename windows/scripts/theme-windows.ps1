@@ -414,7 +414,60 @@ function Get-DreamSkinThemePaths {
     Images = Join-Path $fullRoot 'images'
     PauseFile = Join-Path $fullRoot 'paused'
     State = Join-Path $fullRoot 'state.json'
+    Appearance = Join-Path $fullRoot 'appearance.json'
   }
+}
+
+function Set-DreamSkinAppearanceSettings {
+  param(
+    [Parameter(Mandatory = $true)][double]$BackgroundVisibility,
+    [Parameter(Mandatory = $true)][double]$SidebarOpacity,
+    [Parameter(Mandatory = $true)][double]$ContentOpacity,
+    [Parameter(Mandatory = $true)][string]$Font,
+    [Parameter(Mandatory = $true)][double]$FontSize,
+    [Parameter(Mandatory = $true)][double]$Contrast,
+    [string]$StateRoot = (Join-Path $env:LOCALAPPDATA 'CodexDreamSkin')
+  )
+  if ($BackgroundVisibility -lt 0.15 -or $BackgroundVisibility -gt 1 -or
+      $SidebarOpacity -lt 0.2 -or $SidebarOpacity -gt 1 -or
+      $ContentOpacity -lt 0.2 -or $ContentOpacity -gt 1 -or
+      $FontSize -lt 0.85 -or $FontSize -gt 1.2 -or
+      $Contrast -lt 0.7 -or $Contrast -gt 1 -or
+      $Font -notin @('system', 'serif', 'rounded', 'mono')) {
+    throw 'Appearance settings are outside the supported range.'
+  }
+  $paths = Get-DreamSkinThemePaths -StateRoot $StateRoot
+  Ensure-DreamSkinManagedDirectory -Path $paths.Root -Root $paths.Root
+  Assert-DreamSkinNoReparseComponents -Path $paths.Appearance
+  $value = [ordered]@{
+    backgroundVisibility = [Math]::Round($BackgroundVisibility, 2)
+    sidebarOpacity = [Math]::Round($SidebarOpacity, 2)
+    contentOpacity = [Math]::Round($ContentOpacity, 2)
+    font = $Font
+    fontSize = [Math]::Round($FontSize, 2)
+    contrast = [Math]::Round($Contrast, 2)
+  }
+  Write-DreamSkinUtf8FileAtomically -Path $paths.Appearance -Content (($value | ConvertTo-Json -Compress) + "`r`n")
+  return [pscustomobject]$value
+}
+
+function Get-DreamSkinAppearanceSettings {
+  param([string]$StateRoot = (Join-Path $env:LOCALAPPDATA 'CodexDreamSkin'))
+  $paths = Get-DreamSkinThemePaths -StateRoot $StateRoot
+  $defaults = [ordered]@{
+    backgroundVisibility = 1.0; sidebarOpacity = 0.82; contentOpacity = 0.82
+    font = 'system'; fontSize = 1.0; contrast = 1.0
+  }
+  try {
+    Assert-DreamSkinNoReparseComponents -Path $paths.Appearance
+    if (Test-Path -LiteralPath $paths.Appearance -PathType Leaf) {
+      $candidate = (Read-DreamSkinUtf8File -Path $paths.Appearance) | ConvertFrom-Json -ErrorAction Stop
+      foreach ($key in @($defaults.Keys)) {
+        if ($candidate.PSObject.Properties[$key]) { $defaults[$key] = $candidate.$key }
+      }
+    }
+  } catch {}
+  return [pscustomobject]$defaults
 }
 
 function Test-DreamSkinThemePathWithin {

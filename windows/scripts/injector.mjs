@@ -41,7 +41,7 @@ const stableTestidLiteral = (testid) => {
   }
   return JSON.stringify(`[data-testid="${testid}"]`);
 };
-const SKIN_VERSION = "1.6.15";
+const SKIN_VERSION = "1.6.16";
 const MAX_ART_BYTES = 10 * 1024 * 1024;
 const MAX_VIDEO_BYTES = 80 * 1024 * 1024;
 const MAX_SAFE_CSS_BYTES = 256 * 1024;
@@ -594,6 +594,16 @@ export async function loadTheme(themeDir) {
     },
     renderProfile: buildThemeProfile(v2),
   } : legacyTheme;
+  const appearancePath = path.join(path.dirname(realThemeDir), "appearance.json");
+  try {
+    const appearanceStat = await fs.lstat(appearancePath);
+    if (appearanceStat.isFile() && !appearanceStat.isSymbolicLink() && appearanceStat.size <= 4096) {
+      const value = JSON.parse(await fs.readFile(appearancePath, "utf8"));
+      if (value && typeof value === "object" && !Array.isArray(value)) theme.appearanceSettings = value;
+    }
+  } catch (error) {
+    if (error.code !== "ENOENT") throw new Error("Appearance settings could not be read safely");
+  }
   const [themeStat, imageStat, safeCss] = await Promise.all([
     fs.stat(themePath),
     fs.stat(realImagePath),
