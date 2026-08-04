@@ -1,5 +1,11 @@
 # Task Progress
 
+## Client release v1.6.25 — preparing (2026-08-04)
+
+- [goal] Prevent the platform from misclassifying an in-progress apply as a missing helper, make the selected text color the final renderer color source, remove generated dots from 邮差浣熊, and restore readable contrast to 云鹿栖境.
+- [implemented locally] The platform waits through the helper apply window without opening an install modal. The shared renderer applies user text color after all generated RGB tokens. 邮差浣熊 and 云鹿栖境 use their artwork in the sidebar; 云鹿栖境 uses darker cyan-gray panels, deep ink text, and a bordered solid composer.
+- [verified locally] Focused platform regressions and its production build pass. Shared renderer/bridge tests, catalog generation, runtime synchronization, payload integrity, complete applicable macOS regressions, six-source v1.6.25 consistency, and `git diff --check` pass; native SwiftPM/XCTest remains covered by release CI because this Mac lacks a full matching Xcode platform.
+
 ## Client release v1.6.24 — in progress (2026-08-04)
 
 - [goal] Publish the administrator-tested helper repair: make the local appearance bridge accept only the two explicit Vite loopback origins in addition to the existing platform origins, persist all seven preview settings including text color, and bring the 邮差浣熊 shell into alignment with its navy/postal-red artwork.

@@ -435,13 +435,6 @@ __DREAM_SKIN_MEDIA_LAYER_SOURCE__
     setStyleProperty(root, "--ds-user-content-opacity", String(APPEARANCE_SETTINGS.contentOpacity));
     setStyleProperty(root, "--ds-user-font-scale", String(APPEARANCE_SETTINGS.fontSize));
     setStyleProperty(root, "--ds-user-text-contrast", String(APPEARANCE_SETTINGS.contrast));
-    if (APPEARANCE_SETTINGS.textColor) {
-      setStyleProperty(root, "--ds-text", APPEARANCE_SETTINGS.textColor);
-      setStyleProperty(root, "--ds-theme-color-text", APPEARANCE_SETTINGS.textColor);
-      setStyleProperty(root, "--ds-sidebar-text", APPEARANCE_SETTINGS.textColor);
-      const userTextRgb = rgbString(APPEARANCE_SETTINGS.textColor);
-      if (userTextRgb) setStyleProperty(root, "--ds-text-rgb", userTextRgb);
-    }
     setStyleProperty(root, "--ds-sidebar-bg", `rgb(${rgbString(variables["--ds-panel"])} / ${APPEARANCE_SETTINGS.sidebarOpacity})`);
     setStyleProperty(root, "--ds-card-bg", `rgb(${rgbString(variables["--ds-panel"])} / ${APPEARANCE_SETTINGS.contentOpacity})`);
     setStyleProperty(root, "--ds-theme-surface-radius", "12px");
@@ -476,6 +469,16 @@ __DREAM_SKIN_MEDIA_LAYER_SOURCE__
     for (const [name, value] of Object.entries(rgbVariables)) {
       const rgb = rgbString(value);
       if (rgb) setStyleProperty(root, name, rgb);
+    }
+    // User appearance settings must be the final color layer. In particular,
+    // --ds-text-rgb is consumed by native Codex text and shadow tokens, so it
+    // cannot be overwritten by the generated theme RGB map above.
+    if (APPEARANCE_SETTINGS.textColor) {
+      setStyleProperty(root, "--ds-text", APPEARANCE_SETTINGS.textColor);
+      setStyleProperty(root, "--ds-theme-color-text", APPEARANCE_SETTINGS.textColor);
+      setStyleProperty(root, "--ds-sidebar-text", APPEARANCE_SETTINGS.textColor);
+      const userTextRgb = rgbString(APPEARANCE_SETTINGS.textColor);
+      if (userTextRgb) setStyleProperty(root, "--ds-text-rgb", userTextRgb);
     }
     setStyleProperty(root, "--dream-skin-name", cssString(compactThemeName(THEME.name)));
     setStyleProperty(root, "--dream-skin-tagline", cssString(THEME.tagline || "Make something wonderful."));

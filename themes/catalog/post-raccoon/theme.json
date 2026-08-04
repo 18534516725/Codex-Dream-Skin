@@ -21,7 +21,7 @@
     "motion": "mail",
     "sidebar": "postal",
     "composer": "label",
-    "texture": "halftone"
+    "texture": "grain"
   },
   "colors": {
     "background": "#07172f",

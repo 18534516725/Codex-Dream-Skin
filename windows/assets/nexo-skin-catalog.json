@@ -412,7 +412,7 @@
         "windows"
       ],
       "hashes": {
-        "theme": "a1567e49c8370f6d64c1a79cf5df0588d71eb9a8179fc4a9ba0982f9f6987645",
+        "theme": "7302d6fba9ec403e303f04d560836879ced5bb69deaf39e3706e18980b76a977",
         "poster": "c008944657abcde04272b1682e6af1bb27a47a9d6b85a1e94ddb87b9f7d7808d",
         "preview": "67bb6912bd8eb3d3d2e0d4b2f174273a9014a82b901eee6ec748e12429b75590",
         "video": null
@@ -443,14 +443,14 @@
           "texture": "paper"
         },
         "colors": {
-          "background": "#e7eee9",
-          "panel": "#f0f5f1",
-          "panelAlt": "#dce8e0",
-          "accent": "#67a889",
-          "secondary": "#8b72b4",
-          "text": "#26332d",
-          "muted": "#65786f",
-          "line": "#9bb4a6"
+          "background": "#c9d9d2",
+          "panel": "#d6e2dc",
+          "panelAlt": "#b8ccc2",
+          "accent": "#3f7d66",
+          "secondary": "#70558f",
+          "text": "#17251f",
+          "muted": "#40584d",
+          "line": "#718f80"
         },
         "art": {
           "focusX": 0.7,
@@ -808,7 +808,7 @@
         "windows"
       ],
       "hashes": {
-        "theme": "fd67c05eb2a337e4cc35d87b20f6e0f4d4863940400cfdaf05823730d93fde5d",
+        "theme": "1e9e6c817bcf6b6946eab0adbe84ede63a3bfeb5dc148d011b4ec53e93fcffdb",
         "poster": "1293cdaadcbf0c8382b38eb6c780c5a6db60a117f4d0d34210db9388f27788e2",
         "preview": "0097ebd0c859fa56464636bce0f1e49d2960f5b95e2e590be14f15efb6941c3f",
         "video": null
@@ -836,7 +836,7 @@
           "motion": "mail",
           "sidebar": "postal",
           "composer": "label",
-          "texture": "halftone"
+          "texture": "grain"
         },
         "colors": {
           "background": "#07172f",

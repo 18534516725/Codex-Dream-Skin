@@ -1693,6 +1693,65 @@ html[data-dream-skin="active"][data-dream-sidebar-style="notebook"] __DREAM_SELE
   background-size: 18px 18px;
 }
 
+/* Artwork-led catalog themes use the supplied image in the sidebar instead of
+   an unrelated generated motif. The scrim keeps native navigation readable. */
+html[data-dream-skin="active"]:is(
+  [data-dream-theme-id="post-raccoon"],
+  [data-dream-theme-id="cloud-antler"]
+) __DREAM_SELECTOR_LEFT_PANEL__ {
+  background:
+    linear-gradient(180deg,
+      rgb(var(--ds-panel-rgb) / .58),
+      rgb(var(--ds-bg-rgb) / .76)),
+    var(--dream-skin-art) !important;
+  background-position: center, var(--ds-art-position) !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  backdrop-filter: none !important;
+}
+html[data-dream-skin="active"]:is(
+  [data-dream-theme-id="post-raccoon"],
+  [data-dream-theme-id="cloud-antler"]
+) __DREAM_SELECTOR_LEFT_PANEL__::before {
+  opacity: .46 !important;
+}
+html[data-dream-skin="active"][data-dream-theme-id="post-raccoon"] __DREAM_SELECTOR_LEFT_PANEL__::after,
+html[data-dream-skin="active"][data-dream-theme-id="cloud-antler"] __DREAM_SELECTOR_LEFT_PANEL__::after {
+  background: none !important;
+}
+
+/* Cloud Antler must stay light without becoming white-on-white. These tokens
+   override a still-running light Codex shell and give the composer a real edge. */
+html[data-dream-skin="active"][data-dream-theme-id="cloud-antler"] {
+  --ds-text: #17251f;
+  --ds-muted: #40584d;
+  --ds-immersive-composer-solid: rgb(var(--ds-panel-2-rgb) / .96);
+  --ds-immersive-line: rgb(var(--ds-accent-rgb) / .52);
+  --color-text-foreground: var(--ds-text) !important;
+  --color-text-foreground-secondary: var(--ds-muted) !important;
+  --color-icon-primary: var(--ds-text) !important;
+  --color-icon-secondary: var(--ds-muted) !important;
+}
+html[data-dream-skin="active"][data-dream-theme-id="cloud-antler"]
+  __DREAM_SELECTOR_COMPOSER_CHROME__ {
+  background: rgb(var(--ds-panel-2-rgb) / .96) !important;
+  border: 1px solid rgb(var(--ds-accent-rgb) / .48) !important;
+  box-shadow:
+    0 12px 34px rgb(var(--ds-bg-rgb) / .26),
+    inset 0 1px rgb(255 255 255 / .34) !important;
+  color: var(--ds-text) !important;
+  backdrop-filter: blur(10px) saturate(106%) !important;
+}
+html[data-dream-skin="active"][data-dream-theme-id="cloud-antler"]
+  __DREAM_SELECTOR_COMPOSER_CHROME__ :is(textarea, [contenteditable="true"], [role="textbox"], button, svg) {
+  color: var(--ds-text) !important;
+}
+html[data-dream-skin="active"][data-dream-theme-id="cloud-antler"]
+  __DREAM_SELECTOR_LEFT_PANEL__ :is(button, a, [data-ds-sidebar-row], [data-ds-sidebar-account]) {
+  color: var(--ds-text) !important;
+  text-shadow: 0 1px 0 rgb(255 255 255 / .36) !important;
+}
+
 /* Composer frames distinguish the themes without replacing the native editor. */
 html[data-dream-skin="active"][data-dream-composer-style="letter"] __DREAM_SELECTOR_COMPOSER_CHROME__,
 html[data-dream-skin="active"][data-dream-composer-style="label"] __DREAM_SELECTOR_COMPOSER_CHROME__ {

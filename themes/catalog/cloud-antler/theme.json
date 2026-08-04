@@ -24,14 +24,14 @@
     "texture": "paper"
   },
   "colors": {
-    "background": "#e7eee9",
-    "panel": "#f0f5f1",
-    "panelAlt": "#dce8e0",
-    "accent": "#67a889",
-    "secondary": "#8b72b4",
-    "text": "#26332d",
-    "muted": "#65786f",
-    "line": "#9bb4a6"
+    "background": "#c9d9d2",
+    "panel": "#d6e2dc",
+    "panelAlt": "#b8ccc2",
+    "accent": "#3f7d66",
+    "secondary": "#70558f",
+    "text": "#17251f",
+    "muted": "#40584d",
+    "line": "#718f80"
   },
   "art": {
     "focusX": 0.7,

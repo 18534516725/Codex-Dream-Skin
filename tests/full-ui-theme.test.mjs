@@ -50,6 +50,37 @@ test("Post Raccoon uses its navy-and-postal-red artwork palette in the live shel
   });
 });
 
+test("Post Raccoon and Cloud Antler keep artwork visible without dotted or washed-out chrome", async () => {
+  const cloudAntler = JSON.parse(await fs.readFile(
+    path.join(root, "themes", "catalog", "cloud-antler", "theme.json"),
+    "utf8",
+  ));
+  assert.deepEqual(cloudAntler.colors, {
+    background: "#c9d9d2",
+    panel: "#d6e2dc",
+    panelAlt: "#b8ccc2",
+    accent: "#3f7d66",
+    secondary: "#70558f",
+    text: "#17251f",
+    muted: "#40584d",
+    line: "#718f80",
+  });
+  for (const themeId of ["post-raccoon", "cloud-antler"]) {
+    const selector = `data-dream-theme-id="${themeId}"`;
+    assert.match(css, new RegExp(`${selector}[\\s\\S]*?--dream-skin-art`));
+    assert.match(css, new RegExp(`${selector}[\\s\\S]*?__DREAM_SELECTOR_COMPOSER_CHROME__`));
+  }
+  assert.match(css, /data-dream-theme-id="post-raccoon"[\s\S]*?::after\s*\{[\s\S]*?background:\s*none\s*!important/);
+  assert.match(css, /data-dream-theme-id="cloud-antler"[\s\S]*?--ds-text:\s*#17251f/);
+  assert.match(css, /data-dream-theme-id="cloud-antler"[\s\S]*?__DREAM_SELECTOR_COMPOSER_CHROME__[\s\S]*?background:\s*rgb\(var\(--ds-panel-2-rgb\)\s*\/\s*\.96\)/);
+});
+
+test("User-selected text color is written after generated RGB tokens", () => {
+  const userOverride = renderer.indexOf('if (APPEARANCE_SETTINGS.textColor)');
+  const generatedRgb = renderer.indexOf('const rgbVariables = {');
+  assert.ok(userOverride > generatedRgb, "text color override must run after generated RGB variables");
+});
+
 test("Every visual family produces a distinct, complete profile", () => {
   const families = [
     "cinematic-cyber", "nature-healing", "warm-editorial",
