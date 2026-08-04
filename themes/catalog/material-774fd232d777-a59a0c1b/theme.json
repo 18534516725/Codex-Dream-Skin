@@ -6,7 +6,7 @@
   "family": "cartoon-stationery",
   "media": {
     "poster": "background.webp",
-    "video": "background.mp4"
+    "video": null
   },
   "typography": {
     "body": "native-sans",
