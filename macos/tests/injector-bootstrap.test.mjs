@@ -202,5 +202,13 @@ assert.match(
 );
 assert.match(source, /visibleSuggestionLabels\.length >= result\.visibleCardCount/);
 assert.match(source, /result\.suggestionLabelColorsMatch/);
+assert.match(source, /from "\.\.\/assets\/appearance-bridge\.mjs"/,
+  "The watcher must use the shared loopback appearance bridge.");
+assert.match(source, /from "\.\.\/assets\/appearance-settings\.mjs"/,
+  "The watcher must use the shared per-skin appearance store.");
+assert.match(source, /await appearanceStore\.materialize\(saved\.skinId\)/,
+  "Saved settings for the active skin must materialize before refresh.");
+assert.match(source, /await appearanceBridge\?\.close\(\)/,
+  "Watcher shutdown must close the local appearance bridge.");
 
 console.log("PASS: early injection is L0-ready, generation-safe, and removed on shutdown.");

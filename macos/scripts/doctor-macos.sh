@@ -15,7 +15,10 @@ discover_codex_app
 require_macos_runtime
 [ -f "$CONFIG_PATH" ] || fail "Codex config not found: $CONFIG_PATH"
 for required in \
+  "$PROJECT_ROOT/assets/appearance-bridge.mjs" \
+  "$PROJECT_ROOT/assets/appearance-settings.mjs" \
   "$PROJECT_ROOT/assets/dream-skin.css" \
+  "$PROJECT_ROOT/assets/nexo-skin-catalog.json" \
   "$PROJECT_ROOT/assets/renderer-inject.js" \
   "$PROJECT_ROOT/assets/safe-css-policy.json" \
   "$PROJECT_ROOT/assets/safe-css-validator.mjs" \

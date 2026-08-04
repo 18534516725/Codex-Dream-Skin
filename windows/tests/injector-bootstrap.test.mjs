@@ -193,5 +193,13 @@ assert.match(source, /if \(!fallbackTargets\.get\(id\)\) return;/,
   "Fallback listeners must stay inert after a successful early registration.");
 assert.match(source, /Page\.removeScriptToEvaluateOnNewDocument/,
   "Watcher shutdown and theme refresh must unregister persistent Page scripts.");
+assert.match(source, /from "\.\.\/assets\/appearance-bridge\.mjs"/,
+  "The watcher must use the shared loopback appearance bridge.");
+assert.match(source, /from "\.\.\/assets\/appearance-settings\.mjs"/,
+  "The watcher must use the shared per-skin appearance store.");
+assert.match(source, /await appearanceStore\.materialize\(saved\.skinId\)/,
+  "Saved settings for the active skin must materialize before refresh.");
+assert.match(source, /await appearanceBridge\?\.close\(\)/,
+  "Watcher shutdown must close the local appearance bridge.");
 
 console.log("PASS: Windows early injection is L0-ready, generation-safe, ordered before probing, and fallback-scoped.");

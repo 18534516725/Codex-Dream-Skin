@@ -37,7 +37,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   )
   private let requiredEngineRelativePaths = [
     "VERSION",
+    "assets/appearance-bridge.mjs",
+    "assets/appearance-settings.mjs",
     "assets/dream-skin.css",
+    "assets/nexo-skin-catalog.json",
     "assets/portal-hero.png",
     "assets/renderer-inject.js",
     "assets/safe-css-policy.json",

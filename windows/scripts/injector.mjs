@@ -11,10 +11,25 @@ import {
 import { validateThemeV2 } from "../assets/theme-v2.mjs";
 import { buildThemeProfile } from "../assets/theme-profile.mjs";
 import { decodeAndValidateSafeCss } from "../assets/safe-css-validator.mjs";
+import { createAppearanceBridge } from "../assets/appearance-bridge.mjs";
+import { AppearanceSettingsStore } from "../assets/appearance-settings.mjs";
 
 const scriptPath = fileURLToPath(import.meta.url);
 const here = path.dirname(scriptPath);
 const root = path.resolve(here, "..");
+const NEXO_CATALOG = JSON.parse(await fs.readFile(path.join(root, "assets", "nexo-skin-catalog.json"), "utf8"));
+if (NEXO_CATALOG.schemaVersion !== 2 || !Array.isArray(NEXO_CATALOG.items)) {
+  throw new Error("assets/nexo-skin-catalog.json has an unsupported schema");
+}
+const APPROVED_SKIN_IDS = new Set(NEXO_CATALOG.items.map((item) => item?.id).filter((id) =>
+  typeof id === "string" && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)));
+const APPEARANCE_BRIDGE_ORIGINS = new Set([
+  NEXO_CATALOG.assetOrigin,
+  "https://www.nexotoken.net",
+  "https://nexotoken.top",
+  "https://www.nexotoken.top",
+]);
+if (process.env.DREAMSKIN_ALLOW_DEV_ORIGIN === "1") APPEARANCE_BRIDGE_ORIGINS.add("http://localhost:5173");
 const SELECTOR_CONTRACT = JSON.parse(await fs.readFile(
   path.join(root, "assets", "selectors.json"), "utf8",
 ));
@@ -1540,6 +1555,10 @@ async function runOneShot(options) {
 
 async function runWatch(options) {
   const identityAnchor = await connectBrowserIdentityAnchor(options.port, options.browserId);
+  const appearanceStore = new AppearanceSettingsStore({
+    stateRoot: path.dirname(options.themeDir),
+    approvedSkinIds: APPROVED_SKIN_IDS,
+  });
   const sessions = new Map();
   const earlyScripts = new Map();
   const fallbackTargets = new Map();
@@ -1552,6 +1571,8 @@ async function runWatch(options) {
   let lastStrongThemeAuditAt = 0;
   let loadedPayload = null;
   let paused = false;
+  let appearanceBridge = null;
+  let appearanceRefreshRequested = false;
   const stop = () => { stopping = true; };
   const rejectTarget = (target, baseDelayMs, error = null) => {
     const previous = targetFailures.get(target.id) ?? { failures: 0, lastLogAt: 0 };
@@ -1585,7 +1606,22 @@ async function runWatch(options) {
   process.on("SIGTERM", stop);
 
   try {
+    const initialTheme = await loadTheme(options.themeDir);
+    if (APPROVED_SKIN_IDS.has(initialTheme.theme.id)) await appearanceStore.materialize(initialTheme.theme.id);
     loadedPayload = await loadPayload(options.themeDir);
+    try {
+      appearanceBridge = await createAppearanceBridge({
+        store: appearanceStore,
+        allowedOrigins: APPEARANCE_BRIDGE_ORIGINS,
+        onSettingsSaved: async (saved) => {
+          if (saved.skinId !== loadedPayload?.theme.id) return;
+          await appearanceStore.materialize(saved.skinId);
+          appearanceRefreshRequested = true;
+        },
+      });
+    } catch (error) {
+      console.error(`[dream-skin] appearance bridge unavailable: ${error.message}`);
+    }
     lastStrongThemeAuditAt = Date.now();
     paused = await fileExists(options.pauseFile);
     while (!stopping) {
@@ -1614,7 +1650,8 @@ async function runWatch(options) {
       if (!nextPaused) {
         try {
           const now = Date.now();
-          let shouldAudit = !loadedPayload || now - lastStrongThemeAuditAt >= STRONG_THEME_AUDIT_MS;
+          let shouldAudit = appearanceRefreshRequested || !loadedPayload ||
+            now - lastStrongThemeAuditAt >= STRONG_THEME_AUDIT_MS;
           if (!shouldAudit) {
             try {
               shouldAudit = await readThemeSourceStamp(loadedPayload) !== loadedPayload.sourceStamp;
@@ -1623,10 +1660,15 @@ async function runWatch(options) {
             }
           }
           if (shouldAudit) {
-            const candidateTheme = await loadTheme(options.themeDir);
+            let candidateTheme = await loadTheme(options.themeDir);
+            if (APPROVED_SKIN_IDS.has(candidateTheme.theme.id)) {
+              await appearanceStore.materialize(candidateTheme.theme.id);
+              candidateTheme = await loadTheme(options.themeDir);
+            }
             lastStrongThemeAuditAt = now;
-            if (!loadedPayload || candidateTheme.fingerprint !== loadedPayload.fingerprint) {
+            if (appearanceRefreshRequested || !loadedPayload || candidateTheme.fingerprint !== loadedPayload.fingerprint) {
               nextPayload = await loadPayload(options.themeDir, candidateTheme);
+              appearanceRefreshRequested = false;
             } else {
               loadedPayload.sourceStamp = candidateTheme.sourceStamp;
             }
@@ -1762,6 +1804,7 @@ async function runWatch(options) {
       await new Promise((resolve) => setTimeout(resolve, 1200));
     }
   } finally {
+    await appearanceBridge?.close();
     identityAnchor.close();
     for (const [id, session] of sessions) {
       await removeEarlyPayload(session, earlyScripts.get(id));

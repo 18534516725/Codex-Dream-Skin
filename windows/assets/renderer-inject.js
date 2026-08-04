@@ -234,17 +234,20 @@ if (typeof module === "object" && module?.exports) {
     ? THEME.id : "custom";
   const normalizeAppearanceSettings = (value) => {
     const source = value && typeof value === "object" && !Array.isArray(value) ? value : {};
+    const legacyFonts = { system: "native", serif: "editorial", mono: "code" };
+    const font = legacyFonts[source.font] || source.font;
     const bounded = (key, fallback, min, max) => {
       const number = Number(source[key]);
       return Number.isFinite(number) ? Number(Math.min(max, Math.max(min, number)).toFixed(2)) : fallback;
     };
     return {
-      backgroundVisibility: bounded("backgroundVisibility", 1, 0.15, 1),
+      backgroundVisibility: bounded("backgroundVisibility", 1, 0, 1),
       sidebarOpacity: bounded("sidebarOpacity", 0.82, 0.2, 1),
       contentOpacity: bounded("contentOpacity", 0.82, 0.2, 1),
-      font: ["system", "serif", "rounded", "mono"].includes(source.font) ? source.font : "system",
-      fontSize: bounded("fontSize", 1, 0.85, 1.2),
-      contrast: bounded("contrast", 1, 0.7, 1),
+      font: ["native", "clear", "rounded", "editorial", "condensed", "humanist", "code", "pixel"].includes(font)
+        ? font : "native",
+      fontSize: bounded("fontSize", 1, 0.8, 1.34),
+      contrast: bounded("contrast", 1, 0.6, 1),
     };
   };
   const APPEARANCE_SETTINGS = normalizeAppearanceSettings(THEME.appearanceSettings);
@@ -504,10 +507,14 @@ if (typeof module === "object" && module?.exports) {
     const renderProfile = THEME.renderProfile && typeof THEME.renderProfile === "object"
       ? THEME.renderProfile : {};
     const userFonts = {
-      system: null,
-      serif: '"Songti SC", "STSong", "Times New Roman", serif',
-      rounded: '"SF Pro Rounded", "PingFang SC", "Microsoft YaHei UI", "Segoe UI", sans-serif',
-      mono: 'ui-monospace, "SFMono-Regular", Consolas, "Liberation Mono", monospace',
+      native: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+      clear: '"Avenir Next", "Segoe UI", sans-serif',
+      rounded: 'ui-rounded, "SF Pro Rounded", "Nunito", sans-serif',
+      editorial: '"Songti SC", "STSong", "Noto Serif CJK SC", Georgia, serif',
+      condensed: '"Arial Narrow", "Avenir Next Condensed", "Roboto Condensed", sans-serif',
+      humanist: 'Optima, Candara, "Segoe UI", sans-serif',
+      code: '"SFMono-Regular", Consolas, "Liberation Mono", monospace',
+      pixel: '"Courier New", monospace',
     };
     const profileDefaults = {
       "--ds-family-signature": familyChoice(),
@@ -527,11 +534,9 @@ if (typeof module === "object" && module?.exports) {
         ? renderProfile[name] : fallback;
       setStyleProperty(root, name, value);
     }
-    if (userFonts[APPEARANCE_SETTINGS.font]) {
-      setStyleProperty(root, "--ds-font-body", userFonts[APPEARANCE_SETTINGS.font]);
-      setStyleProperty(root, "--ds-font-title", userFonts[APPEARANCE_SETTINGS.font]);
-      setStyleProperty(root, "--ds-font-label", userFonts[APPEARANCE_SETTINGS.font]);
-    }
+    setStyleProperty(root, "--ds-font-body", userFonts[APPEARANCE_SETTINGS.font]);
+    setStyleProperty(root, "--ds-font-title", userFonts[APPEARANCE_SETTINGS.font]);
+    setStyleProperty(root, "--ds-font-label", userFonts[APPEARANCE_SETTINGS.font]);
     setStyleProperty(root, "--ds-user-background-visibility", String(APPEARANCE_SETTINGS.backgroundVisibility));
     setStyleProperty(root, "--ds-user-sidebar-opacity", String(APPEARANCE_SETTINGS.sidebarOpacity));
     setStyleProperty(root, "--ds-user-content-opacity", String(APPEARANCE_SETTINGS.contentOpacity));

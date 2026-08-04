@@ -1,0 +1,5748 @@
+{
+  "schemaVersion": 2,
+  "assetOrigin": "https://nexotoken.net",
+  "items": [
+    {
+      "id": "stellar-voyager",
+      "name": "星核旅者",
+      "version": 2,
+      "family": "celestial-fantasy",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "01-stellar-voyager.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "b4a2f7f4570023798fb0c11da0a845fcc9e97f51d593b4edc5238c5bc8e39277",
+        "poster": "ae3637e5469c28d637240bad60319a96ee9e13366601ccddeba85bd2a660513e",
+        "preview": "fd1eb9bb06d07390b44247e96b249c46749bbadea672c3a7d8d999d8d4ec9379",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "stellar-voyager",
+        "name": "星核旅者",
+        "appearance": "dark",
+        "family": "celestial-fantasy",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "glass",
+          "corners": "cut",
+          "motion": "orbit",
+          "sidebar": "navigation",
+          "composer": "console",
+          "texture": "grid"
+        },
+        "colors": {
+          "background": "#0e1722",
+          "panel": "#132235",
+          "panelAlt": "#1b3048",
+          "accent": "#70c0ff",
+          "secondary": "#f4be5c",
+          "text": "#edf7ff",
+          "muted": "#a9bfd1",
+          "line": "#35536d"
+        },
+        "art": {
+          "focusX": 0.68,
+          "focusY": 0.46,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "sakura-signal",
+      "name": "樱花信使",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "02-sakura-signal.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "c243f7f8c8a15a9998013bebcc160214a457d2835b1f79ef74d3efaff7705fe4",
+        "poster": "e25a05ba795c6f01ab562e58b8da09bc85a9ce13acf93a3c69ad93048f161738",
+        "preview": "68e6c62d5b1e90f95274b192eab6eac21ceb142b6438c493d38f32f4fe6d7d19",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "sakura-signal",
+        "name": "樱花信使",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "rounded",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "stamp",
+          "motion": "petals",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#19141f",
+          "panel": "#211a29",
+          "panelAlt": "#2a2134",
+          "accent": "#e897be",
+          "secondary": "#a689e8",
+          "text": "#fff8fc",
+          "muted": "#cabdca",
+          "line": "#735b7d"
+        },
+        "art": {
+          "focusX": 0.72,
+          "focusY": 0.45,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "neon-courier",
+      "name": "霓虹信使",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "03-neon-courier.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "0b3331daa4b2f04718aa54e85d36560b46b093aa7187a9db10eccf0806d4b873",
+        "poster": "10f0685f7543561c4070ecdddacd0c2164b75f16964cbd8ad5896df6c4358d1f",
+        "preview": "4f5ecd1e52fc621cba066eda209e59667e287f8da2de8144c792a6d928268e15",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "neon-courier",
+        "name": "霓虹信使",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "rain",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#110b1c",
+          "panel": "#170f1f",
+          "panelAlt": "#251733",
+          "accent": "#f45dca",
+          "secondary": "#4fdae5",
+          "text": "#fff4fd",
+          "muted": "#c5abc8",
+          "line": "#63306b"
+        },
+        "art": {
+          "focusX": 0.66,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "mist-beacon",
+      "name": "雾海灯塔",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "light",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "04-mist-beacon.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "c48acdf3fc75fa9d4910a524e634dc56e3e7884a7688b66d831498901ed18c2b",
+        "poster": "052477f8e0375662f8abdeef060b3fe6bb4a89a619b301e07e7979059cfaf14a",
+        "preview": "930408730f01a8f198b880dc3dc8630fa0a10c104a9ce55365c261ed1782e211",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "mist-beacon",
+        "name": "雾海灯塔",
+        "appearance": "light",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "editorial",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "paper",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "maritime",
+          "composer": "label",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#eee6d8",
+          "panel": "#f7f0e5",
+          "panelAlt": "#e4d8c6",
+          "accent": "#b17b35",
+          "secondary": "#668993",
+          "text": "#2d2924",
+          "muted": "#756d63",
+          "line": "#b9a58b"
+        },
+        "art": {
+          "focusX": 0.69,
+          "focusY": 0.45,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "rain-harbor",
+      "name": "雨港余光",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "05-rain-harbor.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "fc743109dda158015f21cfced675f34fc75bf10bd333ed5255cbcf2f8ad7133f",
+        "poster": "892cc88826dffe215976c4718765e5d1d82f7c78663f5396a1464b5285cb5d5c",
+        "preview": "7a5a7d0f081a6f207ff9931dbcad488561f9e1dca405eaa7f86f0aa60ad26975",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "rain-harbor",
+        "name": "雨港余光",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "glass",
+          "corners": "cut",
+          "motion": "rain",
+          "sidebar": "harbor",
+          "composer": "console",
+          "texture": "droplets"
+        },
+        "colors": {
+          "background": "#091819",
+          "panel": "#0d1819",
+          "panelAlt": "#142526",
+          "accent": "#56bead",
+          "secondary": "#db9d5b",
+          "text": "#effbf7",
+          "muted": "#9bbdb6",
+          "line": "#315e58"
+        },
+        "art": {
+          "focusX": 0.72,
+          "focusY": 0.47,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "crimson-forge",
+      "name": "绯红铸界",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "06-crimson-forge.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "3d0ce73ed894a99e61cc81d604b47ec13d619505199aa4dad0e405de26e69fec",
+        "poster": "42abc6821e91d83bbbe2d3521aac874a538b5b5ade2f21286f072a5203193184",
+        "preview": "b5a469c0cfda3134d3f9f531ce3123848bd4533ba2fc987a59b16fec29dc1ae2",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "crimson-forge",
+        "name": "绯红铸界",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "stage",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "sparks",
+          "sidebar": "forge",
+          "composer": "console",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#16090b",
+          "panel": "#1e0f11",
+          "panelAlt": "#321619",
+          "accent": "#e85249",
+          "secondary": "#ebaa50",
+          "text": "#fff1ed",
+          "muted": "#c7a19b",
+          "line": "#71342f"
+        },
+        "art": {
+          "focusX": 0.67,
+          "focusY": 0.46,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "cloud-antler",
+      "name": "云鹿栖境",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "light",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "07-cloud-antler.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "a1567e49c8370f6d64c1a79cf5df0588d71eb9a8179fc4a9ba0982f9f6987645",
+        "poster": "c008944657abcde04272b1682e6af1bb27a47a9d6b85a1e94ddb87b9f7d7808d",
+        "preview": "67bb6912bd8eb3d3d2e0d4b2f174273a9014a82b901eee6ec748e12429b75590",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "cloud-antler",
+        "name": "云鹿栖境",
+        "appearance": "light",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "scroll",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#e7eee9",
+          "panel": "#f0f5f1",
+          "panelAlt": "#dce8e0",
+          "accent": "#67a889",
+          "secondary": "#8b72b4",
+          "text": "#26332d",
+          "muted": "#65786f",
+          "line": "#9bb4a6"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.44,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "midnight-terminal",
+      "name": "午夜终端",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "08-midnight-terminal.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "4ae9dd340762b95cb23ffb65ad68f3864399b3e9d1b465ba91a0403c19dda0f9",
+        "poster": "cb711d9d3d30cd9b5eb84c59098a8795318697377d2613cdcb6704e8190d3f44",
+        "preview": "8e2ec70fe7ecb2cb30b093001644fd531294e734e0aff23c08f3f23a99dc3209",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "midnight-terminal",
+        "name": "午夜终端",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "terminal",
+          "composer": "terminal",
+          "texture": "grid"
+        },
+        "colors": {
+          "background": "#07110f",
+          "panel": "#0c1514",
+          "panelAlt": "#12211f",
+          "accent": "#54cda2",
+          "secondary": "#5d91da",
+          "text": "#edfff8",
+          "muted": "#94b9ac",
+          "line": "#2e6755"
+        },
+        "art": {
+          "focusX": 0.73,
+          "focusY": 0.49,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "retro-orbit",
+      "name": "复古轨道",
+      "version": 2,
+      "family": "pixel-retro",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "09-retro-orbit.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "05688c5eb3e0f902824188d0362f8680db5513378368ba137c05eb66ba2b6b67",
+        "poster": "e79f045303026997288fdcaf7491942cc25b40f374c305b0585262ae4c77dbc9",
+        "preview": "611013b70d8ed67a43ab55d88d0dfb2fd6777c84af871ee2757a6567106216b9",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "retro-orbit",
+        "name": "复古轨道",
+        "appearance": "dark",
+        "family": "pixel-retro",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "pixel",
+          "label": "pixel",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "pixel-platform",
+          "surface": "pixel",
+          "corners": "pixel",
+          "motion": "orbit",
+          "sidebar": "station",
+          "composer": "pixel-console",
+          "texture": "dither"
+        },
+        "colors": {
+          "background": "#18100b",
+          "panel": "#1e1611",
+          "panelAlt": "#302219",
+          "accent": "#e58948",
+          "secondary": "#53b3b2",
+          "text": "#fff3df",
+          "muted": "#cbb79e",
+          "line": "#72503a"
+        },
+        "art": {
+          "focusX": 0.69,
+          "focusY": 0.45,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "strategy-atrium",
+      "name": "策略中庭",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "10-strategy-atrium.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "49e8ae3d54ec619c27763e3eff9f33c7f1eb0ebe7aea3bf9a3412b01f500bbc2",
+        "poster": "0ba7b5f3703098c0adabc5806b8eddc7e6e07e1502cf4539491bb47f8986ec3b",
+        "preview": "6438ccd372487cc45dd3a68551eb5ba169efebaa120ccb2dbf8b3fedc460f462",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "strategy-atrium",
+        "name": "策略中庭",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "editorial",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "blueprint",
+          "composer": "workbench",
+          "texture": "grid"
+        },
+        "colors": {
+          "background": "#17140f",
+          "panel": "#1c1812",
+          "panelAlt": "#2a241a",
+          "accent": "#cdae69",
+          "secondary": "#65a486",
+          "text": "#fff7e5",
+          "muted": "#c2b49c",
+          "line": "#695a3a"
+        },
+        "art": {
+          "focusX": 0.71,
+          "focusY": 0.46,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "aurora-leviathan",
+      "name": "极光巨鲸",
+      "version": 2,
+      "family": "celestial-fantasy",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "11-aurora-leviathan.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "b6afb43a5850099a42cce8234d74309771b6585f0454396ec4951b805afd3357",
+        "poster": "04bab0dcb83d86c0e3bdfe16f9559f4618ffd160219ee925bf60ed7ac5fb4bb7",
+        "preview": "6cadb882f8a7238afafd57eadffdf7a4b4565e6e73c43d9757e9e63fb5326562",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "aurora-leviathan",
+        "name": "极光巨鲸",
+        "appearance": "dark",
+        "family": "celestial-fantasy",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "glass",
+          "corners": "round",
+          "motion": "orbit",
+          "sidebar": "aurora",
+          "composer": "console",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#071419",
+          "panel": "#0c191e",
+          "panelAlt": "#112931",
+          "accent": "#5bd2cf",
+          "secondary": "#9b7ee6",
+          "text": "#effdff",
+          "muted": "#9dbdc4",
+          "line": "#32636d"
+        },
+        "art": {
+          "focusX": 0.68,
+          "focusY": 0.42,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "ink-ridge-guardian",
+      "name": "墨岭守望",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "12-ink-ridge-guardian.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "200b1bd287328e8a227d800f78b104a478c1108d29d7ed2090c2cf255f6b9909",
+        "poster": "de1815719f98e83815aee043dfeb97d16c41c0428b629c58ea1ad13d05b7364e",
+        "preview": "c763669b7e52c87f382b3247bdca947ac51e99e54113ea2e9e84d475cb5c5398",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "ink-ridge-guardian",
+        "name": "墨岭守望",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "editorial",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "ink",
+          "sidebar": "scroll",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#17130f",
+          "panel": "#1b1713",
+          "panelAlt": "#29211a",
+          "accent": "#cba661",
+          "secondary": "#a8534c",
+          "text": "#fff6e8",
+          "muted": "#bdae9a",
+          "line": "#67543c"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.45,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "post-raccoon",
+      "name": "邮差浣熊",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "light",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "13-post-raccoon.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "e502e8233bc5564c1c50af29c07a3ac143e20d101345e38187904835e0a3bf3c",
+        "poster": "1293cdaadcbf0c8382b38eb6c780c5a6db60a117f4d0d34210db9388f27788e2",
+        "preview": "0097ebd0c859fa56464636bce0f1e49d2960f5b95e2e590be14f15efb6941c3f",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "post-raccoon",
+        "name": "邮差浣熊",
+        "appearance": "light",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "rounded",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "ticket",
+          "motion": "mail",
+          "sidebar": "postal",
+          "composer": "label",
+          "texture": "halftone"
+        },
+        "colors": {
+          "background": "#f5eee0",
+          "panel": "#fff8eb",
+          "panelAlt": "#eadfcf",
+          "accent": "#da4342",
+          "secondary": "#f1be5c",
+          "text": "#332522",
+          "muted": "#78645f",
+          "line": "#c99b83"
+        },
+        "art": {
+          "focusX": 0.74,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "night-shift-penguin",
+      "name": "夜班企鹅",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "14-night-shift-penguin.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "4e5acafa45824a063a801bfd228cdef973ebe71d2fa837e3a6abd64f0fee026f",
+        "poster": "0f82f5123c88319b9edf3f8f8dbd61d4ca39d8a94fd8b9aaea7492597f1469f0",
+        "preview": "0636b5a33d790b0fecb392f60d989485d0bcc81dc0af1366eecaaebf749e8e7f",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "night-shift-penguin",
+        "name": "夜班企鹅",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "rounded",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "stage",
+          "surface": "metal",
+          "corners": "round",
+          "motion": "spotlight",
+          "sidebar": "setlist",
+          "composer": "mixer",
+          "texture": "vinyl"
+        },
+        "colors": {
+          "background": "#0d0c0a",
+          "panel": "#11100e",
+          "panelAlt": "#201d17",
+          "accent": "#e0b650",
+          "secondary": "#fae197",
+          "text": "#fff9e8",
+          "muted": "#bfb59c",
+          "line": "#655632"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.46,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "workshop-otter",
+      "name": "工坊水獭",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "light",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "15-workshop-otter.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "c5589a70f100e7c3e660afa08d48cf2bde88918b56da79ab67268ec0928f7eb4",
+        "poster": "a48ec0670e23a0b42d650eb18a6a58b014df6e60e6539cfb814de68fd318ea5e",
+        "preview": "12cd299dcafc39abbad01c2c865d9ae57c55dd01bf3aa68a6e5684fd666f7c25",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "workshop-otter",
+        "name": "工坊水獭",
+        "appearance": "light",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "rounded",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "doodle",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "crayon"
+        },
+        "colors": {
+          "background": "#e8f3ee",
+          "panel": "#f5fbf8",
+          "panelAlt": "#dbece6",
+          "accent": "#2bb3a3",
+          "secondary": "#ef8449",
+          "text": "#243b3a",
+          "muted": "#657b78",
+          "line": "#8dbab2"
+        },
+        "art": {
+          "focusX": 0.72,
+          "focusY": 0.47,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "moon-platform-cat",
+      "name": "月台猫站长",
+      "version": 2,
+      "family": "pixel-retro",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "16-moon-platform-cat.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "5f362675abe8ec1a8b611e152774fcf033b7e6a247523084ef7e94306c6df96b",
+        "poster": "98ee50b584bdd36396b8d552dc6838910351460d0b1540b514ffac9ce6139ddb",
+        "preview": "2174dac2378b0d8c0f89d9f1f6c6c836e2e98e59e6f2076b2b6554d852312476",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "moon-platform-cat",
+        "name": "月台猫站长",
+        "appearance": "dark",
+        "family": "pixel-retro",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "pixel",
+          "label": "pixel",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "pixel-platform",
+          "surface": "pixel",
+          "corners": "pixel",
+          "motion": "pixel-rain",
+          "sidebar": "station",
+          "composer": "pixel-console",
+          "texture": "dither"
+        },
+        "colors": {
+          "background": "#080d22",
+          "panel": "#0d122b",
+          "panelAlt": "#171d3d",
+          "accent": "#f1aa48",
+          "secondary": "#6985d3",
+          "text": "#f6f4ff",
+          "muted": "#aaa8c6",
+          "line": "#414c83"
+        },
+        "art": {
+          "focusX": 0.75,
+          "focusY": 0.5,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "floppy-wizard",
+      "name": "软盘魔法师",
+      "version": 2,
+      "family": "pixel-retro",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "17-floppy-wizard.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "695a949d3f375c02360937b5974ce7d96ab6fc9596683c34019e07811823c963",
+        "poster": "522cdfe367dc776e0c0754d116bfedcdbca1dec5cf69384c9c2f93be6f3ae172",
+        "preview": "c01e6729199127f64d72dfc1c2a5c45a63fb61d14efb651bc62c5eec04ed2c97",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "floppy-wizard",
+        "name": "软盘魔法师",
+        "appearance": "dark",
+        "family": "pixel-retro",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "pixel",
+          "label": "pixel",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "pixel-desktop",
+          "surface": "pixel",
+          "corners": "pixel",
+          "motion": "cursor",
+          "sidebar": "file-tree",
+          "composer": "dialog",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#100822",
+          "panel": "#160f2a",
+          "panelAlt": "#241743",
+          "accent": "#a969ed",
+          "secondary": "#52d5e0",
+          "text": "#fff2ff",
+          "muted": "#baa4cb",
+          "line": "#553178"
+        },
+        "art": {
+          "focusX": 0.69,
+          "focusY": 0.45,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "deep-sea-repair",
+      "name": "深海维修队",
+      "version": 2,
+      "family": "pixel-retro",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "18-deep-sea-repair.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "230577bc7bd8795a7e613286682abbcba8a4b0a01b6379b69523e6179cdf0feb",
+        "poster": "e94fcac7ac31231ef54cc3ba40178e1f935e6d002f393939eea4fe553c0cdefa",
+        "preview": "2d5e65bf6fe97fd9469a71c5ffd91c9f7a37cb47dd70cf120d036929b567b87a",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "deep-sea-repair",
+        "name": "深海维修队",
+        "appearance": "dark",
+        "family": "pixel-retro",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "pixel",
+          "label": "pixel",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "pixel-console",
+          "surface": "pixel",
+          "corners": "pixel",
+          "motion": "sonar",
+          "sidebar": "submarine",
+          "composer": "sonar",
+          "texture": "dither"
+        },
+        "colors": {
+          "background": "#061820",
+          "panel": "#0a1f27",
+          "panelAlt": "#10313c",
+          "accent": "#36beb6",
+          "secondary": "#f17055",
+          "text": "#eaffff",
+          "muted": "#9cbec0",
+          "line": "#286973"
+        },
+        "art": {
+          "focusX": 0.72,
+          "focusY": 0.5,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "现有自有目录主题，等待新版实机预览复核。"
+        }
+      }
+    },
+    {
+      "id": "material-0117a251b3ae-1e094157",
+      "name": "暖景01",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "19-material-0117a251b3ae-1e094157.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "2c32caa355191446c6c9e0121d1eba977f3258948a84ca3f0d5adf06bdde7c03",
+        "poster": "bf1f0497829e0090a8c5b31bd63dc59a9345561cfef1cbc79dc11c00a1113818",
+        "preview": "8b5882e84a6a04896d6f6cc1d3518a7b3b61e31e566b512a5e427c67be91e737",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-0117a251b3ae-1e094157",
+        "name": "暖景01",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-0b06537b4e1e-8b5f1405",
+      "name": "暖景02",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "20-material-0b06537b4e1e-8b5f1405.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "ce6a0d890d6235cf53d5cc24667ea775e54abba0f1fb766e203c95495c810450",
+        "poster": "d64bb0628879cb76dc8ed54e4775e7b01677df206c5cb4533d06786ff96efb60",
+        "preview": "15c3793be58bcafd50d34b4fe5dcf22fb2f1eafff6cfbca498dd01bd828a72b0",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-0b06537b4e1e-8b5f1405",
+        "name": "暖景02",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-0b697c11f472-d29565e9",
+      "name": "暖景03",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "21-material-0b697c11f472-d29565e9.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "fa22365657740a50888b0bac31744d9c32db3aa5c66de364b5e773154d7af0a8",
+        "poster": "28ce4108b3e9cf6802aa80f703c79552bfd9b5f030b04b27526e1b4145255772",
+        "preview": "35b7ea8ad40760395b6a7b9911e052c219b355651bc5139482c48fd4a5984724",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-0b697c11f472-d29565e9",
+        "name": "暖景03",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-0c635c87db4a-35af774f",
+      "name": "暖景04",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "22-material-0c635c87db4a-35af774f.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "eacc62dc2d2f451350f19584719ae9042a3c04a2dcd29d8829fefa6dd28bdcd3",
+        "poster": "56a54c05696bdc6298fd6b77d44774ebb6823f1ec17d0e832f866823b6f94f27",
+        "preview": "244bfda51f173901e8908cec58da80277747032565fe97ba38c9d9dabbcb9a9f",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-0c635c87db4a-35af774f",
+        "name": "暖景04",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-1a4affc23fd7-004e967f",
+      "name": "暖景05",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "23-material-1a4affc23fd7-004e967f.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "cbe3e18a8ee5f8adb60f2edacdbaa31dd346331b9e5b6a1fe09694f379ebf940",
+        "poster": "8a1a61e076ee8edcd6ba7b40a0dcea4cc8900693a822f58620974633e1dc0801",
+        "preview": "80c3890e78173ac7be2f73a98701156c4cc4a9266d1438787242be359c3c8728",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-1a4affc23fd7-004e967f",
+        "name": "暖景05",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-1a8850341d81-48ef8f75",
+      "name": "街角小铺",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "24-material-1a8850341d81-48ef8f75.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "f56f06c38890d68c8d788f6382bdf4ef32095f6c798fbc1341e17298526e2d69",
+        "poster": "a9edc24d7a06e04900d679372a331d5c8ef6cc094d36f7b60d6c78bb6ee87aac",
+        "preview": "2908f54fc3d65620df3e01dbb5f81e483967b577043e8b5a8b977b38c4d655f4",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-1a8850341d81-48ef8f75",
+        "name": "街角小铺",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-22618d0ca043-da48d06f",
+      "name": "暖景06",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "25-material-22618d0ca043-da48d06f.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "9abcfec617008b119f4a0dc57ad9eb2b6772a7ac436960d596e44347ce9df2f1",
+        "poster": "00e8cd4621771c040f2ccdd2dea765ce08ae60f7aaf1960c66917a23ceb3c4a1",
+        "preview": "b412616cabbe171e46b60ab01694ac20d68a6a3e23f3fb7c553fc20a90688579",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-22618d0ca043-da48d06f",
+        "name": "暖景06",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-2421f0715011-b4f66cba",
+      "name": "暖景07",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "26-material-2421f0715011-b4f66cba.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "fc20f9885a459c50b7a03ce79fd063115ceefa3e98255e2daceadb6c7a940e85",
+        "poster": "b38de5c807d2f2224ca08da20f955fc0c3c9964894873eb40fcac8a5bf74e0d5",
+        "preview": "7eead6d562b2c81ea08e9fee12645e3cd6277aac20d4193574b1df2cd8f0296d",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-2421f0715011-b4f66cba",
+        "name": "暖景07",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-2ac6f2267799-24151e62",
+      "name": "暖景08",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "27-material-2ac6f2267799-24151e62.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "8d74bf62646f271394affaa20ed002c52683490744b58cb31784714a9924aaea",
+        "poster": "07f65794f06b965d6d5b5bf8a139ba803f05b89ada64d570fd6606322ea2f1c3",
+        "preview": "c8cdfb29e133eabd514863e6db86490d63554a1ab7e614e552acd35dd2d16756",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-2ac6f2267799-24151e62",
+        "name": "暖景08",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-2ed8a89e6e0c-0a4e1c3a",
+      "name": "暖景09",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "28-material-2ed8a89e6e0c-0a4e1c3a.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "d7ffad76ef866cd898597f51d76283c014412106f418a076cc077818cd5b12f2",
+        "poster": "c4fb49b5cedd487bae626577d8dc4ab840d1fe32f82bcb0b489004dffb06ba06",
+        "preview": "a33f0aa416096b508adc88509e2ac18db46f112c24b42709a6c9e7997a254f81",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-2ed8a89e6e0c-0a4e1c3a",
+        "name": "暖景09",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-33f59ebe0cbd-b115ace2",
+      "name": "暖景10",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "29-material-33f59ebe0cbd-b115ace2.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "c24a01224a3d91c3ee4fa8a27af875ea27509de2e83a4d0482900ad4b365c881",
+        "poster": "c7d94ecdfde157d5d8186857843e86a2d940106840d1ad2b2f9cd1f717f0c334",
+        "preview": "4ce9058fd429a9fa657634839f65ea71df60589cf43c75296466c4f1eab791ae",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-33f59ebe0cbd-b115ace2",
+        "name": "暖景10",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-35518c15db60-3fb88cb5",
+      "name": "暗影蛛侠",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "30-material-35518c15db60-3fb88cb5.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "8ca0b4e63bc43b891a79430911e28497ec39a4611cb8d76804d9172bb60778c2",
+        "poster": "19699dbe5cfc91b44f691de376f3dc8e22ad2ddec2fd41b4289297047f7bb109",
+        "preview": "9e9aa5b66cecc374fb7c1b069297950c243b1fd5b9bd04f540704a041d0aad1f",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-35518c15db60-3fb88cb5",
+        "name": "暗影蛛侠",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-3d14a72399f4-5100b418",
+      "name": "蝶舞黄昏",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "31-material-3d14a72399f4-5100b418.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "63b377f98d38e83db5b3cba6e4549610d24326dcae466b93b1bae3144c2808d8",
+        "poster": "1c0d21e633fd06d9bfdc447eab9624ee145510e052e9557b947cf82a878d44fd",
+        "preview": "7d9e3220dd2a71085fbb86fd2b1df04081cc68f6ea68cfa8ff6e8f9309121f30",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-3d14a72399f4-5100b418",
+        "name": "蝶舞黄昏",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-3da9211d1e63-d67d35dd",
+      "name": "暖景11",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "32-material-3da9211d1e63-d67d35dd.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "c030aa8fb67a602d5f58ce190cdaa1297ee5091cf4578e1cff05ad38504d665c",
+        "poster": "b05fe3bcf8d6d022066ab3867b6fc3291c8c1dca114887083ea3d939435db7c5",
+        "preview": "2c337a5de13b38c0ec7dece4dd8587fe259511456278b0a981a60e2be486207a",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-3da9211d1e63-d67d35dd",
+        "name": "暖景11",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-42041506421c-4b4b6fdb",
+      "name": "暖景12",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "33-material-42041506421c-4b4b6fdb.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "ab40ce54185992fdbacd6b6ecd8dc7a4a663234d1d3493d151643d8740cdb56d",
+        "poster": "4914021bf4426bef66187ff371249aad0a64ee715c73218f7b07f3b5086d0ef9",
+        "preview": "7b681f284e057e4f1555888595eef8f98795e1b6b8a52b301335ca70da4db5ea",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-42041506421c-4b4b6fdb",
+        "name": "暖景12",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-48fcea2c61ac-4f0cd62a",
+      "name": "暖景13",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "34-material-48fcea2c61ac-4f0cd62a.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "8f4c288ad9253276d525e81d53b652e2572a78206b12abe5cd467c531d2cd26c",
+        "poster": "e3f3aa1acdc68911ac8662eb767f0f6334f6797e525f97003e8bb337407b9d56",
+        "preview": "b1161814680b0a658986193611b13ff7c137a71c8a2e48705aa5afa67178578d",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-48fcea2c61ac-4f0cd62a",
+        "name": "暖景13",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-4e2780c5e554-181050f7",
+      "name": "暖景14",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "35-material-4e2780c5e554-181050f7.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "2f7597e1c73b7a3a3a8a074c867a8692b80df463d391f2c36a5c79bcf440f731",
+        "poster": "91feb439db664ce78698ec38a1de0b07e446aaec6eb453403e81157782052b92",
+        "preview": "cdb79ccee4872b5142a1e6403844624d97a74cb1300878bac7fca811c4e56435",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-4e2780c5e554-181050f7",
+        "name": "暖景14",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-5a264a07aaa0-595c3ed4",
+      "name": "暖景15",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "36-material-5a264a07aaa0-595c3ed4.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "1cc894104c02852ed229e45567599903ab2fd22c550e5b3be64b31c73d51a2c3",
+        "poster": "80c801bb1629efd7898e17b9df9f7247c17923cacf5147e79949d36c37d7ebfb",
+        "preview": "887154697ff051643790d5fb8886e3d877bc8954c2f3e85d75f03c9bb9aae16e",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-5a264a07aaa0-595c3ed4",
+        "name": "暖景15",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-5c528e40ac92-6f04582d",
+      "name": "暖景16",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "37-material-5c528e40ac92-6f04582d.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "f0400b001e65318059ead84102e6ec9060a6bb76fbbd34779ca7f8e528ac85d7",
+        "poster": "7c10f2e33fc9208a1c70e4e6ff781742759b23791a6ffba63a01edadfb22b58e",
+        "preview": "87b4cb405d7c933c6ab58e21eb3b2d4315abae93bfe31eca1eccb06b7144b231",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-5c528e40ac92-6f04582d",
+        "name": "暖景16",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-5c8675795ebb-f69a229a",
+      "name": "云山晴空",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "38-material-5c8675795ebb-f69a229a.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "27bb7175aa0bec4b2b61ec1979c7c9541e4b4e36427ce6024544e9242a3e3dd6",
+        "poster": "840919085594066b3cd3c625aa9460ecd8068f4f066639f23ff0378d34fb8e63",
+        "preview": "1e301524492262fea866fb1caf4f5ce0367232d6be0dffb8f4dd4b8a91dad7bc",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-5c8675795ebb-f69a229a",
+        "name": "云山晴空",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-5d70246fddff-462311a7",
+      "name": "暖景17",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "39-material-5d70246fddff-462311a7.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "48b2d693c097dec60b69295ea902c4484af7301801596ffe6914137cd9c5e217",
+        "poster": "e45b69e5410e84e510dce38c4162f1377cc0abe14f060c9b842be39a4f05b352",
+        "preview": "30a443c646f0cdbfd5543faab77193251823fc7933fb9ece64e3dcf70b27e2ae",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-5d70246fddff-462311a7",
+        "name": "暖景17",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-5e6ba9f18bdb-6090828c",
+      "name": "暖景18",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "40-material-5e6ba9f18bdb-6090828c.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "fd696d7843e8392f5d5b4f2cfb4176a9182cba2b33b54209129f64c0d5ec42f9",
+        "poster": "cc296c628096092c99263fee2f849e846aab48a74d18f5745972facb3edee783",
+        "preview": "7ebef3e7e4a686aeedc64e7dcb2f43d7e4189f7784bafe8242dfe058d9318749",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-5e6ba9f18bdb-6090828c",
+        "name": "暖景18",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-614658b95a77-9c97eb99",
+      "name": "暖景19",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "41-material-614658b95a77-9c97eb99.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "9c804b26063894b5ec5bcba4c4c1e2202aa3562f9055ec19bdbd97d22ff45bc0",
+        "poster": "8442cd19d97bde9d9d85ca679991e15bde49a29d2d6f2544c868a30521561e89",
+        "preview": "f5f25b99378468901d58065b4d2ed954647252b379d751d1b734007d0106267f",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-614658b95a77-9c97eb99",
+        "name": "暖景19",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-65a457280941-bb73aad1",
+      "name": "冰火长离",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "42-material-65a457280941-bb73aad1.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "8deaec1edd0429dddb29b2bf594ea2f679900bcee2a55c18b5002b90d5556a79",
+        "poster": "7fab82170f4bf3836fe2cada2bc41878f5e9919ff7d38315279406195179fe9a",
+        "preview": "b03e7912e28ec94ef5c3655a34f5ca8770223bba3789f84c6f826566145e8e01",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-65a457280941-bb73aad1",
+        "name": "冰火长离",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-670d5e71f1e5-496b8e0c",
+      "name": "暖景21",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "43-material-670d5e71f1e5-496b8e0c.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "268fa70ff2038b959ed27a4bbe6ea66339bc93822bd45779aa152c10e137e29b",
+        "poster": "426f41587607bd1a67d23a744a2c611e871975194d9068a1f9731bddcc299202",
+        "preview": "46bfc85d236b86d2b3cb4d953392b3716adbb11183497841cea810ebdb2023bd",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-670d5e71f1e5-496b8e0c",
+        "name": "暖景21",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-6f63c3f311b0-62c677dc",
+      "name": "暖景22",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "44-material-6f63c3f311b0-62c677dc.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "c56b20a9732499e960edc77f934bd697ee6754e0135418570f4a71fd5f8cad9b",
+        "poster": "87499a64eac4a841844d7c17ee240b0f2b2d09d9e0c0604d1a307ba36c13ba1a",
+        "preview": "5f5995f9efedc693b554637cbd4ddf3fd6c0aa923d8b2b7a0447cd28f0608d30",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-6f63c3f311b0-62c677dc",
+        "name": "暖景22",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-702fed2aca8c-9c0787b7",
+      "name": "云海漩涡",
+      "version": 2,
+      "family": "celestial-fantasy",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "45-material-702fed2aca8c-9c0787b7.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "231aedafb2027ff8e757a8d491db12f984c21e3aadff7f212dc6c99cae120605",
+        "poster": "b8d32de6761327d43c5a210f68ffb1f994be5f1b80f840bb8ac7142de3949150",
+        "preview": "bcfccb522ef8e3b5cd1537deaf30705e2e0d1899723978b194a7da93d0c17171",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-702fed2aca8c-9c0787b7",
+        "name": "云海漩涡",
+        "appearance": "dark",
+        "family": "celestial-fantasy",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "glass",
+          "corners": "round",
+          "motion": "orbit",
+          "sidebar": "aurora",
+          "composer": "console",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#08101f",
+          "panel": "#101a31",
+          "panelAlt": "#182744",
+          "accent": "#78bfff",
+          "secondary": "#a783ee",
+          "text": "#f4f8ff",
+          "muted": "#aab9d3",
+          "line": "#405a88"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-71315154787f-c072419a",
+      "name": "暖景23",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "46-material-71315154787f-c072419a.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "89406c34eeed0a93effa647ddcf4e91212377bbc2d78e334b94fe9e9b282a0d9",
+        "poster": "ec7b6a2f76dfe0e45ae7a3ef0894d4c80e054dbf0ad8d9ebf5021618061c8f7b",
+        "preview": "9c2fb70931bce21942f78c217822372700f2e733aa1768832c5e42e51de8144e",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-71315154787f-c072419a",
+        "name": "暖景23",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-73b38d33736a-68703139",
+      "name": "暖景24",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "47-material-73b38d33736a-68703139.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "1da1a9c63b1fec5d868b29a7e091bbdd1d9d5fb342c32eaffac8503cfee10c92",
+        "poster": "ff2f8028bd1c1d62364161cd1c3afa99cb67101f01a218c64a8ed21c8efeab43",
+        "preview": "84e752c48ee451fe084651f22879d66c399bbfd25f9d7dbcddc848bf92516eb3",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-73b38d33736a-68703139",
+        "name": "暖景24",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-7415c354a204-cda007db",
+      "name": "暖景25",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "48-material-7415c354a204-cda007db.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "497cf9db45808030c8799ec9b5218007afea0360f4e292131efe409f141dbe06",
+        "poster": "eef3424b24a71d3d619c428be51c83708607e4b601836356cccc5da9a032b3d6",
+        "preview": "9699eccaa74bf43ec4c0f750263ff34b3db12f54e0789580c05cc67e4a863d3e",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-7415c354a204-cda007db",
+        "name": "暖景25",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-7477738994a3-239719bb",
+      "name": "暖景26",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "49-material-7477738994a3-239719bb.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "a36a604a51ab05599d159ca2d6d946f219cad04e6fc8699e2c0182cfd9073ca7",
+        "poster": "35a6d482c2376fff4c95f0eebfc8dd4cba589e2e25a79aadd06162145880bbe5",
+        "preview": "8ac49157af274189d8caeef3ea72ac2df2a19157fc6da927868af5d2d455d7f4",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-7477738994a3-239719bb",
+        "name": "暖景26",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-774fd232d777-a59a0c1b",
+      "name": "水面小熊",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "50-material-774fd232d777-a59a0c1b.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "11503734cec2ab45f36d4ad9a2f2fc305afa37950d0d00c758d4e8dcbf7650f6",
+        "poster": "acb2874515bf29638303fcfd0b3ecf5f8493d7f2bb327d8b763f6e5f9b580fc1",
+        "preview": "f009a1a0da4b6c829401564b1bcd0a2f35b18f32250a569fc6a551c2f266c6ab",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-774fd232d777-a59a0c1b",
+        "name": "水面小熊",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "none",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-7af75399fc83-f7c63004",
+      "name": "暖景27",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "51-material-7af75399fc83-f7c63004.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "36e7db75f213fff473e47907ff5f51913312d90c80c431e4d20042099013f65e",
+        "poster": "fbeee7da5cd01d75cc7b48cfa5cba2bb8b6336a8a4d4759d62c3927b10a93bf4",
+        "preview": "7e03b19c763a773e6324c2763dff9972fdd01e9bcafbdb9693fcb4b415aabcea",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-7af75399fc83-f7c63004",
+        "name": "暖景27",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-7b9b6ff2c4f6-28fc0b99",
+      "name": "雨站绿意",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "52-material-7b9b6ff2c4f6-28fc0b99.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "b15861b7498f9a11b21f4220da51535d0e5f226815f4ce7933c3147ea0654ce7",
+        "poster": "948d02387714bffc4cbdc4cc053967fa8b5a5a5543e7dc64b0614ec26e9a8b66",
+        "preview": "0465da7cd30d70716ba623bc881d26da1606de46df161402baf1893c52a30b20",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-7b9b6ff2c4f6-28fc0b99",
+        "name": "雨站绿意",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-7ecd5810ab54-dc150b5d",
+      "name": "暖景28",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "53-material-7ecd5810ab54-dc150b5d.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "73f8e7fa829072e723dc9c323be8109dffd4eceb3d9df390fdbef034a3e9c77e",
+        "poster": "c69718db8fb0ec9098ab8dafbe2c38f9de7360034c835563b5d5d6ad96281bb3",
+        "preview": "d296544159b087f926550cbbf778d399463707d15b2de1c338afc59d1f7564f5",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-7ecd5810ab54-dc150b5d",
+        "name": "暖景28",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-7f0760a9b9a7-f718ba46",
+      "name": "暖景29",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "54-material-7f0760a9b9a7-f718ba46.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "9a5d8cb091bd807c1b89b6b0a8e358a5fcf05eee1c3a84fda4fe641ef8387f39",
+        "poster": "13be4ae6bc235ce1867ca33ceb447b183faaa222dd71c40e9a6cc86d9b4d8de9",
+        "preview": "afb603cd577e67d80789eca8f1fb7dd4eb1af9dac597779e1d731cb2471fc83e",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-7f0760a9b9a7-f718ba46",
+        "name": "暖景29",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-8e0b79eb55d4-805bed69",
+      "name": "暖景30",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "55-material-8e0b79eb55d4-805bed69.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "839a2b478bcdbb2928e579e1955eec5e53b8af960a5b3b2ec42315d0a683a994",
+        "poster": "2965df8703b5470c28e6bb7b797d4584b5f0cc8c15f4ea64116f67ef4a5d12b6",
+        "preview": "bc9570e086a308bb5aa29e6a31f707843051b160a4a65544b5da81024c1cdcfd",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-8e0b79eb55d4-805bed69",
+        "name": "暖景30",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-91331101a1c5-517c5ed6",
+      "name": "暖景31",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "56-material-91331101a1c5-517c5ed6.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "c061dcf8c47c9b6a6cca3706afe8d454c92ff5f110f75ec7d897b8bfc12a7b02",
+        "poster": "6a0ffef25543dc11e8bc13107374366c644653dfb5e0fdf7fce3173fc7143923",
+        "preview": "9228ca527d143c8ed2a8ea54b5f587e19a9f7a0cf716ddc2447edfc6bdc43070",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-91331101a1c5-517c5ed6",
+        "name": "暖景31",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-983423060f57-cadf7a6b",
+      "name": "雪山街景",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "57-material-983423060f57-cadf7a6b.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "5a4e443f066c8f0fdd47081ee7a81a44da6d21eb31ae36c29f5f9d9277b78202",
+        "poster": "fe6a4d64c29274d4db9a6a4cf0d8ae5c6f9ef94de345c1cf7ec0d04e6454ded2",
+        "preview": "b56a403d1ab1d84786d954d147105f792edebcc931b27df5894934d345e93b0e",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-983423060f57-cadf7a6b",
+        "name": "雪山街景",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-9a422ae62660-472d7a20",
+      "name": "暖景32",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "58-material-9a422ae62660-472d7a20.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "aed991cc07d1c2e953c6091b65e26d725b32eb6138a45551c7fa06e497c032d4",
+        "poster": "d0ef099ac60c47b141f65bd2957473cfac100b809ebf660b86c377770907add8",
+        "preview": "3e9cfccb9fccc3c402364fc79fa3d42139dac09e6315b3f9e57fe24387d2e8c1",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-9a422ae62660-472d7a20",
+        "name": "暖景32",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-a17a308d35d3-21aba190",
+      "name": "霓虹少女",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "59-material-a17a308d35d3-21aba190.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "0bd48295abf7e337e2ff6f6db9c1134abb21e2ed19d2d1316cb7d1196db96251",
+        "poster": "d7f6b828f8083508650b0ebd71218c95251a4453038bb249853bee5ebf338d8e",
+        "preview": "6fa9e42ae725f2d95652f6f21d5238686ae1a0723428c71bcf30bb0a6e04f05f",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-a17a308d35d3-21aba190",
+        "name": "霓虹少女",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-a53f83b337b5-218c740f",
+      "name": "像素蘑菇",
+      "version": 2,
+      "family": "pixel-retro",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "60-material-a53f83b337b5-218c740f.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "86262b1c7b9be95207a605a682e0c80392ad4b0521b39be949862f9847a66c71",
+        "poster": "e5bad28c000c091fe6df848dbedc6a409a87cacb587b6c2575a599ba2776eb02",
+        "preview": "e8cae0742e4a42e3e8d5a1a30e6f74cc1d6d49961b2cce9e98463567ce6d53dd",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-a53f83b337b5-218c740f",
+        "name": "像素蘑菇",
+        "appearance": "dark",
+        "family": "pixel-retro",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "pixel",
+          "label": "pixel",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "pixel-desktop",
+          "surface": "pixel",
+          "corners": "pixel",
+          "motion": "pixel-rain",
+          "sidebar": "file-tree",
+          "composer": "pixel-console",
+          "texture": "dither"
+        },
+        "colors": {
+          "background": "#0c0b1a",
+          "panel": "#151229",
+          "panelAlt": "#211b3c",
+          "accent": "#ed5bb5",
+          "secondary": "#50d7dd",
+          "text": "#fff6ff",
+          "muted": "#b5a7c7",
+          "line": "#5d477d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-a5f713f94418-15fba88c",
+      "name": "落日街道",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "61-material-a5f713f94418-15fba88c.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "69c9af2d29d582e474c67aef2e23d594fa2cf168b081493e24af1d20459232f4",
+        "poster": "e27dd3aedaf7939be6415f55e568522fc4af67208490f49c715b97d2c6ca70ae",
+        "preview": "59ea004d9af485070fea1900c23f605fe1bf1b9222379c721f28c8ee70cedda2",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-a5f713f94418-15fba88c",
+        "name": "落日街道",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-a8d26e9fc3a0-8adc8676",
+      "name": "暖景33",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "62-material-a8d26e9fc3a0-8adc8676.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "033d0be04682ed3c283040e3404d185fde117d405fc1b869f32eb061814787b4",
+        "poster": "f77a49b1785f4ba8db6b9e9f7d0bae443bbefa49ae95ee487ff573eb8b590b8a",
+        "preview": "87c8820309dced540f4f249a8f01d9befa4dfef53fce3788455e0c6281899de9",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-a8d26e9fc3a0-8adc8676",
+        "name": "暖景33",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-ab048e4644d4-3eb7aa3b",
+      "name": "星瞳剑影",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "63-material-ab048e4644d4-3eb7aa3b.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "3ff3bfbfc09711b68e9f3b1768062e68ac5d52f49ff8b078c9fdc29a4d96740b",
+        "poster": "b7c4c9e750abeb2526384fc39f6bf900f6af82fcd0a51aa7ab2fd10f267a1afd",
+        "preview": "62b73c8e459a2fce361402590c2fe6cc2604f175c8fffad30733a044db5d93ec",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-ab048e4644d4-3eb7aa3b",
+        "name": "星瞳剑影",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-abacf6305443-3ea17b15",
+      "name": "暖景34",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "64-material-abacf6305443-3ea17b15.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "a6b7203bf0b1a0de953d4b8ac5baba7f0c026ccd59ca7dbdbfd9b605fb225c88",
+        "poster": "e04fe57c404d6739834ba17002ac83ad2abb0865f6872e4d1d7a3fad705c8b75",
+        "preview": "f5e2504d58635f74a6ff2ca5599e646eb4d7894aee88ce1bb114f2e7c75df33b",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-abacf6305443-3ea17b15",
+        "name": "暖景34",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-ac251e816228-60354553",
+      "name": "暖景35",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "65-material-ac251e816228-60354553.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "6fac02a200ebe8cdcb5a8fbd1c4e0e5e50d20dd50aedf6df8efde87afcdb5727",
+        "poster": "c0a4bd1f48bdf8a8b9b004e6e156eac0dde45c03a3c91df76a0a25cf821fa55a",
+        "preview": "93833c69f3dd1ccb8ba471754d3515000f5f24e5bcc4deac3735b69d9a70e326",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-ac251e816228-60354553",
+        "name": "暖景35",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-acccc3326809-e9e74869",
+      "name": "居家少女",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "66-material-acccc3326809-e9e74869.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "8697d9ccde3abee1a220f9afaf3c5f1165b48f7b5e1c031107bc469dc4027f4e",
+        "poster": "f39cd8b6b8475a729534b7a60ba5478c12c0a1011b70fc6710a3faa84525f57d",
+        "preview": "ec4efbadc72a0bc0db2cef0c511576fa0a72ca9f962abea2279b6fa19bf73322",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-acccc3326809-e9e74869",
+        "name": "居家少女",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-b388e6005506-09c334f1",
+      "name": "水中星梦",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "67-material-b388e6005506-09c334f1.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "083d19261f2d249dd2e24d44e432021424e877f07e961cbda0b2dbc3e04164e9",
+        "poster": "64ccc2ca6331350ef818d6a7cf064810e8414232b7b2703dfcc5632a09efd464",
+        "preview": "9b0e175468a3402e59e03a1031abfc0db458523b3a275032d7d8519cf65168e9",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-b388e6005506-09c334f1",
+        "name": "水中星梦",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-b778dd3bbf9e-ae8493f0",
+      "name": "暖景36",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "68-material-b778dd3bbf9e-ae8493f0.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "947dde8f7e8f2264228d6aad69e2d605a0e88cabf1e16420ca7de784dadc3ebc",
+        "poster": "0a3f6c538876de64b2d9bf0cb0d519689d453f8609a33ac20c055228976074dc",
+        "preview": "73daa706f732713965629bbb62be3f228f480e4e7b19901ab8643fc78455726c",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-b778dd3bbf9e-ae8493f0",
+        "name": "暖景36",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-bbf9586adde1-f83c7bf2",
+      "name": "暖景37",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "69-material-bbf9586adde1-f83c7bf2.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "99302810b6da8a7b3f8083d9d7da7a922dd2bcd5ca588f818b5529d97511661f",
+        "poster": "30f9f0c5601fd542fe4ef7960d72ca6626dcb851408c54afd83cfb631a7db90d",
+        "preview": "696055c3213157022dd76dfeae16315b909956460dcfbbb215369c875843aa56",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-bbf9586adde1-f83c7bf2",
+        "name": "暖景37",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-c43bd73a9bce-0c68f9bd",
+      "name": "暖景38",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "70-material-c43bd73a9bce-0c68f9bd.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "1f86ecabeadcb66b243d062685fd72297f9813d6e4dcf0d12a005d46d8bbe388",
+        "poster": "f28a84681bda0e93424594f2d464a02607e506760cc72a5ce2defe6da8ee7cab",
+        "preview": "6735a8a168b73286d8d0e2fa4187f4146b2cebc93fc65f9877d9d45c3685dd08",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-c43bd73a9bce-0c68f9bd",
+        "name": "暖景38",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-c915acac96a5-66541347",
+      "name": "赛博夜城",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "71-material-c915acac96a5-66541347.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "07b00189c07e1a97fe0c9b9e9cd665da11c6eb1147b00938d10646b771ab7c00",
+        "poster": "6ffa9cf3b369f35c48eea403804cb0153ddbd161b1efbb6220cc1784fff24d0d",
+        "preview": "883993864f0b8788330116aa3e0c8e126316e8224e8ff9256c0dfbe533277a7c",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-c915acac96a5-66541347",
+        "name": "赛博夜城",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-ccd37e754836-0b3c3f26",
+      "name": "暖景39",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "72-material-ccd37e754836-0b3c3f26.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "89a6ab603e1c2835a2772b0d85b21370f6472529bfdef12dd32776831114c2c1",
+        "poster": "386c877a4dcd1ccb266c60fb5ede4d258bee628e16363dce598f9b1876a17ebc",
+        "preview": "82dc0b57fe55ffb4e48f4525d66960025e649f99d1b45b320362f13cc072d1c5",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-ccd37e754836-0b3c3f26",
+        "name": "暖景39",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-d3c6b69bacc3-a605f3bf",
+      "name": "像素猩猩",
+      "version": 2,
+      "family": "pixel-retro",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "73-material-d3c6b69bacc3-a605f3bf.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "f69df24310ab8a26f4ca5053cdf96292cc60b71c0cb115e43ffe4408cbc96b4f",
+        "poster": "eb95fb3fb57fb7ea4a942180823e14ae62a03f5e41b9280d0c4ed69b55d1f317",
+        "preview": "2e80d5071ed0840925a2f71ee0ce0c0c1f11307a805fa40a0317c2b7188b1514",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-d3c6b69bacc3-a605f3bf",
+        "name": "像素猩猩",
+        "appearance": "dark",
+        "family": "pixel-retro",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "pixel",
+          "label": "pixel",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "pixel-desktop",
+          "surface": "pixel",
+          "corners": "pixel",
+          "motion": "pixel-rain",
+          "sidebar": "file-tree",
+          "composer": "pixel-console",
+          "texture": "dither"
+        },
+        "colors": {
+          "background": "#0c0b1a",
+          "panel": "#151229",
+          "panelAlt": "#211b3c",
+          "accent": "#ed5bb5",
+          "secondary": "#50d7dd",
+          "text": "#fff6ff",
+          "muted": "#b5a7c7",
+          "line": "#5d477d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-d430abd95534-a13d761c",
+      "name": "雨天小铺",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "74-material-d430abd95534-a13d761c.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "7f95b208068043c04d2e1d05bc6c4f6d73d95020370d59f2fdaae1526b68b57c",
+        "poster": "c4559cd278a9a2350473c98742e992929d2344e8ef504d4e6e2e146eab9b4dd8",
+        "preview": "23c329fbdb59bb6f1b83cfc42f0b94c4561f4474cc00da0115c0129fa6fe93de",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-d430abd95534-a13d761c",
+        "name": "雨天小铺",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-d5bf587040ce-5df88096",
+      "name": "暖景40",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "75-material-d5bf587040ce-5df88096.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "7276b3981567132b477ec47d527e24547e879ff3409fe4ad80eb2789979a78f8",
+        "poster": "6336265805f35c9ecc020e7b581968a0bc9d4832aaa594bc4ed19347d5aeed9c",
+        "preview": "8ce630e5182b82bf1d3102ea817ca39afe1c5692d98bf7771482dccfca83f8b1",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-d5bf587040ce-5df88096",
+        "name": "暖景40",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-d793fe1e03bb-7a93589e",
+      "name": "暖景41",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "76-material-d793fe1e03bb-7a93589e.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "f679e1c3b4954bd0c9eafe4872101f85eadce197b9ee57df22c84d77b4c72fd0",
+        "poster": "28439a075115f114195c9318fc59d15717aee1f6f0edd747f0d7122f5eb4dd38",
+        "preview": "6d3883fa0903d420c7ed6920576bb3a27dc78d91517a689de17f745e2b51a458",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-d793fe1e03bb-7a93589e",
+        "name": "暖景41",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-d94902506015-3b889718",
+      "name": "暖景42",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "77-material-d94902506015-3b889718.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "ed9446d98ef0cf743bd87d56d982fafadd74f28375911479a252548c0370dda9",
+        "poster": "27e651dbddd61f9718e137efc243c6c0061d0ddd6b1ea624350f12cb5e2f955c",
+        "preview": "051d4bcbc98f909a6b2a9a94d9c46dc0ed58ea22a8177a601fdf85da1aa28169",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-d94902506015-3b889718",
+        "name": "暖景42",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-dde38c0aaf98-86f2e704",
+      "name": "霓虹客厅",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "78-material-dde38c0aaf98-86f2e704.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "b9d38603b406945137f34db9374074e986502a653489df0c748d1d50b611111c",
+        "poster": "f842f4de534a1af497fa6623500c44f4143392e45fe62214843a4b4cfb9560b3",
+        "preview": "ad391c94678178dc049c65d9d7af80b5b0e9d7db6906491ac4edf920f9148094",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-dde38c0aaf98-86f2e704",
+        "name": "霓虹客厅",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-df6388daee46-e3486a16",
+      "name": "深蓝礼服",
+      "version": 2,
+      "family": "celestial-fantasy",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "79-material-df6388daee46-e3486a16.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "9f20cdcb204d53e5dec3cb9287d8e40121988ffa7390f24eb2d90dacbb25773a",
+        "poster": "277858575bb46036466f13ff47e2cbbaf08ddaaf7d894b485bd6521d99f1b922",
+        "preview": "8ade14682fca560d8c322e89078253170e382cecdf84a218a036a4294645dd87",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-df6388daee46-e3486a16",
+        "name": "深蓝礼服",
+        "appearance": "dark",
+        "family": "celestial-fantasy",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "glass",
+          "corners": "round",
+          "motion": "orbit",
+          "sidebar": "aurora",
+          "composer": "console",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#08101f",
+          "panel": "#101a31",
+          "panelAlt": "#182744",
+          "accent": "#78bfff",
+          "secondary": "#a783ee",
+          "text": "#f4f8ff",
+          "muted": "#aab9d3",
+          "line": "#405a88"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-e647e8228bc5-7d0540ff",
+      "name": "暖景43",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "80-material-e647e8228bc5-7d0540ff.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "b64e108bdb922640479206aaf64f33db85986adbabf74b6ce7650e32876832af",
+        "poster": "cb0cbb1dde70b6195ec31bdbe96e9dbd98a26038952449872e3f5680bcb0a97a",
+        "preview": "7450a531b5b450b6c1a25a84aa783b61cc818c81bf5dd40a4d5d25ee474456dc",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-e647e8228bc5-7d0540ff",
+        "name": "暖景43",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-e8f2d89ab026-1e6a137e",
+      "name": "星眸少女",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "81-material-e8f2d89ab026-1e6a137e.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "da9020c326a319beab1b818cb6374c0e95e1fb14a6ce7e369cc7e2df292d2b77",
+        "poster": "c70621897a48683e56bce1d8003955cf9931d33760702b4718e471382c6eedbf",
+        "preview": "32b9a65684fbe5b7964aae4c0790dd5e5c4c8e7c9abe5e420957c29d00055a52",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-e8f2d89ab026-1e6a137e",
+        "name": "星眸少女",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-eaec56e64905-a741fc7e",
+      "name": "暖景44",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "82-material-eaec56e64905-a741fc7e.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "57903ddc1958afe8c3c85e1acc04aa95238933b58d8f909739cd98988ff8da42",
+        "poster": "d417d2d2aab0a1657f4fd1b527413da060a7e5955622048604e3ae73488eda23",
+        "preview": "1d6d46f1ce8e7560cc1bff54d24a7add05690d58d3dbc3a13d7e528e69181723",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-eaec56e64905-a741fc7e",
+        "name": "暖景44",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-ebab83397bde-2d3696f1",
+      "name": "霓虹夜城",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "83-material-ebab83397bde-2d3696f1.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "535ca6e246fe23c0dc278e24d927131a39b04b66edf7403a8a7d6c94ff308cdf",
+        "poster": "82487f5f4fdcfe36ac217fe2f135852a76b4f05ba9b54c94e00cc77b8557d10f",
+        "preview": "8ab155c920a2d9327ab2dac845156af68d8254c867f2d79431d2ac8751e84d70",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-ebab83397bde-2d3696f1",
+        "name": "霓虹夜城",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-ecccbb789992-51cc5983",
+      "name": "蜘蛛宇宙",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "84-material-ecccbb789992-51cc5983.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "a269a8eb38242f372fc59d91132eaa4a0445ce46cc2d00a28883eaa3d5ec61e0",
+        "poster": "e567d13ccaf452859627b5f12d689a3860fe207f1fde35913a0b08746baa1657",
+        "preview": "3dfe278b790f5dc260328f4d4a8ada98bbabd4c8428300d2e40a26d332f64bee",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-ecccbb789992-51cc5983",
+        "name": "蜘蛛宇宙",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-f00bb3ffd712-c4a37910",
+      "name": "暖景45",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "85-material-f00bb3ffd712-c4a37910.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "9e178b9cc209dd4a79e1f70ad7f4ab18e5afe45257f6ece82cb72bf66280e197",
+        "poster": "d7082412cc5168697acb4a80fc51873157e854b5edf54de91d8d769aa2769975",
+        "preview": "2525f2f4f3f0170eb64e4fa249f3a132d383a277169b2205efaaff9c9f4280ff",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-f00bb3ffd712-c4a37910",
+        "name": "暖景45",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-fa7d1a7fddab-33ce0b33",
+      "name": "暖景46",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "86-material-fa7d1a7fddab-33ce0b33.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "bd6b9de5d59771a47a72d6798feb15eae0a1a5af76da045fa0d54f969459a00a",
+        "poster": "9152389a27da1af00f2151b00daa16b83ad8cf31b6d72430dd5e0dedd6724f07",
+        "preview": "64dfef77109f62e4ea97f4f8a14cb214fd0c6059dba981e735bd7695e3a793bd",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-fa7d1a7fddab-33ce0b33",
+        "name": "暖景46",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    },
+    {
+      "id": "material-fd47543151e3-e1f77f50",
+      "name": "海边芙宁",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "87-material-fd47543151e3-e1f77f50.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "4735fe0269c54ecaa7f36226977c6b51f0b0d8f0df6012c08fb92cb0c0761a3c",
+        "poster": "11a0bd83b9c3cec6edcee5ce65cbf319ef6cf88bfe4e21bb49ec6b4e04f48afe",
+        "preview": "14648ff34c676d06e01b873cf2326cbc3ebdb83383495af02b77062889d87c5a",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "material-fd47543151e3-e1f77f50",
+        "name": "海边芙宁",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员已完成素材与公开授权审核。"
+        }
+      }
+    }
+  ]
+}

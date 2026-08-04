@@ -154,7 +154,31 @@ const sourceImageMetadata = await fs.readFile(
   path.join(projectRoot, "runtime", "image-metadata.mjs"),
   "utf8",
 );
+const sourceAppearanceSettings = await fs.readFile(
+  path.join(projectRoot, "runtime", "appearance-settings.mjs"),
+  "utf8",
+);
+const sourceAppearanceBridge = await fs.readFile(
+  path.join(projectRoot, "runtime", "appearance-bridge.mjs"),
+  "utf8",
+);
+const sourceNexoCatalog = await fs.readFile(
+  path.join(projectRoot, "themes", "catalog.json"),
+  "utf8",
+);
 const outputs = [
+  {
+    content: sourceAppearanceSettings,
+    paths: ["macos/assets/appearance-settings.mjs", "windows/assets/appearance-settings.mjs"],
+  },
+  {
+    content: sourceAppearanceBridge,
+    paths: ["macos/assets/appearance-bridge.mjs", "windows/assets/appearance-bridge.mjs"],
+  },
+  {
+    content: sourceNexoCatalog,
+    paths: ["macos/assets/nexo-skin-catalog.json", "windows/assets/nexo-skin-catalog.json"],
+  },
   {
     // The injector runs from a packaged platform tree, so stage the same
     // contract beside the renderer assets while keeping tools/selectors.json

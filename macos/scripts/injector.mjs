@@ -14,11 +14,26 @@ import {
 import { validateThemeV2 } from "../assets/theme-v2.mjs";
 import { buildThemeProfile } from "../assets/theme-profile.mjs";
 import { decodeAndValidateSafeCss } from "../assets/safe-css-validator.mjs";
+import { createAppearanceBridge } from "../assets/appearance-bridge.mjs";
+import { AppearanceSettingsStore } from "../assets/appearance-settings.mjs";
 
 const execFileAsync = promisify(execFile);
 const scriptPath = fileURLToPath(import.meta.url);
 const here = path.dirname(scriptPath);
 const root = path.resolve(here, "..");
+const NEXO_CATALOG = JSON.parse(await fs.readFile(path.join(root, "assets", "nexo-skin-catalog.json"), "utf8"));
+if (NEXO_CATALOG.schemaVersion !== 2 || !Array.isArray(NEXO_CATALOG.items)) {
+  throw new Error("assets/nexo-skin-catalog.json has an unsupported schema");
+}
+const APPROVED_SKIN_IDS = new Set(NEXO_CATALOG.items.map((item) => item?.id).filter((id) =>
+  typeof id === "string" && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)));
+const APPEARANCE_BRIDGE_ORIGINS = new Set([
+  NEXO_CATALOG.assetOrigin,
+  "https://www.nexotoken.net",
+  "https://nexotoken.top",
+  "https://www.nexotoken.top",
+]);
+if (process.env.DREAMSKIN_ALLOW_DEV_ORIGIN === "1") APPEARANCE_BRIDGE_ORIGINS.add("http://localhost:5173");
 const SELECTOR_CONTRACT = JSON.parse(await fs.readFile(
   path.join(root, "assets", "selectors.json"), "utf8",
 ));
@@ -1609,6 +1624,12 @@ async function watchOperationState(statePath, onState) {
 }
 
 async function runWatch(options) {
+  const appearanceStore = new AppearanceSettingsStore({
+    stateRoot: path.dirname(options.themeDir ?? path.join(root, "assets")),
+    approvedSkinIds: APPROVED_SKIN_IDS,
+  });
+  const initialTheme = await loadTheme(options.themeDir);
+  if (APPROVED_SKIN_IDS.has(initialTheme.theme.id)) await appearanceStore.materialize(initialTheme.theme.id);
   let current = await loadPayload(options.themeDir);
   const sessions = new Map();
   const rejected = new Set();
@@ -1625,6 +1646,7 @@ async function runWatch(options) {
   let activeTargetSetups = 0;
   const targetSetupWaiters = new Set();
   let wakeControlWait = null;
+  let appearanceBridge = null;
   const wakeControlLoop = () => {
     const wake = wakeControlWait;
     wakeControlWait = null;
@@ -1755,6 +1777,10 @@ async function runWatch(options) {
     const refreshEpoch = mutationEpoch;
     let next;
     try {
+      const candidateTheme = await loadTheme(options.themeDir);
+      if (APPROVED_SKIN_IDS.has(candidateTheme.theme.id)) {
+        await appearanceStore.materialize(candidateTheme.theme.id);
+      }
       next = await loadPayload(options.themeDir);
     } catch (error) {
       await Promise.all([...sessions.values()].map(async (record) => {
@@ -1835,6 +1861,19 @@ async function runWatch(options) {
       });
     }, 45);
   };
+  try {
+    appearanceBridge = await createAppearanceBridge({
+      store: appearanceStore,
+      allowedOrigins: APPEARANCE_BRIDGE_ORIGINS,
+      onSettingsSaved: async (saved) => {
+        if (saved.skinId !== current.theme.id) return;
+        await appearanceStore.materialize(saved.skinId);
+        queuePayloadRefresh();
+      },
+    });
+  } catch (error) {
+    console.error(`[dream-skin] appearance bridge unavailable: ${error.message}`);
+  }
   const closePayloadWatchers = watchPayloadSources(options.themeDir, queuePayloadRefresh);
   const closeOperationWatcher = await watchOperationState(options.operationState, (operation) => {
     operationSignalChain = operationSignalChain.then(async () => {
@@ -2124,6 +2163,7 @@ async function runWatch(options) {
     if (reloadTimer) clearTimeout(reloadTimer);
     closePayloadWatchers();
     closeOperationWatcher();
+    await appearanceBridge?.close();
     await reloadChain.catch(() => {});
     await operationSignalChain.catch(() => {});
     await Promise.all([...sessions.values()].map((record) =>
