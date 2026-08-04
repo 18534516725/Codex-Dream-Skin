@@ -1040,7 +1040,8 @@ try {
   New-Item -ItemType Directory -Path $releaseFixtureAssets, $releaseFixtureScripts, $releaseFixturePresetDirectory -Force | Out-Null
   Copy-Item -LiteralPath (Join-Path $Root 'VERSION') -Destination $releaseFixtureRoot -Force
   foreach ($releaseAsset in @(
-    'dream-skin.css', 'renderer-inject.js', 'safe-css-policy.json', 'safe-css-validator.mjs', 'selectors.json',
+    'appearance-bridge.mjs', 'appearance-settings.mjs', 'dream-skin.css', 'nexo-skin-catalog.json',
+    'renderer-inject.js', 'safe-css-policy.json', 'safe-css-validator.mjs', 'selectors.json',
     'theme-package-validator.mjs'
   )) {
     Copy-Item -LiteralPath (Join-Path $Root "assets\$releaseAsset") `
