@@ -858,6 +858,7 @@ html[data-dream-skin="active"] __DREAM_SELECTOR_HOME_ROUTE__ __DREAM_SELECTOR_GA
 }
 
 html[data-dream-skin="active"] __DREAM_SELECTOR_HOME_ROUTE__ __DREAM_SELECTOR_GAME_SOURCE__ button {
+  display: none !important;
   margin: 0 5px;
   padding: 2px 9px 3px;
   border: 1px solid rgb(var(--ds-accent-rgb) / .36);

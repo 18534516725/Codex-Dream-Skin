@@ -858,6 +858,7 @@ html[data-dream-skin="active"] [role="main"]:has([data-testid="home-icon"]) [dat
 }
 
 html[data-dream-skin="active"] [role="main"]:has([data-testid="home-icon"]) [data-feature="game-source"] button {
+  display: none !important;
   margin: 0 5px;
   padding: 2px 9px 3px;
   border: 1px solid rgb(var(--ds-accent-rgb) / .36);
