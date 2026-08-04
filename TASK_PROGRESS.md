@@ -816,3 +816,44 @@ Updated: 2026-07-31 14:29 HKT (Asia/Hong_Kong)
   `git diff --check`, and a second real-DOM read-only cardinality check pass.
   No installed runtime, Codex process, active theme, PR, issue, commit, or push
   was changed by this focused task.
+
+## 2026-08-04 High-resolution catalog refresh
+
+- Goal: replace 21 low-quality static catalog masters with the user's matching
+  super-resolution images, regenerate their 1200x750 previews, and keep IDs
+  stable across the canonical, macOS, Windows, and platform catalogs.
+- Input inventory: 19 JPEG and 2 PNG files in the user's Downloads directory;
+  every filename maps uniquely to an existing approved static theme title/ID.
+- Video scope: convert the single true-video catalog theme
+  `material-774fd232d777-a59a0c1b` to its static poster and remove the MP4 from
+  the formal catalog. Dynamic Theme V2 playback remains supported by the
+  engine; this change only removes the current video asset as requested.
+- Current repository: `/Users/wangqi/work/Codex-Dream-Skin`, branch
+  `codex/high-resolution-catalog-refresh` based on `main` at `39af834`.
+- [complete] Read repository rules, README, catalog builders, validators, and
+  quality gates; cloned the platform-owned official repository.
+- [complete] Verified all 21 input filenames map uniquely to published static
+  IDs and recorded source dimensions (3840-4400 px wide).
+- [complete] Visual pair-sheet QA confirmed all 21 inputs preserve the old
+  subject and composition. Sources were center-cropped without stretching to
+  3840x2400, encoded as high-quality WebP, and used to regenerate 1200x750
+  previews. The 21 master payloads grew from 9,647,776 to 20,446,012 bytes in
+  aggregate while remaining below the 10 MiB per-theme limit.
+- [complete] Converted `material-774fd232d777-a59a0c1b` from video to static,
+  preserved its poster and ID, removed the MP4 binding/file, rebuilt the
+  canonical plus macOS/Windows embedded catalogs, and synchronized all platform
+  originals/previews/catalog data. The removed MP4 copies are recoverable from
+  the macOS Trash folder `codex-skin-video-removal-20260804`.
+- [verified] `tools/validate-theme-artifacts.mjs --catalog themes/catalog.json`
+  validates 87 themes; 32 root/catalog/Theme V2/macOS/Windows Node tests pass;
+  runtime asset sync check passes; platform skin asset validation passes; and
+  the platform production build succeeds.
+- [known unrelated test defect] The platform's unchanged
+  `skinCatalogSchema.test.ts` positive fixture omits the now-required `name`
+  field, so that single pre-existing fixture fails while the generated 87-item
+  catalog tests and production build pass. This task did not edit the fixture.
+- [publication decision] The fixed clients resolve stable catalog IDs to the
+  platform asset origin and download the image when the user applies a skin.
+  Because all 21 IDs and asset filenames remain stable, no new DMG/Setup
+  version is required; only the platform frontend assets need deployment.
+- No client version change, installed app change, or Codex restart has occurred.
