@@ -28,6 +28,8 @@ test("macOS schedules a throttled startup update check and packages a detached u
   assert.match(app, /completeDeferredEngineUpdateIfPossible\(\)/);
   assert.match(app, /更新已就绪，关闭 ChatGPT 后自动完成/);
   assert.match(app, /if installedScript\(named: "status-dream-skin-macos\.sh"\) == nil/);
+  assert.match(app, /换肤组件会在你自然关闭 Codex 后自动升级/,
+    "the updater must explain that the running engine is deferred without closing Codex");
 });
 
 test("macOS update checker accepts the signed app version and returns safe release notes", () => {

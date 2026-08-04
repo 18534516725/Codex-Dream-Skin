@@ -1253,7 +1253,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         alert.messageText = "发现新版本 \(latest)"
         let updateContext = triggeredByUnknownSkin
           ? "当前助手版本过旧，无法识别这个新皮肤。更新完成后请再次点击一键应用。"
-          : "当前版本为 \(current)。更新只会重启换肤助手，不会关闭或重启 Codex。"
+          : "当前版本为 \(current)。助手会立即更新；换肤组件会在你自然关闭 Codex 后自动升级，不会强制关闭或重启 Codex。"
         alert.informativeText = releaseNotes.isEmpty
           ? updateContext
           : "\(updateContext)\n\n更新说明\n\(String(releaseNotes.prefix(1200)))"
