@@ -5,20 +5,25 @@ import path from "node:path";
 import { validateThemeV2 } from "../themes/theme-v2.mjs";
 
 const root = path.resolve(import.meta.dirname, "..");
-const existingOrder = [
-  "stellar-voyager", "sakura-signal", "neon-courier", "mist-beacon", "rain-harbor", "crimson-forge",
-  "cloud-antler", "midnight-terminal", "retro-orbit", "strategy-atrium", "aurora-leviathan", "ink-ridge-guardian",
-  "post-raccoon", "night-shift-penguin", "workshop-otter", "moon-platform-cat", "floppy-wizard", "deep-sea-repair",
-];
 const catalogDirectory = path.join(root, "themes", "catalog");
-const discovered = (await fs.readdir(catalogDirectory, { withFileTypes: true }))
-  .filter((entry) => entry.isDirectory() && entry.name.startsWith("material-"))
-  .map((entry) => entry.name)
-  .sort((left, right) => left.localeCompare(right, "en"));
-const ids = [...existingOrder, ...discovered];
+const publicationCatalog = JSON.parse(await fs.readFile(
+  path.join(root, "themes", "platform-publication-catalog.json"),
+  "utf8",
+));
+if (publicationCatalog.schemaVersion !== 2 || !Array.isArray(publicationCatalog.items)) {
+  throw new Error("themes/platform-publication-catalog.json is invalid");
+}
+const publishedItems = publicationCatalog.items;
+const ids = publishedItems.map((item) => item.id);
+if (new Set(ids).size !== ids.length) throw new Error("Platform publication catalog contains duplicate ids");
 
 const items = [];
 for (const [index, id] of ids.entries()) {
+  const published = publishedItems[index];
+  const assetFile = path.basename(published.assetUrl ?? "");
+  if (!/^\d{2}-[a-z0-9-]+\.webp$/.test(assetFile) || !published.assetUrl.endsWith(`/${assetFile}`)) {
+    throw new Error(`${id} has an invalid platform asset URL`);
+  }
   const directory = path.join(root, "themes", "catalog", id);
   const themeBytes = await fs.readFile(path.join(directory, "theme.json"));
   const theme = validateThemeV2(JSON.parse(themeBytes.toString("utf8")));
@@ -34,7 +39,7 @@ for (const [index, id] of ids.entries()) {
     appearance: theme.appearance,
     mediaKind: video ? "video" : "static",
     riskStatus: theme.risk.status,
-    assetFile: `${String(index + 1).padStart(2, "0")}-${id}.webp`,
+    assetFile,
     platforms: ["macos", "windows"],
     hashes: {
       theme: createHash("sha256").update(themeBytes).digest("hex"),

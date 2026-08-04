@@ -10,9 +10,14 @@ const [themeContract, applyScript] = await Promise.all([
   fs.readFile(path.join(root, "scripts/apply-community-theme.ps1"), "utf8"),
 ]);
 const catalog = JSON.parse(await fs.readFile(path.join(root, "assets/nexo-skin-catalog.json"), "utf8"));
+const publication = JSON.parse(await fs.readFile(path.join(root, "../themes/platform-publication-catalog.json"), "utf8"));
 
 assert.equal(catalog.schemaVersion, 2);
-assert.equal(catalog.items.length, 87);
+assert.equal(catalog.items.length, 65);
+assert.deepEqual(
+  catalog.items.map((item) => [item.id, item.assetFile]),
+  publication.items.map((item) => [item.id, path.basename(item.assetUrl)]),
+);
 assert.ok(catalog.items.every((item) => ["dark", "light"].includes(item.theme.appearance)));
 assert.ok(catalog.items.every((item) => item.theme.art.taskMode === "full"));
 for (const field of [

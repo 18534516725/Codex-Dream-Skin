@@ -17,7 +17,18 @@ while [ "$#" -gt 0 ]; do
   esac
 done
 
+reopen_current_app_on_failure() {
+  [ -n "$TARGET_APP" ] && [ "${TARGET_APP#/}" != "$TARGET_APP" ] \
+    && [ -d "$TARGET_APP" ] && [ ! -L "$TARGET_APP" ] || return 0
+  local current_id
+  current_id="$(/usr/bin/plutil -extract CFBundleIdentifier raw -o - \
+    "$TARGET_APP/Contents/Info.plist" 2>/dev/null || true)"
+  [ "$current_id" = "cc.dreamskin.menubar" ] || return 0
+  /usr/bin/open "$TARGET_APP" >/dev/null 2>&1 || true
+}
+
 fail() {
+  reopen_current_app_on_failure
   /usr/bin/osascript - "$*" <<'APPLESCRIPT' >/dev/null 2>&1 || true
 on run argv
   display alert "Nexo Codex Skin 更新失败" message (item 1 of argv) buttons {"好"}
@@ -41,6 +52,7 @@ download() {
   local effective
   effective="$(/usr/bin/curl --proto '=https' --tlsv1.2 --fail --silent --show-error \
     --location --max-redirs 5 --connect-timeout 8 --max-time 180 \
+    --retry 3 --retry-delay 2 --retry-all-errors --retry-max-time 60 \
     --user-agent 'CodexDreamSkin-AutoUpdate' --output "$output" \
     --write-out '%{url_effective}' "$url")" || fail "无法下载正式更新文件。"
   valid_download_host "$effective" || fail "更新下载跳转到了未获准的服务器。"
@@ -65,10 +77,8 @@ MOUNT="$TMP/mount"
 BACKUP="$TARGET_APP.previous-update-$PARENT_PID"
 
 cleanup() {
-  if /sbin/mount | /usr/bin/grep -F -q " on $MOUNT "; then
-    /usr/bin/hdiutil detach "$MOUNT" -quiet >/dev/null 2>&1 || true
-  fi
-  /bin/rm -rf "$TMP"
+  /usr/bin/hdiutil detach "$MOUNT" -quiet >/dev/null 2>&1 || true
+  /bin/rm -rf "$TMP" >/dev/null 2>&1 || true
 }
 trap cleanup EXIT
 /bin/mkdir -p "$MOUNT"
