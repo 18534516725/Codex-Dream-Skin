@@ -36,6 +36,11 @@ assert.match(css, /__DREAM_SELECTOR_GAME_SOURCE__\s*\{[\s\S]*font-size:\s*0\s*!i
 assert.match(css, /__DREAM_SELECTOR_GAME_SOURCE__::after\s*\{[\s\S]*display:\s*none\s*!important/, "home must hide the secondary tagline");
 assert.match(
   css,
+  /__DREAM_SELECTOR_GAME_SOURCE__::before\s*\{[^}]*display:\s*none\s*!important/,
+  "home must not render the applied skin name",
+);
+assert.match(
+  css,
   /__DREAM_SELECTOR_GAME_SOURCE__ button\s*\{[^}]*display:\s*none\s*!important/,
   "home must hide the selected-project pill after a skin is applied",
 );

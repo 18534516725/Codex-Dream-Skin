@@ -843,13 +843,8 @@ html[data-dream-skin="active"] [role="main"]:has([data-testid="home-icon"]) [dat
 }
 
 html[data-dream-skin="active"] [role="main"]:has([data-testid="home-icon"]) [data-feature="game-source"]::before {
-  content: var(--dream-skin-name, "Codex Dream Skin");
-  display: block;
-  margin-bottom: 0;
-  color: var(--ds-accent);
-  font: 800 clamp(28px, 3.2vw, 48px)/1.15 "Microsoft YaHei UI", sans-serif;
-  letter-spacing: .02em;
-  text-shadow: 0 0 14px rgb(var(--ds-accent-rgb) / .26);
+  content: none;
+  display: none !important;
 }
 
 html[data-dream-skin="active"] [role="main"]:has([data-testid="home-icon"]) [data-feature="game-source"]::after {

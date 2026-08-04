@@ -843,13 +843,8 @@ html[data-dream-skin="active"] __DREAM_SELECTOR_HOME_ROUTE__ __DREAM_SELECTOR_GA
 }
 
 html[data-dream-skin="active"] __DREAM_SELECTOR_HOME_ROUTE__ __DREAM_SELECTOR_GAME_SOURCE__::before {
-  content: var(--dream-skin-name, "Codex Dream Skin");
-  display: block;
-  margin-bottom: 0;
-  color: var(--ds-accent);
-  font: 800 clamp(28px, 3.2vw, 48px)/1.15 "Microsoft YaHei UI", sans-serif;
-  letter-spacing: .02em;
-  text-shadow: 0 0 14px rgb(var(--ds-accent-rgb) / .26);
+  content: none;
+  display: none !important;
 }
 
 html[data-dream-skin="active"] __DREAM_SELECTOR_HOME_ROUTE__ __DREAM_SELECTOR_GAME_SOURCE__::after {
