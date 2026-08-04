@@ -14,11 +14,12 @@ export const DEFAULT_APPEARANCE_SETTINGS = Object.freeze({
   font: "native",
   fontSize: 15,
   contrast: 88,
+  textColor: "",
 });
 
 const ENVELOPE_FIELDS = ["schemaVersion", "settings", "skinId"];
 const SETTING_FIELDS = [
-  "backgroundVisibility", "contentOpacity", "contrast", "font", "fontSize", "sidebarOpacity",
+  "backgroundVisibility", "contentOpacity", "contrast", "font", "fontSize", "sidebarOpacity", "textColor",
 ];
 const LIMITS = Object.freeze({
   backgroundVisibility: [0, 100],
@@ -31,6 +32,16 @@ const LIMITS = Object.freeze({
 function hasExactFields(value, fields) {
   return value && typeof value === "object" && !Array.isArray(value) &&
     Object.keys(value).sort().join("\0") === [...fields].sort().join("\0");
+}
+
+function isTextColor(value) {
+  return typeof value === "string" && (value === "" || /^#[0-9a-f]{6}$/i.test(value));
+}
+
+function migrateStoredSettings(value) {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return value;
+  const legacyFields = SETTING_FIELDS.filter((field) => field !== "textColor");
+  return hasExactFields(value, legacyFields) ? { ...value, textColor: "" } : value;
 }
 
 export function validateAppearanceEnvelope(input, approvedSkinIds) {
@@ -50,6 +61,8 @@ export function validateAppearanceEnvelope(input, approvedSkinIds) {
   }
   if (!APPEARANCE_FONTS.includes(input.settings.font)) throw new Error("Appearance font is invalid");
   settings.font = input.settings.font;
+  if (!isTextColor(input.settings.textColor)) throw new Error("Appearance textColor is invalid");
+  settings.textColor = input.settings.textColor;
   return { schemaVersion: APPEARANCE_SCHEMA_VERSION, skinId: input.skinId, settings };
 }
 
@@ -61,6 +74,7 @@ export function toRuntimeAppearance(settings) {
     font: settings.font,
     fontSize: Number((settings.fontSize / 15).toFixed(4)),
     contrast: settings.contrast / 100,
+    textColor: settings.textColor,
   };
 }
 
@@ -135,7 +149,7 @@ export class AppearanceSettingsStore {
     const current = await this.readStore();
     const candidate = current.skins[skinId];
     if (!candidate) return { schemaVersion: 1, skinId, settings: { ...DEFAULT_APPEARANCE_SETTINGS } };
-    return validateAppearanceEnvelope({ schemaVersion: 1, skinId, settings: candidate }, this.approvedSkinIds);
+    return validateAppearanceEnvelope({ schemaVersion: 1, skinId, settings: migrateStoredSettings(candidate) }, this.approvedSkinIds);
   }
 
   async materialize(skinId) {

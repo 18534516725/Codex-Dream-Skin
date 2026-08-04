@@ -20,6 +20,7 @@ const baseSettings = Object.freeze({
   font: "native",
   fontSize: 15,
   contrast: 88,
+  textColor: "",
 });
 const envelope = (skinId, overrides = {}) => ({
   schemaVersion: 1,
@@ -68,6 +69,7 @@ test("accepts every preview font and converts settings to runtime units", () => 
     font: "editorial",
     fontSize: 12,
     contrast: 60,
+    textColor: "#123456",
   }).settings), {
     backgroundVisibility: 0,
     sidebarOpacity: 1,
@@ -75,6 +77,7 @@ test("accepts every preview font and converts settings to runtime units", () => 
     font: "editorial",
     fontSize: 0.8,
     contrast: 0.6,
+    textColor: "#123456",
   });
 });
 
@@ -87,6 +90,7 @@ test("rejects unknown, missing, non-integer and out-of-range input", () => {
   assert.throws(() => validateAppearanceEnvelope(envelope("rain", { fontSize: 15.5 }), approved), /fontSize/);
   assert.throws(() => validateAppearanceEnvelope(envelope("rain", { sidebarOpacity: 19 }), approved), /sidebarOpacity/);
   assert.throws(() => validateAppearanceEnvelope(envelope("rain", { font: "serif" }), approved), /font/);
+  assert.throws(() => validateAppearanceEnvelope(envelope("rain", { textColor: "red" }), approved), /textColor/);
 });
 
 test("stores settings independently and materializes only the selected skin", async (context) => {
