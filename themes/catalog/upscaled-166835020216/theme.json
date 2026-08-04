@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 2,
+  "id": "upscaled-166835020216",
+  "name": "蓝海暮云",
+  "appearance": "dark",
+  "family": "nature-healing",
+  "media": {
+    "poster": "background.webp",
+    "video": null
+  },
+  "typography": {
+    "body": "native-sans",
+    "title": "native-sans",
+    "label": "native-sans",
+    "code": "native-mono"
+  },
+  "visual": {
+    "layout": "editorial",
+    "surface": "ink",
+    "corners": "stamp",
+    "motion": "mist",
+    "sidebar": "garden",
+    "composer": "label",
+    "texture": "paper"
+  },
+  "colors": {
+    "background": "#0d1714",
+    "panel": "#15231e",
+    "panelAlt": "#1d3028",
+    "accent": "#66c59b",
+    "secondary": "#e2ae65",
+    "text": "#f2fff8",
+    "muted": "#a7c0b3",
+    "line": "#426b57"
+  },
+  "art": {
+    "focusX": 0.7,
+    "focusY": 0.48,
+    "safeArea": "left",
+    "taskMode": "full"
+  },
+  "risk": {
+    "status": "approved",
+    "note": "平台管理员确认拥有可公开再分发与商用授权。"
+  }
+}

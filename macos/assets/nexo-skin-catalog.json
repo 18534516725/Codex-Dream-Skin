@@ -4291,6 +4291,3900 @@
           "note": "平台管理员已完成素材与公开授权审核。"
         }
       }
+    },
+    {
+      "id": "upscaled-154088005425",
+      "name": "粉发档案",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "125-upscaled-154088005425.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "9775e024a71b5b03d6a0347dc88f5ee7030ed43e8dd3c21af3c540bf1e2c7675",
+        "poster": "3cf43f548cd57a7cf8c606faf70e9d3d89b3f13e135be0ac7aef202cd133e8e9",
+        "preview": "e343f148a3285109cc6e55fb4d56615acb0f9a710c6e82e7b776d41c75c4fa93",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-154088005425",
+        "name": "粉发档案",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-154302506748",
+      "name": "粉发报刊",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "126-upscaled-154302506748.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "c7faec79a6fb17bfa9bc06e8eadaeda4e52903b9d6a9b450881b17c804156156",
+        "poster": "30f527cc4e431c446a83571d303dce617cf3ea049728aa88283c875add6b52eb",
+        "preview": "bf472294eb3b8c3c88fc146ceb7eb6cce9e219c7047943b0616416319b39dc6e",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-154302506748",
+        "name": "粉发报刊",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-158618702965",
+      "name": "云端泳池",
+      "version": 2,
+      "family": "celestial-fantasy",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "127-upscaled-158618702965.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "21962151e112608c058b5289b2829d88d5a54d5602a0a040728e8a8b2086520d",
+        "poster": "4c9830336de5a84383e03dba866f3b4c46a20f65253ed08d1b40f833663811af",
+        "preview": "85f3ae8210cc27e552e0d0991d65a17978959d1f52f7c74e5116c5d99ca13c79",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-158618702965",
+        "name": "云端泳池",
+        "appearance": "dark",
+        "family": "celestial-fantasy",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "glass",
+          "corners": "round",
+          "motion": "orbit",
+          "sidebar": "aurora",
+          "composer": "console",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#08101f",
+          "panel": "#101a31",
+          "panelAlt": "#182744",
+          "accent": "#78bfff",
+          "secondary": "#a783ee",
+          "text": "#f4f8ff",
+          "muted": "#aab9d3",
+          "line": "#405a88"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-160823509525",
+      "name": "蜘蛛飞跃",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "128-upscaled-160823509525.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "63db21c95395f7ecee6f2f36d128aebd5e5f946726895a4ad20ca5241f4a2bd1",
+        "poster": "67a6003764e06bcb4f028358860063fa0f359cda77df746801d8b187e17bfba8",
+        "preview": "828839887d61e373ef133822ba1f75687afb28c28433989aca99a4c8f7848812",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-160823509525",
+        "name": "蜘蛛飞跃",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-162545670439",
+      "name": "古巷红妆",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "129-upscaled-162545670439.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "39a0ca99c5de01752582fd7a155b50fce1334767b1a361a7291d0ebd2792899f",
+        "poster": "3d4d46ee352fb6c05e21630247565812c2350fa05b9c5e85942ea2e7a6c4eacc",
+        "preview": "1c5eb49172de304938e63307c67b9082b1fa0e1e890c4999d9dabc9e3cf0a08c",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-162545670439",
+        "name": "古巷红妆",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-162702029770",
+      "name": "海风小店",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "130-upscaled-162702029770.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "2321e7fd429a4086697c890971aa64fa92df9b07c9231d871bafc2586a7a2e6b",
+        "poster": "2cdd87b5a7fcf8199e89081337fd20cbb5ef200e2209f31c451c9e81d9a731a1",
+        "preview": "76df94fead9a8d79ccb6d261fe3dc2b5a1337976b2f22bfa383d3297121b18cc",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-162702029770",
+        "name": "海风小店",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-165235092415",
+      "name": "双生银瞳",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "131-upscaled-165235092415.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "6a6ab2e469c70f2507b56584f1da18adf654fe760165e200e98c8f9aa81b882f",
+        "poster": "995a11c75c83ca9f8facda383146c295b8e00208546435fd754051441482beb2",
+        "preview": "bf5c67072ca0b253e4dbebd9fa7dede98b4949109f04067788bd551f4b39a646",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-165235092415",
+        "name": "双生银瞳",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-165576228030",
+      "name": "粉发剪影",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "132-upscaled-165576228030.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "432e63149281d4f440c6f946942e2f8ae602e76fd30d027420fdd5e15012bb53",
+        "poster": "fba748a940ca8d1bd4d8f07ed6bf96e3ea70802e0505cdb6f4da2f7ed528f00a",
+        "preview": "d4b86e02679eae3823664d335153aae536f00e4729e5ed1e3860744c6932059d",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-165576228030",
+        "name": "粉发剪影",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-165737156040",
+      "name": "银发机娘",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "133-upscaled-165737156040.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "feb136e8c0a5dd03b301e923ef6c77628c59b2689a73bc62034646b6b7119561",
+        "poster": "b9e46efdc2a87396a6e82b3bac14337b1bbeff89e6b16066654c26eefcb45205",
+        "preview": "dadc210e629e532bb3bc9f25ad97db9d2ce94714ee6e92a72ac3a169004e7628",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-165737156040",
+        "name": "银发机娘",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-166494769139",
+      "name": "午夜书吧",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "134-upscaled-166494769139.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "bb054a866dd829f43446baab8958048bfad029b0534e5f7dbde9b70972a376d9",
+        "poster": "997af39cb69cc10accc7f055e391e0cdae6f6db379ef32f39556a103e8dbec23",
+        "preview": "98540ccb3ff0aa802a3ce3ff4d397d722b570d70fafad5ce5ef432953e519ac0",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-166494769139",
+        "name": "午夜书吧",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-166835020216",
+      "name": "蓝海暮云",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "135-upscaled-166835020216.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "1af3b53df68eafac89bb1c273619843a60868b3c864d0156107752d4e3eb4bb9",
+        "poster": "992d093168ad0bd85e9fc66eeb1915b0339423bdd75062a18e3e311fd0651738",
+        "preview": "7d859bbf474c7c2ceaa48feced54da8f30a182b7ed4bec31ef56b3aefda6fce8",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-166835020216",
+        "name": "蓝海暮云",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-166929467819",
+      "name": "浮光白花",
+      "version": 2,
+      "family": "celestial-fantasy",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "136-upscaled-166929467819.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "2a3a70a4b133980217e3d5e0651f707dc55ed3efc6bcf1462e32722162efc55b",
+        "poster": "c3a308d7afadb818e48b6a1d79cc7c0a96c7071069e7912fd814224261f69e5b",
+        "preview": "c51fdab63c6f6bb18050612c99cc1926e5ae145a066a576ce2a9295b46f9df19",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-166929467819",
+        "name": "浮光白花",
+        "appearance": "dark",
+        "family": "celestial-fantasy",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "glass",
+          "corners": "round",
+          "motion": "orbit",
+          "sidebar": "aurora",
+          "composer": "console",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#08101f",
+          "panel": "#101a31",
+          "panelAlt": "#182744",
+          "accent": "#78bfff",
+          "secondary": "#a783ee",
+          "text": "#f4f8ff",
+          "muted": "#aab9d3",
+          "line": "#405a88"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-167809269934",
+      "name": "海绵回廊",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "137-upscaled-167809269934.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "86e28a06506528edc981215b8ce2c004b0ef9373ccae5084618a240553fafe8a",
+        "poster": "d91438fb0ea81f67be55014dfb94e060005524d43fe9656522119ea5e63a2913",
+        "preview": "337b1dc072b04f183c9769e44720c7aa7cee3ff20978bdd8a6fd739214144e82",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-167809269934",
+        "name": "海绵回廊",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-169601543129",
+      "name": "墨发侧影",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "138-upscaled-169601543129.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "336874e3fed505b7cfe1f3831cdd9e4ed84899553f1c630a67edcf6ed267901e",
+        "poster": "6d425826bbf11c6980315fe221d7c35f6c9d59a8d2dbc60fa54e6cc9cbec9526",
+        "preview": "d7a556d1a10cfbdf9928b7ac491bc5660fec708cc35dff3d25d1ab3ecfaaf7c2",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-169601543129",
+        "name": "墨发侧影",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-170294040602",
+      "name": "赤月浪潮",
+      "version": 2,
+      "family": "celestial-fantasy",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "139-upscaled-170294040602.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "bbb66dfd0f24a3d68aa748148b280f782d5c45fce8fb8969ce7479ac3454c398",
+        "poster": "a8d2c69e54e037d8b1a3f4bdeceeb99d97e25d66ddee221b58b73bd230bb343f",
+        "preview": "0e6b48afd8dd74a364e822200cb0064907e4605f59a25c2e1f9e211fa335fd24",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-170294040602",
+        "name": "赤月浪潮",
+        "appearance": "dark",
+        "family": "celestial-fantasy",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "glass",
+          "corners": "round",
+          "motion": "orbit",
+          "sidebar": "aurora",
+          "composer": "console",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#08101f",
+          "panel": "#101a31",
+          "panelAlt": "#182744",
+          "accent": "#78bfff",
+          "secondary": "#a783ee",
+          "text": "#f4f8ff",
+          "muted": "#aab9d3",
+          "line": "#405a88"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-171419333446",
+      "name": "犬系晴空",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "140-upscaled-171419333446.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "e6b38297d7db4a3d63ad2d798b2c6df8b0252fc498d9e6cb1593e0999e7d138e",
+        "poster": "17573d6400e0e726243474c3dc8802a350cbefefbf330d041ec9c3dffa3fd20d",
+        "preview": "d925d707ed9efbc1433b8c08322ecb219278e13606617fa8547e056d8da98f0a",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-171419333446",
+        "name": "犬系晴空",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-173436506643",
+      "name": "白犬晴空",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "141-upscaled-173436506643.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "96669ed5e73ccd521b3c765d9af05b08c79d65ac166b5a72454c809094819bdd",
+        "poster": "3cdded7f6246fce22e068ada5ec2928726d0581ac2b812e4ad766f8e25f0c0ad",
+        "preview": "99aa8cf4d801aa6fc8543f36bda34cc75f48d1f70ec99e829724384b7a5c18f9",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-173436506643",
+        "name": "白犬晴空",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-174374069110",
+      "name": "雪岭山庄",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "142-upscaled-174374069110.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "e851b126da68b21b02dad808b19b364b625b3512a49b949f2bad7139b3a8fd62",
+        "poster": "03ba201dd8113dd25040e98d4df8aaf0bb33ead898044aa32c642b033e48775b",
+        "preview": "e0210099ace0f123d93e979ff44c4c2ece935283f3f0dfef19fcbd64767c7c6a",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-174374069110",
+        "name": "雪岭山庄",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-178380535321",
+      "name": "红椅少女",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "143-upscaled-178380535321.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "bf3a085104a2f0b1fbbc048d370e20270ac8f13ec04b3aa4b2159729218a3f6d",
+        "poster": "4a57bebc1c3ff9c9129071bf1daa0d4f56efda2e39815eac9565f8f0922b75b1",
+        "preview": "3a5a3750f358cf75f436c13721e9d23684b57e3c64c6b4cd450e49ff4f861c7f",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-178380535321",
+        "name": "红椅少女",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-178779263134",
+      "name": "幻兽霓彩",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "144-upscaled-178779263134.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "59c0e17648e9b980c02c84b4d997250b217cfa39bffdde442e26aa730d573d26",
+        "poster": "5866abaf45350e3b3c439a6637c675afedfb72bbf65f8bbace5cf9ec88c05afe",
+        "preview": "268ddbbb79134c0ec0471e013377e5dbb917a0d74c333b602b659389bb771cbf",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-178779263134",
+        "name": "幻兽霓彩",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-178779263779",
+      "name": "晨光海湾",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "145-upscaled-178779263779.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "a0a33145562e263c9a227bc95fae3915fd3bb8ef7837f26f58807149a6d52956",
+        "poster": "f5dc00085d6d1a58e6dcc2d3d6741447ab284f5195687efc7c41048a6b9df4b6",
+        "preview": "a238724f7d95569ff032cb1020cf95ac6cac6c50b9e97781a5a81f3647e91aaf",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-178779263779",
+        "name": "晨光海湾",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-179571300923",
+      "name": "星瞳线稿",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "146-upscaled-179571300923.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "72a03b102239f64a2f8078c7ee680b18daccaed5149bea7a542dd85ac6043173",
+        "poster": "efc42555ed88973511db61d8481ec4e9d4b49f845c0ea73f0790d15c004dce48",
+        "preview": "62bef5e424b00fe975884c3bda809c8f2302fd847f93b5cc38c55343404c01c4",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-179571300923",
+        "name": "星瞳线稿",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-180807090950",
+      "name": "霓虹兔女",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "147-upscaled-180807090950.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "d18639684e099136f9f525022693f30e2f8101fc660894af0140acd434b1ab27",
+        "poster": "bcb58d02fc4db69625692d53e3a07ccd9577ae937000290163fe78f90b11bab3",
+        "preview": "b86bfe4f9d7315337edb4f24a7ad8aa61ddf06e2a81191daef9daa70535b156f",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-180807090950",
+        "name": "霓虹兔女",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-181678983726",
+      "name": "暗室兔女",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "148-upscaled-181678983726.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "d92b900e7fdedee3835cae9eef0033186398ec91430d2e90f4cab4804f6da390",
+        "poster": "da3c6a0c4c2ea1763a1c057d313d2c4916bc84c4992925e7e1158921c3a0ab70",
+        "preview": "5c9e714334b4872dd00534dcebd29942fdb323c495894eb417dfa167319f25d7",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-181678983726",
+        "name": "暗室兔女",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-182344595359",
+      "name": "湖畔山城",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "149-upscaled-182344595359.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "04face7106e0b26407ab46587df7ddffe8ce9f761bdc24da5707cab42d3dec19",
+        "poster": "78fcca9d1ce00b692f9e3b6c26f926b5187d9198968c61b3a9af68e41e84e8a9",
+        "preview": "bc8d033f4f086a95cec39127c9aaec42a622dd6b500a7ed309e454682b6c45ba",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-182344595359",
+        "name": "湖畔山城",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-188569230246",
+      "name": "银发线稿",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "150-upscaled-188569230246.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "cc563dc070047e054e68173c0bfbf3525e7e8cb051ac0c062c71674cfba9c963",
+        "poster": "524a4f610d57eff5ca366d18ea1fef63850e522bc7119f5e2a5e922ca6e479ae",
+        "preview": "c297e19f7bb097a0207f1af584c029a2bc3f11315f257d672bbd6784aba95e9a",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-188569230246",
+        "name": "银发线稿",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-188727358579",
+      "name": "紫瞳线稿",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "151-upscaled-188727358579.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "300c75532c4d6f1c93e5f9846532969264526ccf2001e6f159bde606d0c6b632",
+        "poster": "d25e7fe3e002f86ff18d2dec71e41189f7b2e6c38c9e471af7b748ac1b135084",
+        "preview": "e4fcaabffa1fd73ae313873631256d85c86633d746aec3efbf31034994ae9290",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-188727358579",
+        "name": "紫瞳线稿",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-188862263727",
+      "name": "落日猫耳",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "152-upscaled-188862263727.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "fa8ea60a6e610391a10f21a1e048ef5290d10c1a596420921275fb54651cb0c6",
+        "poster": "30a5df1b4454b07e255708e3b747439fd5171316285e192a2fe70a1061ffaa91",
+        "preview": "383d60d2379e489a03061873fb1e6e202f6ffdc2309e70b95d91915b800112f5",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-188862263727",
+        "name": "落日猫耳",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-189817800282",
+      "name": "海湾电车",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "153-upscaled-189817800282.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "5092aca1ef8b3d7716cc4fc5a1b2a11101c76cd84a1423d90ea54bef7d8e0d1a",
+        "poster": "ccb5847eb7dda3c2560f1b17061da8a8c1ee83020cc61c03c814ffde862f26aa",
+        "preview": "45fb6a726e58d1be83709ba28c26e4bf5d3b5b47217d8ef57a3db3883e337765",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-189817800282",
+        "name": "海湾电车",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-190948432688",
+      "name": "墨镜羊驼",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "154-upscaled-190948432688.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "71744fd99cb808ea0aff20aa1f2a753d6030e44c56edf4bc37693138984490f1",
+        "poster": "a83a31aec182a94ee91f1b75d39fb2e872e74e359c2299f03eb6b7ca6076c268",
+        "preview": "aa9eb7a4a2dc58e42cf5581b5a265fff8392a6c43e7c1e7e2308b220ac803b32",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-190948432688",
+        "name": "墨镜羊驼",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-190956761874",
+      "name": "晨光卧室",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "155-upscaled-190956761874.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "d33f223819adbcb5e9a628ba0b4db84f915cc2cdc7aac01525cce6d6619df4bc",
+        "poster": "1835289f957d9efda78e177f8e0b16593a4ae0e6d3037f79ef70b7a86fcdc4f4",
+        "preview": "b0a2f2f710598309b66880a42eefa2df88e75b4f33b08babd0412a163c7a01a8",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-190956761874",
+        "name": "晨光卧室",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-191003464664",
+      "name": "樱庭夜屋",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "156-upscaled-191003464664.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "8b9124f15bd19731d5b72cb06240c347fcb9cc0f57b79243dc6d53e6885e3961",
+        "poster": "b24c76e0c9f08d6e43730f4404d1693711b04cab58e24f385c2406f53b00acf6",
+        "preview": "bb5cae22ec8b96bcd059adbb56dacbeb010736330f5235868dbab388466fd0ce",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-191003464664",
+        "name": "樱庭夜屋",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-191506148289",
+      "name": "海滨女团",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "157-upscaled-191506148289.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "b0cc969d8f5c5da48161db19ae59d8f81e0171f77a2eeacc51e43df1e3a7e721",
+        "poster": "b29711bd0db839871b30952871043bd1a70bfc2ee06d510e73781ee27755417d",
+        "preview": "10c97a67ec7d23b09878df63ad05978ee025d89e38e096bd77203236bc958ecb",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-191506148289",
+        "name": "海滨女团",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-191737628539",
+      "name": "暗夜双姝",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "158-upscaled-191737628539.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "98193e8c797bda9abc662edf16a5f12b9d39cc1e8e3dbc3636c7cf5319613a11",
+        "poster": "8cb1796ee49927cf8099c4f7cc8dec6433ac0d539a0fb92558eb9a4d4bf72de7",
+        "preview": "ad5b1a859ca5b499181a1585e9f53dbebda38ca7cb5a7b0f5f6987be831d596c",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-191737628539",
+        "name": "暗夜双姝",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-191924279106",
+      "name": "樱花跑车",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "159-upscaled-191924279106.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "1a8350bba3b97f736b463dd8f295efa5a7e3572c3780a156a39b6cfc51caf61f",
+        "poster": "b1ac2f4b29a51ce8e77d1df28c4b81ae4ac32302ca574399885ee4a5b68ff3d4",
+        "preview": "2a1bccd0af8bbbec58ebbc0fdeaf85439a45dd93f92db04484c0e1160bc1ea1e",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-191924279106",
+        "name": "樱花跑车",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-191967367577",
+      "name": "纸雕花山",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "160-upscaled-191967367577.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "5b2b17f527f7cdddaeaa1ebbe08f6ae29ade52976ff4241b3df2fef5568fb17c",
+        "poster": "ea2d9819ecbc6093145f4280e6bea0b8402c8ab6f4e9bd9f3d9f493e013139b4",
+        "preview": "00d4855c29af4cfef743f0d02bb02d86449ddb87ba916ee9c30262a99f172674",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-191967367577",
+        "name": "纸雕花山",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-192465114263",
+      "name": "黑裙肖像",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "161-upscaled-192465114263.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "227d8fcabe9fc1fb5f3442f137e1ed41de4d21f1168d7871aa1abf0e34bcae74",
+        "poster": "2c61b91ecbb05ef1df66f139c23bb1cc9a947d416f70bdfc230e453a435cbca7",
+        "preview": "ed3ed241248b69252d972bb15034d20651d2b842f42e184f61739f15425d1ac5",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-192465114263",
+        "name": "黑裙肖像",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-192649219997",
+      "name": "海滨小新",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "162-upscaled-192649219997.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "1ad0040e222b0fe9762c648e981ba980bafc587c5ed7a2f65fa5e0106159ac9c",
+        "poster": "75d3afba76317d1d3c35f41add8b47b7b4be8747c212ad1a0b3cad4ec2b390b6",
+        "preview": "a77e22325deb5fc7fda855402174d666fc0416fb68d59bebe407a30ddfc681bb",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-192649219997",
+        "name": "海滨小新",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-193156514804",
+      "name": "红白魔女",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "163-upscaled-193156514804.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "d3e0a40615f5fd8e0ea7facf67b3e69d5c70f760ad0f891ac9601e50567bbed5",
+        "poster": "a19a0b039d5e5b5df0a06f99d5773e535cf96b53052b786c13e17704eeba34e6",
+        "preview": "4d1a2e56a69f08eab3d4c4ff6ebb64136c891ebf6b63b6bab6673dfbb9856fdf",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-193156514804",
+        "name": "红白魔女",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-193331426079",
+      "name": "黑裙写真",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "164-upscaled-193331426079.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "2de793a110b2d47958230e5be1a11649ed174078f7e7dad06eed03215737f8c6",
+        "poster": "e4ad325b2a6bd695b63d240bf077866760da821fa40184a1fdcbce5af5962aa9",
+        "preview": "da280884574bb29be0524241c2d7572ecdf3f1814cb440caceef52d6d61e2192",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-193331426079",
+        "name": "黑裙写真",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-193388991562",
+      "name": "萌宠午后",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "165-upscaled-193388991562.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "8f57f89337ff4871c4e1724c35e000515251747dfa22b07452dd8dfc0cd07159",
+        "poster": "93323b4b9871f28ab4f76a6a13b6771b8b9e279eb8b0b896d9f6c00942577b3f",
+        "preview": "95ef11418e627618b59c289332c9995d0419544b4fc3bc656375fe8bbdb4d71a",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-193388991562",
+        "name": "萌宠午后",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-193399284046",
+      "name": "海边伙伴",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "166-upscaled-193399284046.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "aed75d3f1ece45fc5e043a9651d5dc72ae2cd43668eed1b409b099cce9d323b8",
+        "poster": "a6764f51dca8f91e0653dad9d921c09537411e5d872dff2d5b2a548c18f69412",
+        "preview": "3bc636d65307d5db27017428d54f62c80daec8c60468b6bbe8185ffec60c8e91",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-193399284046",
+        "name": "海边伙伴",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-193702859556",
+      "name": "光影静坐",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "167-upscaled-193702859556.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "cf39818c9a8787d6169a9811dffcea968e4e93d00dbf5653d9f71e9e3a77dbbd",
+        "poster": "539306bbc53f0b641ef6c6d567f9da12ff4d1d05951c75b1d5d21e3aea2d7d53",
+        "preview": "9f119e829632491375a6b587deb1eb8fd6281d3f198fffdea8af675f6426e023",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-193702859556",
+        "name": "光影静坐",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-193715649342",
+      "name": "月夜水兵",
+      "version": 2,
+      "family": "celestial-fantasy",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "168-upscaled-193715649342.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "3b739ce01f33d38dfdea8fc3b62ba36788f7c497edd9cb818f29a224df03b26d",
+        "poster": "688a2a2d4b8a18464868566f1602a50f8c138b51f1efc91e580c65efc69aa73f",
+        "preview": "87456be76e735407680dffc785e547c95dbded4105fb2a165970151775e34b3d",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-193715649342",
+        "name": "月夜水兵",
+        "appearance": "dark",
+        "family": "celestial-fantasy",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "glass",
+          "corners": "round",
+          "motion": "orbit",
+          "sidebar": "aurora",
+          "composer": "console",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#08101f",
+          "panel": "#101a31",
+          "panelAlt": "#182744",
+          "accent": "#78bfff",
+          "secondary": "#a783ee",
+          "text": "#f4f8ff",
+          "muted": "#aab9d3",
+          "line": "#405a88"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-193776215010",
+      "name": "花海日出",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "169-upscaled-193776215010.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "6043f33a6af1e19af5942765637ecb97103551cf1bf3fe6f43a2fe9510dbfcfe",
+        "poster": "f2ce6428a3f39c4a5bb0436c2f868f563c0f5f73cd2f78e8855a6e26cca6c5fa",
+        "preview": "e6578c460d6fea7875ed415f067413b87864c37a3cc3867a1c4969d82f6c5e31",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-193776215010",
+        "name": "花海日出",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-193820497977",
+      "name": "纸艺海潮",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "170-upscaled-193820497977.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "34cfdc8b50dc84ebe4dae56eb26b91503086e2312dd6d92a1b5156c78071bb90",
+        "poster": "686f0793774223f7972fd86c057626d1ee8c8b73a2929664499c0f0d79f588b1",
+        "preview": "e5d83cdaed06841ce8a3c78a5c00f60844e6cdb695ab6aa5d3525cb55c2ed40d",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-193820497977",
+        "name": "纸艺海潮",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-193820931952",
+      "name": "云端小屋",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "171-upscaled-193820931952.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "21567e2f39c386a70bcc53d00d193c7171adfed0df101f618a37f7de6a6b66e7",
+        "poster": "24a7ba3d51e653bde484a1433784f298bb2346ac3819e16c4f27549b4b9f0f41",
+        "preview": "6887fbc7841de25475196ebc0872357d47a91dfbea88bcb6ad00a38ce5037e4a",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-193820931952",
+        "name": "云端小屋",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-193901059204",
+      "name": "粉发犬耳",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "172-upscaled-193901059204.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "3bd8996a55ac7ad228acef2340c56121ab83feb2b5e543a1ebc5a2c76b094a31",
+        "poster": "94d8c774703b0d436f3ecb97e3917aa03dc47ffa3247a055f26ebbd1400371fd",
+        "preview": "56e576e200881037d8368dd612105d434ddf0779a27c776305efac800590e7f7",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-193901059204",
+        "name": "粉发犬耳",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-193934918333",
+      "name": "雪山晨街",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "173-upscaled-193934918333.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "b52a44bac1128537b2ce2ef4cc158b19a04bd811c005c52a152e9a4ac3147f47",
+        "poster": "7780dd481848f25c5532e36321d78bab4f1d1a4d4b891b246bd905e4ad1ca7d5",
+        "preview": "044541debd0cedc471ce83808adc97ba88f203fa33ccbbef0857e077707eb68a",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-193934918333",
+        "name": "雪山晨街",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-194012804855",
+      "name": "花影街巷",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "174-upscaled-194012804855.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "1fe8d4eda3ba0cac27aaccb5b5cd809ce5993812235ef162f29e3fb9182787d7",
+        "poster": "8b7dd8bc026c25142d7aa8be8e966bb8b9d9576c2dd916f0dbf92c8d16adcbaa",
+        "preview": "bce62966ced99b251cee4ab4cb129dbafefbbbcf62c045aa38dab33a5d047ffd",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-194012804855",
+        "name": "花影街巷",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-194075985401",
+      "name": "山居露台",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "175-upscaled-194075985401.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "d7d900805d235506944644648469a7b991312f468ad293c18119e2774cf3ad67",
+        "poster": "e589dd59d3a5206085e9fff6bb7a99496a64d8243d0c4ee033a676f820dfe5cb",
+        "preview": "91522886688c73f1e01553ccddc422fabea5bd5b48cb3bb076d8e114bda4e397",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-194075985401",
+        "name": "山居露台",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-194103554537",
+      "name": "云间木屋",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "176-upscaled-194103554537.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "c245c0c9495a1f739e48ab5d4b82069bd63fc3444b6af0c8dd8138a279a81795",
+        "poster": "0d30392b98604e30a5ff7ff5c2fe7066a78b1de141ce566e843ddc1bd2918ebb",
+        "preview": "74a8990a68b4199c3506eba3000fa2de117b92d6d336c61d9b46c2a80e27cdc2",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-194103554537",
+        "name": "云间木屋",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-194214612425",
+      "name": "霞光赛道",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "177-upscaled-194214612425.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "b1fdd967669b5fb27ce4dff85981d06d09edaaebf5abe077b203748d1a5b35fb",
+        "poster": "24cbee08e14b943473a4fe18c784f23fe743836278af077bf92bbf97c9ccad02",
+        "preview": "e34ca64539b602ddf3cf7e1379edd332c376311ee80ef7c147bd8dea7c79f58d",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-194214612425",
+        "name": "霞光赛道",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-194281993322",
+      "name": "白裙肖像",
+      "version": 2,
+      "family": "warm-editorial",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "178-upscaled-194281993322.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "4e3f132f8a5acf8239c1ef74c67a2d9036ad400fd317347366fa379c1c0bee46",
+        "poster": "45232b65607cbd3aa6db1ccceb9f412ee6d82acaf73f462388f81528c5a8b255",
+        "preview": "9c69c3de24747596c3a38f1c5fdc4f9366501535c4dbfd53823f3371c328e8dc",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-194281993322",
+        "name": "白裙肖像",
+        "appearance": "dark",
+        "family": "warm-editorial",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "editorial",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "collage",
+          "surface": "paper",
+          "corners": "tape",
+          "motion": "none",
+          "sidebar": "notebook",
+          "composer": "workbench",
+          "texture": "grain"
+        },
+        "colors": {
+          "background": "#19140f",
+          "panel": "#251e17",
+          "panelAlt": "#33281e",
+          "accent": "#d7aa68",
+          "secondary": "#7ba891",
+          "text": "#fff8e9",
+          "muted": "#c4b39a",
+          "line": "#6e5a3d"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-194385633293",
+      "name": "蓝焰剑士",
+      "version": 2,
+      "family": "cinematic-cyber",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "179-upscaled-194385633293.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "f6e9e41c5c8adc993e403c52be09de551cec2bd291b118cfe9c4eae31c18ac86",
+        "poster": "6cd71f03c396e7dc1a4df868116b7e3f7aa514702d4dbc901cc48123a46474ce",
+        "preview": "4b2df6ee407230233d1f721c40eae84f1ef59a216b2274e00b9584ae99f2cbfb",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-194385633293",
+        "name": "蓝焰剑士",
+        "appearance": "dark",
+        "family": "cinematic-cyber",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "console",
+          "surface": "metal",
+          "corners": "cut",
+          "motion": "scan",
+          "sidebar": "neon",
+          "composer": "terminal",
+          "texture": "scanline"
+        },
+        "colors": {
+          "background": "#090d16",
+          "panel": "#101827",
+          "panelAlt": "#18233a",
+          "accent": "#45d8ff",
+          "secondary": "#f05ac6",
+          "text": "#f1fbff",
+          "muted": "#9cb0c2",
+          "line": "#31567a"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-194385658426",
+      "name": "粉发星眸",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "180-upscaled-194385658426.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "7752c7268954202a4ca3ae61d989129cbeeda39862ec18bcfbdcce8d8b1d5e54",
+        "poster": "76e14dd907944f0667abc940c9edfe0295bb25518f2aa65ed53bd78ded3d5e38",
+        "preview": "78c6108ed2211be747bd448a81fafba740f7007cea102ae6674816f23ed2bf88",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-194385658426",
+        "name": "粉发星眸",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-194389802509",
+      "name": "海岸花路",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "181-upscaled-194389802509.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "6571f668f609f03aa66d67f3a5d0dc60d6af27c6901d54bd502ae67203740323",
+        "poster": "a4091d5fd070e2175594f93fabd77c82c506db2fa1103c08f98d5ba46fdb643d",
+        "preview": "42dbf90ebfdfb84042fc4f1b17e5781c7d882012c159abdd36d7480c7994574c",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-194389802509",
+        "name": "海岸花路",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-194450933582",
+      "name": "金色原野",
+      "version": 2,
+      "family": "nature-healing",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "182-upscaled-194450933582.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "096f52d1dd8cce2cb978d7ab4da9f59557db33d0bfe8540313393a48123604c8",
+        "poster": "ecceee83ed8cbffecb5e53bfa5927ab65634818b038d2c945dbe6bfb7d4a62cb",
+        "preview": "36e03542e2b2f84d819050ed08c764d5bdd74f5b168090022b056b54dc61187c",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-194450933582",
+        "name": "金色原野",
+        "appearance": "dark",
+        "family": "nature-healing",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "native-sans",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "editorial",
+          "surface": "ink",
+          "corners": "stamp",
+          "motion": "mist",
+          "sidebar": "garden",
+          "composer": "label",
+          "texture": "paper"
+        },
+        "colors": {
+          "background": "#0d1714",
+          "panel": "#15231e",
+          "panelAlt": "#1d3028",
+          "accent": "#66c59b",
+          "secondary": "#e2ae65",
+          "text": "#f2fff8",
+          "muted": "#a7c0b3",
+          "line": "#426b57"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
+    },
+    {
+      "id": "upscaled-264057276aca",
+      "name": "粉瞳少女",
+      "version": 2,
+      "family": "cartoon-stationery",
+      "appearance": "dark",
+      "mediaKind": "static",
+      "riskStatus": "approved",
+      "assetFile": "183-upscaled-264057276aca.webp",
+      "platforms": [
+        "macos",
+        "windows"
+      ],
+      "hashes": {
+        "theme": "4d335afceed21bc0dd6ece8547ad5f13eecb6e2f59039795d3a52b078adb9d53",
+        "poster": "26fad065d82bd12d92dcc08521ac96687f11607c5131d19971011c552997ce25",
+        "preview": "84fe5a9d2a1467b9fdc2cf3f1733213fc14f528cfee19ef97502da2ffea2de5c",
+        "video": null
+      },
+      "theme": {
+        "schemaVersion": 2,
+        "id": "upscaled-264057276aca",
+        "name": "粉瞳少女",
+        "appearance": "dark",
+        "family": "cartoon-stationery",
+        "media": {
+          "poster": "background.webp",
+          "video": null
+        },
+        "typography": {
+          "body": "native-sans",
+          "title": "rounded",
+          "label": "native-sans",
+          "code": "native-mono"
+        },
+        "visual": {
+          "layout": "poster-right",
+          "surface": "paper",
+          "corners": "round",
+          "motion": "doodle",
+          "sidebar": "garden",
+          "composer": "letter",
+          "texture": "wash"
+        },
+        "colors": {
+          "background": "#18131d",
+          "panel": "#241c2b",
+          "panelAlt": "#30243a",
+          "accent": "#ee91ba",
+          "secondary": "#7bcfd6",
+          "text": "#fff8fc",
+          "muted": "#cabac8",
+          "line": "#765b79"
+        },
+        "art": {
+          "focusX": 0.7,
+          "focusY": 0.48,
+          "safeArea": "left",
+          "taskMode": "full"
+        },
+        "risk": {
+          "status": "approved",
+          "note": "平台管理员确认拥有可公开再分发与商用授权。"
+        }
+      }
     }
   ]
 }

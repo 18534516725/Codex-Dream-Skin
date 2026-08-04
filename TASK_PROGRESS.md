@@ -1,5 +1,12 @@
 # Task Progress
 
+## Local upscaled skin import — verified, not released (2026-08-04)
+
+- [scope] Import 59 administrator-authorized 4400px source images from the local `已超分完毕` folder as complete Theme V2 skins; no production upload, commit, release, database change, or client restart.
+- [implemented locally] 59 named, content-classified skins were rendered to 3840×2400 WebP masters and 1200×750 previews, added to the signed macOS/Windows catalogs and platform public catalog. Every entry uses the existing full renderer (sidebar, top area, cards, composer, fonts, colors, opacity controls, and safe inert decoration), not a wallpaper-only fallback.
+- [verified locally] Catalog count is 124; platform asset validation passes 124 masters/previews; frontend catalog/admin tests pass 24/24 and the production build exits 0; helper catalog and full UI renderer tests pass 10/10; runtime assets were synchronized and both repositories pass `git diff --check`.
+- [next] User visual local testing. Do not publish until separately requested and the release gates are completed.
+
 ## Client release v1.6.24 — in progress (2026-08-04)
 
 - [goal] Publish the administrator-tested helper repair: make the local appearance bridge accept only the two explicit Vite loopback origins in addition to the existing platform origins, persist all seven preview settings including text color, and bring the 邮差浣熊 shell into alignment with its navy/postal-red artwork.
