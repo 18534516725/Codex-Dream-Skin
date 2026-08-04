@@ -1,5 +1,15 @@
 # Task Progress
 
+## Administrator-managed signed catalog — in progress (2026-08-04)
+
+- [goal] Keep the existing strict `dreamskin://apply?skin=<approved-id>` protocol while allowing the platform-owned administrator catalog to publish future approved 4K skins without rebuilding the helper for every image.
+- [branch] `codex/admin-managed-catalog` from `origin/main` at `dd3f25f`; platform work is on `codex/admin-skin-management`.
+- [platform complete locally] Signed fixed-origin catalog, safe image processing/storage, recharge entitlements, device/apply-event API, ordinary-user collection, taxonomy/usage administrator API, and the responsive Skin Studio are implemented and focused tests/build pass.
+- [implemented locally] Portable closed-schema verification, rollback-safe last-known-good cache, fixed-origin asset resolution, macOS CryptoKit and Windows bundled-Node Ed25519 verification, Keychain/Credential Manager device identity, pairing, entitlement-before-download, request-bound outcome reporting, and signed image SHA-256 enforcement.
+- [verified locally] Portable catalog/pairing contracts pass 10/10, Windows Node contracts pass 21/21, both macOS Swift products build, the complete applicable macOS regression suite passes, runtime assets are synchronized, the PowerShell 5.1 BOM gate passes, and `git diff --check` is clean. Security review findings for embedded image hashes, equal-version conflicts, and first-open revocation refresh are fixed. Windows PowerShell 5.1/7 execution remains a required CI gate because this Mac has no `pwsh`.
+- [safety] No installed helper, active theme, Codex process, database, production secret, Release, or production container has been changed.
+- [pending] Provision and pin the authorized production Ed25519 public key, run Windows CI and the signed release gates, then separately obtain authorization for the database migration and production signing/pairing secret environment mutations before release/deployment.
+
 ## Client release v1.6.9 — in progress (2026-08-03)
 
 - [scope] Promote the 69 de-duplicated materials that the platform administrator
