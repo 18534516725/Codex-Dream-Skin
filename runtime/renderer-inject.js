@@ -140,6 +140,7 @@ __DREAM_SKIN_MEDIA_LAYER_SOURCE__
         ? font : "native",
       fontSize: bounded("fontSize", 1, 0.8, 1.34),
       contrast: bounded("contrast", 1, 0.6, 1),
+      textColor: /^#[0-9a-f]{6}$/i.test(source.textColor) ? source.textColor : "",
     };
   };
   const APPEARANCE_SETTINGS = normalizeAppearanceSettings(THEME.appearanceSettings);
@@ -434,6 +435,13 @@ __DREAM_SKIN_MEDIA_LAYER_SOURCE__
     setStyleProperty(root, "--ds-user-content-opacity", String(APPEARANCE_SETTINGS.contentOpacity));
     setStyleProperty(root, "--ds-user-font-scale", String(APPEARANCE_SETTINGS.fontSize));
     setStyleProperty(root, "--ds-user-text-contrast", String(APPEARANCE_SETTINGS.contrast));
+    if (APPEARANCE_SETTINGS.textColor) {
+      setStyleProperty(root, "--ds-text", APPEARANCE_SETTINGS.textColor);
+      setStyleProperty(root, "--ds-theme-color-text", APPEARANCE_SETTINGS.textColor);
+      setStyleProperty(root, "--ds-sidebar-text", APPEARANCE_SETTINGS.textColor);
+      const userTextRgb = rgbString(APPEARANCE_SETTINGS.textColor);
+      if (userTextRgb) setStyleProperty(root, "--ds-text-rgb", userTextRgb);
+    }
     setStyleProperty(root, "--ds-sidebar-bg", `rgb(${rgbString(variables["--ds-panel"])} / ${APPEARANCE_SETTINGS.sidebarOpacity})`);
     setStyleProperty(root, "--ds-card-bg", `rgb(${rgbString(variables["--ds-panel"])} / ${APPEARANCE_SETTINGS.contentOpacity})`);
     setStyleProperty(root, "--ds-theme-surface-radius", "12px");

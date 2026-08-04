@@ -31,6 +31,25 @@ test("Theme V2 maps readable cross-platform typography and sidebar colors", () =
   assert.match(profile["--ds-sidebar-hover"], /^rgb\(/);
 });
 
+test("Post Raccoon uses its navy-and-postal-red artwork palette in the live shell", async () => {
+  const raccoon = JSON.parse(await fs.readFile(
+    path.join(root, "themes", "catalog", "post-raccoon", "theme.json"),
+    "utf8",
+  ));
+  assert.equal(raccoon.appearance, "dark");
+  assert.equal(raccoon.visual.surface, "glass");
+  assert.deepEqual(raccoon.colors, {
+    background: "#07172f",
+    panel: "#10294a",
+    panelAlt: "#163a61",
+    accent: "#c54b32",
+    secondary: "#e8c98e",
+    text: "#f2dfb0",
+    muted: "#b8b1a3",
+    line: "#8f3025",
+  });
+});
+
 test("Every visual family produces a distinct, complete profile", () => {
   const families = [
     "cinematic-cyber", "nature-healing", "warm-editorial",
