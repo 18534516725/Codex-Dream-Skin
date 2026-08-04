@@ -1,5 +1,10 @@
 # Task Progress
 
+## Client release v1.6.27 — preparing (2026-08-05)
+
+- [root cause] The macOS v1.6.26 release stopped in Swift XCTest because the 樱花信使 fixed-hash assertion still referenced an old generated master. The catalog, macOS embedded copy and actual image all agree on `e25a05ba…f161738`.
+- [fix] Updated the Swift assertion and added a Node regression that proves the Swift pin remains equal to the generated macOS catalog value whenever the catalog is rebuilt.
+
 ## Client release v1.6.26 — preparing (2026-08-04)
 
 - [goal] Publish the newly approved high-resolution collection through the helper's normal release workflow.

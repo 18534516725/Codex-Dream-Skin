@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, "..");
-const [contract, catalogSource, publicationSource, appDelegate, loader, writer, appBuilder] = await Promise.all([
+const [contract, catalogSource, publicationSource, appDelegate, loader, writer, appBuilder, coreTests] = await Promise.all([
   fs.readFile(path.join(root, "menubar-app/Sources/DreamSkinCore/NexoSkinLink.swift"), "utf8"),
   fs.readFile(path.join(root, "menubar-app/Sources/DreamSkinCore/Resources/nexo-skin-catalog.json"), "utf8"),
   fs.readFile(path.join(root, "../themes/platform-publication-catalog.json"), "utf8"),
@@ -13,6 +13,7 @@ const [contract, catalogSource, publicationSource, appDelegate, loader, writer, 
   fs.readFile(path.join(root, "scripts/load-image-theme-macos.sh"), "utf8"),
   fs.readFile(path.join(root, "scripts/write-theme.mjs"), "utf8"),
   fs.readFile(path.join(root, "scripts/build-menubar-app.sh"), "utf8"),
+  fs.readFile(path.join(root, "menubar-app/Tests/DreamSkinCoreTests/CoreTests.swift"), "utf8"),
 ]);
 
 assert.doesNotMatch(contract, /Bundle\.module\.url/, "installed app catalog lookup must never trap when a SwiftPM resource bundle is absent");
@@ -34,6 +35,13 @@ assert.deepEqual(
   catalog.items.map((item) => [item.id, item.assetFile]),
   publication.items.map((item) => [item.id, path.basename(item.assetUrl)]),
   "macOS fixed-skin URLs must stay aligned with the platform publication catalog",
+);
+const sakuraSignal = catalog.items.find((item) => item.id === "sakura-signal");
+assert.ok(sakuraSignal, "macOS catalog must retain 樱花信使");
+assert.match(
+  coreTests,
+  new RegExp(sakuraSignal.hashes.background),
+  "Swift fixed-skin regression must pin the catalog's current 樱花信使 background hash",
 );
 for (const id of [
   "post-raccoon", "night-shift-penguin", "workshop-otter",

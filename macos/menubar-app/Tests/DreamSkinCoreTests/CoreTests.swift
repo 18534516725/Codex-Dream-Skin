@@ -154,7 +154,7 @@ final class CoreTests: XCTestCase {
     XCTAssertEqual(entry.name, "樱花信使")
     XCTAssertEqual(entry.appearance, "dark")
     XCTAssertEqual(entry.taskMode, "full")
-    XCTAssertEqual(entry.backgroundSha256, "ae3637e5469c28d637240bad60319a96ee9e13366601ccddeba85bd2a660513e")
+    XCTAssertEqual(entry.backgroundSha256, "e25a05ba795c6f01ab562e58b8da09bc85a9ce13acf93a3c69ad93048f161738")
     XCTAssertFalse(entry.visual.accentRGB.isEmpty)
     XCTAssertFalse(entry.visual.secondaryRGB.isEmpty)
     XCTAssertFalse(entry.visual.panelRGB.isEmpty)
