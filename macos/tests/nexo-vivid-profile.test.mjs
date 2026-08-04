@@ -5,9 +5,10 @@ import { fileURLToPath } from "node:url";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(here, "..");
-const [contract, catalogSource, appDelegate, loader, writer, appBuilder] = await Promise.all([
+const [contract, catalogSource, publicationSource, appDelegate, loader, writer, appBuilder] = await Promise.all([
   fs.readFile(path.join(root, "menubar-app/Sources/DreamSkinCore/NexoSkinLink.swift"), "utf8"),
   fs.readFile(path.join(root, "menubar-app/Sources/DreamSkinCore/Resources/nexo-skin-catalog.json"), "utf8"),
+  fs.readFile(path.join(root, "../themes/platform-publication-catalog.json"), "utf8"),
   fs.readFile(path.join(root, "menubar-app/Sources/CodexDreamSkinMenuBar/AppDelegate.swift"), "utf8"),
   fs.readFile(path.join(root, "scripts/load-image-theme-macos.sh"), "utf8"),
   fs.readFile(path.join(root, "scripts/write-theme.mjs"), "utf8"),
@@ -26,8 +27,14 @@ for (const field of [
   assert.match(contract, new RegExp(`public let ${field}:`), `macOS fixed skin profiles must expose ${field}`);
 }
 const catalog = JSON.parse(catalogSource);
+const publication = JSON.parse(publicationSource);
 assert.equal(catalog.schemaVersion, 2, "macOS must consume the Theme V2 catalog");
-assert.equal(catalog.items.length, 87, "macOS must package all 87 approved fixed skins");
+assert.equal(catalog.items.length, 65, "macOS must package the current 65 approved fixed skins");
+assert.deepEqual(
+  catalog.items.map((item) => [item.id, item.assetFile]),
+  publication.items.map((item) => [item.id, path.basename(item.assetUrl)]),
+  "macOS fixed-skin URLs must stay aligned with the platform publication catalog",
+);
 for (const id of [
   "post-raccoon", "night-shift-penguin", "workshop-otter",
   "moon-platform-cat", "floppy-wizard", "deep-sea-repair",
