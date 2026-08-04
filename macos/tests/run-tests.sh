@@ -149,6 +149,7 @@ PROJECT_ROOT="$(cd "$ROOT/.." && pwd -P)"
 if ! /usr/bin/cmp -s "$ROOT/assets/dream-skin.css" "$PROJECT_ROOT/windows/assets/dream-skin.css" ||
     ! /usr/bin/cmp -s "$ROOT/assets/appearance-bridge.mjs" "$PROJECT_ROOT/windows/assets/appearance-bridge.mjs" ||
     ! /usr/bin/cmp -s "$ROOT/assets/appearance-settings.mjs" "$PROJECT_ROOT/windows/assets/appearance-settings.mjs" ||
+    ! /usr/bin/cmp -s "$ROOT/assets/signed-nexo-catalog.mjs" "$PROJECT_ROOT/windows/assets/signed-nexo-catalog.mjs" ||
     ! /usr/bin/cmp -s "$ROOT/assets/nexo-skin-catalog.json" "$PROJECT_ROOT/windows/assets/nexo-skin-catalog.json" ||
     ! /usr/bin/cmp -s "$ROOT/assets/renderer-inject.js" "$PROJECT_ROOT/windows/assets/renderer-inject.js" ||
     ! /usr/bin/cmp -s "$ROOT/assets/safe-css-policy.json" "$PROJECT_ROOT/windows/assets/safe-css-policy.json" ||

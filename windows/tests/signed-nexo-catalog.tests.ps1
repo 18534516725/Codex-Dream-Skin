@@ -52,12 +52,13 @@ process.stdout.write(sign(null, Buffer.from(process.argv[2], 'base64'), privateK
 function New-SignedNexoCatalogFixture {
   param(
     [long]$Version = 10,
+    [ValidateSet(1, 2)][int]$SchemaVersion = 1,
     [string[]]$Revocations = @(),
     [object[]]$Skins = @(),
     [datetime]$Now = [datetime]::UtcNow
   )
   if ($Skins.Count -eq 0) {
-    $Skins = @([ordered]@{
+    $defaultSkin = [ordered]@{
       appearance = 'dark'
       backgroundPath = 'sakura-signal/v2/background.webp'
       backgroundSha256 = ('a' * 64)
@@ -68,7 +69,17 @@ function New-SignedNexoCatalogFixture {
       previewPath = 'sakura-signal/v2/preview.webp'
       previewSha256 = ('b' * 64)
       tags = @('pink')
-    })
+    }
+    if ($SchemaVersion -eq 2) {
+      $defaultSkin.taskMode = 'full'
+      $defaultSkin.visual = [ordered]@{
+        accentRGB = '112 192 255'; secondaryRGB = '244 190 92'; panelRGB = '19 34 53'
+        glowStrength = 0.5; signature = 'SAKURA SIGNAL'; focusX = 0.68; focusY = 0.46
+        layoutVariant = 'poster-right'; surfaceStyle = 'glass'; cornerStyle = 'cut'
+        motionPreset = 'none'; sidebarStyle = 'navigation'; composerStyle = 'console'; textureStyle = 'grid'
+      }
+    }
+    $Skins = @($defaultSkin)
   }
   return [ordered]@{
     assetOrigin = 'https://nexotoken.net/codex-skins/assets/'
@@ -76,7 +87,7 @@ function New-SignedNexoCatalogFixture {
     expiresAt = $Now.AddDays(7).ToString("yyyy-MM-dd'T'HH:mm:ss.fff'Z'", [Globalization.CultureInfo]::InvariantCulture)
     issuedAt = $Now.ToString("yyyy-MM-dd'T'HH:mm:ss.fff'Z'", [Globalization.CultureInfo]::InvariantCulture)
     revocations = $Revocations
-    schemaVersion = 1
+    schemaVersion = $SchemaVersion
     skins = $Skins
   }
 }
@@ -229,6 +240,24 @@ try {
     Import-DreamSkinSignedNexoCatalogEnvelope `
       -EnvelopeJson (New-SignedNexoEnvelopeJson -Catalog $staleCatalog) `
       -StateRoot $expiredRoot -PublicKeys $testKeys -Now $now
+  }
+
+  $v2Root = Join-Path $temporaryRoot 'schema-v2'
+  New-Item -ItemType Directory -Path $v2Root | Out-Null
+  $v2 = New-SignedNexoCatalogFixture -Version 20 -SchemaVersion 2 -Now $now
+  $v2Saved = Import-DreamSkinSignedNexoCatalogEnvelope `
+    -EnvelopeJson (New-SignedNexoEnvelopeJson -Catalog $v2) `
+    -StateRoot $v2Root -PublicKeys $testKeys -Now $now
+  if ($v2Saved.Skins[0].TaskMode -cne 'full' -or
+    $v2Saved.Skins[0].Visual.AccentRGB -cne '112 192 255' -or
+    [double]$v2Saved.Skins[0].Visual.FocusX -ne 0.68) {
+    throw 'The signed v2 full-interface visual profile was not preserved.'
+  }
+  $v2.skins[0].visual.accentRGB = '255 0 0;url(https://evil.example)'
+  Assert-SignedCatalogRejected -Label 'an unsafe signed v2 visual profile' -Action {
+    Import-DreamSkinSignedNexoCatalogEnvelope `
+      -EnvelopeJson (New-SignedNexoEnvelopeJson -Catalog $v2) `
+      -StateRoot $v2Root -PublicKeys $testKeys -Now $now
   }
 
   Write-Output 'Signed Nexo catalog tests passed.'

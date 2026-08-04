@@ -148,7 +148,7 @@ function Invoke-DreamSkinNexoApply {
         if ($actualHash -cne $expectedHash) { throw 'The signed skin image SHA-256 did not match.' }
       }
       $themeProfile = [pscustomobject]@{
-        id = "nexo-$($entry.Id)"
+        id = $entry.Id
         name = $entry.Name
         appearance = $entry.Appearance
         visual = [pscustomobject]@{

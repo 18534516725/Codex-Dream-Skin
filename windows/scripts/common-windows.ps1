@@ -185,6 +185,7 @@ function Install-DreamSkinRuntimeEngine {
     'VERSION',
     'assets\appearance-bridge.mjs',
     'assets\appearance-settings.mjs',
+    'assets\signed-nexo-catalog.mjs',
     'assets\dream-reference.jpg',
     'assets\dream-skin.css',
     'assets\nexo-skin-catalog.json',

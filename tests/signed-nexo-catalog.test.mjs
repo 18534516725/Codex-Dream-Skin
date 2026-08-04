@@ -15,7 +15,7 @@ const root = new URL('../', import.meta.url);
 
 function payload(overrides = {}) {
   return {
-    schemaVersion: 1,
+    schemaVersion: 2,
     catalogVersion: 42,
     issuedAt: '2026-08-04T00:00:00.000Z',
     expiresAt: '2026-08-11T00:00:00.000Z',
@@ -24,6 +24,13 @@ function payload(overrides = {}) {
       id: 'aurora-field', nameZh: '极光原野', nameEn: 'Aurora Field', category: '风景', tags: ['极光'], appearance: 'dark',
       backgroundPath: 'aurora-field/v2/background.webp', previewPath: 'aurora-field/v2/preview.webp',
       backgroundSha256: 'a'.repeat(64), previewSha256: 'b'.repeat(64),
+      taskMode: 'full',
+      visual: {
+        accentRGB: '112 192 255', secondaryRGB: '244 190 92', panelRGB: '19 34 53',
+        glowStrength: 0.5, signature: 'AURORA FIELD', focusX: 0.68, focusY: 0.46,
+        layoutVariant: 'poster-right', surfaceStyle: 'glass', cornerStyle: 'cut',
+        motionPreset: 'none', sidebarStyle: 'navigation', composerStyle: 'console', textureStyle: 'grid',
+      },
     }],
     revocations: ['retired-skin'],
     ...overrides,
@@ -43,6 +50,17 @@ test('verifies a bounded Ed25519 envelope and derives only fixed-origin URLs', (
   const result = verifySignedCatalogEnvelope(envelope(), { keyring: { 'nexo-skin-2026-01': publicKeyBase64 }, now });
   assert.equal(result.skins[0].backgroundURL, `${NEXO_ASSET_ORIGIN}aurora-field/v2/background.webp`);
   assert.equal(result.skins[0].previewURL, `${NEXO_ASSET_ORIGIN}aurora-field/v2/preview.webp`);
+  assert.equal(result.skins[0].visual.accentRGB, '112 192 255');
+  assert.equal(result.skins[0].taskMode, 'full');
+});
+
+test('rejects incomplete or unsafe full-interface visual profiles', () => {
+  const missing = payload(); delete missing.skins[0].visual.composerStyle;
+  assert.throws(() => verifySignedCatalogEnvelope(envelope(missing), { keyring: { 'nexo-skin-2026-01': publicKeyBase64 }, now }));
+  const unsafe = payload(); unsafe.skins[0].visual.accentRGB = '255 0 0; url(https://evil.example)';
+  assert.throws(() => verifySignedCatalogEnvelope(envelope(unsafe), { keyring: { 'nexo-skin-2026-01': publicKeyBase64 }, now }));
+  const outOfRange = payload(); outOfRange.skins[0].visual.focusX = 2;
+  assert.throws(() => verifySignedCatalogEnvelope(envelope(outOfRange), { keyring: { 'nexo-skin-2026-01': publicKeyBase64 }, now }));
 });
 
 test('rejects tampering, wrong keys, arbitrary origins, paths, duplicate IDs, expiry and oversize payloads', () => {
@@ -85,4 +103,19 @@ test('platform clients bind embedded poster hashes and reject same-version conte
   assert.match(windowsTheme, /BackgroundSha256 = \[string\]\$record\.hashes\.poster/);
   assert.match(macStore, /catalogVersion == snapshot\.catalogVersion/);
   assert.match(macStore, /existing\.snapshot\.revocations != snapshot\.revocations/);
+  assert.match(macLink, /"nexo-skin-2026-01": Data\(base64Encoded: "[A-Za-z0-9+/]{43}="\)!/);
+  const windowsSigned = readFileSync(new URL('windows/scripts/signed-nexo-catalog.ps1', root), 'utf8');
+  assert.match(windowsSigned, /'nexo-skin-2026-01'\s*=\s*'MCowBQYDK2VwAyEA[A-Za-z0-9+/]{43}='/);
+});
+
+test('both injectors extend appearance approval only from the verified signed cache', () => {
+  for (const platform of ['macos', 'windows']) {
+    const injector = readFileSync(new URL(`${platform}/scripts/injector.mjs`, root), 'utf8');
+    assert.match(injector, /verifySignedCatalogEnvelope\(envelope, \{/);
+    assert.match(injector, /allowExpired: true/);
+    assert.match(injector, /for \(const skin of catalog\.skins\) APPROVED_SKIN_IDS\.add\(skin\.id\)/);
+  }
+  const windowsApply = readFileSync(new URL('windows/scripts/apply-community-theme.ps1', root), 'utf8');
+  assert.match(windowsApply, /id = \$entry\.Id/);
+  assert.doesNotMatch(windowsApply, /id = "nexo-\$\(\$entry\.Id\)"/);
 });

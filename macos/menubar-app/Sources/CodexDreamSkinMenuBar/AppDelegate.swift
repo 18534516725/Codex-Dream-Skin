@@ -41,6 +41,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     "VERSION",
     "assets/appearance-bridge.mjs",
     "assets/appearance-settings.mjs",
+    "assets/signed-nexo-catalog.mjs",
     "assets/dream-skin.css",
     "assets/nexo-skin-catalog.json",
     "assets/portal-hero.png",

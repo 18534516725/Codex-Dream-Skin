@@ -397,12 +397,16 @@ try {
 
   $expectedPayloadFiles = @(
     'VERSION',
+    'assets\appearance-bridge.mjs',
+    'assets\appearance-settings.mjs',
     'assets\dream-reference.jpg',
     'assets\dream-skin.css',
+    'assets\nexo-skin-catalog.json',
     'assets\renderer-inject.js',
     'assets\safe-css-policy.json',
     'assets\safe-css-validator.mjs',
     'assets\selectors.json',
+    'assets\signed-nexo-catalog.mjs',
     'assets\theme-package-validator.mjs',
     'assets\theme.json',
     'assets\codex-dream-skin.ico',

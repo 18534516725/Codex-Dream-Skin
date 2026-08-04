@@ -78,10 +78,11 @@ private struct GeneratedVisual: Decodable {
 public enum NexoSkinContract {
   private static let linkPattern = #"^dreamskin://apply\?skin=([a-z0-9-]{1,64})$"#
 
-  // A production key is intentionally not invented in source. Until the matching
-  // platform signing key is provisioned, verified remote additions fail closed and
-  // the signed embedded catalog remains the only usable source.
-  public static let pinnedCatalogPublicKeys: [String: Data] = [:]
+  // The matching private key is provisioned only on the platform signer. The
+  // client pins the raw Ed25519 public key and fails closed for every other key.
+  public static let pinnedCatalogPublicKeys: [String: Data] = [
+    "nexo-skin-2026-01": Data(base64Encoded: "2ILmCQDK2Z63umFAxIm/PwIrVWTYLHwl66sFOLQo5Ls=")!,
+  ]
 
   private static func catalogData() -> Data? {
     if let url = Bundle.main.url(forResource: "nexo-skin-catalog", withExtension: "json") {
@@ -205,9 +206,9 @@ public enum NexoSkinContract {
       name: record.nameZh,
       imageURL: record.backgroundURL,
       appearance: record.appearance == "adaptive" ? "dark" : record.appearance,
-      taskMode: "full",
+      taskMode: record.taskMode,
       backgroundSha256: record.backgroundSha256,
-      visual: embeddedVisual ?? defaultVisual
+      visual: record.visual ?? embeddedVisual ?? defaultVisual
     )
   }
 

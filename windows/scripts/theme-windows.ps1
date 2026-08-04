@@ -52,27 +52,28 @@ function Resolve-DreamSkinNexoApplyUri {
       $signedRecord = Resolve-DreamSkinSignedNexoSkin -SkinId $id `
         -StateRoot $StateRoot -Now $Now -SkipRefresh:$SkipCatalogRefresh
       $isLight = $signedRecord.Appearance -ceq 'light'
+      $visual = $signedRecord.Visual
       return [pscustomobject]@{
         Id = $id
         Name = $signedRecord.Name
         ImageUri = $signedRecord.ImageUri
         BackgroundSha256 = $signedRecord.BackgroundSha256
         Appearance = $signedRecord.Appearance
-        TaskMode = 'full'
-        AccentRGB = $(if ($isLight) { '38 111 133' } else { '69 216 255' })
-        SecondaryRGB = $(if ($isLight) { '176 71 126' } else { '240 90 198' })
-        PanelRGB = $(if ($isLight) { '244 248 250' } else { '16 24 39' })
-        GlowStrength = 0.56
-        Signature = ([string]$signedRecord.Id).Replace('-', ' ').ToUpperInvariant()
-        FocusX = 0.7
-        FocusY = 0.48
-        LayoutVariant = 'poster-right'
-        SurfaceStyle = 'glass'
-        CornerStyle = 'round'
-        MotionPreset = 'orbit'
-        SidebarStyle = 'aurora'
-        ComposerStyle = 'console'
-        TextureStyle = 'grain'
+        TaskMode = $signedRecord.TaskMode
+        AccentRGB = $(if ($null -ne $visual) { $visual.AccentRGB } elseif ($isLight) { '38 111 133' } else { '69 216 255' })
+        SecondaryRGB = $(if ($null -ne $visual) { $visual.SecondaryRGB } elseif ($isLight) { '176 71 126' } else { '240 90 198' })
+        PanelRGB = $(if ($null -ne $visual) { $visual.PanelRGB } elseif ($isLight) { '244 248 250' } else { '16 24 39' })
+        GlowStrength = $(if ($null -ne $visual) { $visual.GlowStrength } else { 0.56 })
+        Signature = $(if ($null -ne $visual) { $visual.Signature } else { ([string]$signedRecord.Id).Replace('-', ' ').ToUpperInvariant() })
+        FocusX = $(if ($null -ne $visual) { $visual.FocusX } else { 0.7 })
+        FocusY = $(if ($null -ne $visual) { $visual.FocusY } else { 0.48 })
+        LayoutVariant = $(if ($null -ne $visual) { $visual.LayoutVariant } else { 'poster-right' })
+        SurfaceStyle = $(if ($null -ne $visual) { $visual.SurfaceStyle } else { 'glass' })
+        CornerStyle = $(if ($null -ne $visual) { $visual.CornerStyle } else { 'round' })
+        MotionPreset = $(if ($null -ne $visual) { $visual.MotionPreset } else { 'orbit' })
+        SidebarStyle = $(if ($null -ne $visual) { $visual.SidebarStyle } else { 'aurora' })
+        ComposerStyle = $(if ($null -ne $visual) { $visual.ComposerStyle } else { 'console' })
+        TextureStyle = $(if ($null -ne $visual) { $visual.TextureStyle } else { 'grain' })
       }
     } catch {
       $catalogResult = "$($_.Exception.Data['DreamSkinNexoCatalogResult'])"

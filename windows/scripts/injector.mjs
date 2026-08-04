@@ -13,6 +13,7 @@ import { buildThemeProfile } from "../assets/theme-profile.mjs";
 import { decodeAndValidateSafeCss } from "../assets/safe-css-validator.mjs";
 import { createAppearanceBridge } from "../assets/appearance-bridge.mjs";
 import { AppearanceSettingsStore } from "../assets/appearance-settings.mjs";
+import { verifySignedCatalogEnvelope } from "../assets/signed-nexo-catalog.mjs";
 
 const scriptPath = fileURLToPath(import.meta.url);
 const here = path.dirname(scriptPath);
@@ -23,6 +24,26 @@ if (NEXO_CATALOG.schemaVersion !== 2 || !Array.isArray(NEXO_CATALOG.items)) {
 }
 const APPROVED_SKIN_IDS = new Set(NEXO_CATALOG.items.map((item) => item?.id).filter((id) =>
   typeof id === "string" && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)));
+const SIGNED_NEXO_KEYRING = Object.freeze({
+  "nexo-skin-2026-01": "MCowBQYDK2VwAyEA2ILmCQDK2Z63umFAxIm/PwIrVWTYLHwl66sFOLQo5Ls=",
+});
+
+async function refreshSignedApprovedSkinIds(stateRoot) {
+  for (const name of ["signed-nexo-catalog-envelope.json", "signed-nexo-catalog.json"]) {
+    const cachePath = path.join(stateRoot, "catalog", name);
+    try {
+      const stat = await fs.lstat(cachePath);
+      if (!stat.isFile() || stat.isSymbolicLink() || stat.size < 1 || stat.size > 1_572_864) continue;
+      const envelope = JSON.parse(await fs.readFile(cachePath, "utf8"));
+      const catalog = verifySignedCatalogEnvelope(envelope, {
+        keyring: SIGNED_NEXO_KEYRING,
+        allowExpired: true,
+      });
+      for (const skin of catalog.skins) APPROVED_SKIN_IDS.add(skin.id);
+      return;
+    } catch {}
+  }
+}
 const APPEARANCE_BRIDGE_ORIGINS = new Set([
   NEXO_CATALOG.assetOrigin,
   "https://www.nexotoken.net",
@@ -57,7 +78,7 @@ const stableTestidLiteral = (testid) => {
   }
   return JSON.stringify(`[data-testid="${testid}"]`);
 };
-const SKIN_VERSION = "1.6.27";
+const SKIN_VERSION = "1.6.28";
 const MAX_ART_BYTES = 10 * 1024 * 1024;
 const MAX_VIDEO_BYTES = 80 * 1024 * 1024;
 const MAX_SAFE_CSS_BYTES = 256 * 1024;
@@ -1556,8 +1577,10 @@ async function runOneShot(options) {
 
 async function runWatch(options) {
   const identityAnchor = await connectBrowserIdentityAnchor(options.port, options.browserId);
+  const appearanceStateRoot = path.dirname(options.themeDir);
+  await refreshSignedApprovedSkinIds(appearanceStateRoot);
   const appearanceStore = new AppearanceSettingsStore({
-    stateRoot: path.dirname(options.themeDir),
+    stateRoot: appearanceStateRoot,
     approvedSkinIds: APPROVED_SKIN_IDS,
   });
   const sessions = new Map();
@@ -1607,6 +1630,7 @@ async function runWatch(options) {
   process.on("SIGTERM", stop);
 
   try {
+    await refreshSignedApprovedSkinIds(appearanceStateRoot);
     const initialTheme = await loadTheme(options.themeDir);
     if (APPROVED_SKIN_IDS.has(initialTheme.theme.id)) await appearanceStore.materialize(initialTheme.theme.id);
     loadedPayload = await loadPayload(options.themeDir);
@@ -1661,6 +1685,7 @@ async function runWatch(options) {
             }
           }
           if (shouldAudit) {
+            await refreshSignedApprovedSkinIds(appearanceStateRoot);
             let candidateTheme = await loadTheme(options.themeDir);
             if (APPROVED_SKIN_IDS.has(candidateTheme.theme.id)) {
               await appearanceStore.materialize(candidateTheme.theme.id);

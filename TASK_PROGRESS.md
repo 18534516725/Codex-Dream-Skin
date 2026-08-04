@@ -1,5 +1,15 @@
 # Task Progress
 
+## Client release v1.6.28 — dynamic catalog and end-to-end skin flow (2026-08-05)
+
+- [goal] Make future platform-approved skins available through the signed remote catalog without rebuilding the helper, while keeping strict IDs, hashes, fixed origins, entitlement verification and full-interface visual profiles.
+- [platform local-only] Add the homepage recharge-skin carousel entry, remove the old bottom-right creator notice, and exercise the logged-out, unlocked-user, administrator, settings-sync and one-click apply paths. The payment platform must not be committed, pushed or deployed in this task.
+- [helper release only] Pin the catalog public key, support the signed visual-profile contract on macOS and Windows, run the complete applicable regression/package gates, then publish v1.6.28 through the repository workflow.
+- [implemented locally] Signed catalog schema v2 carries the complete full-interface visual profile. Both native clients pin the platform Ed25519 public key, reject unsafe/unknown fields, consume remote visual profiles, and let the appearance bridge recognize verified catalog additions without a helper rebuild.
+- [verified locally] Root catalog/theme regressions pass 45/45, portable macOS regressions pass 79/79, portable Windows regressions pass 21/21, and the complete applicable macOS repository suite exits 0. A universal `CodexDreamSkin-v1.6.28.dmg` builds, mounts, verifies and contains the dynamic-catalog runtime asset. Native Swift XCTest is skipped because this host lacks a full matching Xcode platform; PowerShell 5.1/7 and Setup.exe remain release-CI gates.
+- [platform local-only verified] The user skin flow passes 56 focused frontend tests, TypeScript checking and a production build; 17 backend skin suites pass 143/143. The recharge-skin homepage carousel and removal of the legacy bottom-right creator notice remain uncommitted and undeployed in `payment-platform` as requested.
+- [pending release] Commit and fast-forward push only this helper repository, then require the v1.6.28 Release workflow to publish DMG, Setup.exe and `SHA256SUMS.txt`.
+
 ## Client release v1.6.27 — preparing (2026-08-05)
 
 - [root cause] The macOS v1.6.26 release stopped in Swift XCTest because the 樱花信使 fixed-hash assertion still referenced an old generated master. The catalog, macOS embedded copy and actual image all agree on `e25a05ba…f161738`.

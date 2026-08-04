@@ -17,6 +17,7 @@ require_macos_runtime
 for required in \
   "$PROJECT_ROOT/assets/appearance-bridge.mjs" \
   "$PROJECT_ROOT/assets/appearance-settings.mjs" \
+  "$PROJECT_ROOT/assets/signed-nexo-catalog.mjs" \
   "$PROJECT_ROOT/assets/dream-skin.css" \
   "$PROJECT_ROOT/assets/nexo-skin-catalog.json" \
   "$PROJECT_ROOT/assets/renderer-inject.js" \

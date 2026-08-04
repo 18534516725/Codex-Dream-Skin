@@ -4,11 +4,12 @@ $script:DreamSkinSignedNexoMaxPayloadBytes = 1MB
 $script:DreamSkinSignedNexoMaxEnvelopeBytes = 1536KB
 $script:DreamSkinSignedNexoMaxEntries = 500
 $script:DreamSkinNexoSigningKeyReleaseGate = `
-  'RELEASE_GATE: pin the authorized Ed25519 public key for keyId nexo-skin-2026-01 before publishing remote catalogs.'
+  'Only the pinned platform Ed25519 catalog key is accepted.'
 
-# Intentionally empty until the independently authorized production signing key
-# ceremony supplies the matching public key. Unknown key ids always fail closed.
-$script:DreamSkinSignedNexoPublicKeys = @{}
+# SPKI-encoded Ed25519 public key. The matching private key is never shipped.
+$script:DreamSkinSignedNexoPublicKeys = @{
+  'nexo-skin-2026-01' = 'MCowBQYDK2VwAyEA2ILmCQDK2Z63umFAxIm/PwIrVWTYLHwl66sFOLQo5Ls='
+}
 
 function Get-DreamSkinSignedNexoCatalogCachePath {
   param([string]$StateRoot = (Join-Path $env:LOCALAPPDATA 'CodexDreamSkin'))
@@ -120,6 +121,60 @@ function Test-DreamSkinSignedNexoId {
     $Value -match '\A[a-z0-9]+(?:-[a-z0-9]+)*\z')
 }
 
+function ConvertFrom-DreamSkinSignedNexoVisual {
+  param([Parameter(Mandatory = $true)][object]$Visual)
+  Assert-DreamSkinSignedNexoExactKeys -Value $Visual -Label 'Signed Nexo visual profile' -Expected @(
+    'accentRGB', 'composerStyle', 'cornerStyle', 'focusX', 'focusY', 'glowStrength',
+    'layoutVariant', 'motionPreset', 'panelRGB', 'secondaryRGB', 'sidebarStyle', 'signature',
+    'surfaceStyle', 'textureStyle'
+  )
+  foreach ($colorName in @('accentRGB', 'secondaryRGB', 'panelRGB')) {
+    $color = Get-DreamSkinSignedNexoExactProperty -Value $Visual -Name $colorName -Label 'Signed Nexo visual profile'
+    if ($color -isnot [string] -or $color -notmatch `
+      '\A(?:0|[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5]) (?:0|[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5]) (?:0|[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5])\z') {
+      throw "Signed Nexo visual profile $colorName is invalid."
+    }
+  }
+  foreach ($numberName in @('focusX', 'focusY', 'glowStrength')) {
+    $value = Get-DreamSkinSignedNexoExactProperty -Value $Visual -Name $numberName -Label 'Signed Nexo visual profile'
+    try { $number = [double]$value } catch { throw "Signed Nexo visual profile $numberName is invalid." }
+    if ([double]::IsNaN($number) -or [double]::IsInfinity($number) -or $number -lt 0 -or $number -gt 1) {
+      throw "Signed Nexo visual profile $numberName is invalid."
+    }
+  }
+  $allowed = @{
+    layoutVariant = @('collage', 'console', 'editorial', 'pixel-console', 'pixel-desktop', 'pixel-platform', 'poster-right', 'stage')
+    surfaceStyle = @('glass', 'ink', 'metal', 'paper', 'pixel')
+    cornerStyle = @('cut', 'pixel', 'round', 'stamp', 'tape', 'ticket')
+    motionPreset = @('cursor', 'doodle', 'ink', 'mail', 'mist', 'none', 'orbit', 'petals', 'pixel-rain', 'rain', 'scan', 'sonar', 'sparks', 'spotlight')
+    sidebarStyle = @('aurora', 'blueprint', 'file-tree', 'forge', 'garden', 'harbor', 'maritime', 'navigation', 'neon', 'notebook', 'postal', 'scroll', 'setlist', 'station', 'submarine', 'terminal')
+    composerStyle = @('console', 'dialog', 'label', 'letter', 'mixer', 'pixel-console', 'sonar', 'terminal', 'workbench')
+    textureStyle = @('crayon', 'dither', 'droplets', 'grain', 'grid', 'paper', 'scanline', 'vinyl', 'wash')
+  }
+  foreach ($field in @($allowed.Keys)) {
+    $value = Get-DreamSkinSignedNexoExactProperty -Value $Visual -Name $field -Label 'Signed Nexo visual profile'
+    if ($value -isnot [string] -or $value -cnotin $allowed[$field]) {
+      throw "Signed Nexo visual profile $field is invalid."
+    }
+  }
+  return [pscustomobject]@{
+    AccentRGB = [string]$Visual.accentRGB
+    SecondaryRGB = [string]$Visual.secondaryRGB
+    PanelRGB = [string]$Visual.panelRGB
+    GlowStrength = [double]$Visual.glowStrength
+    Signature = Assert-DreamSkinSignedNexoText -Value $Visual.signature -Label 'Signed Nexo visual signature' -MaximumLength 64
+    FocusX = [double]$Visual.focusX
+    FocusY = [double]$Visual.focusY
+    LayoutVariant = [string]$Visual.layoutVariant
+    SurfaceStyle = [string]$Visual.surfaceStyle
+    CornerStyle = [string]$Visual.cornerStyle
+    MotionPreset = [string]$Visual.motionPreset
+    SidebarStyle = [string]$Visual.sidebarStyle
+    ComposerStyle = [string]$Visual.composerStyle
+    TextureStyle = [string]$Visual.textureStyle
+  }
+}
+
 function ConvertFrom-DreamSkinSignedNexoCatalogPayload {
   param(
     [Parameter(Mandatory = $true)][byte[]]$Payload,
@@ -140,7 +195,8 @@ function ConvertFrom-DreamSkinSignedNexoCatalogPayload {
   Assert-DreamSkinSignedNexoExactKeys -Value $catalog -Label 'Signed Nexo catalog' -Expected @(
     'assetOrigin', 'catalogVersion', 'expiresAt', 'issuedAt', 'revocations', 'schemaVersion', 'skins'
   )
-  if ((Get-DreamSkinSignedNexoExactProperty -Value $catalog -Name 'schemaVersion' -Label 'Signed Nexo catalog') -ne 1) {
+  $schemaVersion = Get-DreamSkinSignedNexoExactProperty -Value $catalog -Name 'schemaVersion' -Label 'Signed Nexo catalog'
+  if ($schemaVersion -notin @(1, 2)) {
     throw 'The signed Nexo catalog schema version is unsupported.'
   }
   $versionValue = Get-DreamSkinSignedNexoExactProperty -Value $catalog -Name 'catalogVersion' -Label 'Signed Nexo catalog'
@@ -193,10 +249,10 @@ function ConvertFrom-DreamSkinSignedNexoCatalogPayload {
   $skinIds = @{}
   $skins = @()
   foreach ($skin in $skinValues) {
-    Assert-DreamSkinSignedNexoExactKeys -Value $skin -Label 'Signed Nexo skin' -Expected @(
-      'appearance', 'backgroundPath', 'backgroundSha256', 'category', 'id', 'nameEn',
-      'nameZh', 'previewPath', 'previewSha256', 'tags'
-    )
+    $skinKeys = @('appearance', 'backgroundPath', 'backgroundSha256', 'category', 'id', 'nameEn',
+      'nameZh', 'previewPath', 'previewSha256', 'tags')
+    if ($schemaVersion -eq 2) { $skinKeys += @('taskMode', 'visual') }
+    Assert-DreamSkinSignedNexoExactKeys -Value $skin -Label 'Signed Nexo skin' -Expected $skinKeys
     $id = Get-DreamSkinSignedNexoExactProperty -Value $skin -Name 'id' -Label 'Signed Nexo skin'
     if (-not (Test-DreamSkinSignedNexoId -Value $id) -or $skinIds.ContainsKey($id)) {
       throw 'The signed Nexo catalog contains an invalid or duplicate skin id.'
@@ -230,6 +286,14 @@ function ConvertFrom-DreamSkinSignedNexoCatalogPayload {
       if ($tagSet.ContainsKey($safeTag)) { throw 'The signed Nexo skin contains duplicate tags.' }
       $tagSet[$safeTag] = $true
     }
+    $visual = $null
+    $taskMode = 'full'
+    if ($schemaVersion -eq 2) {
+      $taskMode = Get-DreamSkinSignedNexoExactProperty -Value $skin -Name 'taskMode' -Label 'Signed Nexo skin'
+      if ($taskMode -cne 'full') { throw 'The signed Nexo skin task mode is invalid.' }
+      $visual = ConvertFrom-DreamSkinSignedNexoVisual -Visual `
+        (Get-DreamSkinSignedNexoExactProperty -Value $skin -Name 'visual' -Label 'Signed Nexo skin')
+    }
     $skins += [pscustomobject]@{
       Id = [string]$id
       NameZh = Assert-DreamSkinSignedNexoText -Value (Get-DreamSkinSignedNexoExactProperty -Value $skin -Name 'nameZh' -Label 'Signed Nexo skin') -Label 'Signed Nexo skin nameZh'
@@ -241,6 +305,8 @@ function ConvertFrom-DreamSkinSignedNexoCatalogPayload {
       PreviewPath = [string]$previewPath
       PreviewSha256 = [string]$previewHash
       Tags = @($tags)
+      TaskMode = [string]$taskMode
+      Visual = $visual
     }
   }
   $revocations = @()
@@ -482,5 +548,7 @@ function Resolve-DreamSkinSignedNexoSkin {
     PreviewUri = $catalog.AssetOrigin + $skin.PreviewPath
     PreviewSha256 = $skin.PreviewSha256
     CatalogVersion = $catalog.CatalogVersion
+    TaskMode = $skin.TaskMode
+    Visual = $skin.Visual
   }
 }

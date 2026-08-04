@@ -26,6 +26,8 @@ public struct SignedNexoCatalogSkin: Equatable, Sendable {
   public let previewSha256: String
   public let backgroundURL: URL
   public let previewURL: URL
+  public let taskMode: String
+  public let visual: NexoSkinVisualProfile?
 }
 
 public struct SignedNexoCatalogSnapshot: Equatable, Sendable {
@@ -68,6 +70,25 @@ private struct CatalogSkin: Decodable {
   let previewPath: String
   let backgroundSha256: String
   let previewSha256: String
+  let taskMode: String?
+  let visual: CatalogVisual?
+}
+
+private struct CatalogVisual: Decodable {
+  let accentRGB: String
+  let secondaryRGB: String
+  let panelRGB: String
+  let glowStrength: Double
+  let signature: String
+  let focusX: Double
+  let focusY: Double
+  let layoutVariant: String
+  let surfaceStyle: String
+  let cornerStyle: String
+  let motionPreset: String
+  let sidebarStyle: String
+  let composerStyle: String
+  let textureStyle: String
 }
 
 public struct SignedNexoCatalogVerifier: Sendable {
@@ -78,9 +99,25 @@ public struct SignedNexoCatalogVerifier: Sendable {
   private static let payloadKeys = [
     "assetOrigin", "catalogVersion", "expiresAt", "issuedAt", "revocations", "schemaVersion", "skins",
   ]
-  private static let skinKeys = [
+  private static let v1SkinKeys = [
     "appearance", "backgroundPath", "backgroundSha256", "category", "id", "nameEn", "nameZh",
     "previewPath", "previewSha256", "tags",
+  ]
+  private static let v2SkinKeys = v1SkinKeys + ["taskMode", "visual"]
+  private static let visualKeys = [
+    "accentRGB", "composerStyle", "cornerStyle", "focusX", "focusY", "glowStrength",
+    "layoutVariant", "motionPreset", "panelRGB", "secondaryRGB", "sidebarStyle", "signature",
+    "surfaceStyle", "textureStyle",
+  ]
+  private static let rgbPattern = #"^(?:0|[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5]) (?:0|[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5]) (?:0|[1-9][0-9]?|1[0-9]{2}|2[0-4][0-9]|25[0-5])$"#
+  private static let visualValues: [String: Set<String>] = [
+    "layoutVariant": ["collage", "console", "editorial", "pixel-console", "pixel-desktop", "pixel-platform", "poster-right", "stage"],
+    "surfaceStyle": ["glass", "ink", "metal", "paper", "pixel"],
+    "cornerStyle": ["cut", "pixel", "round", "stamp", "tape", "ticket"],
+    "motionPreset": ["cursor", "doodle", "ink", "mail", "mist", "none", "orbit", "petals", "pixel-rain", "rain", "scan", "sonar", "sparks", "spotlight"],
+    "sidebarStyle": ["aurora", "blueprint", "file-tree", "forge", "garden", "harbor", "maritime", "navigation", "neon", "notebook", "postal", "scroll", "setlist", "station", "submarine", "terminal"],
+    "composerStyle": ["console", "dialog", "label", "letter", "mixer", "pixel-console", "sonar", "terminal", "workbench"],
+    "textureStyle": ["crayon", "dither", "droplets", "grain", "grid", "paper", "scanline", "vinyl", "wash"],
   ]
   private let publicKeys: [String: Data]
 
@@ -126,11 +163,15 @@ public struct SignedNexoCatalogVerifier: Sendable {
   ) throws -> SignedNexoCatalogSnapshot {
     guard let object = try? object(from: data),
           hasExactKeys(object, payloadKeys),
+          let payload = try? JSONDecoder().decode(CatalogPayload.self, from: data),
+          [1, 2].contains(payload.schemaVersion),
           let skinObjects = object["skins"] as? [[String: Any]],
           skinObjects.count <= 500,
-          skinObjects.allSatisfy({ hasExactKeys($0, skinKeys) }),
-          let payload = try? JSONDecoder().decode(CatalogPayload.self, from: data),
-          payload.schemaVersion == 1,
+          skinObjects.allSatisfy({ hasExactKeys($0, payload.schemaVersion == 2 ? v2SkinKeys : v1SkinKeys) }),
+          (payload.schemaVersion == 1 || skinObjects.allSatisfy({ skin in
+            guard let visual = skin["visual"] as? [String: Any] else { return false }
+            return hasExactKeys(visual, visualKeys)
+          })),
           payload.catalogVersion > 0,
           payload.assetOrigin == assetOrigin,
           payload.revocations.count <= 500,
@@ -148,6 +189,7 @@ public struct SignedNexoCatalogVerifier: Sendable {
     var skins: [SignedNexoCatalogSkin] = []
     skins.reserveCapacity(payload.skins.count)
     for skin in payload.skins {
+      let visual = skin.visual
       guard isSafeID(skin.id), seen.insert(skin.id).inserted,
             isSafeText(skin.nameZh, maximum: 120),
             isSafeText(skin.nameEn, maximum: 120),
@@ -159,6 +201,7 @@ public struct SignedNexoCatalogVerifier: Sendable {
             skin.tags.count <= 20,
             skin.tags.allSatisfy({ isSafeText($0, maximum: 64) }),
             Set(skin.tags).count == skin.tags.count,
+            payload.schemaVersion == 1 || (skin.taskMode == "full" && isValidVisual(visual)),
             let backgroundURL = URL(string: assetOrigin + skin.backgroundPath),
             let previewURL = URL(string: assetOrigin + skin.previewPath) else {
         throw SignedNexoCatalogError.invalidCatalog
@@ -175,7 +218,17 @@ public struct SignedNexoCatalogVerifier: Sendable {
         backgroundSha256: skin.backgroundSha256,
         previewSha256: skin.previewSha256,
         backgroundURL: backgroundURL,
-        previewURL: previewURL
+        previewURL: previewURL,
+        taskMode: skin.taskMode ?? "full",
+        visual: visual.map { value in
+          NexoSkinVisualProfile(
+            accentRGB: value.accentRGB, secondaryRGB: value.secondaryRGB, panelRGB: value.panelRGB,
+            glowStrength: value.glowStrength, signature: value.signature, focusX: value.focusX,
+            focusY: value.focusY, layoutVariant: value.layoutVariant, surfaceStyle: value.surfaceStyle,
+            cornerStyle: value.cornerStyle, motionPreset: value.motionPreset, sidebarStyle: value.sidebarStyle,
+            composerStyle: value.composerStyle, textureStyle: value.textureStyle
+          )
+        }
       ))
     }
 
@@ -234,6 +287,22 @@ public struct SignedNexoCatalogVerifier: Sendable {
 
   private static func isSHA256(_ value: String) -> Bool {
     value.range(of: #"^[a-f0-9]{64}$"#, options: .regularExpression) != nil
+  }
+
+  private static func isValidVisual(_ value: CatalogVisual?) -> Bool {
+    guard let value,
+          value.accentRGB.range(of: rgbPattern, options: .regularExpression) != nil,
+          value.secondaryRGB.range(of: rgbPattern, options: .regularExpression) != nil,
+          value.panelRGB.range(of: rgbPattern, options: .regularExpression) != nil,
+          (0...1).contains(value.glowStrength), (0...1).contains(value.focusX), (0...1).contains(value.focusY),
+          isSafeText(value.signature, maximum: 64) else { return false }
+    let fields = [
+      "layoutVariant": value.layoutVariant, "surfaceStyle": value.surfaceStyle,
+      "cornerStyle": value.cornerStyle, "motionPreset": value.motionPreset,
+      "sidebarStyle": value.sidebarStyle, "composerStyle": value.composerStyle,
+      "textureStyle": value.textureStyle,
+    ]
+    return fields.allSatisfy { visualValues[$0.key]?.contains($0.value) == true }
   }
 
   private static func isAssetPath(_ value: String, skinID: String, kind: String) -> Bool {

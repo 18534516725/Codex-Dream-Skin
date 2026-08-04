@@ -23,9 +23,17 @@ final class CoreTests: XCTestCase {
       "previewPath": "remote-aurora/v3/preview.webp",
       "backgroundSha256": String(repeating: "a", count: 64),
       "previewSha256": String(repeating: "b", count: 64),
+      "taskMode": "full",
+      "visual": [
+        "accentRGB": "112 192 255", "secondaryRGB": "244 190 92", "panelRGB": "19 34 53",
+        "glowStrength": 0.5, "signature": "REMOTE AURORA", "focusX": 0.68, "focusY": 0.46,
+        "layoutVariant": "poster-right", "surfaceStyle": "glass", "cornerStyle": "cut",
+        "motionPreset": "none", "sidebarStyle": "navigation", "composerStyle": "console",
+        "textureStyle": "grid",
+      ],
     ]]
     let payloadObject: [String: Any] = [
-      "schemaVersion": 1,
+      "schemaVersion": 2,
       "catalogVersion": catalogVersion,
       "issuedAt": "2026-08-04T06:00:00.000Z",
       "expiresAt": expiresAt,
@@ -211,6 +219,8 @@ final class CoreTests: XCTestCase {
     XCTAssertEqual(entry.name, "远境极光")
     XCTAssertEqual(entry.imageURL, snapshot.skins.first?.backgroundURL)
     XCTAssertEqual(entry.backgroundSha256, String(repeating: "a", count: 64))
+    XCTAssertEqual(entry.visual.accentRGB, "112 192 255")
+    XCTAssertEqual(entry.visual.focusX, 0.68)
   }
 
   func testSignedNexoCatalogRejectsTamperingWrongKeyOriginAndUnsafePaths() throws {

@@ -16,6 +16,7 @@ import { buildThemeProfile } from "../assets/theme-profile.mjs";
 import { decodeAndValidateSafeCss } from "../assets/safe-css-validator.mjs";
 import { createAppearanceBridge } from "../assets/appearance-bridge.mjs";
 import { AppearanceSettingsStore } from "../assets/appearance-settings.mjs";
+import { verifySignedCatalogEnvelope } from "../assets/signed-nexo-catalog.mjs";
 
 const execFileAsync = promisify(execFile);
 const scriptPath = fileURLToPath(import.meta.url);
@@ -27,6 +28,26 @@ if (NEXO_CATALOG.schemaVersion !== 2 || !Array.isArray(NEXO_CATALOG.items)) {
 }
 const APPROVED_SKIN_IDS = new Set(NEXO_CATALOG.items.map((item) => item?.id).filter((id) =>
   typeof id === "string" && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)));
+const SIGNED_NEXO_KEYRING = Object.freeze({
+  "nexo-skin-2026-01": "MCowBQYDK2VwAyEA2ILmCQDK2Z63umFAxIm/PwIrVWTYLHwl66sFOLQo5Ls=",
+});
+
+async function refreshSignedApprovedSkinIds(stateRoot) {
+  for (const name of ["signed-nexo-catalog.json", "signed-nexo-catalog-envelope.json"]) {
+    const cachePath = path.join(stateRoot, "catalog", name);
+    try {
+      const stat = await fs.lstat(cachePath);
+      if (!stat.isFile() || stat.isSymbolicLink() || stat.size < 1 || stat.size > 1_572_864) continue;
+      const envelope = JSON.parse(await fs.readFile(cachePath, "utf8"));
+      const catalog = verifySignedCatalogEnvelope(envelope, {
+        keyring: SIGNED_NEXO_KEYRING,
+        allowExpired: true,
+      });
+      for (const skin of catalog.skins) APPROVED_SKIN_IDS.add(skin.id);
+      return;
+    } catch {}
+  }
+}
 const APPEARANCE_BRIDGE_ORIGINS = new Set([
   NEXO_CATALOG.assetOrigin,
   "https://www.nexotoken.net",
@@ -61,7 +82,7 @@ const stableTestidLiteral = (testid) => {
   }
   return JSON.stringify(`[data-testid="${testid}"]`);
 };
-const SKIN_VERSION = "1.6.27";
+const SKIN_VERSION = "1.6.28";
 const LOOPBACK_HOSTS = new Set(["127.0.0.1", "localhost", "[::1]"]);
 const CDP_ID_PATTERN = /^[A-Za-z0-9._-]{1,200}$/;
 const MAX_ART_BYTES = 10 * 1024 * 1024;
@@ -1625,8 +1646,10 @@ async function watchOperationState(statePath, onState) {
 }
 
 async function runWatch(options) {
+  const appearanceStateRoot = path.dirname(options.themeDir ?? path.join(root, "assets"));
+  await refreshSignedApprovedSkinIds(appearanceStateRoot);
   const appearanceStore = new AppearanceSettingsStore({
-    stateRoot: path.dirname(options.themeDir ?? path.join(root, "assets")),
+    stateRoot: appearanceStateRoot,
     approvedSkinIds: APPROVED_SKIN_IDS,
   });
   const initialTheme = await loadTheme(options.themeDir);
@@ -1778,6 +1801,7 @@ async function runWatch(options) {
     const refreshEpoch = mutationEpoch;
     let next;
     try {
+      await refreshSignedApprovedSkinIds(appearanceStateRoot);
       const candidateTheme = await loadTheme(options.themeDir);
       if (APPROVED_SKIN_IDS.has(candidateTheme.theme.id)) {
         await appearanceStore.materialize(candidateTheme.theme.id);

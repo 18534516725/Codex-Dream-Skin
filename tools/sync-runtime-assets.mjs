@@ -162,6 +162,10 @@ const sourceAppearanceBridge = await fs.readFile(
   path.join(projectRoot, "runtime", "appearance-bridge.mjs"),
   "utf8",
 );
+const sourceSignedNexoCatalog = await fs.readFile(
+  path.join(projectRoot, "runtime", "signed-nexo-catalog.mjs"),
+  "utf8",
+);
 const sourceNexoCatalog = await fs.readFile(
   path.join(projectRoot, "themes", "catalog.json"),
   "utf8",
@@ -174,6 +178,10 @@ const outputs = [
   {
     content: sourceAppearanceBridge,
     paths: ["macos/assets/appearance-bridge.mjs", "windows/assets/appearance-bridge.mjs"],
+  },
+  {
+    content: sourceSignedNexoCatalog,
+    paths: ["macos/assets/signed-nexo-catalog.mjs", "windows/assets/signed-nexo-catalog.mjs"],
   },
   {
     content: sourceNexoCatalog,
