@@ -3,10 +3,10 @@
 ## Client release v1.6.24 — in progress (2026-08-04)
 
 - [goal] Publish the administrator-tested helper repair: make the local appearance bridge accept only the two explicit Vite loopback origins in addition to the existing platform origins, persist all seven preview settings including text color, and bring the 邮差浣熊 shell into alignment with its navy/postal-red artwork.
-- [source branch] `codex/admin-managed-catalog`; release must be promoted to `main` before the Release workflow may build artifacts.
+- [released] Release commit `c0438c34266c5bd343eaf05916061294a6bc6b96` was fast-forwarded to `main`, tagged `v1.6.24`, and published at `2026-08-04T11:11:59Z`.
 - [implemented locally] macOS and Windows injectors allow `http://localhost:5173` and `http://127.0.0.1:5173`; the bridge remains loopback-bound and all other origins remain rejected. The shared settings renderer consumes `textColor`, and 邮差浣熊 now uses a dark navy glass profile with postal-red and warm-paper accents.
 - [verified locally] Bridge origin/setting regressions, dual-platform bootstrap contracts, shared renderer/runtime tests, catalog rebuild, asset synchronization, complete applicable macOS regressions, both payload checks, six-source version consistency, and `git diff --check` pass. A universal local `CodexDreamSkin-v1.6.24.dmg` is built and hashed as `a88f06f74bc719a27b0b0a53b547c15fedb244014f20fa766bf1f4b5729eb3a6`.
-- [next] Commit only this release scope, promote the commit to `main`, then verify the public v1.6.24 DMG, Setup.exe, and SHA256SUMS.txt. Windows Setup compilation remains a required GitHub Actions Windows gate.
+- [verified published] The Release workflow completed successfully: public non-draft assets are `CodexDreamSkin-v1.6.24.dmg` (3,683,220 bytes), `CodexDreamSkin-Setup-v1.6.24.exe` (24,497,639 bytes), and `SHA256SUMS.txt` (192 bytes). Downloaded SHA-256 values match both GitHub asset digests and the published sums file.
 
 ## Client release v1.6.9 — in progress (2026-08-03)
 
