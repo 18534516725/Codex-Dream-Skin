@@ -10,8 +10,8 @@ const catalog = JSON.parse(await fs.readFile(path.join(root, "themes", "catalog.
 
 test("generated theme catalog is strict, unique and cross-platform", () => {
   assert.equal(catalog.schemaVersion, 2);
-  assert.equal(catalog.items.length, 87);
-  assert.equal(new Set(catalog.items.map((item) => item.id)).size, 87);
+  assert.equal(catalog.items.length, 124);
+  assert.equal(new Set(catalog.items.map((item) => item.id)).size, 124);
   for (const item of catalog.items) {
     assert.equal(validateThemeV2(item.theme).id, item.id);
     assert.deepEqual(item.platforms, ["macos", "windows"]);
@@ -28,11 +28,11 @@ test("canonical theme names are concise home labels", () => {
   }
 
   assert.equal(
-    catalog.items.find((item) => item.id === "material-ebab83397bde-2d3696f1")?.name,
-    "霓虹夜城",
+    catalog.items.find((item) => item.id === "upscaled-154088005425")?.name,
+    "粉发档案",
   );
   assert.equal(
-    catalog.items.find((item) => item.id === "material-df6388daee46-e3486a16")?.name,
-    "深蓝礼服",
+    catalog.items.find((item) => item.id === "upscaled-194214612425")?.name,
+    "霞光赛道",
   );
 });

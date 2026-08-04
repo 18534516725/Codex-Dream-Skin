@@ -24,6 +24,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   private var operationInFlight = false
   private var engineInstallInFlight = false
   private var themeRecoveryInFlight = false
+  private var pairingInFlight = false
   private var pendingCommunityVersionID: String?
   private var pendingNexoSkin: NexoSkinCatalogEntry?
   private var communityBaselineThemeID = ""
@@ -35,6 +36,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   private lazy var communityHTTP = BoundedCommunityHTTPClient(
     userAgent: "CodexDreamSkin/\(appVersion)"
   )
+  private let nexoDevice = NexoDeviceClient()
   private let requiredEngineRelativePaths = [
     "VERSION",
     "assets/appearance-bridge.mjs",
@@ -128,6 +130,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       installBundledEngineIfNeeded(force: false)
     }
     refreshStatus()
+    refreshSignedNexoCatalog()
     refreshTimer = Timer.scheduledTimer(
       timeInterval: 10,
       target: self,
@@ -154,6 +157,31 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     return .terminateNow
   }
 
+  private func refreshSignedNexoCatalog(completion: (() -> Void)? = nil) {
+    let publicKeys = NexoSkinContract.pinnedCatalogPublicKeys
+    guard !publicKeys.isEmpty else { completion?(); return }
+    let store = SignedNexoCatalogStore(
+      cacheURL: stateRootURL
+        .appendingPathComponent("catalog", isDirectory: true)
+        .appendingPathComponent("signed-nexo-catalog.json"),
+      verifier: SignedNexoCatalogVerifier(publicKeys: publicKeys)
+    )
+    communityHTTP.get(
+      SignedNexoCatalogRemote.endpoint,
+      accept: "application/json",
+      maximumBytes: SignedNexoCatalogRemote.maximumEnvelopeBytes
+    ) { result in
+      if case let .success(payload) = result, let responseURL = payload.response.url {
+        _ = try? store.installRemoteResponse(
+          responseURL: responseURL,
+          statusCode: payload.response.statusCode,
+          body: payload.body
+        )
+      }
+      if let completion { DispatchQueue.main.async(execute: completion) }
+    }
+  }
+
   func application(_ application: NSApplication, open urls: [URL]) {
     guard urls.count == 1 else {
       showError(
@@ -162,13 +190,24 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       )
       return
     }
-    if let entry = NexoSkinContract.entry(from: urls[0]) {
+    let url = urls[0]
+    if NexoSkinContract.isCanonicalApplyURL(url) {
+      // A deep link waits for the fixed signed endpoint before resolving an
+      // embedded ID, so first-run revocations cannot race the startup refresh.
+      refreshSignedNexoCatalog { [weak self] in self?.handleOpenURL(url) }
+      return
+    }
+    handleOpenURL(url)
+  }
+
+  private func handleOpenURL(_ url: URL) {
+    if let entry = NexoSkinContract.entry(from: url) {
       beginNexoSkinApply(entry)
-    } else if NexoSkinContract.isRestoreURL(urls[0]) {
+    } else if NexoSkinContract.isRestoreURL(url) {
       beginNexoRestore()
-    } else if let versionID = CommunityThemeContract.versionID(from: urls[0]) {
+    } else if let versionID = CommunityThemeContract.versionID(from: url) {
       beginCommunityThemeApply(versionID: versionID)
-    } else if NexoSkinContract.isCanonicalApplyURL(urls[0]) {
+    } else if NexoSkinContract.isCanonicalApplyURL(url) {
       performUpdateCheck(showCurrentVersion: false, triggeredByUnknownSkin: true)
     } else {
       showError(
@@ -304,6 +343,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       addActionItem("暂停皮肤", action: #selector(pauseSkin), enabled: !busy)
     }
     addActionItem("打开 ChatGPT", action: #selector(openCodex), enabled: !busy)
+    addActionItem(
+      pairingInFlight ? "正在连接 NexoToken…" : "连接 NexoToken 账号…",
+      action: #selector(beginNexoPairing),
+      enabled: !busy && !pairingInFlight
+    )
     addActionItem("检查更新…", action: #selector(checkForUpdates), enabled: !operationInFlight)
 
     let advancedRoot = NSMenuItem(title: "高级工具", action: nil, keyEquivalent: "")
@@ -607,6 +651,71 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     importThemeArchive(archiveURL)
   }
 
+  @objc private func beginNexoPairing() {
+    guard !pairingInFlight else { return }
+    pairingInFlight = true
+    rebuildMenu()
+    nexoDevice.currentPairingStatus { [weak self] result in
+      DispatchQueue.main.async {
+        guard let self else { return }
+        switch result {
+        case let .success(status) where status == "active":
+          self.pairingInFlight = false
+          self.rebuildMenu()
+          self.showInfo(title: "账号已连接", message: "此设备已经连接 NexoToken，无需重新连接。")
+        case .success:
+          self.startNexoPairingChallenge()
+        case let .failure(error):
+          self.pairingInFlight = false
+          self.rebuildMenu()
+          self.showError(title: "无法检查连接状态", message: error.localizedDescription)
+        }
+      }
+    }
+  }
+
+  private func startNexoPairingChallenge() {
+    nexoDevice.startPairing { [weak self] result in
+      DispatchQueue.main.async {
+        guard let self else { return }
+        switch result {
+        case let .failure(error):
+          self.pairingInFlight = false
+          self.rebuildMenu()
+          self.showError(title: "无法连接账号", message: error.localizedDescription)
+        case let .success(challenge):
+          let alert = NSAlert()
+          alert.messageText = "连接码：\(challenge.code)"
+          alert.informativeText = "将在 NexoToken 的 Codex 皮肤页面确认此连接。连接码十分钟后失效；助手不会读取或保存你的登录令牌。"
+          alert.addButton(withTitle: "打开 NexoToken")
+          alert.addButton(withTitle: "取消")
+          self.activateForUserInteraction()
+          guard alert.runModal() == .alertFirstButtonReturn else {
+            self.pairingInFlight = false
+            self.rebuildMenu()
+            return
+          }
+          if let url = URL(string: "https://nexotoken.net/?view=codex-skins") {
+            NSWorkspace.shared.open(url)
+          }
+          self.nexoDevice.waitUntilPaired { [weak self] status in
+            DispatchQueue.main.async {
+              guard let self else { return }
+              self.pairingInFlight = false
+              self.rebuildMenu()
+              switch status {
+              case .success:
+                self.showInfo(title: "账号已连接", message: "现在可以从 NexoToken 一键应用已解锁的皮肤。")
+              case let .failure(error):
+                self.showError(title: "连接未完成", message: error.localizedDescription)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
   private func beginNexoSkinApply(_ entry: NexoSkinCatalogEntry) {
     guard !operationInFlight, !snapshot.busy else {
       showError(title: "暂时无法换肤", message: "Dream Skin 正在执行其他操作，请稍后再点一次。")
@@ -628,81 +737,113 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
 
     let alert = NSAlert()
     alert.messageText = "应用“\(entry.name)”？"
-    alert.informativeText = "助手会从 Nexo 固定主题目录下载并校验图片。若当前 Codex 没有安全调试连接，应用过程中会自动重启一次；请先保存未发送的输入。"
-    alert.addButton(withTitle: "应用主题")
+    alert.informativeText = "助手会从 Nexo 固定主题目录下载并校验图片。若当前 Codex 没有安全调试连接，继续操作会关闭并重新打开一次 Codex；请先保存未发送的输入。"
     alert.addButton(withTitle: "取消")
+    alert.addButton(withTitle: "应用并允许必要时重启")
     activateForUserInteraction()
-    guard alert.runModal() == .alertFirstButtonReturn else { return }
+    guard alert.runModal() == .alertSecondButtonReturn else { return }
 
     operationInFlight = true
-    updateCommunityStage("正在下载并校验“\(entry.name)”…")
-    communityHTTP.get(
-      entry.imageURL,
-      accept: "image/webp,image/*",
-      maximumBytes: 10 * 1024 * 1024
-    ) { [weak self] result in
+    updateCommunityStage("正在验证账号与皮肤资格…")
+    nexoDevice.verifyEntitlement(skinID: entry.id) { [weak self] entitlement in
       guard let self else { return }
-      do {
-        guard case let .success(payload) = result,
-              payload.body.count > 0,
-              self.mediaType(of: payload.response).hasPrefix("image/") else {
-          throw CommunityThemeContractError.invalidPackageIdentity
-        }
-        let root = self.stateRootURL.appendingPathComponent(
-          ".nexo-apply-\(UUID().uuidString)",
-          isDirectory: true
-        )
-        try self.fileManager.createDirectory(
-          at: root,
-          withIntermediateDirectories: false,
-          attributes: [.posixPermissions: 0o700]
-        )
-        let imageURL = root.appendingPathComponent("background.webp")
-        try payload.body.write(to: imageURL, options: [.atomic])
-        try self.fileManager.setAttributes([.posixPermissions: 0o600], ofItemAtPath: imageURL.path)
-        DispatchQueue.main.async {
-          self.updateCommunityStage("主题已下载，正在应用并验证…")
-          ScriptRunner.run(
-            script: loadScript,
-            arguments: [
-              "--file", imageURL.path,
-              "--name", entry.name,
-              "--theme-id", entry.id,
-              "--appearance", entry.appearance,
-              "--task-mode", entry.taskMode,
-              "--accent-rgb", entry.visual.accentRGB,
-              "--secondary-rgb", entry.visual.secondaryRGB,
-              "--panel-rgb", entry.visual.panelRGB,
-              "--glow-strength", String(entry.visual.glowStrength),
-              "--signature", entry.visual.signature,
-              "--focus-x", String(entry.visual.focusX),
-              "--focus-y", String(entry.visual.focusY),
-              "--layout-variant", entry.visual.layoutVariant,
-              "--surface-style", entry.visual.surfaceStyle,
-              "--corner-style", entry.visual.cornerStyle,
-              "--motion-preset", entry.visual.motionPreset,
-              "--sidebar-style", entry.visual.sidebarStyle,
-              "--composer-style", entry.visual.composerStyle,
-              "--texture-style", entry.visual.textureStyle,
-            ]
-          ) { [weak self] scriptResult in
-            guard let self else { return }
-            try? self.fileManager.removeItem(at: root)
-            self.finishThemeOperation()
-            if scriptResult.succeeded {
-              self.showInfo(title: "主题已应用", message: "“\(entry.name)”已通过下载、主题生成和可见渲染验证。")
-            } else {
-              self.showError(
-                title: "主题应用失败",
-                message: self.conciseOutput(scriptResult.output, fallback: "目标主题没有通过可见渲染验证，未报告成功。")
-              )
-            }
-          }
-        }
-      } catch {
+      switch entitlement {
+      case let .failure(error):
         DispatchQueue.main.async {
           self.finishThemeOperation()
-          self.showError(title: "主题下载失败", message: "固定主题图片未通过来源、大小或格式校验。")
+          self.showError(title: "无法应用此皮肤", message: error.localizedDescription)
+        }
+      case let .success(authorization):
+        DispatchQueue.main.async { self.updateCommunityStage("正在下载并校验“\(entry.name)”…") }
+        self.communityHTTP.get(
+          entry.imageURL,
+          accept: "image/webp,image/*",
+          maximumBytes: 10 * 1024 * 1024
+        ) { [weak self] result in
+          guard let self else { return }
+          do {
+            guard case let .success(payload) = result,
+                  payload.body.count > 0,
+                  self.mediaType(of: payload.response).hasPrefix("image/") else {
+              throw CommunityThemeContractError.invalidPackageIdentity
+            }
+            if let expectedHash = entry.backgroundSha256 {
+              let actualHash = SHA256.hash(data: payload.body).map { String(format: "%02x", $0) }.joined()
+              guard actualHash == expectedHash else {
+                throw CommunityThemeContractError.invalidPackageIdentity
+              }
+            }
+            let root = self.stateRootURL.appendingPathComponent(
+              ".nexo-apply-\(UUID().uuidString)",
+              isDirectory: true
+            )
+            try self.fileManager.createDirectory(
+              at: root,
+              withIntermediateDirectories: false,
+              attributes: [.posixPermissions: 0o700]
+            )
+            let imageURL = root.appendingPathComponent("background.webp")
+            try payload.body.write(to: imageURL, options: [.atomic])
+            try self.fileManager.setAttributes([.posixPermissions: 0o600], ofItemAtPath: imageURL.path)
+            DispatchQueue.main.async {
+              self.updateCommunityStage("主题已下载，正在应用并验证…")
+              ScriptRunner.run(
+                script: loadScript,
+                arguments: [
+                  "--file", imageURL.path,
+                  "--name", entry.name,
+                  "--theme-id", entry.id,
+                  "--appearance", entry.appearance,
+                  "--task-mode", entry.taskMode,
+                  "--accent-rgb", entry.visual.accentRGB,
+                  "--secondary-rgb", entry.visual.secondaryRGB,
+                  "--panel-rgb", entry.visual.panelRGB,
+                  "--glow-strength", String(entry.visual.glowStrength),
+                  "--signature", entry.visual.signature,
+                  "--focus-x", String(entry.visual.focusX),
+                  "--focus-y", String(entry.visual.focusY),
+                  "--layout-variant", entry.visual.layoutVariant,
+                  "--surface-style", entry.visual.surfaceStyle,
+                  "--corner-style", entry.visual.cornerStyle,
+                  "--motion-preset", entry.visual.motionPreset,
+                  "--sidebar-style", entry.visual.sidebarStyle,
+                  "--composer-style", entry.visual.composerStyle,
+                  "--texture-style", entry.visual.textureStyle,
+                ]
+              ) { [weak self] scriptResult in
+                guard let self else { return }
+                try? self.fileManager.removeItem(at: root)
+                self.finishThemeOperation()
+                if scriptResult.succeeded {
+                  self.nexoDevice.reportOutcome(
+                    requestID: authorization.requestID,
+                    status: .succeeded
+                  ) { _ in }
+                  self.showInfo(title: "主题已应用", message: "“\(entry.name)”已通过下载、主题生成和可见渲染验证。")
+                } else {
+                  self.nexoDevice.reportOutcome(
+                    requestID: authorization.requestID,
+                    status: .failed,
+                    failureCode: "RENDER_VERIFICATION_FAILED"
+                  ) { _ in }
+                  self.showError(
+                    title: "主题应用失败",
+                    message: self.conciseOutput(scriptResult.output, fallback: "目标主题没有通过可见渲染验证，未报告成功。")
+                  )
+                }
+              }
+            }
+          } catch {
+            self.nexoDevice.reportOutcome(
+              requestID: authorization.requestID,
+              status: .failed,
+              failureCode: "SKIN_ASSET_UNAVAILABLE"
+            ) { _ in }
+            DispatchQueue.main.async {
+              self.finishThemeOperation()
+              self.showError(title: "主题下载失败", message: "固定主题图片未通过来源、大小或格式校验。")
+            }
+          }
         }
       }
     }

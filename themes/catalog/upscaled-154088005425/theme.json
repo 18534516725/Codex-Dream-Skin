@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 2,
+  "id": "upscaled-154088005425",
+  "name": "粉发档案",
+  "appearance": "dark",
+  "family": "cartoon-stationery",
+  "media": {
+    "poster": "background.webp",
+    "video": null
+  },
+  "typography": {
+    "body": "native-sans",
+    "title": "rounded",
+    "label": "native-sans",
+    "code": "native-mono"
+  },
+  "visual": {
+    "layout": "poster-right",
+    "surface": "paper",
+    "corners": "round",
+    "motion": "doodle",
+    "sidebar": "garden",
+    "composer": "letter",
+    "texture": "wash"
+  },
+  "colors": {
+    "background": "#18131d",
+    "panel": "#241c2b",
+    "panelAlt": "#30243a",
+    "accent": "#ee91ba",
+    "secondary": "#7bcfd6",
+    "text": "#fff8fc",
+    "muted": "#cabac8",
+    "line": "#765b79"
+  },
+  "art": {
+    "focusX": 0.7,
+    "focusY": 0.48,
+    "safeArea": "left",
+    "taskMode": "full"
+  },
+  "risk": {
+    "status": "approved",
+    "note": "平台管理员确认拥有可公开再分发与商用授权。"
+  }
+}

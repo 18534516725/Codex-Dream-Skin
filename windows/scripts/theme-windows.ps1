@@ -2,6 +2,10 @@
   . (Join-Path $PSScriptRoot 'config-utf8.ps1')
 }
 
+if (-not (Get-Command Resolve-DreamSkinSignedNexoSkin -ErrorAction SilentlyContinue)) {
+  . (Join-Path $PSScriptRoot 'signed-nexo-catalog.ps1')
+}
+
 $script:DreamSkinMaxImageBytes = 10 * 1024 * 1024
 $script:DreamSkinMaxThemeArchiveBytes = 32 * 1024 * 1024
 $script:DreamSkinMaxThemeArchiveExpandedBytes = 64 * 1024 * 1024
@@ -30,7 +34,12 @@ function ConvertFrom-DreamSkinHexColor {
 }
 
 function Resolve-DreamSkinNexoApplyUri {
-  param([Parameter(Mandatory = $true)][string]$Uri)
+  param(
+    [Parameter(Mandatory = $true)][string]$Uri,
+    [string]$StateRoot = (Join-Path $env:LOCALAPPDATA 'CodexDreamSkin'),
+    [datetime]$Now = [datetime]::UtcNow,
+    [switch]$SkipCatalogRefresh
+  )
   $match = [regex]::Match(
     $Uri,
     '\Adreamskin://apply/?\?skin=([a-z0-9-]{1,64})\z',
@@ -38,12 +47,48 @@ function Resolve-DreamSkinNexoApplyUri {
   )
   if (-not $match.Success) { throw 'Only a fixed Nexo skin catalog link is accepted.' }
   $id = $match.Groups[1].Value
+  if ($script:DreamSkinSignedNexoPublicKeys.Count -gt 0) {
+    try {
+      $signedRecord = Resolve-DreamSkinSignedNexoSkin -SkinId $id `
+        -StateRoot $StateRoot -Now $Now -SkipRefresh:$SkipCatalogRefresh
+      $isLight = $signedRecord.Appearance -ceq 'light'
+      return [pscustomobject]@{
+        Id = $id
+        Name = $signedRecord.Name
+        ImageUri = $signedRecord.ImageUri
+        BackgroundSha256 = $signedRecord.BackgroundSha256
+        Appearance = $signedRecord.Appearance
+        TaskMode = 'full'
+        AccentRGB = $(if ($isLight) { '38 111 133' } else { '69 216 255' })
+        SecondaryRGB = $(if ($isLight) { '176 71 126' } else { '240 90 198' })
+        PanelRGB = $(if ($isLight) { '244 248 250' } else { '16 24 39' })
+        GlowStrength = 0.56
+        Signature = ([string]$signedRecord.Id).Replace('-', ' ').ToUpperInvariant()
+        FocusX = 0.7
+        FocusY = 0.48
+        LayoutVariant = 'poster-right'
+        SurfaceStyle = 'glass'
+        CornerStyle = 'round'
+        MotionPreset = 'orbit'
+        SidebarStyle = 'aurora'
+        ComposerStyle = 'console'
+        TextureStyle = 'grain'
+      }
+    } catch {
+      $catalogResult = "$($_.Exception.Data['DreamSkinNexoCatalogResult'])"
+      if ($catalogResult -ceq 'Revoked') { throw }
+      # The signed resolver already tried the verified, unexpired last-known-good
+      # cache. Installed entries remain usable during the signing-key rollout or
+      # a first-run outage; an id absent from both catalogs still fails closed.
+    }
+  }
   $record = $script:DreamSkinNexoCatalogById[$id]
   if ($null -eq $record) { throw 'The requested skin is not in the fixed catalog.' }
   return [pscustomobject]@{
     Id = $id
     Name = $record.Name
     ImageUri = "$script:DreamSkinNexoAssetOrigin/codex-skins/originals/$($record.assetFile)"
+    BackgroundSha256 = [string]$record.hashes.poster
     Appearance = [string]$record.theme.appearance
     TaskMode = [string]$record.theme.art.taskMode
     AccentRGB = ConvertFrom-DreamSkinHexColor -Hex ([string]$record.theme.colors.accent)

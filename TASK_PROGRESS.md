@@ -1,5 +1,11 @@
 # Task Progress
 
+## Client release v1.6.26 — preparing (2026-08-04)
+
+- [goal] Publish the newly approved high-resolution collection through the helper's normal release workflow.
+- [implemented locally] Added 59 named and content-classified Theme V2 skins, expanding the audited fixed catalog from 65 to 124. Every addition includes full-window background, sidebar, content, typography, composer, top frame and new-window styling rather than a wallpaper-only overlay.
+- [verified locally] Catalog generation, dual-platform runtime synchronization, catalog regressions, full UI-family regressions and file whitespace validation pass. The release workflow will build and verify the signed macOS DMG, Windows Setup.exe and checksum manifest from `main`.
+
 ## Client release v1.6.25 — preparing (2026-08-04)
 
 - [goal] Prevent the platform from misclassifying an in-progress apply as a missing helper, make the selected text color the final renderer color source, remove generated dots from 邮差浣熊, and restore readable contrast to 云鹿栖境.

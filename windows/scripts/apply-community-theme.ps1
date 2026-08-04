@@ -9,6 +9,7 @@ $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version 2.0
 . (Join-Path $PSScriptRoot 'common-windows.ps1')
 . (Join-Path $PSScriptRoot 'theme-windows.ps1')
+. (Join-Path $PSScriptRoot 'nexo-device.ps1')
 
 function Show-DreamSkinCommunityMessage {
   param(
@@ -74,6 +75,10 @@ SHA-256：$($Metadata.PackageSha256)
 function Invoke-DreamSkinNexoApply {
   param([Parameter(Mandatory = $true)][string]$ApplyUri)
   $entry = Resolve-DreamSkinNexoApplyUri -Uri $ApplyUri
+  # The strict deep link carries only an approved skin ID. The paired device
+  # resolves the platform-created request ID and verifies access before any
+  # skin asset is requested.
+  $authorization = Invoke-DreamSkinNexoEntitlementVerification -SkinId $entry.Id
   Add-Type -AssemblyName System.Windows.Forms -ErrorAction Stop
   $choice = [System.Windows.Forms.MessageBox]::Show(
     "应用主题「$($entry.Name)」？`r`n`r`n助手只会从固定皮肤目录下载图片；必要时 Codex 会重启一次。",
@@ -92,76 +97,93 @@ function Invoke-DreamSkinNexoApply {
   $workRoot = Join-Path $paths.Root ('.nexo-apply-' + [guid]::NewGuid().ToString('N'))
   Ensure-DreamSkinManagedDirectory -Path $workRoot -Root $paths.Root
   $imagePath = Join-Path $workRoot 'background.webp'
+  $failureCode = 'SKIN_ASSET_UNAVAILABLE'
   try {
-    $request = [System.Net.HttpWebRequest][System.Net.WebRequest]::Create(
-      [System.Uri]::new($entry.ImageUri, [System.UriKind]::Absolute)
-    )
-    $request.Method = 'GET'
-    $request.Accept = 'image/webp,image/*'
-    $request.UserAgent = 'CodexDreamSkin/1 nexo-skin-apply'
-    $request.AllowAutoRedirect = $false
-    $request.Timeout = 20000
-    $request.ReadWriteTimeout = 60000
-    $response = [System.Net.HttpWebResponse]$request.GetResponse()
     try {
-      if ([int]$response.StatusCode -ne 200 -or $response.ResponseUri.AbsoluteUri -cne $entry.ImageUri) {
-        throw 'The fixed skin image returned an unexpected status or redirect.'
-      }
-      $contentType = ("$($response.ContentType)" -split ';', 2)[0].Trim().ToLowerInvariant()
-      if (-not $contentType.StartsWith('image/')) { throw 'The fixed skin response is not an image.' }
-      if ($response.ContentLength -gt $script:DreamSkinMaxImageBytes) { throw 'The skin image exceeds 10 MiB.' }
-      $input = $response.GetResponseStream()
-      $output = [System.IO.File]::Open(
-        $imagePath,
-        [System.IO.FileMode]::CreateNew,
-        [System.IO.FileAccess]::Write,
-        [System.IO.FileShare]::None
+      $request = [System.Net.HttpWebRequest][System.Net.WebRequest]::Create(
+        [System.Uri]::new($entry.ImageUri, [System.UriKind]::Absolute)
       )
+      $request.Method = 'GET'
+      $request.Accept = 'image/webp,image/*'
+      $request.UserAgent = 'CodexDreamSkin/1 nexo-skin-apply'
+      $request.AllowAutoRedirect = $false
+      $request.Timeout = 20000
+      $request.ReadWriteTimeout = 60000
+      $response = [System.Net.HttpWebResponse]$request.GetResponse()
       try {
-        $buffer = New-Object byte[] 65536
-        [int64]$written = 0
-        while (($read = $input.Read($buffer, 0, $buffer.Length)) -gt 0) {
-          $written += $read
-          if ($written -gt $script:DreamSkinMaxImageBytes) { throw 'The skin image exceeds 10 MiB.' }
-          $output.Write($buffer, 0, $read)
+        if ([int]$response.StatusCode -ne 200 -or $response.ResponseUri.AbsoluteUri -cne $entry.ImageUri) {
+          throw 'The fixed skin image returned an unexpected status or redirect.'
         }
-        if ($written -le 0) { throw 'The skin image is empty.' }
+        $contentType = ("$($response.ContentType)" -split ';', 2)[0].Trim().ToLowerInvariant()
+        if (-not $contentType.StartsWith('image/')) { throw 'The fixed skin response is not an image.' }
+        if ($response.ContentLength -gt $script:DreamSkinMaxImageBytes) { throw 'The skin image exceeds 10 MiB.' }
+        $input = $response.GetResponseStream()
+        $output = [System.IO.File]::Open(
+          $imagePath,
+          [System.IO.FileMode]::CreateNew,
+          [System.IO.FileAccess]::Write,
+          [System.IO.FileShare]::None
+        )
+        try {
+          $buffer = New-Object byte[] 65536
+          [int64]$written = 0
+          while (($read = $input.Read($buffer, 0, $buffer.Length)) -gt 0) {
+            $written += $read
+            if ($written -gt $script:DreamSkinMaxImageBytes) { throw 'The skin image exceeds 10 MiB.' }
+            $output.Write($buffer, 0, $read)
+          }
+          if ($written -le 0) { throw 'The skin image is empty.' }
+        } finally {
+          $output.Dispose()
+          $input.Dispose()
+        }
       } finally {
-        $output.Dispose()
-        $input.Dispose()
+        $response.Dispose()
       }
-    } finally {
-      $response.Dispose()
+      $hashProperty = $entry.PSObject.Properties['BackgroundSha256']
+      if ($null -ne $hashProperty -and -not [string]::IsNullOrWhiteSpace("$($hashProperty.Value)")) {
+        $expectedHash = "$($hashProperty.Value)"
+        if ($expectedHash -cnotmatch '\A[a-f0-9]{64}\z') { throw 'The signed skin hash is invalid.' }
+        $actualHash = (Get-FileHash -LiteralPath $imagePath -Algorithm SHA256).Hash.ToLowerInvariant()
+        if ($actualHash -cne $expectedHash) { throw 'The signed skin image SHA-256 did not match.' }
+      }
+      $themeProfile = [pscustomobject]@{
+        id = "nexo-$($entry.Id)"
+        name = $entry.Name
+        appearance = $entry.Appearance
+        visual = [pscustomobject]@{
+          accentRGB = $entry.AccentRGB
+          secondaryRGB = $entry.SecondaryRGB
+          panelRGB = $entry.PanelRGB
+          glowStrength = $entry.GlowStrength
+          signature = $entry.Signature
+          layoutVariant = $entry.LayoutVariant
+          surfaceStyle = $entry.SurfaceStyle
+          cornerStyle = $entry.CornerStyle
+          motionPreset = $entry.MotionPreset
+          sidebarStyle = $entry.SidebarStyle
+          composerStyle = $entry.ComposerStyle
+          textureStyle = $entry.TextureStyle
+        }
+        art = [pscustomobject]@{
+          focusX = $entry.FocusX
+          focusY = $entry.FocusY
+          safeArea = 'auto'
+          taskMode = $entry.TaskMode
+        }
+      }
+      $null = Set-DreamSkinActiveTheme -ImagePath $imagePath -Theme $themeProfile -Name $entry.Name -StateRoot $stateRoot
+      $failureCode = 'RENDER_VERIFICATION_FAILED'
+      # Restart is never forced. If Codex lacks a verified CDP session, this
+      # path presents the existing explicit restart confirmation and defaults to cancel.
+      & (Join-Path $PSScriptRoot 'start-dream-skin.ps1') -PromptRestart -RequireUnpaused
+      if ($LASTEXITCODE -ne 0) { throw 'The selected skin did not pass visible renderer verification.' }
+      $null = Send-DreamSkinNexoApplyOutcome -RequestId $authorization.RequestId -Status 'succeeded'
+      return [pscustomobject]@{ Canceled = $false; Name = $entry.Name; CleanupWarning = ''; Kind = 'Nexo' }
+    } catch {
+      $null = Send-DreamSkinNexoApplyOutcome -RequestId $authorization.RequestId -Status 'failed' -FailureCode $failureCode
+      throw
     }
-    $themeProfile = [pscustomobject]@{
-      id = "nexo-$($entry.Id)"
-      name = $entry.Name
-      appearance = $entry.Appearance
-      visual = [pscustomobject]@{
-        accentRGB = $entry.AccentRGB
-        secondaryRGB = $entry.SecondaryRGB
-        panelRGB = $entry.PanelRGB
-        glowStrength = $entry.GlowStrength
-        signature = $entry.Signature
-        layoutVariant = $entry.LayoutVariant
-        surfaceStyle = $entry.SurfaceStyle
-        cornerStyle = $entry.CornerStyle
-        motionPreset = $entry.MotionPreset
-        sidebarStyle = $entry.SidebarStyle
-        composerStyle = $entry.ComposerStyle
-        textureStyle = $entry.TextureStyle
-      }
-      art = [pscustomobject]@{
-        focusX = $entry.FocusX
-        focusY = $entry.FocusY
-        safeArea = 'auto'
-        taskMode = $entry.TaskMode
-      }
-    }
-    $null = Set-DreamSkinActiveTheme -ImagePath $imagePath -Theme $themeProfile -Name $entry.Name -StateRoot $stateRoot
-    & (Join-Path $PSScriptRoot 'start-dream-skin.ps1') -PromptRestart -RequireUnpaused
-    if ($LASTEXITCODE -ne 0) { throw 'The selected skin did not pass visible renderer verification.' }
-    return [pscustomobject]@{ Canceled = $false; Name = $entry.Name; CleanupWarning = ''; Kind = 'Nexo' }
   } finally {
     if (Test-Path -LiteralPath $workRoot) {
       Remove-Item -LiteralPath $workRoot -Recurse -Force -ErrorAction SilentlyContinue

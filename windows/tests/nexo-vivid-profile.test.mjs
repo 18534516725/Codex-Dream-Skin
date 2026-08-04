@@ -13,7 +13,7 @@ const catalog = JSON.parse(await fs.readFile(path.join(root, "assets/nexo-skin-c
 const publication = JSON.parse(await fs.readFile(path.join(root, "../themes/platform-publication-catalog.json"), "utf8"));
 
 assert.equal(catalog.schemaVersion, 2);
-assert.equal(catalog.items.length, 65);
+assert.equal(catalog.items.length, 124);
 assert.deepEqual(
   catalog.items.map((item) => [item.id, item.assetFile]),
   publication.items.map((item) => [item.id, path.basename(item.assetUrl)]),

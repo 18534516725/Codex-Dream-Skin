@@ -29,7 +29,7 @@ for (const field of [
 const catalog = JSON.parse(catalogSource);
 const publication = JSON.parse(publicationSource);
 assert.equal(catalog.schemaVersion, 2, "macOS must consume the Theme V2 catalog");
-assert.equal(catalog.items.length, 65, "macOS must package the current 65 approved fixed skins");
+assert.equal(catalog.items.length, 124, "macOS must package the current 124 approved fixed skins");
 assert.deepEqual(
   catalog.items.map((item) => [item.id, item.assetFile]),
   publication.items.map((item) => [item.id, path.basename(item.assetUrl)]),

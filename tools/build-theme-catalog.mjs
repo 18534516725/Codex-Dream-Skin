@@ -21,7 +21,7 @@ const items = [];
 for (const [index, id] of ids.entries()) {
   const published = publishedItems[index];
   const assetFile = path.basename(published.assetUrl ?? "");
-  if (!/^\d{2}-[a-z0-9-]+\.webp$/.test(assetFile) || !published.assetUrl.endsWith(`/${assetFile}`)) {
+  if (!/^\d{2,3}-[a-z0-9-]+\.webp$/.test(assetFile) || !published.assetUrl.endsWith(`/${assetFile}`)) {
     throw new Error(`${id} has an invalid platform asset URL`);
   }
   const directory = path.join(root, "themes", "catalog", id);
