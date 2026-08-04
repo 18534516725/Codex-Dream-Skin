@@ -421,6 +421,9 @@ export async function runRendererRuntimeTest(assetRoot) {
     "background visibility must be consumed by the live CSS");
   assert.match(css, /--ds-user-sidebar-opacity/,
     "sidebar opacity must be consumed by the live CSS");
+  assert.match(css,
+    /--ds-task-immersive-sidebar:\s*rgb\(var\(--ds-panel-rgb\)\s*\/\s*var\(--ds-user-sidebar-opacity\)\)/,
+    "task-page sidebar must consume the user-selected opacity instead of a fixed overlay");
   assert.match(css, /--ds-user-content-opacity/,
     "content opacity must be consumed by the live CSS");
   assert.match(css, /--ds-user-font-scale/,

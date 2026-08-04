@@ -50,8 +50,8 @@
   --ds-immersive-edge: rgb(var(--ds-bg-rgb) / .40);
   --ds-immersive-mid: rgb(var(--ds-bg-rgb) / .26);
   --ds-immersive-far: rgb(var(--ds-bg-rgb) / .16);
-  --ds-immersive-sidebar: rgb(var(--ds-panel-rgb) / .46);
-  --ds-task-immersive-sidebar: rgb(var(--ds-panel-rgb) / .70);
+  --ds-immersive-sidebar: rgb(var(--ds-panel-rgb) / var(--ds-user-sidebar-opacity));
+  --ds-task-immersive-sidebar: rgb(var(--ds-panel-rgb) / var(--ds-user-sidebar-opacity));
   --ds-immersive-chrome: rgb(var(--ds-panel-rgb) / .28);
   --ds-immersive-composer: rgb(var(--ds-panel-rgb) / .44);
   --ds-immersive-composer-solid: color-mix(in srgb,
@@ -102,8 +102,8 @@ html[data-dream-skin="active"][data-dream-shell="light"] {
   --ds-immersive-edge: rgb(var(--ds-panel-rgb) / .44);
   --ds-immersive-mid: rgb(var(--ds-panel-rgb) / .28);
   --ds-immersive-far: rgb(var(--ds-panel-rgb) / .14);
-  --ds-immersive-sidebar: rgb(var(--ds-panel-rgb) / .48);
-  --ds-task-immersive-sidebar: rgb(var(--ds-panel-rgb) / .72);
+  --ds-immersive-sidebar: rgb(var(--ds-panel-rgb) / var(--ds-user-sidebar-opacity));
+  --ds-task-immersive-sidebar: rgb(var(--ds-panel-rgb) / var(--ds-user-sidebar-opacity));
   --ds-immersive-chrome: rgb(var(--ds-panel-rgb) / .34);
   --ds-immersive-composer: rgb(var(--ds-panel-rgb) / .46);
   --ds-immersive-composer-solid: rgb(var(--ds-panel-rgb) / .74);
