@@ -1,12 +1,14 @@
 # Task Progress
 
-## macOS file-backed device identity — design approved (2026-08-05)
+## macOS file-backed device identity — release v1.6.30 (2026-08-05)
 
 - [goal] Future downloaded macOS releases must not show a Keychain private-key authorization/password dialog while preserving device pairing and entitlement verification.
 - [scope] Change only the `Codex-Dream-Skin` source and future release artifacts. Do not touch the installed app, existing Keychain item, active theme, or running Codex instance.
 - [design] Store the existing UUID plus Ed25519 private key in the helper state directory using a user-owned `0700` directory, a user-owned `0600` regular file, strict validation, and atomic creation. Ignore and retain legacy Keychain data, so upgraded clients pair again without a migration prompt.
 - [branch] `codex/remove-macos-keychain`.
-- [pending] User review of `docs/superpowers/specs/2026-08-05-macos-file-backed-device-identity-design.md`, followed by an implementation plan and test-first implementation.
+- [implemented locally] `NexoDeviceClient` no longer imports Security or reads Keychain. It uses a file-descriptor-safe store under the helper state root, validates ownership/type/mode and bounded bytes, creates `device-identity.json` atomically, and retains existing pairing/signature protocol. Legacy Keychain items are untouched and never queried.
+- [verified locally] Root Node regressions pass 45/45; focused pairing contract passes 5/5; Swift production build and the applicable macOS repository suite pass. A universal v1.6.30 DMG builds, passes `hdiutil imageinfo`, and hashes to `96747c765a4d90913ef0b731c440fddb78d56db594f2e97b0401de48aac51793`. New XCTest coverage exists for identity creation, reload, modes, malformed data, links, oversized data and concurrent creation, but cannot run on this host because its Swift toolchain cannot import XCTest; release CI remains the macOS XCTest gate.
+- [release scope] Bump all six required version sources to v1.6.30, commit only this helper change, fast-forward/push to `main`, then verify public DMG, Setup.exe and SHA256SUMS from the Release workflow.
 
 ## Client release v1.6.29 — first-install Codex-exit handoff (2026-08-05)
 

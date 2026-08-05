@@ -9,9 +9,12 @@ const windowsDevice = readFileSync(new URL('windows/scripts/nexo-device.ps1', ro
 const windowsApply = readFileSync(new URL('windows/scripts/apply-community-theme.ps1', root), 'utf8');
 const windowsTray = readFileSync(new URL('windows/scripts/tray-dream-skin.ps1', root), 'utf8');
 
-test('macOS keeps an Ed25519 device identity in Keychain and only calls the fixed HTTPS API', () => {
+test('macOS keeps its Ed25519 device identity in private application support storage', () => {
   assert.match(macDevice, /Curve25519\.Signing\.PrivateKey/);
-  assert.match(macDevice, /SecItem(?:Add|CopyMatching|Update)/);
+  assert.match(macDevice, /device-identity\.json/);
+  assert.match(macDevice, /fchmod\(descriptor, 0o700\)/);
+  assert.match(macDevice, /fchmod\(descriptor, 0o600\)/);
+  assert.doesNotMatch(macDevice, /import Security|SecItem|kSec/);
   assert.match(macDevice, /URLSessionConfiguration\.ephemeral/);
   assert.match(macDevice, /https:\/\/nexotoken\.net\/api\/codex-skin-devices/);
   assert.match(macDevice, /maximumPairingPolls\s*=\s*300/);

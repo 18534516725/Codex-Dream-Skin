@@ -1,6 +1,10 @@
 import CryptoKit
 import Foundation
-import Security
+#if os(macOS)
+import Darwin
+#else
+import Glibc
+#endif
 
 struct NexoPairingChallenge {
   let code: String
@@ -9,6 +13,168 @@ struct NexoPairingChallenge {
 
 struct NexoApplyPermit {
   let requestID: String
+}
+
+struct NexoStoredIdentity: Codable, Equatable {
+  let installationID: UUID
+  let privateKeyBase64: String
+}
+
+enum NexoDeviceIdentityStoreError: Error {
+  case invalidStateRoot
+  case insecurePermissions
+  case invalidIdentity
+  case identityMissing
+  case ioFailure
+}
+
+final class NexoDeviceIdentityStore {
+  static let maximumIdentityBytes = 4_096
+  private static let identityFilename = "device-identity.json"
+
+  let rootURL: URL
+  let url: URL
+
+  init(rootURL: URL, fileManager: FileManager = .default) {
+    self.rootURL = rootURL.standardizedFileURL
+    self.url = self.rootURL.appendingPathComponent(Self.identityFilename, isDirectory: false)
+    _ = fileManager
+  }
+
+  func loadOrCreate() throws -> NexoStoredIdentity {
+    let rootDescriptor = try openValidatedRoot()
+    defer { close(rootDescriptor) }
+    do {
+      return try loadExistingIdentity(rootDescriptor: rootDescriptor)
+    } catch NexoDeviceIdentityStoreError.identityMissing {
+      return try createIdentity(rootDescriptor: rootDescriptor)
+    }
+  }
+
+  private func openValidatedRoot() throws -> Int32 {
+    if mkdir(rootURL.path, 0o700) != 0, errno != EEXIST {
+      throw NexoDeviceIdentityStoreError.ioFailure
+    }
+    let descriptor = open(rootURL.path, O_RDONLY | O_DIRECTORY | O_NOFOLLOW)
+    guard descriptor >= 0 else { throw NexoDeviceIdentityStoreError.invalidStateRoot }
+    do {
+      try validateDescriptor(descriptor, type: mode_t(S_IFDIR), expectedMode: nil)
+      guard fchmod(descriptor, 0o700) == 0 else { throw NexoDeviceIdentityStoreError.ioFailure }
+      try validateDescriptor(descriptor, type: mode_t(S_IFDIR), expectedMode: 0o700)
+      return descriptor
+    } catch {
+      close(descriptor)
+      throw error
+    }
+  }
+
+  private func loadExistingIdentity(rootDescriptor: Int32) throws -> NexoStoredIdentity {
+    let descriptor = openat(rootDescriptor, Self.identityFilename, O_RDONLY | O_NOFOLLOW)
+    if descriptor < 0 {
+      if errno == ENOENT { throw NexoDeviceIdentityStoreError.identityMissing }
+      throw NexoDeviceIdentityStoreError.invalidIdentity
+    }
+    defer { close(descriptor) }
+    let size = try validateDescriptor(
+      descriptor,
+      type: mode_t(S_IFREG),
+      expectedMode: 0o600
+    )
+    guard size <= Self.maximumIdentityBytes else {
+      throw NexoDeviceIdentityStoreError.invalidIdentity
+    }
+    let identity = try JSONDecoder().decode(NexoStoredIdentity.self, from: try readAll(from: descriptor, size: size))
+    guard let raw = Data(base64Encoded: identity.privateKeyBase64) else {
+      throw NexoDeviceIdentityStoreError.invalidIdentity
+    }
+    do {
+      _ = try Curve25519.Signing.PrivateKey(rawRepresentation: raw)
+    } catch {
+      throw NexoDeviceIdentityStoreError.invalidIdentity
+    }
+    return identity
+  }
+
+  private func createIdentity(rootDescriptor: Int32) throws -> NexoStoredIdentity {
+    let identity = NexoStoredIdentity(
+      installationID: UUID(),
+      privateKeyBase64: Curve25519.Signing.PrivateKey().rawRepresentation.base64EncodedString()
+    )
+    let temporaryName = ".device-identity-\(UUID().uuidString).tmp"
+    let descriptor = openat(
+      rootDescriptor,
+      temporaryName,
+      O_WRONLY | O_CREAT | O_EXCL | O_NOFOLLOW,
+      0o600
+    )
+    guard descriptor >= 0 else { throw NexoDeviceIdentityStoreError.ioFailure }
+    defer {
+      close(descriptor)
+      _ = unlinkat(rootDescriptor, temporaryName, 0)
+    }
+    _ = try validateDescriptor(descriptor, type: mode_t(S_IFREG), expectedMode: nil)
+    guard fchmod(descriptor, 0o600) == 0 else { throw NexoDeviceIdentityStoreError.ioFailure }
+    _ = try validateDescriptor(descriptor, type: mode_t(S_IFREG), expectedMode: 0o600)
+    try write(try JSONEncoder().encode(identity), to: descriptor)
+    guard fsync(descriptor) == 0 else { throw NexoDeviceIdentityStoreError.ioFailure }
+
+    if linkat(rootDescriptor, temporaryName, rootDescriptor, Self.identityFilename, 0) != 0 {
+      if errno == EEXIST { return try loadExistingIdentity(rootDescriptor: rootDescriptor) }
+      throw NexoDeviceIdentityStoreError.ioFailure
+    }
+    guard fsync(rootDescriptor) == 0 else { throw NexoDeviceIdentityStoreError.ioFailure }
+    guard unlinkat(rootDescriptor, temporaryName, 0) == 0 else {
+      throw NexoDeviceIdentityStoreError.ioFailure
+    }
+    return try loadExistingIdentity(rootDescriptor: rootDescriptor)
+  }
+
+  @discardableResult
+  private func validateDescriptor(
+    _ descriptor: Int32,
+    type: mode_t,
+    expectedMode: mode_t?
+  ) throws -> Int {
+    var status = stat()
+    guard fstat(descriptor, &status) == 0 else { throw NexoDeviceIdentityStoreError.ioFailure }
+    let mode = mode_t(status.st_mode)
+    guard mode & mode_t(S_IFMT) == type, status.st_uid == getuid() else {
+      throw NexoDeviceIdentityStoreError.invalidIdentity
+    }
+    if let expectedMode, mode & 0o777 != expectedMode {
+      throw NexoDeviceIdentityStoreError.insecurePermissions
+    }
+    return Int(status.st_size)
+  }
+
+  private func readAll(from descriptor: Int32, size: Int) throws -> Data {
+    var output = Data()
+    output.reserveCapacity(size)
+    while output.count < size {
+      var buffer = [UInt8](repeating: 0, count: min(1024, size - output.count))
+      let count = buffer.withUnsafeMutableBytes { read(descriptor, $0.baseAddress, $0.count) }
+      guard count >= 0 else { throw NexoDeviceIdentityStoreError.ioFailure }
+      guard count > 0 else { throw NexoDeviceIdentityStoreError.invalidIdentity }
+      output.append(contentsOf: buffer.prefix(Int(count)))
+    }
+    return output
+  }
+
+  private func write(_ data: Data, to descriptor: Int32) throws {
+    try data.withUnsafeBytes { bytes in
+      guard let baseAddress = bytes.baseAddress else { throw NexoDeviceIdentityStoreError.ioFailure }
+      var offset = 0
+      while offset < bytes.count {
+        #if os(macOS)
+        let count = Darwin.write(descriptor, baseAddress.advanced(by: offset), bytes.count - offset)
+        #else
+        let count = Glibc.write(descriptor, baseAddress.advanced(by: offset), bytes.count - offset)
+        #endif
+        guard count > 0 else { throw NexoDeviceIdentityStoreError.ioFailure }
+        offset += count
+      }
+    }
+  }
 }
 
 enum NexoApplyOutcomeStatus: String {
@@ -37,11 +203,6 @@ enum NexoDeviceError: LocalizedError {
 /// A deliberately narrow client for the public helper endpoints. It never accepts a
 /// host, path, credential, or request body from a deep link.
 final class NexoDeviceClient: NSObject, URLSessionTaskDelegate {
-  private struct StoredIdentity: Codable {
-    let installationID: UUID
-    let privateKeyBase64: String
-  }
-
   private struct APIEnvelope<T: Decodable>: Decodable {
     let success: Bool
     let data: T?
@@ -62,12 +223,10 @@ final class NexoDeviceClient: NSObject, URLSessionTaskDelegate {
   }
 
   private static let apiRoot = URL(string: "https://nexotoken.net/api/codex-skin-devices")!
-  private static let keychainService = "net.nexotoken.CodexDreamSkin.device"
-  private static let keychainAccount = "ed25519-v1"
   private static let maximumResponseBytes = 65_536
   static let maximumPairingPolls = 300
 
-  private let identity: StoredIdentity?
+  private let identity: NexoStoredIdentity?
   private let privateKey: Curve25519.Signing.PrivateKey?
   private lazy var session: URLSession = {
     let configuration = URLSessionConfiguration.ephemeral
@@ -81,7 +240,7 @@ final class NexoDeviceClient: NSObject, URLSessionTaskDelegate {
   }()
 
   override init() {
-    var loadedIdentity: StoredIdentity?
+    var loadedIdentity: NexoStoredIdentity?
     var loadedPrivateKey: Curve25519.Signing.PrivateKey?
     do {
       let stored = try Self.loadOrCreateIdentity()
@@ -293,34 +452,18 @@ final class NexoDeviceClient: NSObject, URLSessionTaskDelegate {
       .replacingOccurrences(of: "/", with: "_").replacingOccurrences(of: "=", with: "")
   }
 
-  private static func loadOrCreateIdentity() throws -> StoredIdentity {
-    let base: [String: Any] = [
-      kSecClass as String: kSecClassGenericPassword,
-      kSecAttrService as String: keychainService,
-      kSecAttrAccount as String: keychainAccount,
-    ]
-    var read = base
-    read[kSecReturnData as String] = true
-    read[kSecMatchLimit as String] = kSecMatchLimitOne
-    var value: CFTypeRef?
-    let status = SecItemCopyMatching(read as CFDictionary, &value)
-    if status == errSecSuccess, let data = value as? Data,
-       let stored = try? JSONDecoder().decode(StoredIdentity.self, from: data) {
-      return stored
-    }
-    guard status == errSecItemNotFound else { throw NexoDeviceError.identityUnavailable }
-    let key = Curve25519.Signing.PrivateKey()
-    let stored = StoredIdentity(
-      installationID: UUID(),
-      privateKeyBase64: key.rawRepresentation.base64EncodedString()
-    )
-    let data = try JSONEncoder().encode(stored)
-    var add = base
-    add[kSecValueData as String] = data
-    add[kSecAttrAccessible as String] = kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly
-    guard SecItemAdd(add as CFDictionary, nil) == errSecSuccess else {
+  private static func loadOrCreateIdentity() throws -> NexoStoredIdentity {
+    let fileManager = FileManager.default
+    guard let applicationSupportURL = fileManager.urls(
+      for: .applicationSupportDirectory,
+      in: .userDomainMask
+    ).first else {
       throw NexoDeviceError.identityUnavailable
     }
-    return stored
+    let rootURL = applicationSupportURL.appendingPathComponent(
+      "CodexDreamSkinStudio",
+      isDirectory: true
+    )
+    return try NexoDeviceIdentityStore(rootURL: rootURL, fileManager: fileManager).loadOrCreate()
   }
 }

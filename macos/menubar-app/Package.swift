@@ -28,6 +28,11 @@ let package = Package(
       name: "DreamSkinCoreTests",
       dependencies: ["DreamSkinCore"],
       path: "Tests/DreamSkinCoreTests"
+    ),
+    .testTarget(
+      name: "CodexDreamSkinMenuBarTests",
+      dependencies: ["CodexDreamSkinMenuBar"],
+      path: "Tests/CodexDreamSkinMenuBarTests"
     )
   ]
 )
