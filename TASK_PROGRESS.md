@@ -8,7 +8,8 @@
 - [branch] `codex/remove-macos-keychain`.
 - [implemented locally] `NexoDeviceClient` no longer imports Security or reads Keychain. It uses a file-descriptor-safe store under the helper state root, validates ownership/type/mode and bounded bytes, creates `device-identity.json` atomically, and retains existing pairing/signature protocol. Legacy Keychain items are untouched and never queried.
 - [verified locally] Root Node regressions pass 45/45; focused pairing contract passes 5/5; Swift production build and the applicable macOS repository suite pass. A universal v1.6.30 DMG builds, passes `hdiutil imageinfo`, and hashes to `96747c765a4d90913ef0b731c440fddb78d56db594f2e97b0401de48aac51793`. New XCTest coverage exists for identity creation, reload, modes, malformed data, links, oversized data and concurrent creation, but cannot run on this host because its Swift toolchain cannot import XCTest; release CI remains the macOS XCTest gate.
-- [release scope] Bump all six required version sources to v1.6.30, commit only this helper change, fast-forward/push to `main`, then verify public DMG, Setup.exe and SHA256SUMS from the Release workflow.
+- [released] Commit `84783711bc8a455c6fdbf62855723d26fe6d116a` was fast-forwarded to `main`; Release run `30976567271` completed successfully and published v1.6.30.
+- [verified published] The non-draft Release contains `CodexDreamSkin-v1.6.30.dmg` (4,036,436 bytes), `CodexDreamSkin-Setup-v1.6.30.exe` (24,520,258 bytes), and `SHA256SUMS.txt` (192 bytes). The published sums match both release asset digests. CI run `30976567297` remains in progress for its Windows matrix after the Release completed.
 
 ## Client release v1.6.29 — first-install Codex-exit handoff (2026-08-05)
 
