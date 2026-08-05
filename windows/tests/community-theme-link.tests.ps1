@@ -6,8 +6,18 @@ $ErrorActionPreference = 'Stop'
 . (Join-Path $Root 'scripts\theme-windows.ps1')
 
 $themeSource = [System.IO.File]::ReadAllText((Join-Path $Root 'scripts\theme-windows.ps1'))
+$applySource = [System.IO.File]::ReadAllText((Join-Path $Root 'scripts\apply-community-theme.ps1'))
 if ($themeSource -match 'DreamSkinSignedNexoPublicKeys(?:\.Keys)?\)\.Count') {
   throw 'Nexo catalog availability must not rely on an adapter Count property.'
+}
+if ($applySource -notmatch 'New-DreamSkinForegroundDialogOwner' -or
+  $applySource -notmatch '\.TopMost\s*=\s*\$true' -or
+  $applySource -notmatch 'MessageBox\]::Show\(\s*\$owner') {
+  throw 'Protocol dialogs must use a foreground topmost owner.'
+}
+if ($applySource -notmatch 'Local\\CodexDreamSkin\.\$sid\.NexoApply' -or
+  $applySource -notmatch 'Another Nexo skin apply is already waiting or running') {
+  throw 'Nexo apply must serialize repeated protocol launches.'
 }
 $originalNexoPublicKeys = $script:DreamSkinSignedNexoPublicKeys
 try {

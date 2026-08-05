@@ -1,7 +1,7 @@
 import http from "node:http";
 import { randomBytes, timingSafeEqual } from "node:crypto";
 
-export const APPEARANCE_BRIDGE_PROTOCOL_VERSION = 1;
+export const APPEARANCE_BRIDGE_PROTOCOL_VERSION = 2;
 export const APPEARANCE_BRIDGE_PORT = 17384;
 const MAX_BODY_BYTES = 16 * 1024;
 const CHALLENGE_TTL_MS = 30_000;
@@ -46,10 +46,11 @@ export async function createAppearanceBridge({
   port = APPEARANCE_BRIDGE_PORT,
   store,
   allowedOrigins,
+  getActiveSkinId = () => null,
   onSettingsSaved = async () => {},
   now = () => Date.now(),
 }) {
-  if (!store || !(allowedOrigins instanceof Set) || allowedOrigins.size < 1) {
+  if (!store || !(allowedOrigins instanceof Set) || allowedOrigins.size < 1 || typeof getActiveSkinId !== "function") {
     throw new Error("Appearance bridge configuration is invalid");
   }
   const challenges = new Map();
@@ -73,7 +74,12 @@ export async function createAppearanceBridge({
       return response.end();
     }
     if (request.method === "GET" && url.pathname === "/v1/status") {
-      return json(response, 200, { ok: true, protocolVersion: APPEARANCE_BRIDGE_PROTOCOL_VERSION });
+      const activeSkinId = await getActiveSkinId();
+      return json(response, 200, {
+        ok: true,
+        protocolVersion: APPEARANCE_BRIDGE_PROTOCOL_VERSION,
+        activeSkinId: typeof activeSkinId === "string" ? activeSkinId : null,
+      });
     }
     if (request.method === "GET" && url.pathname === "/v1/challenge") {
       const challenge = randomBytes(32).toString("base64url");

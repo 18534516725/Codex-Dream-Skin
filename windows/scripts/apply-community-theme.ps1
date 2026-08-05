@@ -10,6 +10,22 @@ Set-StrictMode -Version 2.0
 . (Join-Path $PSScriptRoot 'common-windows.ps1')
 . (Join-Path $PSScriptRoot 'theme-windows.ps1')
 
+function New-DreamSkinForegroundDialogOwner {
+  Add-Type -AssemblyName System.Drawing -ErrorAction Stop
+  Add-Type -AssemblyName System.Windows.Forms -ErrorAction Stop
+  $owner = [System.Windows.Forms.Form]::new()
+  $owner.ShowInTaskbar = $false
+  $owner.TopMost = $true
+  $owner.StartPosition = [System.Windows.Forms.FormStartPosition]::CenterScreen
+  $owner.FormBorderStyle = [System.Windows.Forms.FormBorderStyle]::FixedToolWindow
+  $owner.ClientSize = [System.Drawing.Size]::new(1, 1)
+  $owner.Opacity = 0
+  $owner.Show()
+  $owner.Activate()
+  $owner.BringToFront()
+  return $owner
+}
+
 function Show-DreamSkinCommunityMessage {
   param(
     [Parameter(Mandatory = $true)][string]$Message,
@@ -21,12 +37,19 @@ function Show-DreamSkinCommunityMessage {
   } else {
     [System.Windows.Forms.MessageBoxIcon]::Information
   }
-  [void][System.Windows.Forms.MessageBox]::Show(
-    $Message,
-    'Codex Dream Skin',
-    [System.Windows.Forms.MessageBoxButtons]::OK,
-    $icon
-  )
+  $owner = New-DreamSkinForegroundDialogOwner
+  try {
+    [void][System.Windows.Forms.MessageBox]::Show(
+      $owner,
+      $Message,
+      'Codex Dream Skin',
+      [System.Windows.Forms.MessageBoxButtons]::OK,
+      $icon
+    )
+  } finally {
+    $owner.Close()
+    $owner.Dispose()
+  }
 }
 
 function Format-DreamSkinCommunitySuccessMessage {
@@ -61,29 +84,53 @@ SHA-256：$($Metadata.PackageSha256)
 
 客户端只会连接固定官方 API，并重新校验下载大小、SHA-256、ZIP、清单和 Safe CSS。应用时 Codex 可能重启，未保存的输入可能丢失。主题内容不会作为命令执行。
 "@
-  $choice = [System.Windows.Forms.MessageBox]::Show(
-    $message.Trim(),
-    '确认一键换肤',
-    [System.Windows.Forms.MessageBoxButtons]::YesNo,
-    [System.Windows.Forms.MessageBoxIcon]::Question,
-    [System.Windows.Forms.MessageBoxDefaultButton]::Button2
-  )
-  return $choice -eq [System.Windows.Forms.DialogResult]::Yes
+  $owner = New-DreamSkinForegroundDialogOwner
+  try {
+    $choice = [System.Windows.Forms.MessageBox]::Show(
+      $owner,
+      $message.Trim(),
+      '确认一键换肤',
+      [System.Windows.Forms.MessageBoxButtons]::YesNo,
+      [System.Windows.Forms.MessageBoxIcon]::Question,
+      [System.Windows.Forms.MessageBoxDefaultButton]::Button2
+    )
+    return $choice -eq [System.Windows.Forms.DialogResult]::Yes
+  } finally {
+    $owner.Close()
+    $owner.Dispose()
+  }
 }
 
 function Invoke-DreamSkinNexoApply {
   param([Parameter(Mandatory = $true)][string]$ApplyUri)
+  $sid = [System.Security.Principal.WindowsIdentity]::GetCurrent().User.Value
+  $mutex = [System.Threading.Mutex]::new($false, "Local\CodexDreamSkin.$sid.NexoApply")
+  $acquired = $false
+  try {
+    try { $acquired = $mutex.WaitOne(0) } catch [System.Threading.AbandonedMutexException] {
+      $acquired = $true
+    }
+    if (-not $acquired) {
+      throw 'Another Nexo skin apply is already waiting or running. Use the existing confirmation window.'
+    }
   $entry = Resolve-DreamSkinNexoApplyUri -Uri $ApplyUri
   # The strict deep link carries only an approved skin ID. The local signed
   # catalog resolves its fixed image URL and hash without any account request.
   Add-Type -AssemblyName System.Windows.Forms -ErrorAction Stop
-  $choice = [System.Windows.Forms.MessageBox]::Show(
-    "应用主题「$($entry.Name)」？`r`n`r`n助手只会从固定皮肤目录下载图片；必要时 Codex 会重启一次。",
-    '确认一键换肤',
-    [System.Windows.Forms.MessageBoxButtons]::YesNo,
-    [System.Windows.Forms.MessageBoxIcon]::Question,
-    [System.Windows.Forms.MessageBoxDefaultButton]::Button2
-  )
+  $owner = New-DreamSkinForegroundDialogOwner
+  try {
+    $choice = [System.Windows.Forms.MessageBox]::Show(
+      $owner,
+      "应用主题「$($entry.Name)」？`r`n`r`n助手只会从固定皮肤目录下载图片；必要时 Codex 会重启一次。",
+      '确认一键换肤',
+      [System.Windows.Forms.MessageBoxButtons]::YesNo,
+      [System.Windows.Forms.MessageBoxIcon]::Question,
+      [System.Windows.Forms.MessageBoxDefaultButton]::Button2
+    )
+  } finally {
+    $owner.Close()
+    $owner.Dispose()
+  }
   if ($choice -ne [System.Windows.Forms.DialogResult]::Yes) {
     return [pscustomobject]@{ Canceled = $true; Name = $entry.Name; CleanupWarning = ''; Kind = 'Nexo' }
   }
@@ -183,6 +230,10 @@ function Invoke-DreamSkinNexoApply {
     if (Test-Path -LiteralPath $workRoot) {
       Remove-Item -LiteralPath $workRoot -Recurse -Force -ErrorAction SilentlyContinue
     }
+  }
+  } finally {
+    if ($acquired) { try { $mutex.ReleaseMutex() } catch {} }
+    $mutex.Dispose()
   }
 }
 

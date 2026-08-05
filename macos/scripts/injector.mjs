@@ -82,7 +82,7 @@ const stableTestidLiteral = (testid) => {
   }
   return JSON.stringify(`[data-testid="${testid}"]`);
 };
-const SKIN_VERSION = "1.6.36";
+const SKIN_VERSION = "1.6.37";
 const LOOPBACK_HOSTS = new Set(["127.0.0.1", "localhost", "[::1]"]);
 const CDP_ID_PATTERN = /^[A-Za-z0-9._-]{1,200}$/;
 const MAX_ART_BYTES = 10 * 1024 * 1024;
@@ -1890,6 +1890,7 @@ async function runWatch(options) {
     appearanceBridge = await createAppearanceBridge({
       store: appearanceStore,
       allowedOrigins: APPEARANCE_BRIDGE_ORIGINS,
+      getActiveSkinId: () => current?.theme.id ?? null,
       onSettingsSaved: async (saved) => {
         if (saved.skinId !== current.theme.id) return;
         await appearanceStore.materialize(saved.skinId);

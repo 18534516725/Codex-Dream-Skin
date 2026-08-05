@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- v1.6.37 reports the verified active skin through appearance bridge protocol v2 so the platform waits for real apply completion before syncing appearance settings.
 - v1.6.34 一键应用皮肤不再连接或验证 NexoToken 账号；助手只使用本地签名目录、固定图片地址与 SHA-256 校验后应用主题。
 - v1.6.33 移除旧版 macOS 系统 curl 不支持的更新重试参数，保留有界重试；自动更新不再在下载开始前失败。
 - v1.6.32 修复自动设备连接 macOS 回归测试的源码定位，确保正式 DMG 构建会验证该流程。

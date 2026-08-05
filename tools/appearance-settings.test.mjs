@@ -129,11 +129,12 @@ test("bridge saves settings for an exact allowed origin and rejects replay", asy
     port: 0,
     store,
     allowedOrigins: new Set(["https://nexotoken.net"]),
+    getActiveSkinId: () => "rain",
     onSettingsSaved: async ({ skinId }) => { callbackSkinId = skinId; },
   });
   context.after(() => bridge.close());
   const status = await request(bridge.server, "GET", "/v1/status", { origin: "https://nexotoken.net" });
-  assert.deepEqual(status.body, { ok: true, protocolVersion: 1 });
+  assert.deepEqual(status.body, { ok: true, protocolVersion: 2, activeSkinId: "rain" });
   const challenge = await request(bridge.server, "GET", "/v1/challenge", { origin: "https://nexotoken.net" });
   const saved = await request(bridge.server, "POST", "/v1/settings", {
     origin: "https://nexotoken.net",
