@@ -12,6 +12,8 @@ const { privateKey, publicKey } = generateKeyPairSync('ed25519');
 const publicKeyBase64 = publicKey.export({ format: 'der', type: 'spki' }).toString('base64');
 const now = new Date('2026-08-04T00:00:00.000Z');
 const root = new URL('../', import.meta.url);
+const rotatedCatalogKeyId = 'nexo-skin-2026-02';
+const rotatedCatalogPublicKey = 'MCowBQYDK2VwAyEANRstEC8G0Xwbqxm9OxXI4IixeoIIyuyKnlkcTAl/O1s=';
 
 function payload(overrides = {}) {
   return {
@@ -106,6 +108,13 @@ test('platform clients bind embedded poster hashes and reject same-version conte
   assert.match(macLink, /"nexo-skin-2026-01": Data\(base64Encoded: "[A-Za-z0-9+/]{43}="\)!/);
   const windowsSigned = readFileSync(new URL('windows/scripts/signed-nexo-catalog.ps1', root), 'utf8');
   assert.match(windowsSigned, /'nexo-skin-2026-01'\s*=\s*'MCowBQYDK2VwAyEA[A-Za-z0-9+/]{43}='/);
+});
+
+test('both platform keyrings pin the rotated production catalog public key', () => {
+  const macLink = readFileSync(new URL('macos/menubar-app/Sources/DreamSkinCore/NexoSkinLink.swift', root), 'utf8');
+  const windowsSigned = readFileSync(new URL('windows/scripts/signed-nexo-catalog.ps1', root), 'utf8');
+  assert.match(macLink, new RegExp(`"${rotatedCatalogKeyId}": Data\\(base64Encoded: "${rotatedCatalogPublicKey}"\\)!`));
+  assert.match(windowsSigned, new RegExp(`'${rotatedCatalogKeyId}'\\s*=\\s*'${rotatedCatalogPublicKey}'`));
 });
 
 test('both injectors extend appearance approval only from the verified signed cache', () => {

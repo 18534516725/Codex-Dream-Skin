@@ -9,6 +9,7 @@ $script:DreamSkinNexoSigningKeyReleaseGate = `
 # SPKI-encoded Ed25519 public key. The matching private key is never shipped.
 $script:DreamSkinSignedNexoPublicKeys = @{
   'nexo-skin-2026-01' = 'MCowBQYDK2VwAyEA2ILmCQDK2Z63umFAxIm/PwIrVWTYLHwl66sFOLQo5Ls='
+  'nexo-skin-2026-02' = 'MCowBQYDK2VwAyEANRstEC8G0Xwbqxm9OxXI4IixeoIIyuyKnlkcTAl/O1s='
 }
 
 function Get-DreamSkinSignedNexoCatalogCachePath {

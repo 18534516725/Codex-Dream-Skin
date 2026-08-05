@@ -82,6 +82,7 @@ public enum NexoSkinContract {
   // client pins the raw Ed25519 public key and fails closed for every other key.
   public static let pinnedCatalogPublicKeys: [String: Data] = [
     "nexo-skin-2026-01": Data(base64Encoded: "2ILmCQDK2Z63umFAxIm/PwIrVWTYLHwl66sFOLQo5Ls=")!,
+    "nexo-skin-2026-02": Data(base64Encoded: "MCowBQYDK2VwAyEANRstEC8G0Xwbqxm9OxXI4IixeoIIyuyKnlkcTAl/O1s=")!,
   ]
 
   private static func catalogData() -> Data? {

@@ -78,7 +78,7 @@ const stableTestidLiteral = (testid) => {
   }
   return JSON.stringify(`[data-testid="${testid}"]`);
 };
-const SKIN_VERSION = "1.6.37";
+const SKIN_VERSION = "1.6.38";
 const MAX_ART_BYTES = 10 * 1024 * 1024;
 const MAX_VIDEO_BYTES = 80 * 1024 * 1024;
 const MAX_SAFE_CSS_BYTES = 256 * 1024;

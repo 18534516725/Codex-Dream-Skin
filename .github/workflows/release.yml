@@ -491,6 +491,45 @@ jobs:
           RELEASE_SHA: ${{ needs.guard.outputs.release_sha }}
         run: |
           set -euo pipefail
+          function retry_github_release_command() {
+            local attempt=1
+            local maximum_attempts=4
+            until "$@"; do
+              if (( attempt >= maximum_attempts )); then
+                echo "GitHub release command failed after ${attempt} attempts." >&2
+                return 1
+              fi
+              echo "GitHub release command failed (attempt ${attempt}/${maximum_attempts}); retrying shortly." >&2
+              sleep $((attempt * 3))
+              attempt=$((attempt + 1))
+            done
+          }
+          function create_draft_release() {
+            local attempt=1
+            local maximum_attempts=4
+            until gh release create "$TAG" \
+              --verify-tag \
+              --draft \
+              --title "Codex Dream Skin v${VERSION}" \
+              --notes-file release-notes.md \
+              dist/CodexDreamSkin-v${VERSION}.dmg \
+              dist/CodexDreamSkin-Setup-v${VERSION}.exe \
+              dist/SHA256SUMS.txt; do
+              # A server-side 500 can be returned after GitHub has already
+              # created the draft. Treat that as success and continue with
+              # the normal asset/digest verification below.
+              if gh release view "$TAG" >/dev/null 2>&1; then
+                return 0
+              fi
+              if (( attempt >= maximum_attempts )); then
+                echo "GitHub release creation failed after ${attempt} attempts." >&2
+                return 1
+              fi
+              echo "GitHub release creation failed (attempt ${attempt}/${maximum_attempts}); retrying shortly." >&2
+              sleep $((attempt * 3))
+              attempt=$((attempt + 1))
+            done
+          }
           tag_sha="$(gh api "repos/$GITHUB_REPOSITORY/git/ref/tags/$TAG" --jq '.object.sha')"
           [[ "$tag_sha" == "$RELEASE_SHA" ]] || {
             echo "Release tag $TAG points at $tag_sha, expected $RELEASE_SHA." >&2
@@ -502,22 +541,15 @@ jobs:
               echo "Refusing to replace an already published v${VERSION} release." >&2
               exit 1
             }
-            gh release upload "$TAG" --clobber \
+            retry_github_release_command gh release upload "$TAG" --clobber \
               dist/CodexDreamSkin-v${VERSION}.dmg \
               dist/CodexDreamSkin-Setup-v${VERSION}.exe \
               dist/SHA256SUMS.txt
-            gh release edit "$TAG" --draft \
+            retry_github_release_command gh release edit "$TAG" --draft \
               --title "Codex Dream Skin v${VERSION}" \
               --notes-file release-notes.md
           else
-            gh release create "$TAG" \
-              --verify-tag \
-              --draft \
-              --title "Codex Dream Skin v${VERSION}" \
-              --notes-file release-notes.md \
-              dist/CodexDreamSkin-v${VERSION}.dmg \
-              dist/CodexDreamSkin-Setup-v${VERSION}.exe \
-              dist/SHA256SUMS.txt
+            create_draft_release
           fi
 
           RELEASE_JSON="$(gh release view "$TAG" --json isDraft,isPrerelease,tagName,assets)"
