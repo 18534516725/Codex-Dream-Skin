@@ -8,7 +8,6 @@ final class NexoPairingURLTests: XCTestCase {
       .deletingLastPathComponent()
       .deletingLastPathComponent()
       .deletingLastPathComponent()
-      .deletingLastPathComponent()
       .appendingPathComponent("Sources/CodexDreamSkinMenuBar/AppDelegate.swift")
     let source = try String(contentsOf: sourceURL)
 
