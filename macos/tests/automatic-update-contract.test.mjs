@@ -26,6 +26,8 @@ test("macOS schedules a throttled startup update check and packages a detached u
   assert.match(updater, /cc\.dreamskin\.menubar/);
   assert.match(updater, /--retry 3/,
     "transient GitHub failures must be retried before abandoning an update");
+  assert.doesNotMatch(updater, /--retry-all-errors/,
+    "the updater must remain compatible with the curl bundled by older supported macOS releases");
   assert.match(updater, /reopen_current_app_on_failure/);
   assert.match(updater, /\/usr\/bin\/open "\$TARGET_APP"/,
     "a failed detached update must restore the still-valid installed helper");

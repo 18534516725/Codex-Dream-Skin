@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- v1.6.33 随 macOS 自动更新兼容性修复同步发布版本号；Windows 更新逻辑不变。
 - v1.6.32 随 macOS 回归测试修复同步发布版本号；Windows 运行时行为不变。
 - v1.6.31 随 macOS 自动设备连接流程同步发布版本号；Windows 保持现有设备身份存储与权限校验流程。
 - v1.6.30 随 macOS 设备身份存储修复同步发布版本号；Windows 仍使用现有 Credential Manager 身份存储与权限校验流程。

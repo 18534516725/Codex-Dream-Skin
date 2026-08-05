@@ -52,7 +52,7 @@ download() {
   local effective
   effective="$(/usr/bin/curl --proto '=https' --tlsv1.2 --fail --silent --show-error \
     --location --max-redirs 5 --connect-timeout 8 --max-time 180 \
-    --retry 3 --retry-delay 2 --retry-all-errors --retry-max-time 60 \
+    --retry 3 --retry-delay 2 --retry-max-time 60 \
     --user-agent 'CodexDreamSkin-AutoUpdate' --output "$output" \
     --write-out '%{url_effective}' "$url")" || fail "无法下载正式更新文件。"
   valid_download_host "$effective" || fail "更新下载跳转到了未获准的服务器。"
