@@ -1,5 +1,13 @@
 # Task Progress
 
+## Client release v1.6.29 — first-install Codex-exit handoff (2026-08-05)
+
+- [goal] Replace the raw English first-install failure shown while Codex is running with a safe guided handoff that preserves the pending one-click skin request.
+- [implemented locally] The macOS menu-bar app detects a running Codex before deploying the bundled engine, asks the user to save and quit normally, keeps the pending Nexo skin, and checks for a natural exit before automatically resuming installation and apply. A race that reaches the shell guard is folded back into the same waiting state. The helper never force-terminates Codex.
+- [verified locally] The focused deferred-update contract, outer-installer preflight, macOS native product build, and `git diff --check` pass. The complete skin-page work remains local to `payment-platform` and is not part of this helper release.
+- [release scope] Version sources are advancing together to v1.6.29 so the `main` push triggers the repository Release workflow for both macOS DMG and Windows Setup.
+- [pending] Run portable release regressions and version consistency, review the staged diff, commit, fast-forward against `origin/main`, push, and let GitHub Actions build the release.
+
 ## Client release v1.6.28 — dynamic catalog and end-to-end skin flow (2026-08-05)
 
 - [goal] Make future platform-approved skins available through the signed remote catalog without rebuilding the helper, while keeping strict IDs, hashes, fixed origins, entitlement verification and full-interface visual profiles.

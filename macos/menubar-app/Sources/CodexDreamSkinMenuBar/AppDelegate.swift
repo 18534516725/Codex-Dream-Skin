@@ -30,6 +30,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   private var communityBaselineThemeID = ""
   private var communityStageMessage = ""
   private var engineUpdateMessage = ""
+  private var waitingForCodexExitToInstallEngine = false
+  private var deferredEngineInstallForce = false
   private var refreshTimer: Timer?
   private var automaticUpdateCheckInFlight = false
   private let automaticUpdateLastCheckKey = "automaticUpdateLastCheck"
@@ -512,7 +514,22 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   }
 
   @objc private func refreshStatusFromTimer() {
+    continueDeferredEngineInstallIfPossible()
     refreshStatus()
+  }
+
+  private func continueDeferredEngineInstallIfPossible() {
+    guard waitingForCodexExitToInstallEngine,
+          !isCodexRunning,
+          !engineInstallInFlight,
+          !operationInFlight,
+          !themeRecoveryInFlight,
+          !snapshot.busy else { return }
+    let force = deferredEngineInstallForce
+    waitingForCodexExitToInstallEngine = false
+    deferredEngineInstallForce = false
+    engineUpdateMessage = ""
+    installBundledEngineIfNeeded(force: force)
   }
 
   private func refreshStatus() {
@@ -1571,6 +1588,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       }
       return
     }
+    if isCodexRunning {
+      deferEngineInstallUntilCodexExits(force: force)
+      return
+    }
     guard let bundledVersion = version(at: bundledEngineURL?.appendingPathComponent("VERSION")) else {
       pendingCommunityVersionID = nil
       pendingNexoSkin = nil
@@ -1614,6 +1635,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
           }
         }
       } else {
+        if result.output.contains("Close Codex before installation") {
+          self.deferEngineInstallUntilCodexExits(force: force)
+          return
+        }
         self.pendingCommunityVersionID = nil
         self.pendingNexoSkin = nil
         self.showError(
@@ -1625,6 +1650,19 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
         )
       }
     }
+  }
+
+  private func deferEngineInstallUntilCodexExits(force: Bool) {
+    let alreadyWaiting = waitingForCodexExitToInstallEngine
+    waitingForCodexExitToInstallEngine = true
+    deferredEngineInstallForce = deferredEngineInstallForce || force
+    engineUpdateMessage = "首次安装等待中：正常退出 Codex 后自动继续"
+    rebuildMenu()
+    guard !alreadyWaiting else { return }
+    showInfo(
+      title: "首次安装需要退出 Codex",
+      message: "请先保存当前输入和工作，然后从 Codex 菜单正常退出。正常退出 Codex 后，助手会自动完成组件安装并继续刚才的一键应用；不会强制关闭 Codex。"
+    )
   }
 
   private func recoverInterruptedThemeImports(completion: ((Bool) -> Void)? = nil) {
@@ -1798,6 +1836,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   private func reactivateCodexBeforeTransaction() {
     NSRunningApplication.runningApplications(withBundleIdentifier: "com.openai.codex")
       .first?.activate(options: [.activateIgnoringOtherApps])
+  }
+
+  private var isCodexRunning: Bool {
+    !NSRunningApplication.runningApplications(withBundleIdentifier: "com.openai.codex").isEmpty
   }
 
   private func showInfo(title: String, message: String) {

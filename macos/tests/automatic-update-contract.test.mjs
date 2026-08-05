@@ -36,6 +36,13 @@ test("macOS schedules a throttled startup update check and packages a detached u
   assert.doesNotMatch(updater, /killall .*Codex|pkill .*Codex|com\.openai\.codex/);
   assert.match(app, /completeDeferredEngineUpdateIfPossible\(\)/);
   assert.match(app, /更新已就绪，关闭 ChatGPT 后自动完成/);
+  assert.match(app, /waitingForCodexExitToInstallEngine/,
+    "a clean install must wait for Codex to close instead of failing");
+  assert.match(app, /continueDeferredEngineInstallIfPossible\(\)/);
+  assert.match(app, /首次安装需要退出 Codex/);
+  assert.match(app, /正常退出 Codex 后，助手会自动完成组件安装/);
+  assert.doesNotMatch(app, /terminateApplication|forceTerminate|killall.*Codex|pkill.*Codex/,
+    "the helper must never force-close Codex");
   assert.match(app, /if installedScript\(named: "status-dream-skin-macos\.sh"\) == nil/);
   assert.match(app, /换肤组件会在你自然关闭 Codex 后自动升级/,
     "the updater must explain that the running engine is deferred without closing Codex");
