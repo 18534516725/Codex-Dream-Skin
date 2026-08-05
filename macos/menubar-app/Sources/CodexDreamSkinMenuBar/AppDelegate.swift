@@ -21,6 +21,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   private let menu = NSMenu()
   private var snapshot = StatusSnapshot()
   private var statusRefreshRunning = false
+  private var loginRestoreAttempted = false
   private var operationInFlight = false
   private var engineInstallInFlight = false
   private var themeRecoveryInFlight = false
@@ -537,12 +538,30 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       if result.succeeded,
          let parsed = StatusSnapshot(jsonData: Data(result.output.utf8)) {
         self.snapshot = parsed
+        self.resumeActiveSkinAfterLogin(snapshot: parsed)
         self.completeDeferredEngineUpdateIfPossible()
         self.statusItem.button?.toolTip = "Nexo Codex Skin · \(parsed.title)"
         self.statusItem.button?.appearsDisabled = parsed.session == "unknown" || parsed.session == "stale"
         self.rebuildMenu()
       }
     }
+  }
+
+  private func resumeActiveSkinAfterLogin(snapshot: StatusSnapshot) {
+    guard !loginRestoreAttempted,
+          SMAppService.mainApp.status == .enabled,
+          snapshot.session == "stale",
+          !snapshot.codexRunning,
+          !snapshot.busy,
+          !operationInFlight,
+          !engineInstallInFlight,
+          !themeRecoveryInFlight,
+          !snapshot.themeID.isEmpty,
+          snapshot.themeID == snapshot.appliedThemeID else {
+      return
+    }
+    loginRestoreAttempted = true
+    runInstalledScript(named: "apply-from-menubar-macos.sh", operation: "恢复已选皮肤")
   }
 
   @objc private func applySkin() {

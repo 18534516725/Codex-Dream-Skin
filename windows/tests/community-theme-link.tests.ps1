@@ -6,8 +6,21 @@ $ErrorActionPreference = 'Stop'
 . (Join-Path $Root 'scripts\theme-windows.ps1')
 
 $themeSource = [System.IO.File]::ReadAllText((Join-Path $Root 'scripts\theme-windows.ps1'))
-if ($themeSource.Contains('$script:DreamSkinSignedNexoPublicKeys.Count')) {
-  throw 'Nexo catalog availability must count key entries through an array for Windows PowerShell compatibility.'
+if ($themeSource -match 'DreamSkinSignedNexoPublicKeys(?:\.Keys)?\)\.Count') {
+  throw 'Nexo catalog availability must not rely on an adapter Count property.'
+}
+$originalNexoPublicKeys = $script:DreamSkinSignedNexoPublicKeys
+try {
+  $script:DreamSkinSignedNexoPublicKeys = @{ 'test-key' = 'test-value' }
+  if (-not (Test-DreamSkinSignedNexoCatalogKeyAvailability)) {
+    throw 'Nexo catalog key availability must accept a non-empty signing-key dictionary.'
+  }
+  $script:DreamSkinSignedNexoPublicKeys = @{}
+  if (Test-DreamSkinSignedNexoCatalogKeyAvailability) {
+    throw 'Nexo catalog key availability must reject an empty signing-key dictionary.'
+  }
+} finally {
+  $script:DreamSkinSignedNexoPublicKeys = $originalNexoPublicKeys
 }
 
 function Assert-CommunityValueRejected {

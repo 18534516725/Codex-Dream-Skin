@@ -33,6 +33,21 @@ function ConvertFrom-DreamSkinHexColor {
     [Convert]::ToInt32($Hex.Substring(5, 2), 16)
 }
 
+function Test-DreamSkinSignedNexoCatalogKeyAvailability {
+  # PowerShell 5.1 can expose a hashtable from a dot-sourced protocol handler
+  # through an adapter that does not provide Count. Enumerate the dictionary
+  # instead of consulting an adapter property so the handler stays portable.
+  $publicKeys = $script:DreamSkinSignedNexoPublicKeys
+  if ($publicKeys -isnot [System.Collections.IDictionary]) { return $false }
+  foreach ($entry in $publicKeys.GetEnumerator()) {
+    if ($entry.Key -is [string] -and -not [string]::IsNullOrWhiteSpace($entry.Key) -and
+      $entry.Value -is [string] -and -not [string]::IsNullOrWhiteSpace($entry.Value)) {
+      return $true
+    }
+  }
+  return $false
+}
+
 function Resolve-DreamSkinNexoApplyUri {
   param(
     [Parameter(Mandatory = $true)][string]$Uri,
@@ -47,10 +62,7 @@ function Resolve-DreamSkinNexoApplyUri {
   )
   if (-not $match.Success) { throw 'Only a fixed Nexo skin catalog link is accepted.' }
   $id = $match.Groups[1].Value
-  # Hashtable adapters differ between Windows PowerShell 5.1 and PowerShell 7
-  # when this file is dot-sourced by a protocol handler. Normalize keys to an
-  # array before counting so one pinned signing key remains valid everywhere.
-  if (@($script:DreamSkinSignedNexoPublicKeys.Keys).Count -gt 0) {
+  if (Test-DreamSkinSignedNexoCatalogKeyAvailability) {
     try {
       $signedRecord = Resolve-DreamSkinSignedNexoSkin -SkinId $id `
         -StateRoot $StateRoot -Now $Now -SkipRefresh:$SkipCatalogRefresh
