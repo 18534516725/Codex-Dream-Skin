@@ -9,7 +9,6 @@ $ErrorActionPreference = 'Stop'
 Set-StrictMode -Version 2.0
 . (Join-Path $PSScriptRoot 'common-windows.ps1')
 . (Join-Path $PSScriptRoot 'theme-windows.ps1')
-. (Join-Path $PSScriptRoot 'nexo-device.ps1')
 
 function Show-DreamSkinCommunityMessage {
   param(
@@ -75,10 +74,8 @@ SHA-256：$($Metadata.PackageSha256)
 function Invoke-DreamSkinNexoApply {
   param([Parameter(Mandatory = $true)][string]$ApplyUri)
   $entry = Resolve-DreamSkinNexoApplyUri -Uri $ApplyUri
-  # The strict deep link carries only an approved skin ID. The paired device
-  # resolves the platform-created request ID and verifies access before any
-  # skin asset is requested.
-  $authorization = Invoke-DreamSkinNexoEntitlementVerification -SkinId $entry.Id
+  # The strict deep link carries only an approved skin ID. The local signed
+  # catalog resolves its fixed image URL and hash without any account request.
   Add-Type -AssemblyName System.Windows.Forms -ErrorAction Stop
   $choice = [System.Windows.Forms.MessageBox]::Show(
     "应用主题「$($entry.Name)」？`r`n`r`n助手只会从固定皮肤目录下载图片；必要时 Codex 会重启一次。",
@@ -178,10 +175,8 @@ function Invoke-DreamSkinNexoApply {
       # path presents the existing explicit restart confirmation and defaults to cancel.
       & (Join-Path $PSScriptRoot 'start-dream-skin.ps1') -PromptRestart -RequireUnpaused
       if ($LASTEXITCODE -ne 0) { throw 'The selected skin did not pass visible renderer verification.' }
-      $null = Send-DreamSkinNexoApplyOutcome -RequestId $authorization.RequestId -Status 'succeeded'
       return [pscustomobject]@{ Canceled = $false; Name = $entry.Name; CleanupWarning = ''; Kind = 'Nexo' }
     } catch {
-      $null = Send-DreamSkinNexoApplyOutcome -RequestId $authorization.RequestId -Status 'failed' -FailureCode $failureCode
       throw
     }
   } finally {

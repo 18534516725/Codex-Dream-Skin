@@ -24,7 +24,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   private var operationInFlight = false
   private var engineInstallInFlight = false
   private var themeRecoveryInFlight = false
-  private var pairingInFlight = false
   private var pendingCommunityVersionID: String?
   private var pendingNexoSkin: NexoSkinCatalogEntry?
   private var communityBaselineThemeID = ""
@@ -38,7 +37,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
   private lazy var communityHTTP = BoundedCommunityHTTPClient(
     userAgent: "CodexDreamSkin/\(appVersion)"
   )
-  private let nexoDevice = NexoDeviceClient()
   private let requiredEngineRelativePaths = [
     "VERSION",
     "assets/appearance-bridge.mjs",
@@ -346,11 +344,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       addActionItem("暂停皮肤", action: #selector(pauseSkin), enabled: !busy)
     }
     addActionItem("打开 ChatGPT", action: #selector(openCodex), enabled: !busy)
-    addActionItem(
-      pairingInFlight ? "正在连接 NexoToken…" : "连接 NexoToken 账号…",
-      action: #selector(beginNexoPairing),
-      enabled: !busy && !pairingInFlight
-    )
     addActionItem("检查更新…", action: #selector(checkForUpdates), enabled: !operationInFlight)
 
     let advancedRoot = NSMenuItem(title: "高级工具", action: nil, keyEquivalent: "")
@@ -669,83 +662,6 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     importThemeArchive(archiveURL)
   }
 
-  @objc private func beginNexoPairing() {
-    guard !pairingInFlight else { return }
-    pairingInFlight = true
-    rebuildMenu()
-    nexoDevice.currentPairingStatus { [weak self] result in
-      DispatchQueue.main.async {
-        guard let self else { return }
-        switch result {
-        case let .success(status) where status == "active":
-          self.pairingInFlight = false
-          self.rebuildMenu()
-          self.showInfo(title: "账号已连接", message: "此设备已经连接 NexoToken，无需重新连接。")
-        case .success:
-          self.startNexoPairingChallenge()
-        case let .failure(error):
-          self.pairingInFlight = false
-          self.rebuildMenu()
-          self.showError(title: "无法检查连接状态", message: error.localizedDescription)
-        }
-      }
-    }
-  }
-
-  private func startNexoPairingChallenge(completion: ((Result<Void, Error>) -> Void)? = nil) {
-    nexoDevice.startPairing { [weak self] result in
-      DispatchQueue.main.async {
-        guard let self else { return }
-        switch result {
-        case let .failure(error):
-          self.pairingInFlight = false
-          self.rebuildMenu()
-          self.showError(title: "无法连接账号", message: error.localizedDescription)
-          completion?(.failure(error))
-        case let .success(challenge):
-          let alert = NSAlert()
-          alert.messageText = "连接 NexoToken 账号"
-          alert.informativeText = "将在浏览器已登录的 NexoToken 账号下自动确认此设备。助手不会读取或保存你的登录令牌。"
-          alert.addButton(withTitle: "打开 NexoToken")
-          alert.addButton(withTitle: "取消")
-          self.activateForUserInteraction()
-          guard alert.runModal() == .alertFirstButtonReturn else {
-            self.pairingInFlight = false
-            self.rebuildMenu()
-            completion?(.failure(NexoDeviceError.pairingExpired))
-            return
-          }
-          var components = URLComponents(string: "https://nexotoken.net/")
-          components?.queryItems = [URLQueryItem(name: "view", value: "codex-skins")]
-          components?.fragment = "pairingCode=\(challenge.code)"
-          if let url = components?.url {
-            NSWorkspace.shared.open(url)
-          } else {
-            self.pairingInFlight = false
-            self.rebuildMenu()
-            completion?(.failure(NexoDeviceError.invalidResponse))
-            return
-          }
-          self.nexoDevice.waitUntilPaired { [weak self] status in
-            DispatchQueue.main.async {
-              guard let self else { return }
-              self.pairingInFlight = false
-              self.rebuildMenu()
-              switch status {
-              case .success:
-                self.showInfo(title: "账号已连接", message: "现在可以从 NexoToken 一键应用已解锁的皮肤。")
-                completion?(.success(()))
-              case let .failure(error):
-                self.showError(title: "连接未完成", message: error.localizedDescription)
-                completion?(.failure(error))
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
   private func beginNexoSkinApply(_ entry: NexoSkinCatalogEntry, skipConfirmation: Bool = false) {
     guard !operationInFlight, !snapshot.busy else {
       showError(title: "暂时无法换肤", message: "Dream Skin 正在执行其他操作，请稍后再点一次。")
@@ -774,50 +690,13 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       activateForUserInteraction()
       guard alert.runModal() == .alertSecondButtonReturn else { return }
 
-      pairingInFlight = true
-      updateCommunityStage("正在确认设备连接…")
-      nexoDevice.currentPairingStatus { [weak self] status in
-        DispatchQueue.main.async {
-          guard let self else { return }
-          switch status {
-          case .success("active"):
-            self.pairingInFlight = false
-            self.rebuildMenu()
-            self.beginNexoSkinApply(entry, skipConfirmation: true)
-          case .success:
-            self.updateCommunityStage("正在连接 NexoToken 账号…")
-            self.startNexoPairingChallenge { [weak self] result in
-              DispatchQueue.main.async {
-                guard let self else { return }
-                switch result {
-                case .success: self.beginNexoSkinApply(entry, skipConfirmation: true)
-                case let .failure(error): self.showError(title: "无法应用此皮肤", message: error.localizedDescription)
-                }
-              }
-            }
-          case let .failure(error):
-            self.pairingInFlight = false
-            self.rebuildMenu()
-            self.showError(title: "无法应用此皮肤", message: error.localizedDescription)
-          }
-        }
-      }
+      beginNexoSkinApply(entry, skipConfirmation: true)
       return
     }
 
     operationInFlight = true
-    updateCommunityStage("正在验证账号与皮肤资格…")
-    nexoDevice.verifyEntitlement(skinID: entry.id) { [weak self] entitlement in
-      guard let self else { return }
-      switch entitlement {
-      case let .failure(error):
-        DispatchQueue.main.async {
-          self.finishThemeOperation()
-          self.showError(title: "无法应用此皮肤", message: error.localizedDescription)
-        }
-      case let .success(authorization):
-        DispatchQueue.main.async { self.updateCommunityStage("正在下载并校验“\(entry.name)”…") }
-        self.communityHTTP.get(
+    updateCommunityStage("正在下载并校验“\(entry.name)”…")
+    communityHTTP.get(
           entry.imageURL,
           accept: "image/webp,image/*",
           maximumBytes: 10 * 1024 * 1024
@@ -877,17 +756,8 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
                 try? self.fileManager.removeItem(at: root)
                 self.finishThemeOperation()
                 if scriptResult.succeeded {
-                  self.nexoDevice.reportOutcome(
-                    requestID: authorization.requestID,
-                    status: .succeeded
-                  ) { _ in }
                   self.showInfo(title: "主题已应用", message: "“\(entry.name)”已通过下载、主题生成和可见渲染验证。")
                 } else {
-                  self.nexoDevice.reportOutcome(
-                    requestID: authorization.requestID,
-                    status: .failed,
-                    failureCode: "RENDER_VERIFICATION_FAILED"
-                  ) { _ in }
                   self.showError(
                     title: "主题应用失败",
                     message: self.conciseOutput(scriptResult.output, fallback: "目标主题没有通过可见渲染验证，未报告成功。")
@@ -896,18 +766,11 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
               }
             }
           } catch {
-            self.nexoDevice.reportOutcome(
-              requestID: authorization.requestID,
-              status: .failed,
-              failureCode: "SKIN_ASSET_UNAVAILABLE"
-            ) { _ in }
             DispatchQueue.main.async {
               self.finishThemeOperation()
               self.showError(title: "主题下载失败", message: "固定主题图片未通过来源、大小或格式校验。")
             }
           }
-        }
-      }
     }
   }
 

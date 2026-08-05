@@ -7,7 +7,6 @@ Add-Type -AssemblyName System.Drawing
 Add-Type -AssemblyName Microsoft.VisualBasic
 . (Join-Path $PSScriptRoot 'common-windows.ps1')
 . (Join-Path $PSScriptRoot 'theme-windows.ps1')
-. (Join-Path $PSScriptRoot 'nexo-device.ps1')
 
 Assert-DreamSkinPort -Port $Port
 $SkillRoot = Split-Path -Parent $PSScriptRoot
@@ -205,15 +204,6 @@ try {
           Show-DreamSkinTrayError -Message $removal.Message
         }
       }
-    }
-    $null = Add-DreamSkinTrayItem -Items $menu.Items -Text '连接 NexoToken 账号…' -Action {
-      Ensure-DreamSkinNexoPairing
-      $notify.ShowBalloonTip(
-        2200,
-        'Nexo Codex Skin',
-        'NexoToken 账号已连接，可以应用已解锁的皮肤。',
-        [System.Windows.Forms.ToolTipIcon]::Info
-      )
     }
     $advancedMenu = [System.Windows.Forms.ToolStripMenuItem]::new('高级工具')
     $null = Add-DreamSkinTrayItem -Items $advancedMenu.DropDownItems -Text '外观设置…' -Action {
