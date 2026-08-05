@@ -47,7 +47,10 @@ function Resolve-DreamSkinNexoApplyUri {
   )
   if (-not $match.Success) { throw 'Only a fixed Nexo skin catalog link is accepted.' }
   $id = $match.Groups[1].Value
-  if ($script:DreamSkinSignedNexoPublicKeys.Count -gt 0) {
+  # Hashtable adapters differ between Windows PowerShell 5.1 and PowerShell 7
+  # when this file is dot-sourced by a protocol handler. Normalize keys to an
+  # array before counting so one pinned signing key remains valid everywhere.
+  if (@($script:DreamSkinSignedNexoPublicKeys.Keys).Count -gt 0) {
     try {
       $signedRecord = Resolve-DreamSkinSignedNexoSkin -SkinId $id `
         -StateRoot $StateRoot -Now $Now -SkipRefresh:$SkipCatalogRefresh

@@ -1,5 +1,13 @@
 # Task Progress
 
+## Windows one-click apply repair — release v1.6.35 (2026-08-05)
+
+- [goal] Fix the Windows one-click Nexo skin apply failure reporting that the PowerShell object has no `Count` property.
+- [root cause] `Resolve-DreamSkinNexoApplyUri` read `.Count` directly from the pinned-signing-key hashtable. Under affected Windows PowerShell protocol-handler execution, that adapted value does not expose the member, so apply stops before the downloaded skin can become active.
+- [implemented locally] Normalize the key collection through `@(...).Count`; add a Windows regression assertion that rejects the unsafe direct access.
+- [release scope] v1.6.35 updates all six required version sources so GitHub Release builds the Windows Setup.exe and companion macOS DMG from the same commit.
+- [verification] In progress. macOS can run portable source checks; Windows PowerShell 5.1/7 and Setup.exe compilation are release-CI gates because this host has no PowerShell executable.
+
 ## macOS file-backed device identity — release v1.6.30 (2026-08-05)
 
 - [goal] Future downloaded macOS releases must not show a Keychain private-key authorization/password dialog while preserving device pairing and entitlement verification.

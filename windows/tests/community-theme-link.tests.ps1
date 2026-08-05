@@ -5,6 +5,11 @@ $ErrorActionPreference = 'Stop'
 . (Join-Path $Root 'scripts\common-windows.ps1')
 . (Join-Path $Root 'scripts\theme-windows.ps1')
 
+$themeSource = [System.IO.File]::ReadAllText((Join-Path $Root 'scripts\theme-windows.ps1'))
+if ($themeSource.Contains('$script:DreamSkinSignedNexoPublicKeys.Count')) {
+  throw 'Nexo catalog availability must count key entries through an array for Windows PowerShell compatibility.'
+}
+
 function Assert-CommunityValueRejected {
   param(
     [Parameter(Mandatory = $true)][scriptblock]$Action,
