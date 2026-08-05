@@ -692,7 +692,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
   }
 
-  private func startNexoPairingChallenge() {
+  private func startNexoPairingChallenge(completion: ((Result<Void, Error>) -> Void)? = nil) {
     nexoDevice.startPairing { [weak self] result in
       DispatchQueue.main.async {
         guard let self else { return }
@@ -701,20 +701,30 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
           self.pairingInFlight = false
           self.rebuildMenu()
           self.showError(title: "无法连接账号", message: error.localizedDescription)
+          completion?(.failure(error))
         case let .success(challenge):
           let alert = NSAlert()
-          alert.messageText = "连接码：\(challenge.code)"
-          alert.informativeText = "将在 NexoToken 的 Codex 皮肤页面确认此连接。连接码十分钟后失效；助手不会读取或保存你的登录令牌。"
+          alert.messageText = "连接 NexoToken 账号"
+          alert.informativeText = "将在浏览器已登录的 NexoToken 账号下自动确认此设备。助手不会读取或保存你的登录令牌。"
           alert.addButton(withTitle: "打开 NexoToken")
           alert.addButton(withTitle: "取消")
           self.activateForUserInteraction()
           guard alert.runModal() == .alertFirstButtonReturn else {
             self.pairingInFlight = false
             self.rebuildMenu()
+            completion?(.failure(NexoDeviceError.pairingExpired))
             return
           }
-          if let url = URL(string: "https://nexotoken.net/?view=codex-skins") {
+          var components = URLComponents(string: "https://nexotoken.net/")
+          components?.queryItems = [URLQueryItem(name: "view", value: "codex-skins")]
+          components?.fragment = "pairingCode=\(challenge.code)"
+          if let url = components?.url {
             NSWorkspace.shared.open(url)
+          } else {
+            self.pairingInFlight = false
+            self.rebuildMenu()
+            completion?(.failure(NexoDeviceError.invalidResponse))
+            return
           }
           self.nexoDevice.waitUntilPaired { [weak self] status in
             DispatchQueue.main.async {
@@ -724,8 +734,10 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
               switch status {
               case .success:
                 self.showInfo(title: "账号已连接", message: "现在可以从 NexoToken 一键应用已解锁的皮肤。")
+                completion?(.success(()))
               case let .failure(error):
                 self.showError(title: "连接未完成", message: error.localizedDescription)
+                completion?(.failure(error))
               }
             }
           }
@@ -734,7 +746,7 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
     }
   }
 
-  private func beginNexoSkinApply(_ entry: NexoSkinCatalogEntry) {
+  private func beginNexoSkinApply(_ entry: NexoSkinCatalogEntry, skipConfirmation: Bool = false) {
     guard !operationInFlight, !snapshot.busy else {
       showError(title: "暂时无法换肤", message: "Dream Skin 正在执行其他操作，请稍后再点一次。")
       return
@@ -753,13 +765,45 @@ final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuDelegate {
       return
     }
 
-    let alert = NSAlert()
-    alert.messageText = "应用“\(entry.name)”？"
-    alert.informativeText = "助手会从 Nexo 固定主题目录下载并校验图片。若当前 Codex 没有安全调试连接，继续操作会关闭并重新打开一次 Codex；请先保存未发送的输入。"
-    alert.addButton(withTitle: "取消")
-    alert.addButton(withTitle: "应用并允许必要时重启")
-    activateForUserInteraction()
-    guard alert.runModal() == .alertSecondButtonReturn else { return }
+    if !skipConfirmation {
+      let alert = NSAlert()
+      alert.messageText = "应用“\(entry.name)”？"
+      alert.informativeText = "助手会从 Nexo 固定主题目录下载并校验图片。若当前 Codex 没有安全调试连接，继续操作会关闭并重新打开一次 Codex；请先保存未发送的输入。"
+      alert.addButton(withTitle: "取消")
+      alert.addButton(withTitle: "应用并允许必要时重启")
+      activateForUserInteraction()
+      guard alert.runModal() == .alertSecondButtonReturn else { return }
+
+      pairingInFlight = true
+      updateCommunityStage("正在确认设备连接…")
+      nexoDevice.currentPairingStatus { [weak self] status in
+        DispatchQueue.main.async {
+          guard let self else { return }
+          switch status {
+          case .success("active"):
+            self.pairingInFlight = false
+            self.rebuildMenu()
+            self.beginNexoSkinApply(entry, skipConfirmation: true)
+          case .success:
+            self.updateCommunityStage("正在连接 NexoToken 账号…")
+            self.startNexoPairingChallenge { [weak self] result in
+              DispatchQueue.main.async {
+                guard let self else { return }
+                switch result {
+                case .success: self.beginNexoSkinApply(entry, skipConfirmation: true)
+                case let .failure(error): self.showError(title: "无法应用此皮肤", message: error.localizedDescription)
+                }
+              }
+            }
+          case let .failure(error):
+            self.pairingInFlight = false
+            self.rebuildMenu()
+            self.showError(title: "无法应用此皮肤", message: error.localizedDescription)
+          }
+        }
+      }
+      return
+    }
 
     operationInFlight = true
     updateCommunityStage("正在验证账号与皮肤资格…")
