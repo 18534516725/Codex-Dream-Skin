@@ -1,5 +1,13 @@
 # Task Progress
 
+## macOS file-backed device identity — design approved (2026-08-05)
+
+- [goal] Future downloaded macOS releases must not show a Keychain private-key authorization/password dialog while preserving device pairing and entitlement verification.
+- [scope] Change only the `Codex-Dream-Skin` source and future release artifacts. Do not touch the installed app, existing Keychain item, active theme, or running Codex instance.
+- [design] Store the existing UUID plus Ed25519 private key in the helper state directory using a user-owned `0700` directory, a user-owned `0600` regular file, strict validation, and atomic creation. Ignore and retain legacy Keychain data, so upgraded clients pair again without a migration prompt.
+- [branch] `codex/remove-macos-keychain`.
+- [pending] User review of `docs/superpowers/specs/2026-08-05-macos-file-backed-device-identity-design.md`, followed by an implementation plan and test-first implementation.
+
 ## Client release v1.6.29 — first-install Codex-exit handoff (2026-08-05)
 
 - [goal] Replace the raw English first-install failure shown while Codex is running with a safe guided handoff that preserves the pending one-click skin request.
