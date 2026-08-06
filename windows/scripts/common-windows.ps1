@@ -904,12 +904,12 @@ function Get-DreamSkinPortListeners {
 
 function Test-DreamSkinPortAvailable {
   param([int]$Port)
-  return (Get-DreamSkinPortListeners -Port $Port).Count -eq 0
+  return @(Get-DreamSkinPortListeners -Port $Port).Count -eq 0
 }
 
 function Test-DreamSkinCodexPortOwner {
   param([int]$Port, [Parameter(Mandatory = $true)][object]$Codex)
-  $listeners = Get-DreamSkinPortListeners -Port $Port
+  $listeners = @(Get-DreamSkinPortListeners -Port $Port)
   if ($listeners.Count -eq 0) { return $false }
   foreach ($listener in $listeners) {
     if ($listener.LocalAddress -notin @('127.0.0.1', '::1')) { return $false }
@@ -927,7 +927,7 @@ function Get-DreamSkinVerifiedCdpIdentity {
   if (-not (Test-DreamSkinCodexPortOwner -Port $Port -Codex $Codex)) { return $null }
   $browser = Get-DreamSkinCdpBrowserIdentity -Port $Port
   if ($null -eq $browser) { return $null }
-  $targets = Get-DreamSkinCdpTargets -Port $Port
+  $targets = @(Get-DreamSkinCdpTargets -Port $Port)
   if ($targets.Count -eq 0) { return $null }
   if (-not (Test-DreamSkinCodexPortOwner -Port $Port -Codex $Codex)) { return $null }
   return [pscustomobject]@{
@@ -1146,18 +1146,18 @@ function Stop-DreamSkinCodex {
     [AllowEmptyCollection()][int[]]$PreserveProcessIds = @(),
     [switch]$AllowForce
   )
-  $processes = Get-DreamSkinCodexProcessesExcept -Codex $Codex -PreserveProcessIds $PreserveProcessIds
+  $processes = @(Get-DreamSkinCodexProcessesExcept -Codex $Codex -PreserveProcessIds $PreserveProcessIds)
   if ($processes.Count -eq 0) { return }
   foreach ($item in $processes) {
     try { [void](Get-Process -Id $item.ProcessId -ErrorAction Stop).CloseMainWindow() } catch {}
   }
 
   $deadline = (Get-Date).AddSeconds(15)
-  while ((Get-DreamSkinCodexProcessesExcept -Codex $Codex `
+  while (@(Get-DreamSkinCodexProcessesExcept -Codex $Codex `
       -PreserveProcessIds $PreserveProcessIds).Count -gt 0 -and (Get-Date) -lt $deadline) {
     Start-Sleep -Milliseconds 250
   }
-  $remaining = Get-DreamSkinCodexProcessesExcept -Codex $Codex -PreserveProcessIds $PreserveProcessIds
+  $remaining = @(Get-DreamSkinCodexProcessesExcept -Codex $Codex -PreserveProcessIds $PreserveProcessIds)
   if ($remaining.Count -eq 0) { return }
   if (-not $AllowForce) {
     throw 'Codex did not close within 15 seconds. Close it manually or explicitly authorize a forced restart.'
@@ -1170,7 +1170,7 @@ function Stop-DreamSkinCodex {
     }
   }
   Start-Sleep -Milliseconds 500
-  if ((Get-DreamSkinCodexProcessesExcept -Codex $Codex `
+  if (@(Get-DreamSkinCodexProcessesExcept -Codex $Codex `
       -PreserveProcessIds $PreserveProcessIds).Count -gt 0) {
     throw 'Codex could not be stopped safely.'
   }
