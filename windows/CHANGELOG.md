@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- v1.6.42 synchronizes the release version with the macOS platform catalog key encoding repair.
 - v1.6.41 fixes the final Windows one-click apply collection-unwrapping case: the branch result used to lose its array shape when exactly one Codex process remained, even after both branch queries were materialized.
 - v1.6.40 fixes the remaining Windows one-click apply crash while Codex child processes shrink from multiple items to one during restart, and applies the same one-item collection safeguard to port, install, restore, and Setup paths.
 - v1.6.39 fixes Windows one-click apply after a theme is saved: startup now materializes Codex process queries before counting them, so a single running Codex process cannot abort final renderer verification with a missing `Count` property.
