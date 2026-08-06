@@ -308,6 +308,10 @@ $applySource = [System.IO.File]::ReadAllText($applyPath)
 foreach ($requiredSafety in @(
   'https://api\.dreamskin\.cc/v1/themes/ver_',
   '$request.AllowAutoRedirect = $false',
+  'Get-DreamSkinNexoImageResponse -ImageUri $entry.ImageUri',
+  '$attemptLimit = 3',
+  'Test-DreamSkinNexoTransientWebException',
+  'Start-Sleep -Milliseconds (500 * $attempt)',
   "'Accept-Encoding'] = 'identity'",
   '[System.Windows.Forms.MessageBoxDefaultButton]::Button2',
   'Local\CodexDreamSkin.$sid.CommunityApply',
@@ -348,6 +352,39 @@ foreach ($forbiddenBehavior in @(
 )) {
   if ($applySource.Contains($forbiddenBehavior)) {
     throw "Community theme apply script contains forbidden behavior: $forbiddenBehavior"
+  }
+}
+
+$transientHelperAst = $applyAst.Find({
+  param($node)
+  $node -is [System.Management.Automation.Language.FunctionDefinitionAst] -and
+    $node.Name -ceq 'Test-DreamSkinNexoTransientWebException'
+}, $true)
+if ($null -eq $transientHelperAst) {
+  throw 'Nexo fixed-image transient network classification helper is missing.'
+}
+Invoke-Expression $transientHelperAst.Extent.Text
+foreach ($status in @(
+  [System.Net.WebExceptionStatus]::ConnectFailure,
+  [System.Net.WebExceptionStatus]::ConnectionClosed,
+  [System.Net.WebExceptionStatus]::NameResolutionFailure,
+  [System.Net.WebExceptionStatus]::ReceiveFailure,
+  [System.Net.WebExceptionStatus]::SendFailure,
+  [System.Net.WebExceptionStatus]::Timeout
+)) {
+  $fixture = [System.Net.WebException]::new('transient fixture', $status)
+  if (-not (Test-DreamSkinNexoTransientWebException -Exception $fixture)) {
+    throw "Nexo fixed-image retry rejected transient WebException status: $status"
+  }
+}
+foreach ($status in @(
+  [System.Net.WebExceptionStatus]::TrustFailure,
+  [System.Net.WebExceptionStatus]::SecureChannelFailure,
+  [System.Net.WebExceptionStatus]::MessageLengthLimitExceeded
+)) {
+  $fixture = [System.Net.WebException]::new('permanent fixture', $status)
+  if (Test-DreamSkinNexoTransientWebException -Exception $fixture) {
+    throw "Nexo fixed-image retry accepted permanent WebException status: $status"
   }
 }
 

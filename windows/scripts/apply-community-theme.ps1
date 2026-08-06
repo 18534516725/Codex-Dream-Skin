@@ -101,6 +101,74 @@ SHA-256：$($Metadata.PackageSha256)
   }
 }
 
+function Get-DreamSkinNexoWebException {
+  param([Parameter(Mandatory = $true)][System.Exception]$Exception)
+  $candidate = $Exception
+  for ($depth = 0; $depth -lt 8 -and $null -ne $candidate; $depth += 1) {
+    if ($candidate -is [System.Net.WebException]) { return $candidate }
+    $candidate = $candidate.InnerException
+  }
+  return $null
+}
+
+function Test-DreamSkinNexoTransientWebException {
+  param([Parameter(Mandatory = $true)][System.Net.WebException]$Exception)
+  if ($Exception.Status -in @(
+      [System.Net.WebExceptionStatus]::ConnectFailure,
+      [System.Net.WebExceptionStatus]::ConnectionClosed,
+      [System.Net.WebExceptionStatus]::NameResolutionFailure,
+      [System.Net.WebExceptionStatus]::PipelineFailure,
+      [System.Net.WebExceptionStatus]::ProxyNameResolutionFailure,
+      [System.Net.WebExceptionStatus]::ReceiveFailure,
+      [System.Net.WebExceptionStatus]::SendFailure,
+      [System.Net.WebExceptionStatus]::Timeout
+    )) {
+    return $true
+  }
+  if ($Exception.Status -ne [System.Net.WebExceptionStatus]::ProtocolError -or
+    $null -eq $Exception.Response -or
+    $Exception.Response -isnot [System.Net.HttpWebResponse]) {
+    return $false
+  }
+  return [int]$Exception.Response.StatusCode -in @(408, 429, 500, 502, 503, 504)
+}
+
+function Get-DreamSkinNexoImageResponse {
+  param([Parameter(Mandatory = $true)][string]$ImageUri)
+  $attemptLimit = 3
+  for ($attempt = 1; $attempt -le $attemptLimit; $attempt += 1) {
+    $request = [System.Net.HttpWebRequest][System.Net.WebRequest]::Create(
+      [System.Uri]::new($ImageUri, [System.UriKind]::Absolute)
+    )
+    $request.Method = 'GET'
+    $request.Accept = 'image/webp,image/*'
+    $request.UserAgent = 'CodexDreamSkin/1 nexo-skin-apply'
+    $request.AllowAutoRedirect = $false
+    $request.Timeout = 20000
+    $request.ReadWriteTimeout = 60000
+    try {
+      return [System.Net.HttpWebResponse]$request.GetResponse()
+    } catch {
+      $webException = Get-DreamSkinNexoWebException -Exception $_.Exception
+      $retry = $null -ne $webException -and
+        (Test-DreamSkinNexoTransientWebException -Exception $webException) -and
+        $attempt -lt $attemptLimit
+      if ($null -ne $webException -and $null -ne $webException.Response) {
+        $webException.Response.Dispose()
+      }
+      if (-not $retry) {
+        if ($null -ne $webException -and
+          (Test-DreamSkinNexoTransientWebException -Exception $webException)) {
+          throw "固定皮肤图片连续 $attemptLimit 次连接失败或超时，请检查网络后重试。($($webException.Status))"
+        }
+        throw
+      }
+      Start-Sleep -Milliseconds (500 * $attempt)
+    }
+  }
+  throw 'The fixed skin image request ended without a response.'
+}
+
 function Invoke-DreamSkinNexoApply {
   param([Parameter(Mandatory = $true)][string]$ApplyUri)
   $sid = [System.Security.Principal.WindowsIdentity]::GetCurrent().User.Value
@@ -144,16 +212,7 @@ function Invoke-DreamSkinNexoApply {
   $failureCode = 'SKIN_ASSET_UNAVAILABLE'
   try {
     try {
-      $request = [System.Net.HttpWebRequest][System.Net.WebRequest]::Create(
-        [System.Uri]::new($entry.ImageUri, [System.UriKind]::Absolute)
-      )
-      $request.Method = 'GET'
-      $request.Accept = 'image/webp,image/*'
-      $request.UserAgent = 'CodexDreamSkin/1 nexo-skin-apply'
-      $request.AllowAutoRedirect = $false
-      $request.Timeout = 20000
-      $request.ReadWriteTimeout = 60000
-      $response = [System.Net.HttpWebResponse]$request.GetResponse()
+      $response = Get-DreamSkinNexoImageResponse -ImageUri $entry.ImageUri
       try {
         if ([int]$response.StatusCode -ne 200 -or $response.ResponseUri.AbsoluteUri -cne $entry.ImageUri) {
           throw 'The fixed skin image returned an unexpected status or redirect.'
