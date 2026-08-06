@@ -60,7 +60,15 @@ if ($endpoints.MetadataUri -cne 'https://api.dreamskin.cc/v1/themes/ver_1234abcd
   throw 'Community theme endpoints were not built from the fixed API origin.'
 }
 
-$nexo = Resolve-DreamSkinNexoApplyUri -Uri 'dreamskin://apply?skin=sakura-signal'
+$isolatedCatalogState = Join-Path ([System.IO.Path]::GetTempPath()) "dreamskin-catalog-link-$PID-$([guid]::NewGuid().ToString('N'))"
+try {
+  # Keep this fixed-catalog assertion independent of any signed catalog cache
+  # created by an installed helper on the machine running the test.
+  $nexo = Resolve-DreamSkinNexoApplyUri -Uri 'dreamskin://apply?skin=sakura-signal' `
+    -StateRoot $isolatedCatalogState -SkipCatalogRefresh
+} finally {
+  Remove-Item -LiteralPath $isolatedCatalogState -Recurse -Force -ErrorAction SilentlyContinue
+}
 if ($nexo.Id -cne 'sakura-signal' -or [string]::IsNullOrWhiteSpace("$($nexo.Name)") -or
   $nexo.ImageUri -cne 'https://nexotoken.net/codex-skins/originals/02-sakura-signal.webp' -or
   $nexo.Appearance -cne 'dark' -or $nexo.TaskMode -cne 'full' -or

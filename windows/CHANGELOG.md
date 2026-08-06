@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- v1.6.39 fixes Windows one-click apply after a theme is saved: startup now materializes Codex process queries before counting them, so a single running Codex process cannot abort final renderer verification with a missing `Count` property.
 - v1.6.37 brings protocol-launched confirmation dialogs to the foreground, serializes repeated Nexo apply requests, and reports the verified active skin through appearance bridge protocol v2.
 - v1.6.34 一键应用皮肤不再连接或验证 NexoToken 账号；Windows 助手仍只接受审核皮肤 ID，并在本地校验固定图片地址、大小、格式和 SHA-256。
 - v1.6.33 随 macOS 自动更新兼容性修复同步发布版本号；Windows 更新逻辑不变。
