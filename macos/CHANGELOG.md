@@ -2,6 +2,7 @@
 
 ## Unreleased
 
+- v1.6.41 synchronizes the release version with the final Windows one-click apply collection fix; macOS runtime behavior is unchanged.
 - v1.6.40 synchronizes the release version with the complete Windows one-item process collection repair; macOS runtime behavior is unchanged.
 - v1.6.39 synchronizes the release version with the Windows one-click apply repair; macOS runtime behavior is unchanged.
 - v1.6.37 reports the verified active skin through appearance bridge protocol v2 so the platform waits for real apply completion before syncing appearance settings.

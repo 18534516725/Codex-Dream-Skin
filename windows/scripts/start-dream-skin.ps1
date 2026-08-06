@@ -94,11 +94,13 @@ try {
     }
   }
   $debugReady = $null -ne $cdpIdentity
-  $codexProcesses = if (Test-DreamSkinPathEqual -Left $codexToStop.Executable -Right $currentCodex.Executable) {
-    $currentProcesses
-  } else {
-    @(Get-DreamSkinCodexProcesses -Codex $codexToStop)
-  }
+  $codexProcesses = @(
+    if (Test-DreamSkinPathEqual -Left $codexToStop.Executable -Right $currentCodex.Executable) {
+      $currentProcesses
+    } else {
+      @(Get-DreamSkinCodexProcesses -Codex $codexToStop)
+    }
+  )
   $closedExistingCodex = $false
   if (-not $debugReady -and $codexProcesses.Count -gt 0) {
     $restartAuthorized = [bool]$RestartExisting

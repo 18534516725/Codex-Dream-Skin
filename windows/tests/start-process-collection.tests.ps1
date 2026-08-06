@@ -77,6 +77,7 @@ if ($unsafeDirectCounts.Count -ne 0) {
 foreach ($required in @(
   '$currentProcesses = @(Get-DreamSkinCodexProcesses -Codex $currentCodex)',
   '$savedProcesses = @(Get-DreamSkinCodexProcesses -Codex $savedCodex)',
+  '$codexProcesses = @(',
   '@(Get-DreamSkinCodexProcesses -Codex $savedPathCandidate).Count',
   '@(Get-DreamSkinCodexProcesses -Codex $codexToStop)',
   '@(Get-DreamSkinCodexProcesses -Codex $codex).Count'
@@ -84,6 +85,14 @@ foreach ($required in @(
   if (-not $source.Contains($required)) {
     throw "Start script no longer materializes the required Codex process collection: $required"
   }
+}
+
+$single = @([pscustomobject]@{ ProcessId = 4242 })
+$materializedBranchResult = @(
+  if ($true) { $single } else { @() }
+)
+if ($materializedBranchResult.Count -ne 1) {
+  throw 'The one-process branch fixture did not preserve its array shape across an if-expression assignment.'
 }
 
 Write-Output 'PASS: Windows startup materializes one-process Codex query results before counting.'
